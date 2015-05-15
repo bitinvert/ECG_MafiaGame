@@ -99,6 +99,9 @@ GameObject:
   - 92: {fileID: 467827352}
   - 124: {fileID: 467827351}
   - 81: {fileID: 467827350}
+  - 114: {fileID: 467827357}
+  - 136: {fileID: 467827356}
+  - 54: {fileID: 467827355}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -171,6 +174,45 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!54 &467827355
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467827349}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: .0500000007
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!136 &467827356
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467827349}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: .5
+  m_Height: 1
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &467827357
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 467827349}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b73139883b2bbe4486e67275561ec4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &469516360
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,6 +295,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 723468475}
   - 65: {fileID: 723468474}
+  - 114: {fileID: 723468476}
   m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
@@ -284,6 +327,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 7
+--- !u!114 &723468476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 723468473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435ef1d28e7212843bef11de42a7373c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pCamMainCam: {fileID: 467827349}
 --- !u!1 &726636334
 GameObject:
   m_ObjectHideFlags: 0
