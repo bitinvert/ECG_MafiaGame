@@ -15,5 +15,12 @@ public class Gestures : MonoBehaviour {
 			Camera.main.transform.position -= new Vector3( mTKRecPan.deltaTranslation.x, 0, mTKRecPan.deltaTranslation.y ) / pIntCMSpeed;
 		};
 		TouchKit.addGestureRecognizer(mTKRecPan);
+
+		var mTKRecZoom = new TKPinchRecognizer();
+		mTKRecZoom.gestureRecognizedEvent += ( r ) =>
+		{
+			//TODO: add the zoom function, with changing the camera size
+		};
+		TouchKit.addGestureRecognizer(mTKRecZoom);
 	}
 }
