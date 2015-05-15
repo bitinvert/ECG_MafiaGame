@@ -7,8 +7,10 @@ public class CameraCollider : MonoBehaviour {
 
 	void OnTriggerExit( Collider other){
 
-			Debug.Log ("Test");
-			pCamMainCam.gameObject.transform.position.Set (0,0,0);
+		Debug.Log("Raus");	
+		pCamMainCam.gameObject.transform.position = new Vector3 (0,0,0);
 
 	}
+
+
 }
