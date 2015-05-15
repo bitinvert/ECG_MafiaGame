@@ -3,13 +3,9 @@ using System.Collections;
 
 public class CameraCollider : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
+	public GameObject pCamMainCam;
 	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
+	void OnCollisionExit(){
+
 	}
 }
