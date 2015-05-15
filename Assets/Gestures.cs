@@ -3,7 +3,9 @@ using System.Collections;
 
 public class Gestures : MonoBehaviour {
 
-	public int pIntCMSpeed = 50;
+	public float pFloatCMSpeed = 50;
+
+	public float pFloatCZSpeed = 1;
 
 	// Use this for initialization
 	void Start () {
@@ -12,14 +14,14 @@ public class Gestures : MonoBehaviour {
 
 		mTKRecPan.gestureRecognizedEvent += (r) => 
 		{
-			Camera.main.transform.position -= new Vector3( mTKRecPan.deltaTranslation.x, 0, mTKRecPan.deltaTranslation.y ) / pIntCMSpeed;
+			Camera.main.transform.position -= new Vector3( mTKRecPan.deltaTranslation.x, 0, mTKRecPan.deltaTranslation.y ) / pFloatCMSpeed;
 		};
 		TouchKit.addGestureRecognizer(mTKRecPan);
 
 		var mTKRecZoom = new TKPinchRecognizer();
 		mTKRecZoom.gestureRecognizedEvent += ( r ) =>
 		{
-			//TODO: add the zoom function, with changing the camera size
+			Camera.main.orthographicSize += mTKRecZoom.deltaScale * pFloatCZSpeed;
 		};
 		TouchKit.addGestureRecognizer(mTKRecZoom);
 	}
