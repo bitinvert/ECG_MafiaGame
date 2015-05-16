@@ -3,9 +3,9 @@ using System.Collections;
 
 public class Gestures : MonoBehaviour {
 
-	public float pFloatCMSpeed = 50;
+	public float pFloatCMSpeed = 25;
 
-	public float pFloatCZSpeed = 1;
+	public float pFloatCZSpeed = 25;
 
 	// Use this for initialization
 	void Start () {
@@ -14,7 +14,9 @@ public class Gestures : MonoBehaviour {
 
 		mTKRecPan.gestureRecognizedEvent += (r) => 
 		{
-			Camera.main.transform.position -= new Vector3( mTKRecPan.deltaTranslation.x, 0, mTKRecPan.deltaTranslation.y ) / pFloatCMSpeed;
+			Vector3 mVec3Dir = new Vector3(mTKRecPan.deltaTranslation.x , 0, mTKRecPan.deltaTranslation.y ) / pFloatCMSpeed;
+			mVec3Dir = Quaternion.Euler (0f,45f,0f) * mVec3Dir;
+			Camera.main.transform.Translate(-mVec3Dir,Space.World);
 		};
 		TouchKit.addGestureRecognizer(mTKRecPan);
 
@@ -24,5 +26,8 @@ public class Gestures : MonoBehaviour {
 			Camera.main.orthographicSize += mTKRecZoom.deltaScale * pFloatCZSpeed;
 		};
 		TouchKit.addGestureRecognizer(mTKRecZoom);
+
 	}
+
+
 }

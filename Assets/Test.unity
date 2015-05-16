@@ -146,7 +146,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: .300000012
+  near clip plane: -100
   far clip plane: 1000
   field of view: 38
   orthographic: 1
@@ -159,7 +159,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_HDR: 0
-  m_OcclusionCulling: 1
+  m_OcclusionCulling: 0
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
 --- !u!4 &467827354
@@ -168,8 +168,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 467827349}
-  m_LocalRotation: {x: .382683456, y: 0, z: 0, w: .923879504}
-  m_LocalPosition: {x: 1.89999998, y: 5, z: -5.9000001}
+  m_LocalRotation: {x: .239117637, y: .369643837, z: -.0990457758, w: .892399073}
+  m_LocalPosition: {x: -9.80000019, y: 10.1999998, z: -12.6999998}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -213,6 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b73139883b2bbe4486e67275561ec4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pVec3PrevCamMovement: {x: 0, y: 0, z: 0}
+  pVec3CurMovement: {x: 0, y: 0, z: 0}
 --- !u!1 &469516360
 GameObject:
   m_ObjectHideFlags: 0
@@ -511,14 +513,14 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: .956862748, b: .839215696, a: 1}
-  m_Intensity: 1
+  m_Intensity: .930000007
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
     m_Type: 2
-    m_Resolution: -1
-    m_Strength: 1
+    m_Resolution: 3
+    m_Strength: .635999978
     m_Bias: .0500000007
     m_NormalBias: .400000006
   m_Cookie: {fileID: 0}
@@ -529,7 +531,7 @@ Light:
     serializedVersion: 2
     m_Bits: 4294967295
   m_Lightmapping: 4
-  m_BounceIntensity: 1
+  m_BounceIntensity: 2.54999995
   m_ShadowRadius: 0
   m_ShadowAngle: 0
   m_AreaSize: {x: 1, y: 1}
@@ -605,7 +607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pFloatCMSpeed: 25
-  pFloatCZSpeed: 7
+  pFloatCZSpeed: 25
 --- !u!1 &2066057658
 GameObject:
   m_ObjectHideFlags: 0
