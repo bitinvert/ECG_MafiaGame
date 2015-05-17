@@ -5,7 +5,7 @@ public class Gestures : MonoBehaviour {
 
 	public float pFloatCMSpeed = 25;
 
-	public float pFloatCZSpeed = 35;
+	public float pFloatCZSpeed = 15;
 
 	// Use this for initialization
 	void Start () {
@@ -26,7 +26,7 @@ public class Gestures : MonoBehaviour {
 		mTKRecZoom.gestureRecognizedEvent += ( r ) =>
 		{
 		
-			Camera.main.orthographicSize += mTKRecZoom.deltaScale * pFloatCZSpeed*Time.deltaTime;
+			Camera.main.orthographicSize += mTKRecZoom.deltaScale * pFloatCZSpeed;
 			
 		};
 		TouchKit.addGestureRecognizer(mTKRecZoom);
