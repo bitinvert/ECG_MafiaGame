@@ -14,7 +14,7 @@ public class CameraMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		pVec3CamMovement = (transform.position - pVec3CamPos) / Time.deltaTime;
-		pVec3CamMovement = Quaternion.Euler (0f, 45f, 0f) * pVec3CamMovement;
+		pVec3CamMovement =/* Quaternion.Euler (0f, 45f, 0f) **/ pVec3CamMovement;
 		pVec3CamPos = transform.position;
 	}
 }

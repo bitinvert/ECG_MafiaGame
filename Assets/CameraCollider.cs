@@ -13,8 +13,25 @@ public class CameraCollider : MonoBehaviour {
 		mFloatOldCamSpeed = pGesturesCamGestures.pFloatCMSpeed;
 		pGesturesCamGestures.pFloatCMSpeed = 0;
 		StartCoroutine(ResetCamMovementSpeed(1));
-		pCameraMainCamera.gameObject.transform.position = pCameraMainCamera.gameObject.transform.position - pCameraMovementMainCamMov.pVec3CamMovement; 
+//		pCameraMainCamera.gameObject.transform.position = pCameraMainCamera.gameObject.transform.position - pCameraMovementMainCamMov.pVec3CamMovement; 
 
+		// Checking the movement of the camera and then offsetting it by one, so it doesn't shoot to far away
+		if(pCameraMovementMainCamMov.pVec3CamMovement.x > 0)
+		{
+			pCameraMainCamera.gameObject.transform.position -= new Vector3(1f, 0f, 0f);
+		}
+		if(pCameraMovementMainCamMov.pVec3CamMovement.x < 0)
+		{
+			pCameraMainCamera.gameObject.transform.position += new Vector3(1f, 0f, 0f);
+		}
+		if(pCameraMovementMainCamMov.pVec3CamMovement.z > 0)
+		{
+			pCameraMainCamera.gameObject.transform.position -= new Vector3(0f, 0f, 1f);
+		}
+		if(pCameraMovementMainCamMov.pVec3CamMovement.z < 0)
+		{
+			pCameraMainCamera.gameObject.transform.position += new Vector3(0f, 0f, 1f);
+		}
 	}
 
 	private IEnumerator ResetCamMovementSpeed (float mFloatWaitTime){
