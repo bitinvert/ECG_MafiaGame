@@ -213,8 +213,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b73139883b2bbe4486e67275561ec4d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pVec3PrevCamMovement: {x: 0, y: 0, z: 0}
-  pVec3CurMovement: {x: 0, y: 0, z: 0}
+  pVec3CamPos: {x: 0, y: 0, z: 0}
+  pVec3CamMovement: {x: 0, y: 0, z: 0}
 --- !u!1 &469516360
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +340,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435ef1d28e7212843bef11de42a7373c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pCamMainCam: {fileID: 467827349}
+  pMainCam: {fileID: 467827349}
+  pCamMovement: {fileID: 467827357}
+  pCamGestures: {fileID: 1729437362}
 --- !u!1 &726636334
 GameObject:
   m_ObjectHideFlags: 0
