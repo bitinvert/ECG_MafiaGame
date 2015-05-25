@@ -17,11 +17,11 @@ public class SwitchMenu : MonoBehaviour {
 			case "FadeOut": StartCoroutine(FadeOut());
 				break;
 
-			//case "ScaleOut": StartCoroutine(ScaleOut());
-			//	break;
+			case "FadeGameMenuIn": StartCoroutine(FadeGameMenuIn ());
+				break;
 
-			//case "Slide": StartCoroutine(Slide ());
-			//	break;
+			case "FadeGameMenuOut": StartCoroutine(FadeGameMenuOut ());
+				break;
 
 			default: break;
 		}
@@ -37,6 +37,42 @@ public class SwitchMenu : MonoBehaviour {
 		{
 			pFrom.alpha -= Time.deltaTime * time;
 			yield return null; // wait for next frame
+		}
+
+		pFrom.blocksRaycasts = false;
+
+		pTo.interactable = true;
+		pTo.blocksRaycasts = true;
+		yield return null;
+	}
+
+	IEnumerator FadeGameMenuIn() 
+	{
+		pFrom.interactable = false;
+		yield return null;
+
+		while (pTo.alpha < 1)
+		{
+			pTo.alpha += Time.deltaTime * time;
+			yield return null;
+		}
+
+		pFrom.blocksRaycasts = false;
+
+		pTo.interactable = true;
+		pTo.blocksRaycasts = true;
+		yield return null;
+	}
+
+	IEnumerator FadeGameMenuOut()
+	{
+		pFrom.interactable = false;
+		yield return null;
+
+		while (pFrom.alpha > 0)
+		{
+			pFrom.alpha -= Time.deltaTime * time;
+			yield return null;
 		}
 
 		pFrom.blocksRaycasts = false;
