@@ -3,6 +3,7 @@ using System;
 using Mono.Data.Sqlite;
 using System.Data;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Server : MonoBehaviour {
 
@@ -11,6 +12,15 @@ public class Server : MonoBehaviour {
 	IDbConnection dbconn;
 	IDbCommand dbcmd;
 
+	NetworkView networkView;
+	
+	/// <summary>
+	/// Start this instance.
+	/// </summary>
+	void Start ()
+	{
+		networkView = GetComponent <NetworkView> ();
+	}
 
 	/// <summary>
 	/// Starts the server. First initialize Server on port, then build connection to a database.
@@ -76,21 +86,38 @@ public class Server : MonoBehaviour {
 		GUILayout.Label("IP: " + Network.player.ipAddress + " Port: " + Network.player.port);  
 	}
 
+	/// <summary>
+	/// Get missions from database and send them to clients.
+	/// </summary>
 	[RPC]
-	void SaveMessage(string message)
+	void GetMissions()
 	{
 		dbcmd = dbconn.CreateCommand ();
-		//NEVER DO THIS! SQL-INJECTION!
-		//TODO: setting parameters to command
-		dbcmd.CommandText = "INSERT INTO Messages VALUES ('" + message + "');";
-		dbcmd.ExecuteNonQuery ();
+		dbcmd.CommandText = "SELECT * FROM Missions;";
+		IDataReader reader = dbcmd.ExecuteReader ();
+		string missions = "";
+
+		while (reader.Read()) 
+		{
+			missions += reader.GetString (0) + " ";
+		}
+		missions = missions.Trim ();
+		networkView.RPC ("ShowMissions", RPCMode.Others, missions);
+
+		reader.Close ();
 		dbcmd.Dispose();
 		dbcmd = null;
 	}
 
 	//RPC client functions
 	[RPC]
-	void SendMessage()
+	void RequestMissions()
+	{
+		//empty
+	}
+
+	[RPC]
+	void ShowMissions(string missions)
 	{
 		//empty
 	}
