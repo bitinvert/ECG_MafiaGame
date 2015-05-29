@@ -3,16 +3,18 @@ using System.Collections;
 
 public class InitializeMenus : MonoBehaviour {
 
-	public CanvasGroup[] pMenus;
-
 	// Deactivate all Sub-Menus except the Start-Menu
 	void Start () {
-		foreach(CanvasGroup menu in pMenus) {
-			if(!menu.name.Equals("Start")) {
+		GameObject[] menusGO = GameObject.FindGameObjectsWithTag ("Menu");
+
+		foreach(GameObject menuGO in menusGO) {
+			CanvasGroup menu = menuGO.GetComponent<CanvasGroup>();
+
+			if(!(menu.name.Equals("Start") || menu.name.Equals("Standard_Overlay"))) {
 				menu.interactable = false;
 				menu.blocksRaycasts = false;
 				menu.alpha = 0.0f;
-			}
+			} 
 		}
 	}
 }
