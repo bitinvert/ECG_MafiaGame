@@ -8,7 +8,7 @@
 		<field name= "1">
 			<x>0</x>
 			<z>1</z>
-			<prefab>FieldFloor</prefab>
+			<prefab>FieldWall</prefab>
 		</field>
 		<field name= "2">
 			<x>0</x>
