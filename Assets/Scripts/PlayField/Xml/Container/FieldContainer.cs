@@ -24,5 +24,13 @@ public class FieldContainer {
 			return serializer.Deserialize(stream) as FieldContainer;
 		}
 	}
+	public void Save(string path)
+	{
+		var serializer = new XmlSerializer(typeof(FieldContainer));
+		using(var stream = new FileStream(path, FileMode.Create))
+		{
+			serializer.Serialize(stream, this);
+		}
+	}
 	
 }

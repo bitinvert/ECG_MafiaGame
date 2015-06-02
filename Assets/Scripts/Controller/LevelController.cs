@@ -13,18 +13,21 @@ public class LevelController : MonoBehaviour {
 	public GameObject pGOWall;
 	public GameObject pGOCover;
 	public string pStringTypeOfLevelLoader;
+	private GameObject mGOLevel;
 	// Use this for initialization
-	void Start () {
+	public void LoadLevel () {
 		switch(pStringTypeOfLevelLoader){
 		case "primitve"	:	PrimitveLevelLoader mLevelLoader = new PrimitveLevelLoader (pGOFloor,pGOWall,pGOCover);
-							mLevelLoader.StartLevelCreation ("assets/level.txt");
+							this.mGOLevel = mLevelLoader.StartLevelCreation ("assets/level.txt");
 							break;
-		case "xml"		:	XmlLoader.LoadLevel ("assets/level.xml");
+		case "xml"		:	this.mGOLevel = XmlLoader.LoadLevel ("assets/level.xml");
 							break;
 		}
 	
 	}
-	
+	public void SaveLevel(){
+		XmlSaver.SaveLevel ("assets/safedLevel.xml",mGOLevel);
+	}
 	// Update is called once per frame
 	void Update () {
 		

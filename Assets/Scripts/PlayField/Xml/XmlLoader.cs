@@ -9,12 +9,12 @@ public class XmlLoader : MonoBehaviour {
 	 * <para>string mStringPath = path to the xml file </para>
 	 * 
 	 * */
-	public static void LoadLevel (string mStringPath){
+	public static GameObject LoadLevel (string mStringPath){
 		FieldContainer mFieldContainer = FieldContainer.Load (mStringPath);
-		GameObject mGORoot = null;
-		mGORoot = new GameObject ();
+		GameObject mGORoot = new GameObject ();
 		mGORoot.name = "level";
 		InstantiateFields (mFieldContainer.pLstFields,mGORoot);
+		return mGORoot;
 	}
 	private static void InstantiateFields(List<FieldItem> mLstFields,GameObject mGORoot){
 		foreach (FieldItem mFieldItem in mLstFields) {

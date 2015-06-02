@@ -14,9 +14,9 @@ public class PrimitveLevelLoader : MonoBehaviour {
 		pGOCover=mGOCover;
 	}
 
-	public void StartLevelCreation(string mStringPath){
+	public GameObject StartLevelCreation(string mStringPath){
 		List<string> mLstStringLevel = PrimitiveStringLoader.LoadString(mStringPath);
-		CreateLevel (mLstStringLevel);
+		return CreateLevel (mLstStringLevel);
 	}
 	/*
 	 * Creates the level in the scene out of string List, containg tags for the differnet field types. 
@@ -24,12 +24,13 @@ public class PrimitveLevelLoader : MonoBehaviour {
 	 * <para>List &lt; string &gt;  mLstString -> a list containing the single level file lines to create the level step by step </para>
 	 * 
 	 * */
-	private void CreateLevel(List<string> mLstStringLevel){
+	private GameObject CreateLevel(List<string> mLstStringLevel){
 		GameObject mGORoot = Instantiate(new GameObject());
 		mGORoot.name= "Level";
 		for (int mIntXAxis = 0; mIntXAxis < mLstStringLevel.Count; mIntXAxis = mIntXAxis +1) {
 			CreateLine(mLstStringLevel[mIntXAxis],mIntXAxis,mGORoot);
 		}
+		return mGORoot;
 	}
 
 	private void CreateLine(string mStringLine, int mIntXPos,GameObject mGORoot){

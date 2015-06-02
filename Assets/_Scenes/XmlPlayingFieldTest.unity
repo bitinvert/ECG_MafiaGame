@@ -134,9 +134,29 @@ Prefab:
       propertyPath: pStringTypeOfLevelLoader
       value: xml
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11477596, guid: f51ac0e791f7fc647a84f3f10ce0b2fb, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: f51ac0e791f7fc647a84f3f10ce0b2fb, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &235875546 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 191908, guid: f51ac0e791f7fc647a84f3f10ce0b2fb, type: 2}
+  m_PrefabInternal: {fileID: 235875545}
+--- !u!114 &235875547
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 235875546}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 087816872ad625843a5703ce484b19c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pGOFloor: {fileID: 0}
+  pGOWall: {fileID: 0}
+  pGOCover: {fileID: 0}
+  pStringTypeOfLevelLoader: xml
 --- !u!1 &618721091
 GameObject:
   m_ObjectHideFlags: 0
@@ -197,6 +217,73 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &1057981151
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1057981152}
+  m_Layer: 0
+  m_Name: level
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1057981152
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1057981151}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
+--- !u!1 &1266566824
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 1266566826}
+  - 114: {fileID: 1266566825}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1266566825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1266566824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06ca9bb8113b19f4eb48175c0c040cbf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pLevelController: {fileID: 235875547}
+--- !u!4 &1266566826
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1266566824}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
 --- !u!1 &1383995844
 GameObject:
   m_ObjectHideFlags: 0
