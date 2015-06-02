@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Playable
   - Menu
+  - Client
   layers:
   - Default
   - TransparentFX

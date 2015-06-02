@@ -7,74 +7,48 @@ public class Client : MonoBehaviour {
 	string remoteIP = "127.0.0.1";
 	int remotePort = 25000;
 	NetworkView networkView;
+	NetworkPlayer player;
 	List<string> missions;
 	bool missionOn = false;
+	public bool loggedIn = false;
+	public string username;
+	public string password;
+	string loginInfo = "Nicht eingeloggt.";
 
 	/// <summary>
 	/// Start this instance.
 	/// </summary>
-	void Start ()
+	void Awake ()
 	{
 		networkView = GetComponent <NetworkView> ();
 		missions = new List<string> ();
+		connectToServer ();
+		DontDestroyOnLoad (this);
+		Application.LoadLevel ("MainMenu");
 	}
 
 	/// <summary>
 	/// Connects to server.
 	/// </summary>
 	void connectToServer() {
-		Network.Connect(remoteIP, remotePort);	
+		Network.Connect(remoteIP, remotePort);
+	}
+
+	void OnConnectedToServer() {
+		Debug.Log("Connected to server");
 	}
 
 	/// <summary>
 	/// Disconnects from server.
 	/// </summary>
 	void disconnectFromServer() {
-		Network.Disconnect();
+		//Network.Disconnect();
+		missionOn = !missionOn;
+		missions.Clear ();
+		loggedIn = false;
+		loginInfo = "Ausgeloggt.";
 	}
 
-	/// <summary>
-	/// Manage view of GUI.
-	/// </summary>
-	void OnGUI ()
-	{	
-		if (Network.peerType == NetworkPeerType.Disconnected)
-		{	
-			GUILayout.Label("Not connected to server.");
-			if (GUILayout.Button ("Connect to server"))
-			{
-				connectToServer();
-			}
-		}
-		else
-		{
-			if(Network.peerType == NetworkPeerType.Connecting)
-			{
-				GUILayout.Label("Connecting to server...");
-			}
-			else {
-				GUILayout.Label("Connected to server.");
-				GUILayout.Label("IP/port: " + Network.player.ipAddress + "/" + Network.player.port);
-			}
-			if (GUILayout.Button ("Disconnect"))
-			{
-				disconnectFromServer();
-			}
-
-			if (GUILayout.Button ("Missionen"))
-			{
-				RequestMissions();
-
-			}
-			if (missionOn)
-			{
-				foreach (string s in missions)
-				{
-					GUILayout.Button(s);
-				}
-			}
-		}
-	}
 
 	/// <summary>
 	/// Request missions from server.
@@ -82,7 +56,7 @@ public class Client : MonoBehaviour {
 	[RPC]
 	void RequestMissions()
 	{
-		networkView.RPC ("GetMissions", RPCMode.Server);
+		networkView.RPC ("GetMissions", RPCMode.Server, Network.player);
 	}
 
 	/// <summary>
@@ -93,18 +67,55 @@ public class Client : MonoBehaviour {
 	void ShowMissions(string missionsString)
 	{
 		string [] missionArray = missionsString.Split (new char[] {' '});
+		missions.Clear ();
 		foreach (string s in missionArray) 
 		{
 			missions.Add (s);
 		}
 		missionOn = true;
+	}
 
+	[RPC]
+	void RequestMap()
+	{
+		networkView.RPC ("BuildMap", RPCMode.Server);
+	}
+
+	[RPC]
+	public void CheckLogin(string username, string password)
+	{
+		player = Network.player;
+		networkView.RPC ("AuthorizeLogin", RPCMode.Server, username, password, player);
+	}
+
+	[RPC]
+	void Login(bool authorized)
+	{
+		if (authorized) {
+			loginInfo = "Eingeloggt als:" + username;
+			loggedIn = true;
+		} else {
+			disconnectFromServer();
+		}
 	}
 
 	//Server RPC functions
 	[RPC]
-	void GetMissions ()
+	void GetMissions (NetworkPlayer sender)
 	{
 		//empty
 	}
+
+	[RPC]
+	void BuildMap ()
+	{
+
+	}
+
+	[RPC]
+	void AuthorizeLogin (string username, string password, NetworkPlayer player)
+	{
+
+	}
+
 }

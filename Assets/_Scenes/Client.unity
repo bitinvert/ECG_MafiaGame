@@ -156,14 +156,27 @@ GameObject:
   m_Component:
   - 4: {fileID: 1562095030}
   - 148: {fileID: 1562095031}
-  - 114: {fileID: 1562095032}
+  - 114: {fileID: 1562095029}
   m_Layer: 0
   m_Name: Client
-  m_TagString: Untagged
+  m_TagString: Client
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!114 &1562095029
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1562095028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 47d41981842267348b73c72ccfbc0e74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  username: 
+  password: 
 --- !u!4 &1562095030
 Transform:
   m_ObjectHideFlags: 0
@@ -188,17 +201,6 @@ NetworkView:
   m_ViewID:
     m_ID: 1
     m_Type: 1
---- !u!114 &1562095032
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1562095028}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 498622e501c36ef4c817a2394e74a9fb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1806550604
 GameObject:
   m_ObjectHideFlags: 0
