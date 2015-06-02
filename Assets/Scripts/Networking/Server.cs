@@ -86,11 +86,56 @@ public class Server : MonoBehaviour {
 		GUILayout.Label("IP: " + Network.player.ipAddress + " Port: " + Network.player.port);  
 	}
 
+	[RPC]
+	void AuthorizeLogin(string username, string password, NetworkPlayer sender)
+	{
+		dbcmd = dbconn.CreateCommand ();
+		IDbDataParameter usernameParam = dbcmd.CreateParameter ();
+		IDbDataParameter passwordParam = dbcmd.CreateParameter ();
+		dbcmd.CommandText = "SELECT * FROM Player WHERE username==@username AND password==@password;";
+
+		usernameParam.DbType = DbType.String;
+		usernameParam.Value = username;
+		usernameParam.ParameterName = "username";
+
+		passwordParam.DbType = DbType.String;
+		passwordParam.Value = password;
+		passwordParam.ParameterName = "password";
+
+		dbcmd.Parameters.Add (usernameParam);
+		dbcmd.Parameters.Add (passwordParam);
+
+		IDataReader reader = dbcmd.ExecuteReader ();
+
+		if (reader.Read ()) 
+		{
+			//rpcmode nur an aufrufer zurueck
+			networkView.RPC("Login", sender, true);
+			//networkView.RPC("Login", RPCMode.Others, true);
+		} else {
+			//rpcmode nur an aufrufer zurueck
+			networkView.RPC("Login", sender, false);
+			//networkView.RPC("Login", RPCMode.Others, false);
+		}
+
+		reader.Close ();
+		dbcmd.Dispose();
+		dbcmd = null;
+	}
+
+
+	[RPC]
+	void BuildMap()
+	{
+		//generate map
+
+	}
+
 	/// <summary>
 	/// Get missions from database and send them to clients.
 	/// </summary>
 	[RPC]
-	void GetMissions()
+	void GetMissions(NetworkPlayer sender)
 	{
 		dbcmd = dbconn.CreateCommand ();
 		dbcmd.CommandText = "SELECT * FROM Missions;";
@@ -102,7 +147,8 @@ public class Server : MonoBehaviour {
 			missions += reader.GetString (0) + " ";
 		}
 		missions = missions.Trim ();
-		networkView.RPC ("ShowMissions", RPCMode.Others, missions);
+		//rpcmode nur an aufrufer zurueck
+		networkView.RPC ("ShowMissions", sender, missions);
 
 		reader.Close ();
 		dbcmd.Dispose();
@@ -110,6 +156,17 @@ public class Server : MonoBehaviour {
 	}
 
 	//RPC client functions
+	[RPC]
+	void CheckLogin ()
+	{
+
+	}
+
+	[RPC]
+	void Login (bool authorized)
+	{
+	}
+
 	[RPC]
 	void RequestMissions()
 	{
@@ -120,5 +177,10 @@ public class Server : MonoBehaviour {
 	void ShowMissions(string missions)
 	{
 		//empty
+	}
+
+	[RPC]
+	void RequestMap ()
+	{
 	}
 }
