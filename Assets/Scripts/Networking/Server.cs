@@ -6,12 +6,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Server : MonoBehaviour {
-
+	
 	int listenPort = 25000;
 	int maxClients = 2;
 	IDbConnection dbconn;
 	IDbCommand dbcmd;
-
+	
 	NetworkView networkView;
 	
 	/// <summary>
@@ -21,7 +21,7 @@ public class Server : MonoBehaviour {
 	{
 		networkView = GetComponent <NetworkView> ();
 	}
-
+	
 	/// <summary>
 	/// Starts the server. First initialize Server on port, then build connection to a database.
 	/// </summary>
@@ -31,17 +31,17 @@ public class Server : MonoBehaviour {
 		dbconn = new SqliteConnection(conn);
 		dbconn.Open(); 
 	}
-
+	
 	/// <summary>
 	/// Shut down server and close database connection.
 	/// </summary>
 	private void stopServer() {
 		Network.Disconnect();
-
+		
 		dbconn.Close();
 		dbconn = null;
 	}
-
+	
 	/// <summary>
 	/// Manage view of GUI.
 	/// </summary>
@@ -68,7 +68,7 @@ public class Server : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	/// <summary>
 	/// Shows the client information.
 	/// </summary>
@@ -78,14 +78,57 @@ public class Server : MonoBehaviour {
 			GUILayout.Label(" Player from ip/port: " + p.ipAddress + "/" + p.port);	
 		}
 	}
-
+	
 	/// <summary>
 	/// Shows the server information.
 	/// </summary>
 	private void showServerInformation() {
 		GUILayout.Label("IP: " + Network.player.ipAddress + " Port: " + Network.player.port);  
 	}
-
+	
+	/// <summary>
+	/// Executes client's registration request.
+	/// </summary>
+	/// <param name="username">Username.</param>
+	/// <param name="password">Password.</param>
+	/// <param name="sender">Sender.</param>
+	[RPC]
+	void RegistrateUser(string username, string password, NetworkPlayer sender)
+	{
+		dbcmd = dbconn.CreateCommand ();
+		IDbDataParameter usernameParam = dbcmd.CreateParameter ();
+		IDbDataParameter passwordParam = dbcmd.CreateParameter ();
+		dbcmd.CommandText = "INSERT INTO Player VALUES(@username, @password);";
+		
+		usernameParam.DbType = DbType.String;
+		usernameParam.Value = username;
+		usernameParam.ParameterName = "username";
+		
+		passwordParam.DbType = DbType.String;
+		passwordParam.Value = password;
+		passwordParam.ParameterName = "password";
+		
+		dbcmd.Parameters.Add (usernameParam);
+		dbcmd.Parameters.Add (passwordParam);
+		
+		if (dbcmd.ExecuteNonQuery () == 1) 
+		{
+			networkView.RPC ("Login", sender, true);
+		} else {
+			networkView.RPC ("Login", sender, false);
+		}
+		
+		dbcmd.Dispose();
+		dbcmd = null;
+		
+	}
+	
+	/// <summary>
+	/// Authorizes client's login request.
+	/// </summary>
+	/// <param name="username">Username.</param>
+	/// <param name="password">Password.</param>
+	/// <param name="sender">Sender.</param>
 	[RPC]
 	void AuthorizeLogin(string username, string password, NetworkPlayer sender)
 	{
@@ -93,37 +136,33 @@ public class Server : MonoBehaviour {
 		IDbDataParameter usernameParam = dbcmd.CreateParameter ();
 		IDbDataParameter passwordParam = dbcmd.CreateParameter ();
 		dbcmd.CommandText = "SELECT * FROM Player WHERE username==@username AND password==@password;";
-
+		
 		usernameParam.DbType = DbType.String;
 		usernameParam.Value = username;
 		usernameParam.ParameterName = "username";
-
+		
 		passwordParam.DbType = DbType.String;
 		passwordParam.Value = password;
 		passwordParam.ParameterName = "password";
-
+		
 		dbcmd.Parameters.Add (usernameParam);
 		dbcmd.Parameters.Add (passwordParam);
-
+		
 		IDataReader reader = dbcmd.ExecuteReader ();
-
+		
 		if (reader.Read ()) 
 		{
-			//rpcmode nur an aufrufer zurueck
 			networkView.RPC("Login", sender, true);
-			//networkView.RPC("Login", RPCMode.Others, true);
 		} else {
-			//rpcmode nur an aufrufer zurueck
 			networkView.RPC("Login", sender, false);
-			//networkView.RPC("Login", RPCMode.Others, false);
 		}
-
+		
 		reader.Close ();
 		dbcmd.Dispose();
 		dbcmd = null;
 	}
-
-
+	
+	/*
 	[RPC]
 	void BuildMap()
 	{
@@ -154,19 +193,24 @@ public class Server : MonoBehaviour {
 		dbcmd.Dispose();
 		dbcmd = null;
 	}
-
+	*/
+	
 	//RPC client functions
+	[RPC]
+	public void RequestRegistration(string username, string password)
+	{
+	}
+	
 	[RPC]
 	void CheckLogin ()
 	{
-
 	}
-
+	
 	[RPC]
 	void Login (bool authorized)
 	{
 	}
-
+	/*
 	[RPC]
 	void RequestMissions()
 	{
@@ -183,4 +227,5 @@ public class Server : MonoBehaviour {
 	void RequestMap ()
 	{
 	}
+	*/
 }

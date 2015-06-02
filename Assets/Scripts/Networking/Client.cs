@@ -7,13 +7,11 @@ public class Client : MonoBehaviour {
 	string remoteIP = "127.0.0.1";
 	int remotePort = 25000;
 	NetworkView networkView;
-	NetworkPlayer player;
-	List<string> missions;
-	bool missionOn = false;
+	//List<string> missions;
+	//bool missionOn = false;
 	public bool loggedIn = false;
-	public string username;
-	public string password;
-	string loginInfo = "Nicht eingeloggt.";
+	string username;
+	string password;
 
 	/// <summary>
 	/// Start this instance.
@@ -21,7 +19,7 @@ public class Client : MonoBehaviour {
 	void Awake ()
 	{
 		networkView = GetComponent <NetworkView> ();
-		missions = new List<string> ();
+		//missions = new List<string> ();
 		connectToServer ();
 		DontDestroyOnLoad (this);
 		Application.LoadLevel ("MainMenu");
@@ -41,15 +39,49 @@ public class Client : MonoBehaviour {
 	/// <summary>
 	/// Disconnects from server.
 	/// </summary>
-	void disconnectFromServer() {
+	public void Logout() {
 		//Network.Disconnect();
-		missionOn = !missionOn;
-		missions.Clear ();
+		//missionOn = !missionOn;
+		//missions.Clear ();
 		loggedIn = false;
-		loginInfo = "Ausgeloggt.";
 	}
 
+	/// <summary>
+	/// Client sends registration-request to server.
+	/// </summary>
+	/// <param name="username">Username.</param>
+	/// <param name="password">Password.</param>
+	[RPC]
+	public void RequestRegistration(string username, string password){
+		networkView.RPC ("RegistrateUser", RPCMode.Server, username, password, Network.player);
+	}
 
+	/// <summary>
+	/// Client sends login-request to server.
+	/// </summary>
+	/// <param name="username">Username.</param>
+	/// <param name="password">Password.</param>
+	[RPC]
+	public void RequestLogin(string username, string password)
+	{
+		networkView.RPC ("AuthorizeLogin", RPCMode.Server, username, password, Network.player);
+	}
+	
+	/// <summary>
+	/// Login Client.
+	/// </summary>
+	/// <param name="authorized">If set to <c>true</c> authorized.</param>
+	[RPC]
+	void Login(bool authorized)
+	{
+		if (authorized) {
+			loggedIn = true;
+		} else {
+			Logout ();
+		}
+	}
+
+	/* Not used yet
 	/// <summary>
 	/// Request missions from server.
 	/// </summary>
@@ -80,26 +112,19 @@ public class Client : MonoBehaviour {
 	{
 		networkView.RPC ("BuildMap", RPCMode.Server);
 	}
-
-	[RPC]
-	public void CheckLogin(string username, string password)
-	{
-		player = Network.player;
-		networkView.RPC ("AuthorizeLogin", RPCMode.Server, username, password, player);
-	}
-
-	[RPC]
-	void Login(bool authorized)
-	{
-		if (authorized) {
-			loginInfo = "Eingeloggt als:" + username;
-			loggedIn = true;
-		} else {
-			disconnectFromServer();
-		}
-	}
+	*/
 
 	//Server RPC functions
+	[RPC]
+	void RegistrateUser (string username, string password, NetworkPlayer player)
+	{
+	}
+
+	[RPC]
+	void AuthorizeLogin (string username, string password, NetworkPlayer player)
+	{
+	}
+	/* Not used yet
 	[RPC]
 	void GetMissions (NetworkPlayer sender)
 	{
@@ -111,11 +136,7 @@ public class Client : MonoBehaviour {
 	{
 
 	}
+	*/
 
-	[RPC]
-	void AuthorizeLogin (string username, string password, NetworkPlayer player)
-	{
-
-	}
 
 }

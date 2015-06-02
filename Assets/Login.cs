@@ -12,12 +12,13 @@ public class Login : MonoBehaviour {
 	public void TestLogin() {
 		GameObject go = GameObject.FindWithTag ("Client");
 		Client client = (Client)go.GetComponent (typeof(Client));
-		client.CheckLogin ("jane", "jane");
+		client.RequestLogin ("jane", "jane");
 		StartCoroutine (CheckLoginStatus(client));
 	}
 
 	IEnumerator CheckLoginStatus(Client client) {
 		while (true) {
+			Debug.Log (client.loggedIn);
 			if (client.loggedIn) {
 				Debug.Log ("yay");
 				this.loggedIn = true;
