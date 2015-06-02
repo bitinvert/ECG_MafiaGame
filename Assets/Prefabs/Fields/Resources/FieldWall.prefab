@@ -88,7 +88,7 @@ MonoBehaviour:
   pBoolCanBeEntered: 0
   pIntCoverValue: 0
   pBooleanIsBlockingView: 1
-  mStringPrefab: FieldWall
+  pStringPrefab: FieldWall
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

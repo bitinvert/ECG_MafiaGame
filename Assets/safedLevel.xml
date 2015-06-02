@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <xmlLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <fields>
-    <field name="0">
+    <field name="FieldCover">
       <x>0</x>
       <z>0</z>
-      <prefab>FieldFloor</prefab>
+      <prefab>FieldCover</prefab>
     </field>
-    <field name="1">
+    <field name="FieldFloor">
       <x>0</x>
       <z>1</z>
-      <prefab>FieldWall</prefab>
+      <prefab>FieldFloor</prefab>
     </field>
-    <field name="2">
+    <field name="FieldCover 1">
       <x>0</x>
       <z>2</z>
-      <prefab>FieldFloor</prefab>
+      <prefab>FieldCover</prefab>
     </field>
   </fields>
 </xmlLevel>

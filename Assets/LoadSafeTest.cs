@@ -5,9 +5,9 @@ public class LoadSafeTest : MonoBehaviour {
 	public LevelController pLevelController;
 	// Use this for initialization
 	void Start () {
-		pLevelController.LoadLevel ();
+		/*pLevelController.LoadLevel ();
 		Debug.Log ("Load");
-		System.Threading.Thread.Sleep(5000);
+		System.Threading.Thread.Sleep(5000);*/
 		pLevelController.SaveLevel ();
 		Debug.Log ("Safe");
 	}
