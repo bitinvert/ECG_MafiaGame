@@ -9,15 +9,31 @@ public class XmlLoader : MonoBehaviour {
 	 * <para>string mStringPath = path to the xml file </para>
 	 * 
 	 * */
-	public static GameObject LoadLevel (string mStringPath){
+	public static GameObject LoadLevelackup (string mStringPath){
 		FieldContainer mFieldContainer = FieldContainer.Load (mStringPath);
 		GameObject mGORoot = new GameObject ();
 		mGORoot.name = "level";
-		InstantiateFields (mFieldContainer.pLstFields,mGORoot);
+		InstantiateFieldsBackup (mFieldContainer.pLstFields,mGORoot);
 		return mGORoot;
 	}
-	private static void InstantiateFields(List<FieldItem> mLstFields,GameObject mGORoot){
+
+	private static void InstantiateFieldsBackup(List<FieldItem> mLstFields,GameObject mGORoot){
 		foreach (FieldItem mFieldItem in mLstFields) {
+			Vector3 mVector3Pos = new Vector3(mFieldItem.x,1,mFieldItem.z);
+			GameObject mGOField = (GameObject)Instantiate(Resources.Load (mFieldItem.prefab),mVector3Pos,new Quaternion());
+			mGOField.name = mFieldItem.name;
+			mGOField.transform.parent = mGORoot.transform;
+		}
+	}
+	public static GameObject LoadLevel (string mStringPath){
+		PrefabHolderContainer mPrefabHolderContainer = PrefabHolderContainer.Load (mStringPath);
+		GameObject mGORoot = new GameObject ();
+		mGORoot.name = "level";
+		InstantiateFields (mPrefabHolderContainer.pLstPrefabHolders,mGORoot);
+		return mGORoot;
+	}
+	private static void InstantiateFields(List<PrefabHolderItem> mLstFields,GameObject mGORoot){
+		foreach (PrefabHolderItem mFieldItem in mLstFields) {
 			Vector3 mVector3Pos = new Vector3(mFieldItem.x,1,mFieldItem.z);
 			GameObject mGOField = (GameObject)Instantiate(Resources.Load (mFieldItem.prefab),mVector3Pos,new Quaternion());
 			mGOField.name = mFieldItem.name;

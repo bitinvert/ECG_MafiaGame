@@ -15,21 +15,21 @@ public class LevelController : MonoBehaviour {
 	public string pStringTypeOfLevelLoader;
 	private GameObject mGOLevel;
 
-	public void LoadLevel () {
+	public void LoadLevel (string path) {
 		switch(pStringTypeOfLevelLoader){
 		case "primitve"	:	PrimitveLevelLoader mLevelLoader = new PrimitveLevelLoader (pGOFloor,pGOWall,pGOCover);
-							this.mGOLevel = mLevelLoader.StartLevelCreation ("assets/level.txt");
+							this.mGOLevel = mLevelLoader.StartLevelCreation (path);
 							break;
-		case "xml"		:	this.mGOLevel = XmlLoader.LoadLevel ("assets/level.xml");
+		case "xml"		:	this.mGOLevel = XmlLoader.LoadLevel (path);
 							break;
 		}
 	
 	}
 
-	public void SaveLevel(){
+	public void SaveLevel(string path){
 		if (mGOLevel == null) {
 			mGOLevel = GameObject.Find ("level");
 		}
-			XmlSaver.SaveLevel ("assets/safedLevel.xml", mGOLevel);
+			XmlSaver.SaveLevel (path, mGOLevel);
 	}
 }
