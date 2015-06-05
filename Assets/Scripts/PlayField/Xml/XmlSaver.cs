@@ -23,7 +23,7 @@ public class XmlSaver {
 			
 		}
 		Debug.Log (mPrefabHolderContainer.pLstPrefabHolders.Count);
-		mPrefabHolderContainer.Save (mStringPath);
+		mPrefabHolderContainer.Save (mStringPath + "_prefabHolder.xml");
 	}
 	private static void SaveFields (string mStringPath, GameObject mGOLevel){
 		FieldContainer mFieldContainer = new FieldContainer ();
@@ -38,6 +38,6 @@ public class XmlSaver {
 			FieldItem mFieldItem = new FieldItem(mStringName,mFltX,mFltZ,mStringPrefab);
 			mFieldContainer.pLstFields.Add (mFieldItem);
 		}
-		mFieldContainer.Save (mStringPath);
+		mFieldContainer.Save (mStringPath + "_singleFields.xml");
 	}
 }
