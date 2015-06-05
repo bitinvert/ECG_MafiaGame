@@ -99,6 +99,7 @@ MonoBehaviour:
   pGOFloor: {fileID: 0}
   pGOWall: {fileID: 0}
   pGOCover: {fileID: 0}
+  pStringTypeOfLevelLoader: xml
 --- !u!114 &11486120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -110,6 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 09c9006f9df36b24dbad222e0075362b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mGOPlayableSprite: {fileID: 0}
+  mGOTileToMove: {fileID: 0}
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1
