@@ -4,7 +4,7 @@
     <prefabholder name="PrefabTest">
       <prefab>PrefabTest</prefab>
       <x>0</x>
-      <z>2</z>
+      <z>0</z>
     </prefabholder>
   </prefabholders>
 </xmlLevel>
