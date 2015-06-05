@@ -225,6 +225,8 @@ MonoBehaviour:
   pBoolLoadOnStart: 1
   pBoolSaveOnClose: 1
   pLevelController: {fileID: 222896918}
+  pStringLoadName: emptyLevel
+  pStringSaveName: emptyLevel
 --- !u!4 &1768834304
 Transform:
   m_ObjectHideFlags: 0
