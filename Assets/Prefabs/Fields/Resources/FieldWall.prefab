@@ -12,7 +12,7 @@ GameObject:
   - 64: {fileID: 6486172}
   - 23: {fileID: 2398132}
   - 114: {fileID: 11432778}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
