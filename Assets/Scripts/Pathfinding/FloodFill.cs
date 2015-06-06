@@ -38,17 +38,29 @@ public class FloodFill : MonoBehaviour {
 			pHashGridSet.Add (node);
 
 			//TODO Check if out of bounds
-			if(!(node.pIntX <= 0 || node.pIntX >= pGridField.mIntSizeX-1 ||
-			   node.pIntY <= 0 || node.pIntY >= pGridField.mIntSizeY-1 ))
+			if(!(node.pIntX <= 0))
 			{	
 				//Westen überprüfen
 				FindPath(pGridField.mNodeGrid[node.pIntX-1, node.pIntY], dist+1);
+
+
+			}
+			if(!(node.pIntX >= pGridField.mIntSizeX-1))
+			{
 				//Osten überprüfen
 				FindPath(pGridField.mNodeGrid[node.pIntX+1, node.pIntY], dist+1);
-				//Norden überprüfen
-				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY+1], dist+1);
+			}
+			if(!(node.pIntY <= 0))
+			{
 				//Sueden überprüfen
 				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY-1], dist+1);
+
+
+			}
+			if(!(node.pIntY >= pGridField.mIntSizeY-1))
+			{
+				//Norden überprüfen
+				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY+1], dist+1);
 			}
 		}
 	}
