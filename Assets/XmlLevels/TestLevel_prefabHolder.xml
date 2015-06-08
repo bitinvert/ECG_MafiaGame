@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="Windows-1252"?>
 <xmlLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <prefabholders>
-    <prefabholder name="PrefabTest">
-      <prefab>PrefabTest</prefab>
-      <x>1</x>
-      <z>0</z>
-    </prefabholder>
-    <prefabholder name="PrefabTest 1">
-      <prefab>PrefabTest</prefab>
+    <prefabholder name="Test">
+      <prefab>Test</prefab>
       <x>0</x>
       <z>0</z>
     </prefabholder>
