@@ -223,10 +223,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pBoolLoadOnStart: 1
-  pBoolSaveOnClose: 1
+  pBoolSaveOnClose: 0
   pLevelController: {fileID: 222896918}
-  pStringLoadName: emptyLevel
-  pStringSaveName: emptyLevel
+  pStringLoadName: TestWith3DModels
+  pStringSaveName: TestWith3DModels
 --- !u!4 &1768834304
 Transform:
   m_ObjectHideFlags: 0
