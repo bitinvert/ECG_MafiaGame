@@ -11,5 +11,10 @@
       <x>4</x>
       <z>0</z>
     </prefabholder>
+    <prefabholder name="LanternWithWalkway 2">
+      <prefab>LanternWithWalkway</prefab>
+      <x>7</x>
+      <z>0</z>
+    </prefabholder>
   </prefabholders>
 </xmlLevel>

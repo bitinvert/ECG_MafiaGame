@@ -225,7 +225,7 @@ MonoBehaviour:
   pBoolLoadOnStart: 1
   pBoolSaveOnClose: 0
   pLevelController: {fileID: 222896918}
-  pStringLoadName: TestWith3DModels
+  pStringLoadName: EmptyLevel
   pStringSaveName: TestWith3DModels
 --- !u!4 &1768834304
 Transform:
