@@ -3,6 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
+using System.Text;
+
+
 [XmlRoot("xmlLevel")]
 public class PrefabHolderContainer {
 	[XmlArray("prefabholders")]
@@ -24,5 +27,10 @@ public class PrefabHolderContainer {
 		{
 			return serializer.Deserialize(stream) as PrefabHolderContainer;
 		}
+	}
+	public static PrefabHolderContainer LoadFromString(string mString){
+		var serializer = new XmlSerializer(typeof(PrefabHolderContainer));
+		Stream mStream = new MemoryStream(Encoding.UTF8.GetBytes(mString ?? ""));
+		return serializer.Deserialize (mStream) as PrefabHolderContainer;
 	}
 }

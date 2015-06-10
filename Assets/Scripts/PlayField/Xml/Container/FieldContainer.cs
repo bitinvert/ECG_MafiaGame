@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
 using System.IO;
+using System.Text;
 
 [XmlRoot("xmlLevel")]
 public class FieldContainer {
@@ -24,12 +25,18 @@ public class FieldContainer {
 			return serializer.Deserialize(stream) as FieldContainer;
 		}
 	}
+	public static FieldContainer LoadFromString(string mString){
+		var serializer = new XmlSerializer(typeof(FieldContainer));
+		Stream mStream = new MemoryStream(Encoding.UTF8.GetBytes(mString ?? ""));
+		return serializer.Deserialize (mStream) as FieldContainer;
+	}
 	public void Save(string path)
 	{
 		var serializer = new XmlSerializer(typeof(FieldContainer));
 		using(var stream = new FileStream(path, FileMode.Create))
 		{
 			serializer.Serialize(stream, this);
+
 		}
 	}
 	

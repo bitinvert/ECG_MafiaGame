@@ -13,6 +13,22 @@ public class XmlLoader : MonoBehaviour {
 		PrefabHolderContainer mPrefabHolderContainer = PrefabHolderContainer.Load (mStringPath + "_prefabHolder.xml");
 		FieldContainer mFieldContainer = FieldContainer.Load (mStringPath + "_singleFields.xml");
 		GameObject mGORoot = new GameObject ();
+		return InstantiateLevel (mPrefabHolderContainer, mFieldContainer);
+	}
+	/*
+	 * Creates the level in the scene using deserialized items, which were stored in a string in xml Format. 
+	 * Author: Sven Magnussen
+	 * <para>string mStringPrefabs = string containing the xml nodes with the prefabHolders , string mStringSingleFields = string containing the xml nodes with the singleFields</para>
+	 * 
+	 * */
+	public static GameObject LoadLevelFromString (string mStringPrefabs, string mStringSingleFields){
+		PrefabHolderContainer mPrefabHolderContainer = PrefabHolderContainer.LoadFromString (mStringPrefabs);
+		FieldContainer mFieldContainer = FieldContainer.LoadFromString (mStringSingleFields);
+		return InstantiateLevel (mPrefabHolderContainer, mFieldContainer);
+	}
+	//PRIVATE SUBMETHODS
+	private static GameObject InstantiateLevel(PrefabHolderContainer mPrefabHolderContainer,FieldContainer mFieldContainer){
+		GameObject mGORoot = new GameObject ();
 		mGORoot.name = "level";
 		InstantiatePrefabHolder (mPrefabHolderContainer.pLstPrefabHolders,mGORoot);
 		InstantiateFields (mFieldContainer.pLstFields,mGORoot);

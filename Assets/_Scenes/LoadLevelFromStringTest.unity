@@ -87,6 +87,45 @@ NavMeshSettings:
     cellSize: .166666672
     manualCellSize: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &16623477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 16623479}
+  - 114: {fileID: 16623478}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &16623478
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16623477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67ff317f7fa9d9247a6aa1c3093687d2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &16623479
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 16623477}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 4
 --- !u!114 &222896918 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11477596, guid: f51ac0e791f7fc647a84f3f10ce0b2fb,
@@ -132,8 +171,7 @@ Prefab:
       propertyPath: m_RootOrder
       value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 11486120, guid: f51ac0e791f7fc647a84f3f10ce0b2fb, type: 2}
+    m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: f51ac0e791f7fc647a84f3f10ce0b2fb, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &1682917362
@@ -211,7 +249,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1768834303
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -226,8 +264,8 @@ MonoBehaviour:
   pBoolLoadOnStart: 1
   pBoolSaveOnClose: 0
   pLevelController: {fileID: 222896918}
-  pStringLoadName: EmptyLevel
-  pStringSaveName: TestWith3DModels
+  pStringLoadName: TestWith3DModels
+  pStringSaveName: ith3DModelsodels
 --- !u!4 &1768834304
 Transform:
   m_ObjectHideFlags: 0
