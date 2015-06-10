@@ -25,9 +25,15 @@ public class PlayerController : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(!pBoolEnemy && pGCController.pTransSeeker.Equals(this.gameObject.transform))
+		if(!pBoolEnemy && pGCController.pTransSeeker != null && pGOTarget != null && pGCController.pTransSeeker.position.Equals(pGOTarget.transform.position + new Vector3(0f,.25f,0f)))
 		{
-
+			pGOTarget = null;
+			pGCController.pTransSeeker = null;
+			pBoolDoubleTap = false;
+			mBoolPathShown = false;
+			mIntTargetIndex = 0;
+			
+			pAStarPathfinding.pListPath = new Vector3[0];
 		}
 		if(!pBoolEnemy && pGOTarget != null && !pBoolDoubleTap)
 		{
@@ -39,13 +45,13 @@ public class PlayerController : MonoBehaviour {
 			mBoolPathShown = false;
 			FollowPath();
 		}
-		if(pGOTarget != null && this.transform.position == pGOTarget.transform.position + new Vector3(0f,.25f,0f))
-		{
-			pBoolDoubleTap = false;
-			mBoolPathShown = false;
-			mIntTargetIndex = 0;
-			pAStarPathfinding.pListPath = new Vector3[0];
-		}
+//		if(pGOTarget != null && this.transform.position == pGOTarget.transform.position + new Vector3(0f,.25f,0f))
+//		{
+//			pBoolDoubleTap = false;
+//			mBoolPathShown = false;
+//			mIntTargetIndex = 0;
+//			pAStarPathfinding.pListPath = new Vector3[0];
+//		}
 	}
 
 //	void ShowArea()

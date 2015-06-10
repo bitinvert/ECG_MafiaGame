@@ -9,11 +9,11 @@ public class FloodFill : MonoBehaviour {
 
 	public Grid pGridField;
 
-	public HashSet<Node> pHashGridSet;
+	public List<Node> pListGridSet;
 
 	// Use this for initialization
 	void Start () {
-		pHashGridSet = new HashSet<Node>();
+		pListGridSet = new List<Node>();
 		pListCharacters = pGCController.pListCharacters;
 	}
 	
@@ -25,7 +25,7 @@ public class FloodFill : MonoBehaviour {
 			{
 				return;
 			}
-			if(pHashGridSet.Contains (node))
+			if(pListGridSet.Contains (node))
 			{
 				return;
 			}
@@ -35,7 +35,7 @@ public class FloodFill : MonoBehaviour {
 			}
 
 			node.pIntDistValue = dist;
-			pHashGridSet.Add (node);
+			pListGridSet.Add (node);
 
 			//TODO Check if out of bounds
 			if(!(node.pIntX <= 0))

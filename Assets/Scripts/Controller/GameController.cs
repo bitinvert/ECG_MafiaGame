@@ -13,22 +13,25 @@ public class GameController : MonoBehaviour {
 		var mTKRecCharTap = new TKTapRecognizer();
 		mTKRecCharTap.gestureRecognizedEvent += (r) =>
 		{
-
-
+			
+			
 			Vector3 mVec3TapPos = new Vector3(mTKRecCharTap.touchLocation().x,
 			                                  mTKRecCharTap.touchLocation().y,
 			                                  0f);
 			RaycastHit mRHInfo = new RaycastHit();
-			if(!pTransSeeker && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
+			if(pTransSeeker == null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
-				if(mRHInfo.collider.gameObject.tag == "Playable")
+				Debug.Log ("Bla");
+				Debug.Log (mRHInfo.collider.gameObject.tag);
+				if(mRHInfo.collider.gameObject.tag.Equals("Playable"))
 				{
-
+					
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
-				
+					Debug.Log("Blo");
 				}
+				
 			}
-			else if(pTransSeeker && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
+			else if(pTransSeeker != null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
 				if(mRHInfo.collider.tag == "Field" && 
 				   pListCharacters[pListCharacters.IndexOf(
@@ -36,12 +39,12 @@ public class GameController : MonoBehaviour {
 				{
 					pListCharacters[pListCharacters.IndexOf(
 						pTransSeeker.GetComponent<PlayerController>())].pGOTarget = mRHInfo.collider.gameObject;
-
+					
 				}
 				else if(mRHInfo.collider.tag == "Field")
 				{
 					GameObject mGOTemp =  mRHInfo.collider.gameObject;
-
+					
 					if(pListCharacters[pListCharacters.IndexOf(
 						pTransSeeker.GetComponent<PlayerController>())].pGOTarget.Equals(mGOTemp))
 					{
@@ -54,7 +57,11 @@ public class GameController : MonoBehaviour {
 							pTransSeeker.GetComponent<PlayerController>())].pGOTarget = mGOTemp;
 					}
 				}
+			}else
+			{
+				Debug.Log("Bli");
 			}
+			
 		};
 		TouchKit.addGestureRecognizer(mTKRecCharTap);
 	}

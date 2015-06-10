@@ -35,9 +35,37 @@ public class Grid : MonoBehaviour {
 
 	void Update()
 	{
-		fill.pHashGridSet.Clear ();
+		fill.pListGridSet.Clear ();
 		if(fill.pGCController.pTransSeeker != null)
-		fill.FindPath(NodeFromWorldPosition(fill.pGCController.pTransSeeker.gameObject.transform.position - new Vector3(0, 0.25f, 0)), 0);
+		{
+			fill.FindPath(NodeFromWorldPosition(fill.pGCController.pTransSeeker.gameObject.transform.position - new Vector3(0, 0.25f, 0)), 0);
+			SetGrid ();
+			
+			
+		}
+		else
+		{
+			ResetGrid();
+		}
+	}
+	
+	void SetGrid()
+	{
+		foreach(Node n in mNodeGrid)
+		{
+			if(!fill.pListGridSet.Contains(n))
+			{
+				n.pBoolWalkable = false;
+			}
+		}
+	}
+	
+	void ResetGrid()
+	{
+		foreach(Node n in mNodeGrid)
+		{
+			n.pBoolWalkable = !(Physics.CheckSphere(n.pVec3WorldPos, pFloatGridRadius - 0.02f, pLayerUnwalkableMask));
+		}
 	}
 
 	//Method to set the values for the grid	
@@ -109,8 +137,8 @@ public class Grid : MonoBehaviour {
 		foreach(Node n in mNodeGrid)
 		{
 			Gizmos.color = (n.pBoolWalkable)?Color.white:Color.red;
-			if(fill.pHashGridSet!=null)
-				if(fill.pHashGridSet.Contains(n))
+			if(fill.pListGridSet!=null)
+				if(fill.pListGridSet.Contains(n))
 					Gizmos.color = Color.blue;
 
 			Gizmos.DrawCube (n.pVec3WorldPos, Vector3.one * (mFloatGridDiameter - .1f));
