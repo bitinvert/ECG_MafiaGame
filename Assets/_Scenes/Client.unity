@@ -175,8 +175,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 47d41981842267348b73c72ccfbc0e74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  username: 
-  password: 
+  loggedIn: 0
 --- !u!4 &1562095030
 Transform:
   m_ObjectHideFlags: 0
@@ -273,6 +272,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &1806550609
 Transform:
   m_ObjectHideFlags: 0

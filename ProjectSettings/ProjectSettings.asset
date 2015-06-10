@@ -386,8 +386,10 @@ PlayerSettings:
   iOS::Architecture: 2
   iOS::ScriptingBackend: 0
   boolPropertyNames:
+  - WebGL::analyzeBuildSize
   - WebGL::dataCaching
   - XboxOne::enus
+  WebGL::analyzeBuildSize: 0
   WebGL::dataCaching: 0
   XboxOne::enus: 1
   stringPropertyNames:
