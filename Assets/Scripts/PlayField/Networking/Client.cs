@@ -8,11 +8,13 @@ public class Client : MonoBehaviour {
 	int remotePort = 25000;
 	NetworkView networkView;
 	//List<string> missions;
+	string testMission = "bankraub";
 	//bool missionOn = false;
 	public bool loggedIn = false;
 	string username;
 	string password;
-
+	public LevelController levelController;
+	
 	/// <summary>
 	/// Start this instance.
 	/// </summary>
@@ -21,21 +23,21 @@ public class Client : MonoBehaviour {
 		networkView = GetComponent <NetworkView> ();
 		//missions = new List<string> ();
 		connectToServer ();
-		DontDestroyOnLoad (this);
-		Application.LoadLevel ("MainMenu");
+		//DontDestroyOnLoad (this);
+		//Application.LoadLevel ("MainMenu");
 	}
-
+	
 	/// <summary>
 	/// Connects to server.
 	/// </summary>
 	void connectToServer() {
 		Network.Connect(remoteIP, remotePort);
 	}
-
+	
 	void OnConnectedToServer() {
 		Debug.Log("Connected to server");
 	}
-
+	
 	/// <summary>
 	/// Disconnects from server.
 	/// </summary>
@@ -45,22 +47,22 @@ public class Client : MonoBehaviour {
 		//missions.Clear ();
 		loggedIn = false;
 	}
-
+	
 	/// <summary>
 	/// Client sends registration-request to server.
 	/// </summary>
-	/// <param name="username">Username.</param>
-	/// <param name="password">Password.</param>
+	/// <param name="username">Username of client</param>
+	/// <param name="password">Password of client</param>
 	[RPC]
 	public void RequestRegistration(string username, string password){
 		networkView.RPC ("RegistrateUser", RPCMode.Server, username, password, Network.player);
 	}
-
+	
 	/// <summary>
 	/// Client sends login-request to server.
 	/// </summary>
-	/// <param name="username">Username.</param>
-	/// <param name="password">Password.</param>
+	/// <param name="username">Username of client</param>
+	/// <param name="password">Password of client</param>
 	[RPC]
 	public void RequestLogin(string username, string password)
 	{
@@ -70,7 +72,7 @@ public class Client : MonoBehaviour {
 	/// <summary>
 	/// Login Client.
 	/// </summary>
-	/// <param name="authorized">If set to <c>true</c> authorized.</param>
+	/// <param name="authorized">Indicates if user login was successful or not.</param>
 	[RPC]
 	void Login(bool authorized)
 	{
@@ -80,7 +82,28 @@ public class Client : MonoBehaviour {
 			Logout ();
 		}
 	}
-
+	
+	/// <summary>
+	/// Client sends request to server to join a selected mission.
+	/// </summary>
+	[RPC]
+	void JoinMission ()
+	{
+		
+		networkView.RPC ("RegisterMission", RPCMode.Server, Network.player, testMission);
+	}
+	
+	/// <summary>
+	/// Client instantiates received map from server.
+	/// </summary>
+	/// <param name="mapFields">xml view of map fields</param>
+	/// <param name="mapPrefabs">xml view of map prefabs</param>
+	[RPC]
+	void InstantiateMap (string mapPrefabs, string mapFields)
+	{
+		levelController.LoadLevel (mapPrefabs, mapFields);
+	}
+	
 	/* Not used yet
 	/// <summary>
 	/// Request missions from server.
@@ -106,24 +129,24 @@ public class Client : MonoBehaviour {
 		}
 		missionOn = true;
 	}
-
-	[RPC]
-	void RequestMap()
-	{
-		networkView.RPC ("BuildMap", RPCMode.Server);
-	}
 	*/
-
+	
 	//Server RPC functions
 	[RPC]
 	void RegistrateUser (string username, string password, NetworkPlayer player)
 	{
 	}
-
+	
 	[RPC]
 	void AuthorizeLogin (string username, string password, NetworkPlayer player)
 	{
 	}
+	
+	[RPC]
+	void RegisterMission(NetworkPlayer sender, string missionName)
+	{
+	}
+	
 	/* Not used yet
 	[RPC]
 	void GetMissions (NetworkPlayer sender)
@@ -131,12 +154,18 @@ public class Client : MonoBehaviour {
 		//empty
 	}
 
-	[RPC]
-	void BuildMap ()
-	{
-
-	}
 	*/
-
-
+	
+	/// <summary>
+	/// Test GUI.
+	/// </summary>
+	void OnGUI ()
+	{
+		if (GUILayout.Button ("Join "+ testMission)) 
+		{
+			JoinMission ();
+		}
+	}
+	
+	
 }

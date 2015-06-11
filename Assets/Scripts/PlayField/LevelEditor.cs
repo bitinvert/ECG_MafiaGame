@@ -10,7 +10,7 @@ public class LevelEditor : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		if (pBoolLoadOnStart) {
-			pLevelController.LoadLevel ("assets/XmlLevels/"+pStringLoadName); //Load Level for fields and solve problem with xml merge mybe 2 files?
+			//pLevelController.LoadLevel ("assets/XmlLevels/"+pStringLoadName); //Load Level for fields and solve problem with xml merge mybe 2 files?
 			Debug.Log ("Load");	
 		}
 	}

@@ -15,12 +15,12 @@ public class LevelController : MonoBehaviour {
 	public string pStringTypeOfLevelLoader;
 	private GameObject mGOLevel;
 
-	public void LoadLevel (string path) {
+	public void LoadLevel (string prefabs, string fields) {
 		switch(pStringTypeOfLevelLoader){
 		case "primitve"	:	PrimitveLevelLoader mLevelLoader = new PrimitveLevelLoader (pGOFloor,pGOWall,pGOCover);
-							this.mGOLevel = mLevelLoader.StartLevelCreation (path);
+							//this.mGOLevel = mLevelLoader.StartLevelCreation (path);
 							break;
-		case "xml"		:	this.mGOLevel = XmlLoader.LoadLevel (path);
+		case "xml"		:	this.mGOLevel = XmlLoader.LoadLevelFromString (prefabs, fields);
 							break;
 		}
 	

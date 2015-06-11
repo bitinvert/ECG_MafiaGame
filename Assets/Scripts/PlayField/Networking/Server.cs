@@ -11,6 +11,7 @@ public class Server : MonoBehaviour {
 	int maxClients = 2;
 	IDbConnection dbconn;
 	IDbCommand dbcmd;
+	Dictionary <string, List<NetworkPlayer>> missionMap;
 	
 	NetworkView networkView;
 	
@@ -20,6 +21,7 @@ public class Server : MonoBehaviour {
 	void Start ()
 	{
 		networkView = GetComponent <NetworkView> ();
+		missionMap = new Dictionary <string, List<NetworkPlayer>> ();
 	}
 	
 	/// <summary>
@@ -89,11 +91,11 @@ public class Server : MonoBehaviour {
 	/// <summary>
 	/// Executes client's registration request.
 	/// </summary>
-	/// <param name="username">Username.</param>
-	/// <param name="password">Password.</param>
-	/// <param name="sender">Sender.</param>
+	/// <param name="username">Username of client</param>
+	/// <param name="password">Password of client</param>
+	/// <param name="sender">client's network player, so server knows which it has to answer</param>
 	[RPC]
-	void RegistrateUser(string username, string password, NetworkPlayer sender)
+	void RegisterUser(string username, string password, NetworkPlayer sender)
 	{
 		dbcmd = dbconn.CreateCommand ();
 		IDbDataParameter usernameParam = dbcmd.CreateParameter ();
@@ -126,9 +128,9 @@ public class Server : MonoBehaviour {
 	/// <summary>
 	/// Authorizes client's login request.
 	/// </summary>
-	/// <param name="username">Username.</param>
-	/// <param name="password">Password.</param>
-	/// <param name="sender">Sender.</param>
+	/// <param name="username">Username of client</param>
+	/// <param name="password">Password of client</param>
+	/// <param name="sender">client's network player, so server knows which it has to answer</param>
 	[RPC]
 	void AuthorizeLogin(string username, string password, NetworkPlayer sender)
 	{
@@ -162,13 +164,38 @@ public class Server : MonoBehaviour {
 		dbcmd = null;
 	}
 	
-	/*
+	/// <summary>
+	/// Register Client to a mission
+	/// </summary>
+	/// <param name="sender">Client who wants to join a mission.</param>
+	/// <param name="missionName">Name of selected mission.</param>
 	[RPC]
-	void BuildMap()
+	void RegisterMission(NetworkPlayer sender, string missionName)
 	{
-		//generate map
-
+		if (missionMap.ContainsKey(missionName)) 
+		{
+			if (missionMap [missionName].Count < 2)
+			{
+				missionMap [missionName].Add (sender);
+			}
+			else if (missionMap [missionName].Count == 2)
+			{
+				string mapFields = System.IO.File.ReadAllText(@"Assets/safedLevel_singleFields.xml");
+				string mapPrefab = System.IO.File.ReadAllText(@"Assets/safedLevel_prefabHolder.xml");
+				
+				foreach (NetworkPlayer networkPlayer in missionMap[missionName])
+				{
+					networkView.RPC ("InstantiateMap", networkPlayer, mapPrefab, mapFields);
+				}
+			}
+		} else {
+			List <NetworkPlayer> members = new List <NetworkPlayer>();
+			members.Add (sender);
+			missionMap.Add (missionName, members);
+		}
 	}
+	/*
+	Not used yet.
 
 	/// <summary>
 	/// Get missions from database and send them to clients.
@@ -210,22 +237,23 @@ public class Server : MonoBehaviour {
 	void Login (bool authorized)
 	{
 	}
-	/*
+	
 	[RPC]
-	void RequestMissions()
+	void JoinMission ()
 	{
-		//empty
 	}
-
+	
+	[RPC]
+	void InstantiateMap (string fields, string prefabs)
+	{
+	}
+	
+	/*
 	[RPC]
 	void ShowMissions(string missions)
 	{
 		//empty
 	}
-
-	[RPC]
-	void RequestMap ()
-	{
-	}
 	*/
 }
+
