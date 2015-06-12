@@ -13,6 +13,7 @@ public class Client : MonoBehaviour {
 	public bool loggedIn = false;
 	string username;
 	string password;
+	int turnValue;
 	public LevelController levelController;
 	
 	/// <summary>
@@ -89,7 +90,6 @@ public class Client : MonoBehaviour {
 	[RPC]
 	void JoinMission ()
 	{
-		
 		networkView.RPC ("RegisterMission", RPCMode.Server, Network.player, testMission);
 	}
 	
@@ -102,6 +102,26 @@ public class Client : MonoBehaviour {
 	void InstantiateMap (string mapPrefabs, string mapFields)
 	{
 		levelController.LoadLevel (mapPrefabs, mapFields);
+	}
+
+	[RPC]
+	void ReadyToStart ()
+	{
+		//After placing all your pieces on your gameboard you're ready to start the game
+		networkView.RPC ("DrawBeginner", RPCMode.Server, Network.player, testMission);
+	}
+
+	[RPC]
+	void SendMove ()
+	{
+		//After making your actions, pack them in a message and send it to the server
+		networkView.RPC ("CheckMove", RPCMode.Server, turnValue);
+	}
+
+	[RPC]
+	void SetTurnValue (int value)
+	{
+		turnValue = value;
 	}
 	
 	/* Not used yet
@@ -146,7 +166,17 @@ public class Client : MonoBehaviour {
 	void RegisterMission(NetworkPlayer sender, string missionName)
 	{
 	}
-	
+
+	[RPC]
+	void DrawBeginner (NetworkPlayer sender, string missionName)
+	{
+	}
+
+	[RPC]
+	void CheckMove (int turnValue)
+	{
+	}
+
 	/* Not used yet
 	[RPC]
 	void GetMissions (NetworkPlayer sender)
@@ -164,6 +194,18 @@ public class Client : MonoBehaviour {
 		if (GUILayout.Button ("Join "+ testMission)) 
 		{
 			JoinMission ();
+		}
+		if (GUILayout.Button ("Start")) {
+			ReadyToStart ();
+		}
+		GUILayout.Label (turnValue+"");
+
+		if (turnValue != 0)
+		{
+			if (GUILayout.Button ("Move"))
+			{
+				SendMove ();
+			}
 		}
 	}
 	
