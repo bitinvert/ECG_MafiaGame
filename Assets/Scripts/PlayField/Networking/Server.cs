@@ -9,6 +9,8 @@ public class Server : MonoBehaviour {
 	
 	int listenPort = 25000;
 	int maxClients = 2;
+	int readyPlayer = 0;
+	int currentTurn = 1;
 	IDbConnection dbconn;
 	IDbCommand dbcmd;
 	Dictionary <string, List<NetworkPlayer>> missionMap;
@@ -87,7 +89,7 @@ public class Server : MonoBehaviour {
 	private void showServerInformation() {
 		GUILayout.Label("IP: " + Network.player.ipAddress + " Port: " + Network.player.port);  
 	}
-	
+
 	/// <summary>
 	/// Executes client's registration request.
 	/// </summary>
@@ -163,7 +165,7 @@ public class Server : MonoBehaviour {
 		dbcmd.Dispose();
 		dbcmd = null;
 	}
-	
+
 	/// <summary>
 	/// Register Client to a mission
 	/// </summary>
@@ -180,9 +182,10 @@ public class Server : MonoBehaviour {
 			}
 			else if (missionMap [missionName].Count == 2)
 			{
+
 				string mapFields = System.IO.File.ReadAllText(@"Assets/safedLevel_singleFields.xml");
 				string mapPrefab = System.IO.File.ReadAllText(@"Assets/safedLevel_prefabHolder.xml");
-				
+
 				foreach (NetworkPlayer networkPlayer in missionMap[missionName])
 				{
 					networkView.RPC ("InstantiateMap", networkPlayer, mapPrefab, mapFields);
@@ -194,6 +197,52 @@ public class Server : MonoBehaviour {
 			missionMap.Add (missionName, members);
 		}
 	}
+
+	/// <summary>
+	/// Draws the beginner of a game. Only if both players are ready to start.
+	/// </summary>
+	/// <param name="sender">Sender.</param>
+	/// <param name="missionName">Mission name.</param>
+	[RPC]
+	void DrawBeginner (NetworkPlayer sender, string missionName)
+	{
+		if (missionMap [missionName].Contains (sender)) 
+		{
+			readyPlayer += 1;
+		}
+
+		if (readyPlayer == 2) 
+		{
+
+			if (UnityEngine.Random.Range(1, 3) == 1){
+				networkView.RPC("SetTurnValue", missionMap[missionName][0], 1);
+				networkView.RPC("SetTurnValue", missionMap[missionName][1], 2);
+			} else{
+				networkView.RPC("SetTurnValue", missionMap[missionName][0], 2);
+				networkView.RPC("SetTurnValue", missionMap[missionName][1], 1);
+			}
+		}
+	}
+
+	/// <summary>
+	/// Checks if the move was done in a valid turn.
+	/// </summary>
+	/// <param name="turnValue">Turn value.</param>
+	[RPC]
+	void CheckMove (int turnValue)
+	{
+		if (turnValue != currentTurn) {
+			Debug.Log (turnValue + " anderer Spieler ist dran");
+		} else {
+			if (turnValue == 1)
+			{
+				currentTurn = 2;
+			} else{
+				currentTurn = 1;
+			}
+		}
+	}
+
 	/*
 	Not used yet.
 
@@ -237,17 +286,27 @@ public class Server : MonoBehaviour {
 	void Login (bool authorized)
 	{
 	}
-	
+
 	[RPC]
 	void JoinMission ()
 	{
 	}
-	
+
 	[RPC]
 	void InstantiateMap (string fields, string prefabs)
 	{
 	}
-	
+
+	[RPC]
+	void SendMove ()
+	{
+	}
+
+	[RPC]
+	void SetTurnValue (int value)
+	{
+	}
+
 	/*
 	[RPC]
 	void ShowMissions(string missions)
@@ -256,4 +315,3 @@ public class Server : MonoBehaviour {
 	}
 	*/
 }
-
