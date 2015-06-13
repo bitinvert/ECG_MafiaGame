@@ -7,7 +7,7 @@ public class GameController : MonoBehaviour {
 	public Transform pTransSeeker;
 
 
-	public List<PlayerController> pListCharacters;
+	public List<Unit> pListCharacters;
 		
 	void Start () {
 		var mTKRecCharTap = new TKTapRecognizer();
@@ -35,10 +35,10 @@ public class GameController : MonoBehaviour {
 			{
 				if(mRHInfo.collider.tag == "Field" && 
 				   pListCharacters[pListCharacters.IndexOf(
-					pTransSeeker.GetComponent<PlayerController>())].pGOTarget == null)
+					pTransSeeker.GetComponent<Unit>())].pGOTarget == null)
 				{
 					pListCharacters[pListCharacters.IndexOf(
-						pTransSeeker.GetComponent<PlayerController>())].pGOTarget = mRHInfo.collider.gameObject;
+						pTransSeeker.GetComponent<Unit>())].pGOTarget = mRHInfo.collider.gameObject;
 					
 				}
 				else if(mRHInfo.collider.tag == "Field")
@@ -46,15 +46,15 @@ public class GameController : MonoBehaviour {
 					GameObject mGOTemp =  mRHInfo.collider.gameObject;
 					
 					if(pListCharacters[pListCharacters.IndexOf(
-						pTransSeeker.GetComponent<PlayerController>())].pGOTarget.Equals(mGOTemp))
+						pTransSeeker.GetComponent<Unit>())].pGOTarget.Equals(mGOTemp))
 					{
 						pListCharacters[pListCharacters.IndexOf(
-							pTransSeeker.GetComponent<PlayerController>())].pBoolDoubleTap = true;
+							pTransSeeker.GetComponent<Unit>())].pBoolDoubleTap = true;
 					}
 					else
 					{
 						pListCharacters[pListCharacters.IndexOf(
-							pTransSeeker.GetComponent<PlayerController>())].pGOTarget = mGOTemp;
+							pTransSeeker.GetComponent<Unit>())].pGOTarget = mGOTemp;
 					}
 				}
 			}else

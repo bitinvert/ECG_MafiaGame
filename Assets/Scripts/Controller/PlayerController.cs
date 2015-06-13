@@ -1,109 +1,20 @@
-﻿using UnityEngine;
+﻿﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerController : MonoBehaviour {
-
-	public GameController pGCController;
-
-	public AStar pAStarPathfinding;
-	public FloodFill pFFWalkArea;
-	public int pIntWalkDistance;
-	public bool pBoolEnemy;
-
-	public GameObject pGOTarget;
-	public bool pBoolDoubleTap;
 	
-
-	private bool mBoolPathShown;
-
-	public float pFloatSpeed = 2;
-
-	int mIntTargetIndex;
-
-	int i = 0;
+	public GameController pGCController;	
 	
-
-	// Update is called once per frame
-	void Update () {
-		if(!pBoolEnemy && pGCController.pTransSeeker != null && pGOTarget != null && pGCController.pTransSeeker.position.Equals(pGOTarget.transform.position + new Vector3(0f,.25f,0f)))
-		{
-			pGOTarget = null;
-			pGCController.pTransSeeker = null;
-			pBoolDoubleTap = false;
-			mBoolPathShown = false;
-			mIntTargetIndex = 0;
-			
-			pAStarPathfinding.pListPath = new Vector3[0];
-		}
-		if(!pBoolEnemy && pGOTarget != null && !pBoolDoubleTap)
-		{
-			mBoolPathShown = ShowPath();
-
-		}
-		if(pBoolDoubleTap)
-		{
-			mBoolPathShown = false;
-			FollowPath();
-		}
-//		if(pGOTarget != null && this.transform.position == pGOTarget.transform.position + new Vector3(0f,.25f,0f))
-//		{
-//			pBoolDoubleTap = false;
-//			mBoolPathShown = false;
-//			mIntTargetIndex = 0;
-//			pAStarPathfinding.pListPath = new Vector3[0];
-//		}
-	}
-
-//	void ShowArea()
-//	{
-//
-//	}
-
-	bool ShowPath()
+	public string pStringPlayerName;
+	public List<Unit> pListUnits;
+	public Faction pFactionFlag;
+	public Unit pUnitActive; 
+	
+	
+	public enum Faction
 	{
-		//Placeholder
-		pAStarPathfinding.FindPath(this.transform.position, pGOTarget.transform.position);
-		if(pAStarPathfinding.pListPath.Length > 0)
-		{
-			return true;
-		}
-		return false;
+		Mafia, Police
 	}
-
-	void FollowPath()
-	{
-		Vector3 mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
-
-		while(true)
-		{
-			if (transform.position == mVec3Current) {
-				mIntTargetIndex++;
-				if (mIntTargetIndex >= pAStarPathfinding.pListPath.Length) {
-
-					break;
-				}
-				mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
-			}
-			
-			transform.position = Vector3.MoveTowards(transform.position,mVec3Current,pFloatSpeed * Time.deltaTime);
-			return;
-		}
-	}
-
-	public void OnDrawGizmos() {
-		if (pAStarPathfinding != null) {
-			for (int i = mIntTargetIndex; i < pAStarPathfinding.pListPath.Length; i ++) {
-				Gizmos.color = Color.black;
-				Gizmos.DrawCube(pAStarPathfinding.pListPath[i], Vector3.one/3);
-				
-				if (i == mIntTargetIndex) {
-					Gizmos.DrawLine(transform.position, pAStarPathfinding.pListPath[i]);
-				}
-				else {
-					Gizmos.DrawLine(pAStarPathfinding.pListPath[i-1],pAStarPathfinding.pListPath[i]);
-				}
-			}
-		}
-	}
-
+	
 }

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class FloodFill : MonoBehaviour {
 
 	public GameController pGCController;
-	public List<PlayerController> pListCharacters;
+	public List<Unit> pListCharacters;
 
 	public Grid pGridField;
 
@@ -20,7 +20,7 @@ public class FloodFill : MonoBehaviour {
 	public void FindPath(Node node, int dist)
 	{
 		if(pGCController.pTransSeeker != null){
-			if(dist > pListCharacters[pListCharacters.IndexOf(pGCController.pTransSeeker.GetComponent<PlayerController>())]
+			if(dist > pListCharacters[pListCharacters.IndexOf(pGCController.pTransSeeker.GetComponent<Unit>())]
 			   .pIntWalkDistance)
 			{
 				return;
