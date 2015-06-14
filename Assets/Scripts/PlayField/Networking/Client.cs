@@ -11,8 +11,10 @@ public class Client : MonoBehaviour {
 	string testMission = "bankraub";
 	//bool missionOn = false;
 	public bool loggedIn = false;
+	public bool registered = false;
 	string username;
 	string password;
+	string message;
 	int turnValue;
 	public LevelController levelController;
 	
@@ -56,7 +58,7 @@ public class Client : MonoBehaviour {
 	/// <param name="password">Password of client</param>
 	[RPC]
 	public void RequestRegistration(string username, string password){
-		networkView.RPC ("RegistrateUser", RPCMode.Server, username, password, Network.player);
+		networkView.RPC ("RegisterUser", RPCMode.Server, username, password, Network.player);
 	}
 	
 	/// <summary>
@@ -69,18 +71,34 @@ public class Client : MonoBehaviour {
 	{
 		networkView.RPC ("AuthorizeLogin", RPCMode.Server, username, password, Network.player);
 	}
-	
+
+	/// <summary>
+	/// Register a user.
+	/// </summary>
+	/// <param name="authorized">indicates if register request was successful or not</param>
+	[RPC]
+	void Register (bool authorized, string message)
+	{
+		if (authorized) {
+			registered = true;
+			loggedIn = true;
+			this.message = message;
+		} else {
+			this.message = message;
+		}
+	}
 	/// <summary>
 	/// Login Client.
 	/// </summary>
 	/// <param name="authorized">Indicates if user login was successful or not.</param>
 	[RPC]
-	void Login(bool authorized)
+	void Login(bool authorized, string message)
 	{
 		if (authorized) {
 			loggedIn = true;
+			this.message = message;
 		} else {
-			Logout ();
+			this.message = message;
 		}
 	}
 	
@@ -153,7 +171,7 @@ public class Client : MonoBehaviour {
 	
 	//Server RPC functions
 	[RPC]
-	void RegistrateUser (string username, string password, NetworkPlayer player)
+	void RegisterUser (string username, string password, NetworkPlayer player)
 	{
 	}
 	
@@ -191,6 +209,10 @@ public class Client : MonoBehaviour {
 	/// </summary>
 	void OnGUI ()
 	{
+		GUILayout.Label (message);
+		if (GUILayout.Button ("registrate")){
+			RequestRegistration ("test", "test");
+		}
 		if (GUILayout.Button ("Join "+ testMission)) 
 		{
 			JoinMission ();

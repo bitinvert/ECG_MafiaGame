@@ -89,7 +89,7 @@ public class Server : MonoBehaviour {
 	private void showServerInformation() {
 		GUILayout.Label("IP: " + Network.player.ipAddress + " Port: " + Network.player.port);  
 	}
-
+	
 	/// <summary>
 	/// Executes client's registration request.
 	/// </summary>
@@ -99,6 +99,7 @@ public class Server : MonoBehaviour {
 	[RPC]
 	void RegisterUser(string username, string password, NetworkPlayer sender)
 	{
+		int entry = 0;
 		dbcmd = dbconn.CreateCommand ();
 		IDbDataParameter usernameParam = dbcmd.CreateParameter ();
 		IDbDataParameter passwordParam = dbcmd.CreateParameter ();
@@ -115,11 +116,19 @@ public class Server : MonoBehaviour {
 		dbcmd.Parameters.Add (usernameParam);
 		dbcmd.Parameters.Add (passwordParam);
 		
-		if (dbcmd.ExecuteNonQuery () == 1) 
+		try 
 		{
-			networkView.RPC ("Login", sender, true);
-		} else {
-			networkView.RPC ("Login", sender, false);
+			entry = dbcmd.ExecuteNonQuery ();
+			if (entry == 1) 
+			{
+				networkView.RPC ("Register", sender, true, "Registrierung war erfolgreich");
+			} else {
+				
+				networkView.RPC ("Register", sender, false, "Registrierung fehlgeschlagen");
+			}
+		}catch (SqliteException sqlEx)
+		{
+			networkView.RPC ("Register", sender, false, "User existiert bereits. Wähle andere Daten.");
 		}
 		
 		dbcmd.Dispose();
@@ -156,16 +165,17 @@ public class Server : MonoBehaviour {
 		
 		if (reader.Read ()) 
 		{
-			networkView.RPC("Login", sender, true);
+			networkView.RPC("Login", sender, true, "Login war erfolgreich");
 		} else {
-			networkView.RPC("Login", sender, false);
+			
+			networkView.RPC("Login", sender, false, "Username oder Passwort falsch");
 		}
 		
 		reader.Close ();
 		dbcmd.Dispose();
 		dbcmd = null;
 	}
-
+	
 	/// <summary>
 	/// Register Client to a mission
 	/// </summary>
@@ -182,10 +192,10 @@ public class Server : MonoBehaviour {
 			}
 			else if (missionMap [missionName].Count == 2)
 			{
-
+				
 				string mapFields = System.IO.File.ReadAllText(@"Assets/safedLevel_singleFields.xml");
 				string mapPrefab = System.IO.File.ReadAllText(@"Assets/safedLevel_prefabHolder.xml");
-
+				
 				foreach (NetworkPlayer networkPlayer in missionMap[missionName])
 				{
 					networkView.RPC ("InstantiateMap", networkPlayer, mapPrefab, mapFields);
@@ -197,7 +207,7 @@ public class Server : MonoBehaviour {
 			missionMap.Add (missionName, members);
 		}
 	}
-
+	
 	/// <summary>
 	/// Draws the beginner of a game. Only if both players are ready to start.
 	/// </summary>
@@ -210,10 +220,10 @@ public class Server : MonoBehaviour {
 		{
 			readyPlayer += 1;
 		}
-
+		
 		if (readyPlayer == 2) 
 		{
-
+			
 			if (UnityEngine.Random.Range(1, 3) == 1){
 				networkView.RPC("SetTurnValue", missionMap[missionName][0], 1);
 				networkView.RPC("SetTurnValue", missionMap[missionName][1], 2);
@@ -223,7 +233,7 @@ public class Server : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	/// <summary>
 	/// Checks if the move was done in a valid turn.
 	/// </summary>
@@ -242,7 +252,7 @@ public class Server : MonoBehaviour {
 			}
 		}
 	}
-
+	
 	/*
 	Not used yet.
 
@@ -283,30 +293,35 @@ public class Server : MonoBehaviour {
 	}
 	
 	[RPC]
-	void Login (bool authorized)
+	void Login (bool authorized, string message)
 	{
 	}
-
+	
+	[RPC]
+	void Register (bool authorized, string message)
+	{
+	}
+	
 	[RPC]
 	void JoinMission ()
 	{
 	}
-
+	
 	[RPC]
 	void InstantiateMap (string fields, string prefabs)
 	{
 	}
-
+	
 	[RPC]
 	void SendMove ()
 	{
 	}
-
+	
 	[RPC]
 	void SetTurnValue (int value)
 	{
 	}
-
+	
 	/*
 	[RPC]
 	void ShowMissions(string missions)
