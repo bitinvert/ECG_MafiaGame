@@ -3,12 +3,16 @@ using System.Collections;
 
 public class SwitchMenu : MonoBehaviour {
 
-	public CanvasGroup pFrom;
+	private CanvasGroup pFrom;
 	public CanvasGroup pTo;
 
 	public string method;
 
 	public float time;
+
+	void Start() {
+		pFrom = this.GetComponentInParent<CanvasGroup> ();
+	}
 
 	public void Switch() 
 	{
@@ -26,8 +30,16 @@ public class SwitchMenu : MonoBehaviour {
 			case "FadeGameMenuOut": StartCoroutine(FadeGameMenuOut ());
 				break;
 
+			case "LessDrawCallsTest": LessDrawCallsTest();
+				break;
+
 			default: break;
 		}
+	}
+
+	void LessDrawCallsTest() {
+		pFrom.gameObject.SetActive (false);
+		pTo.gameObject.SetActive (true);
 	}
 
 	IEnumerator FadeOut()

@@ -219,7 +219,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   loggedIn: 0
+  registered: 0
   levelController: {fileID: 849819198}
+  connected: 0
 --- !u!4 &1562095030
 Transform:
   m_ObjectHideFlags: 0

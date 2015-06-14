@@ -17,6 +17,8 @@ public class Client : MonoBehaviour {
 	string message;
 	int turnValue;
 	public LevelController levelController;
+
+	public bool connected = false;
 	
 	/// <summary>
 	/// Start this instance.
@@ -26,8 +28,8 @@ public class Client : MonoBehaviour {
 		networkView = GetComponent <NetworkView> ();
 		//missions = new List<string> ();
 		connectToServer ();
-		//DontDestroyOnLoad (this);
-		//Application.LoadLevel ("MainMenu");
+		DontDestroyOnLoad (this);
+		Application.LoadLevel ("MainMenu1");
 	}
 	
 	/// <summary>
@@ -39,6 +41,7 @@ public class Client : MonoBehaviour {
 	
 	void OnConnectedToServer() {
 		Debug.Log("Connected to server");
+		connected = true;
 	}
 	
 	/// <summary>

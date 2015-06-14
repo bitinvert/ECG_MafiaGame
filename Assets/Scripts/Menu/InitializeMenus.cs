@@ -10,10 +10,11 @@ public class InitializeMenus : MonoBehaviour {
 		foreach(GameObject menuGO in menusGO) {
 			CanvasGroup menu = menuGO.GetComponent<CanvasGroup>();
 
-			if(!(menu.name.Equals("Start") || menu.name.Equals("Standard_Overlay"))) {
-				menu.interactable = false;
-				menu.blocksRaycasts = false;
-				menu.alpha = 0.0f;
+			if(!(menu.name.Equals("Login") || menu.name.Equals("Standard_Overlay"))) {
+				//menu.interactable = false;
+				//menu.blocksRaycasts = false;
+				//menu.alpha = 0.0f;
+				menuGO.SetActive(false);
 			} 
 		}
 	}
