@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xmlLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <fields>
+    <field name="FieldFloor">
+      <x>6</x>
+      <z>3</z>
+      <prefab>FieldFloor</prefab>
+    </field>
+    <field name="FieldFloor 1">
+      <x>6</x>
+      <z>2</z>
+      <prefab>FieldFloor</prefab>
+    </field>
+  </fields>
+</xmlLevel>
