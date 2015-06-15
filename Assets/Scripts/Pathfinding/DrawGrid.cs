@@ -25,7 +25,7 @@ public class DrawGrid : MonoBehaviour {
 	
 	private Material lineMaterial;
 	
-	private Color mainColor = new Color(0f,1f,0f,0.5f);
+	private Color mainColor = new Color(0.1f,0.1f,0.1f,0.3f);
 
 
 	void Start () 
@@ -100,7 +100,7 @@ public class DrawGrid : MonoBehaviour {
 
 		GL.End();
 
-
+		/*
 		GL.Begin(GL.TRIANGLE_STRIP);
 
 			GL.Color(new Color(1f, 0f, 1f, 0.5f));
@@ -109,6 +109,6 @@ public class DrawGrid : MonoBehaviour {
 			GL.Vertex3(1f + startX, 0f, 1f + startZ);
 			GL.Vertex3(1f + startX, 0f, 0f + startZ);
 			
-		GL.End();
+		GL.End();*/
 	}
 }

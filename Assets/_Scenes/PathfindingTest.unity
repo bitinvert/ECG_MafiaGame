@@ -454,7 +454,7 @@ MonoBehaviour:
   pIntAttack: 0
   pIntDefense: 0
   pIntHealth: 0
-  pIntWalkDistance: 2
+  pIntWalkDistance: 4
   pBoolEnemy: 0
   pFloatSpeed: 2
   pAStarPathfinding: {fileID: 2043637949}
@@ -2217,6 +2217,14 @@ Prefab:
     - target: {fileID: 404192, guid: 4f7b8ae2b67644a43b4b2a365dad6606, type: 2}
       propertyPath: m_RootOrder
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055552, guid: 4f7b8ae2b67644a43b4b2a365dad6606, type: 2}
+      propertyPath: orthographic size
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2055552, guid: 4f7b8ae2b67644a43b4b2a365dad6606, type: 2}
+      propertyPath: near clip plane
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4f7b8ae2b67644a43b4b2a365dad6606, type: 2}

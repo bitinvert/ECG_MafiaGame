@@ -9,11 +9,11 @@ public class FloodFill : MonoBehaviour {
 
 	public Grid pGridField;
 
-	public List<Node> pListGridSet;
+	public HashSet<Node> pListGridSet;
 
 	// Use this for initialization
 	void Start () {
-		pListGridSet = new List<Node>();
+		pListGridSet = new HashSet<Node>();
 		pListCharacters = pGCController.pListCharacters;
 	}
 	
@@ -25,11 +25,11 @@ public class FloodFill : MonoBehaviour {
 			{
 				return;
 			}
-			if(pListGridSet.Contains (node))
-			{
-				return;
-			}
-			if(!node.pBoolWalkable)
+//			if(pListGridSet.Contains (node))
+//			{
+//				return;
+//			}
+			if(node.pBoolWalkable == false)
 			{
 				return;
 			}
@@ -37,13 +37,11 @@ public class FloodFill : MonoBehaviour {
 			node.pIntDistValue = dist;
 			pListGridSet.Add (node);
 
-			//TODO Check if out of bounds
+
 			if(!(node.pIntX <= 0))
 			{	
 				//Westen überprüfen
 				FindPath(pGridField.mNodeGrid[node.pIntX-1, node.pIntY], dist+1);
-
-
 			}
 			if(!(node.pIntX >= pGridField.mIntSizeX-1))
 			{
@@ -54,7 +52,6 @@ public class FloodFill : MonoBehaviour {
 			{
 				//Sueden überprüfen
 				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY-1], dist+1);
-
 
 			}
 			if(!(node.pIntY >= pGridField.mIntSizeY-1))
