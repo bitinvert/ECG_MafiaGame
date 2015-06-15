@@ -2239,7 +2239,7 @@ MonoBehaviour:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1185479851}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5a274a82fd69afb419a894518179d6cf, type: 3}
   m_Name: 
@@ -2251,6 +2251,20 @@ MonoBehaviour:
   startX: -3.5
   startY: 0
   startZ: -4.5
+--- !u!114 &1185479853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1185479851}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7de0d70946df3a54bbcf531ac4be01e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pathfinding: {fileID: 2043637946}
+  offsetX: -3
+  offsetZ: -4
 --- !u!1001 &1186931480
 Prefab:
   m_ObjectHideFlags: 0
@@ -4118,6 +4132,7 @@ MonoBehaviour:
   mIntSizeX: 0
   mIntSizeY: 0
   fill: {fileID: 2043637950}
+  isGridCreated: 0
 --- !u!4 &2043637948
 Transform:
   m_ObjectHideFlags: 0

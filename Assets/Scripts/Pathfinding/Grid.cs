@@ -24,6 +24,8 @@ public class Grid : MonoBehaviour {
 	AStar path;
 	public FloodFill fill;
 
+	public bool isGridCreated = false;
+
 	// Use this for initialization
 	void Start ()
 	{
@@ -31,6 +33,7 @@ public class Grid : MonoBehaviour {
 		mIntSizeX = Mathf.RoundToInt(pVec3GridWorldSize.x / mFloatGridDiameter);
 		mIntSizeY = Mathf.RoundToInt(pVec3GridWorldSize.y / mFloatGridDiameter);
 		CreateGrid();
+		isGridCreated = true;
 	}
 
 	void Update()

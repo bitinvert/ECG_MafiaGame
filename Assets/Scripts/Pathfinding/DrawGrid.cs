@@ -30,7 +30,7 @@ public class DrawGrid : MonoBehaviour {
 
 	void Start () 
 	{
-
+		CreateLineMaterial();
 	}
 	
 	void CreateLineMaterial() 
@@ -58,7 +58,7 @@ public class DrawGrid : MonoBehaviour {
 	
 	void OnPostRender() 
 	{    
-		CreateLineMaterial();
+
 		// set the current material
 		lineMaterial.SetPass( 0 );
 
