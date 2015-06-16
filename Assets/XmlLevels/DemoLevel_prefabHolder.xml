@@ -7,7 +7,7 @@
       <z>1</z>
     </prefabholder>
     <prefabholder name="Billiard2x2">
-      <prefab>Billiard2x2</prefab>
+      <prefab>Billiard2x2;Deco2x2</prefab>
       <x>3</x>
       <z>2</z>
     </prefabholder>

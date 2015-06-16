@@ -37,7 +37,8 @@ public class XmlLoader : MonoBehaviour {
 	private static void InstantiatePrefabHolder(List<PrefabHolderItem> mLstFields,GameObject mGORoot){
 		foreach (PrefabHolderItem mFieldItem in mLstFields) {
 			Vector3 mVector3Pos = new Vector3(mFieldItem.x,0,mFieldItem.z);
-			GameObject mGOField = (GameObject)Instantiate(Resources.Load (mFieldItem.prefab),mVector3Pos,new Quaternion());
+			string mStringPrefab = PickRandomPrefab(mFieldItem.prefab);
+			GameObject mGOField = (GameObject)Instantiate(Resources.Load (mStringPrefab),mVector3Pos,new Quaternion());
 			mGOField.name = mFieldItem.name;
 			mGOField.transform.parent = mGORoot.transform;
 		}
@@ -47,11 +48,22 @@ public class XmlLoader : MonoBehaviour {
 		mGOSingleFields.name = "singleFields";
 		foreach (FieldItem mFieldItem in mLstFields) {
 			Vector3 mVector3Pos = new Vector3(mFieldItem.x,0,mFieldItem.z);
-			GameObject mGOField = (GameObject)Instantiate(Resources.Load (mFieldItem.prefab),mVector3Pos,new Quaternion());
+			string mStringPrefab = PickRandomPrefab(mFieldItem.prefab);
+			GameObject mGOField = (GameObject)Instantiate(Resources.Load (mStringPrefab),mVector3Pos,new Quaternion());
 			mGOField.name = mFieldItem.name;
 			mGOField.transform.parent = mGOSingleFields.transform;
 		}
 		mGOSingleFields.transform.parent = mGORoot.transform;
+	}
+	private static string PickRandomPrefab(string mStringPrefabs){
+		string[] mStingArrayPrefabs = mStringPrefabs.Split (';');
+		Debug.Log (mStingArrayPrefabs);
+		if (mStingArrayPrefabs.Length > 1) {
+			int mIntIndex =  (int) Mathf.Floor(Random.Range (0,(float)mStingArrayPrefabs.Length));
+			return mStingArrayPrefabs [mIntIndex];
+		} else {
+			return mStingArrayPrefabs[0];
+		}
 	}
 
 
