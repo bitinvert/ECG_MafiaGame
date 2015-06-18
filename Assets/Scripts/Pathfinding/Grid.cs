@@ -71,7 +71,7 @@ public class Grid : MonoBehaviour {
 	{
 		foreach(Node n in mNodeGrid)
 		{
-			n.pBoolReachable = true;
+			n.pBoolReachable = false;
 		}
 	}
 
