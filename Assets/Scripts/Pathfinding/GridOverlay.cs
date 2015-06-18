@@ -13,7 +13,8 @@ public class GridOverlay : MonoBehaviour {
 	//Array of all nodes
 	private Node[,] mNodeGrid;
 	private Material lineMaterial;
-	private Color lineColor = new Color(0.1f,0.1f,0.1f,0.3f);
+	private Color lineColor = new Color(0.1f, 0.1f, 0.1f, 0.3f);
+	private Color walkColor = new Color(0.0f, 0.7f, 0.9f, 0.5f);
 
 	private bool gridCreated;
 
@@ -88,13 +89,13 @@ public class GridOverlay : MonoBehaviour {
 			lineMaterial.SetPass (0);
 
 			foreach(Node n in mNodeGrid) {
+				Vector3 p1 = new Vector3(n.pIntX + 0.5f + offsetX, 0, n.pIntY + 0.5f + offsetZ);
+				Vector3 p2 = new Vector3(n.pIntX + 0.5f + offsetX, 0, n.pIntY - 0.5f + offsetZ);
+				Vector3 p3 = new Vector3(n.pIntX - 0.5f + offsetX, 0, n.pIntY - 0.5f + offsetZ);
+				Vector3 p4 = new Vector3(n.pIntX - 0.5f + offsetX, 0, n.pIntY + 0.5f + offsetZ);
+
 				if(n.pBoolWalkable) 
 				{
-					Vector3 p1 = new Vector3(n.pIntX + 0.5f + offsetX, 0, n.pIntY + 0.5f + offsetZ);
-					Vector3 p2 = new Vector3(n.pIntX + 0.5f + offsetX, 0, n.pIntY - 0.5f + offsetZ);
-					Vector3 p3 = new Vector3(n.pIntX - 0.5f + offsetX, 0, n.pIntY - 0.5f + offsetZ);
-					Vector3 p4 = new Vector3(n.pIntX - 0.5f + offsetX, 0, n.pIntY + 0.5f + offsetZ);
-
 					GL.Begin(GL.LINES);
 
 						GL.Color(lineColor);
@@ -108,6 +109,21 @@ public class GridOverlay : MonoBehaviour {
 						GL.Vertex(p3);
 						GL.Vertex(p4);
 
+						GL.Vertex(p4);
+						GL.Vertex(p1);
+
+					GL.End();
+				} 
+				if(n.pBoolReachable && n.pBoolWalkable)
+				{
+					GL.Begin(GL.TRIANGLE_STRIP);
+
+						GL.Color (walkColor);
+
+						GL.Vertex(p1);
+						GL.Vertex(p2);
+						GL.Vertex(p3);
+						GL.Vertex(p3);
 						GL.Vertex(p4);
 						GL.Vertex(p1);
 
