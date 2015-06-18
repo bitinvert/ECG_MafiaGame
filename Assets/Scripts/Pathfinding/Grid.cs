@@ -58,7 +58,11 @@ public class Grid : MonoBehaviour {
 		{
 			if(!fill.pListGridSet.Contains(n))
 			{
-				n.pBoolWalkable = false;
+				n.pBoolReachable= false;
+			}
+			else
+			{
+				n.pBoolReachable= true;
 			}
 		}
 	}
@@ -67,7 +71,7 @@ public class Grid : MonoBehaviour {
 	{
 		foreach(Node n in mNodeGrid)
 		{
-			n.pBoolWalkable = !(Physics.CheckSphere(n.pVec3WorldPos, pFloatGridRadius - 0.02f, pLayerUnwalkableMask));
+			n.pBoolReachable = true;
 		}
 	}
 

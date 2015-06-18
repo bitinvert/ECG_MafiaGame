@@ -1,4 +1,4 @@
-﻿﻿using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Unit : MonoBehaviour {
@@ -47,6 +47,7 @@ public class Unit : MonoBehaviour {
 		{
 			mBoolPathShown = false;
 			FollowPath();
+
 		}
 		
 	}
@@ -64,6 +65,8 @@ public class Unit : MonoBehaviour {
 	
 	void FollowPath()
 	{
+		//TODO Exception handling when walkable tile unreachable
+		//Move unreachable tiles to other layer
 		Vector3 mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
 		
 		while(true)

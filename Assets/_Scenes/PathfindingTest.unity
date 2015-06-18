@@ -3437,6 +3437,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pTransSeeker: {fileID: 0}
+  pGridGrid: {fileID: 2043637947}
   pListCharacters:
   - {fileID: 245889751}
 --- !u!4 &1780396914
@@ -4029,6 +4030,10 @@ Prefab:
     - target: {fileID: 407120, guid: 2522fedcbd13a97479c60584348562fb, type: 2}
       propertyPath: m_LocalScale.z
       value: .100000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 173924, guid: 2522fedcbd13a97479c60584348562fb, type: 2}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2522fedcbd13a97479c60584348562fb, type: 2}

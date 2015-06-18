@@ -5,7 +5,7 @@ public class Node {
 
 	//Determins if a tile is walable	
 	public bool pBoolWalkable;
-
+	public bool pBoolReachable;
 	//x and y position in the array of all nodes
 	public int pIntX;
 	public int pIntY;

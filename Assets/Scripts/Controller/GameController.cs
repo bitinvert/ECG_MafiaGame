@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -6,7 +6,7 @@ public class GameController : MonoBehaviour {
 	// Use this for initialization
 	public Transform pTransSeeker;
 
-
+	public Grid pGridGrid;
 	public List<Unit> pListCharacters;
 		
 	void Start () {
@@ -34,6 +34,7 @@ public class GameController : MonoBehaviour {
 			else if(pTransSeeker != null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
 				if(mRHInfo.collider.tag == "Field" && 
+				   pGridGrid.NodeFromWorldPosition(mRHInfo.collider.transform.position).pBoolReachable == true && 
 				   pListCharacters[pListCharacters.IndexOf(
 					pTransSeeker.GetComponent<Unit>())].pGOTarget == null)
 				{
@@ -41,7 +42,8 @@ public class GameController : MonoBehaviour {
 						pTransSeeker.GetComponent<Unit>())].pGOTarget = mRHInfo.collider.gameObject;
 					
 				}
-				else if(mRHInfo.collider.tag == "Field")
+				else if(mRHInfo.collider.tag == "Field" &&
+				        pGridGrid.NodeFromWorldPosition(mRHInfo.collider.transform.position).pBoolReachable == true)
 				{
 					GameObject mGOTemp =  mRHInfo.collider.gameObject;
 					
