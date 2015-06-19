@@ -8,7 +8,10 @@ public class Unit : MonoBehaviour {
 	public int pIntDefense;
 	public int pIntHealth;
 	public int pIntWalkDistance;
-	
+	//we have no attack distance at this point, because the dis. should change with particular weapons. So we are using a getAttackDis method
+	// to wrap this fact. Right now it is returning a fix number
+
+	//for brendans pathfinding. brace yourselves changes are coming
 	public bool pBoolEnemy;
 	
 	public float pFloatSpeed = 2;
@@ -16,10 +19,10 @@ public class Unit : MonoBehaviour {
 	
 	public AStar pAStarPathfinding;
 	public FloodFill pFFWalkArea;
-	
+
 	public GameController pGCController;
 	
-	int mIntTargetIndex;
+	private int mIntTargetIndex;
 	
 	public GameObject pGOTarget;
 	
@@ -100,5 +103,29 @@ public class Unit : MonoBehaviour {
 			}
 		}
 	}
+	//Svens implementationZZZzzz
+	public void ShowAttackRadius(){
+		Node mNodeUnit = pFFWalkArea.pGridField.NodeFromWorldPosition (this.gameObject.transform.position);
+		pFFWalkArea.FindPath (mNodeUnit, GetAttackDistance());
+	}
 	
+	private int GetAttackDistance(){
+		return 2;
+	}
+	public int Attack (Unit mUnitEnemy){
+		int mIntDamage = CalculateDamage (mUnitEnemy);
+		mUnitEnemy.pIntHealth = mUnitEnemy.pIntHealth - mIntDamage;
+		return mIntDamage;
+	}
+	public void Die (){
+		Destroy (this.gameObject);
+	}
+	
+	private int CalculateDamage(Unit mUnitEnemy){
+		int mIntDamage = mUnitEnemy.pIntDefense - this.pIntAttack;
+		if (mIntDamage < 1) {
+			mIntDamage = 1;
+		}
+		return mIntDamage;
+	}
 }
