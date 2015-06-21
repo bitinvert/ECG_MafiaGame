@@ -21,7 +21,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 		  Here the certain values will be set*/
 		if(SelectedChar ())
 		{
-			Debug.Log ("State: Character Selected")
+			Debug.Log ("State: Character Selected");
 		}
 		if(ShowAttack ())
 		{
