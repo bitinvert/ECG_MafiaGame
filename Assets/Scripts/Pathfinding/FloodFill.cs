@@ -17,18 +17,13 @@ public class FloodFill : MonoBehaviour {
 		pListCharacters = pGCController.pListCharacters;
 	}
 	
-	public void FindPath(Node node, int dist)
+	public void FindPath(Node node, int dist, int maxDist)
 	{
 		if(pGCController.pTransSeeker != null){
-			if(dist > pListCharacters[pListCharacters.IndexOf(pGCController.pTransSeeker.GetComponent<Unit>())]
-			   .pIntWalkDistance)
+			if(dist > maxDist)
 			{
 				return;
 			}
-//			if(pListGridSet.Contains (node))
-//			{
-//				return;
-//			}
 			if(node.pBoolWalkable == false)
 			{
 				return;
@@ -41,23 +36,23 @@ public class FloodFill : MonoBehaviour {
 			if(!(node.pIntX <= 0))
 			{	
 				//Westen überprüfen
-				FindPath(pGridField.mNodeGrid[node.pIntX-1, node.pIntY], dist+1);
+				FindPath(pGridField.mNodeGrid[node.pIntX-1, node.pIntY], dist+1,maxDist);
 			}
 			if(!(node.pIntX >= pGridField.mIntSizeX-1))
 			{
 				//Osten überprüfen
-				FindPath(pGridField.mNodeGrid[node.pIntX+1, node.pIntY], dist+1);
+				FindPath(pGridField.mNodeGrid[node.pIntX+1, node.pIntY], dist+1,maxDist);
 			}
 			if(!(node.pIntY <= 0))
 			{
 				//Sueden überprüfen
-				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY-1], dist+1);
+				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY-1], dist+1,maxDist);
 
 			}
 			if(!(node.pIntY >= pGridField.mIntSizeY-1))
 			{
 				//Norden überprüfen
-				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY+1], dist+1);
+				FindPath(pGridField.mNodeGrid[node.pIntX, node.pIntY+1], dist+1,maxDist);
 			}
 		}
 	}

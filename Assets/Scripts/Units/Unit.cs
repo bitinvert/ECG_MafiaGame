@@ -28,10 +28,17 @@ public class Unit : MonoBehaviour {
 	
 	public bool pBoolDoubleTap;
 	private bool mBoolPathShown;
-	
+
+	//Magic number for offset
+	private Vector3 mVec3Offset;
+
+	void Start () {
+		mVec3Offset = new Vector3(0f,this.transform.position.y,0f);
+	}
+
 	// Update is called once per frame
 	void Update () {
-		if(!pBoolEnemy && pGCController.pTransSeeker != null && pGOTarget != null && pGCController.pTransSeeker.position.Equals(pGOTarget.transform.position + new Vector3(0f,.25f,0f)))
+		if(!pBoolEnemy && pGCController.pTransSeeker != null && pGOTarget != null && pGCController.pTransSeeker.position.Equals(pGOTarget.transform.position + mVec3Offset))
 		{
 			pGOTarget = null;
 			pGCController.pTransSeeker = null;
@@ -44,17 +51,16 @@ public class Unit : MonoBehaviour {
 		if(!pBoolEnemy && pGOTarget != null && !pBoolDoubleTap)
 		{
 			mBoolPathShown = ShowPath();
-			
 		}
 		if(pBoolDoubleTap)
 		{
 			mBoolPathShown = false;
-			FollowPath();
+			move();
 
 		}
 		
 	}
-	
+
 	bool ShowPath()
 	{
 		//Placeholder
@@ -65,29 +71,7 @@ public class Unit : MonoBehaviour {
 		}
 		return false;
 	}
-	
-	void FollowPath()
-	{
-		//TODO Exception handling when walkable tile unreachable
-		//Move unreachable tiles to other layer
-		Vector3 mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
-		
-		while(true)
-		{
-			if (transform.position == mVec3Current) {
-				mIntTargetIndex++;
-				if (mIntTargetIndex >= pAStarPathfinding.pListPath.Length) {
-					
-					break;
-				}
-				mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
-			}
-			
-			transform.position = Vector3.MoveTowards(transform.position,mVec3Current,pFloatSpeed * Time.deltaTime);
-			return;
-		}
-	}
-	
+
 	public void OnDrawGizmos() {
 		if (pAStarPathfinding != null) {
 			for (int i = mIntTargetIndex; i < pAStarPathfinding.pListPath.Length; i ++) {
@@ -105,8 +89,8 @@ public class Unit : MonoBehaviour {
 	}
 	//Svens implementationZZZzzz
 	public void ShowAttackRadius(){
-		Node mNodeUnit = pFFWalkArea.pGridField.NodeFromWorldPosition (this.gameObject.transform.position);
-		pFFWalkArea.FindPath (mNodeUnit, GetAttackDistance());
+		Node mNodeUnit = pFFWalkArea.pGridField.NodeFromWorldPosition (this.gameObject.transform.position-mVec3Offset);
+		pFFWalkArea.FindPath (mNodeUnit, 0,GetAttackDistance());
 	}
 	
 	private int GetAttackDistance(){
@@ -128,4 +112,49 @@ public class Unit : MonoBehaviour {
 		}
 		return mIntDamage;
 	}
+
+	//Brendans implementation
+	//Movement Stuffs
+	public void ShowMovementRadius(){
+		Node mNodeUnit = pFFWalkArea.pGridField.NodeFromWorldPosition (this.gameObject.transform.position-mVec3Offset);
+		pFFWalkArea.FindPath (mNodeUnit, 0,pIntWalkDistance);
+	}
+
+	public void move()
+	{
+		Vector3 mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
+		
+		while(true)
+		{
+			if (transform.position == mVec3Current) {
+				mIntTargetIndex++;
+				if (mIntTargetIndex >= pAStarPathfinding.pListPath.Length) {
+					
+					break;
+				}
+				mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
+			}
+			
+			transform.position = Vector3.MoveTowards(transform.position,mVec3Current,pFloatSpeed * Time.deltaTime);
+			return;
+		}
+	}
+
+	//Special Stuffs
+	//Returns constant because it needs to be implemented in specialised units
+	private int GetSpecialDistance()
+	{
+		return 3;
+	}
+
+	public void ShowSpecialRadius(){
+		Node mNodeUnit = pFFWalkArea.pGridField.NodeFromWorldPosition (this.gameObject.transform.position-mVec3Offset);
+		pFFWalkArea.FindPath (mNodeUnit, 0, GetSpecialDistance());
+	}
+
+	public void UseSpecial(Unit mUnitOther){
+		//needs to be implemented in specialized units, only debug in standard unit
+		Debug.Log("Special Done!!");
+	}
+
 }

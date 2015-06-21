@@ -36,23 +36,21 @@ public class Grid : MonoBehaviour {
 		isGridCreated = true;
 	}
 
-	void Update()
+/*	void Update()
 	{
 		fill.pListGridSet.Clear ();
 		if(fill.pGCController.pTransSeeker != null)
 		{
 			fill.FindPath(NodeFromWorldPosition(fill.pGCController.pTransSeeker.gameObject.transform.position - new Vector3(0, 0.25f, 0)), 0);
 			SetGrid ();
-			
-			
 		}
 		else
 		{
 			ResetGrid();
 		}
-	}
+	}*/
 	
-	void SetGrid()
+	public void SetGrid()
 	{
 		foreach(Node n in mNodeGrid)
 		{
@@ -67,7 +65,7 @@ public class Grid : MonoBehaviour {
 		}
 	}
 	
-	void ResetGrid()
+	public void ResetGrid()
 	{
 		foreach(Node n in mNodeGrid)
 		{

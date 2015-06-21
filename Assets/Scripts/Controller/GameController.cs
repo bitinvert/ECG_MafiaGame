@@ -10,6 +10,7 @@ public class GameController : MonoBehaviour {
 	public List<Unit> pListCharacters;
 		
 	void Start () {
+		pListCharacters = new List<Unit>( Object.FindObjectsOfType(typeof(Unit)) as Unit[]);
 		var mTKRecCharTap = new TKTapRecognizer();
 		mTKRecCharTap.gestureRecognizedEvent += (r) =>
 		{
@@ -21,25 +22,19 @@ public class GameController : MonoBehaviour {
 			RaycastHit mRHInfo = new RaycastHit();
 			if(pTransSeeker == null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
-				Debug.Log ("Bla");
-				Debug.Log (mRHInfo.collider.gameObject.tag);
 				if(mRHInfo.collider.gameObject.tag.Equals("Playable"))
 				{
-					
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
-					Debug.Log("Blo");
 				}
-				
 			}
 			else if(pTransSeeker != null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
+				int mIntUnitIndex = pListCharacters.IndexOf(pTransSeeker.GetComponent<Unit>());
 				if(mRHInfo.collider.tag == "Field" && 
 				   pGridGrid.NodeFromWorldPosition(mRHInfo.collider.transform.position).pBoolReachable == true && 
-				   pListCharacters[pListCharacters.IndexOf(
-					pTransSeeker.GetComponent<Unit>())].pGOTarget == null)
+				   pListCharacters[mIntUnitIndex].pGOTarget == null)
 				{
-					pListCharacters[pListCharacters.IndexOf(
-						pTransSeeker.GetComponent<Unit>())].pGOTarget = mRHInfo.collider.gameObject;
+					pListCharacters[mIntUnitIndex].pGOTarget = mRHInfo.collider.gameObject;
 					
 				}
 				else if(mRHInfo.collider.tag == "Field" &&
@@ -47,29 +42,23 @@ public class GameController : MonoBehaviour {
 				{
 					GameObject mGOTemp =  mRHInfo.collider.gameObject;
 					
-					if(pListCharacters[pListCharacters.IndexOf(
-						pTransSeeker.GetComponent<Unit>())].pGOTarget.Equals(mGOTemp))
+					if(pListCharacters[mIntUnitIndex].pGOTarget.Equals(mGOTemp))
 					{
-						pListCharacters[pListCharacters.IndexOf(
-							pTransSeeker.GetComponent<Unit>())].pBoolDoubleTap = true;
+						pListCharacters[mIntUnitIndex].pBoolDoubleTap = true;
 					}
 					else
 					{
-						pListCharacters[pListCharacters.IndexOf(
-							pTransSeeker.GetComponent<Unit>())].pGOTarget = mGOTemp;
+						pListCharacters[mIntUnitIndex].pGOTarget = mGOTemp;
 					}
 				}
-			}else
-			{
-				Debug.Log("Bli");
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable"))
+				{
+					pTransSeeker = mRHInfo.collider.gameObject.transform;
+				}
 			}
 			
 		};
 		TouchKit.addGestureRecognizer(mTKRecCharTap);
 	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+
 }
