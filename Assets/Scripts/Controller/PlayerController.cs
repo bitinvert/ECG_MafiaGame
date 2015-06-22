@@ -25,5 +25,20 @@ public class PlayerController : MonoBehaviour {
 	{
 		Mafia, Police
 	}
-	
+
+	public void setShowMove(bool b) {
+		this.pBoolShowMove = b;
+	}
+
+	public void setShowAttack(bool b) {
+		this.pBoolShowAttack = b;
+	}
+
+	public void setShowSpecial(bool b) {
+		this.pBoolShowSpecial = b;
+	}
+
+	public void setEndTurn(bool b) {
+		this.pBoolEndTurn = b;
+	}
 }
