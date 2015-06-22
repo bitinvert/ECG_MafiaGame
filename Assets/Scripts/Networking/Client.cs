@@ -3,10 +3,12 @@ using System.Collections;
 using System.Collections.Generic;
 
 public class Client : MonoBehaviour {
+	
+	private const string roomName = "RoomName";
+	private RoomInfo[] roomsList;
+	private int maxClients = 2;
 
-	string remoteIP = "127.0.0.1";
-	int remotePort = 25000;
-	NetworkView networkView;
+	private PhotonView PhotonView;	
 	//List<string> missions;
 	string testMission = "bankraub";
 	//bool missionOn = false;
@@ -16,44 +18,102 @@ public class Client : MonoBehaviour {
 	string password;
 	string message;
 	int turnValue;
-	public LevelController levelController;
-
+	public LevelController levelController;	
 	public bool connected = false;
 	
-	/// <summary>
-	/// Start this instance.
-	/// </summary>
-	void Awake ()
+	void Awake(){
+		//Application.LoadLevel ("MainMenu");
+	}
+	
+	void Start()
 	{
-		networkView = GetComponent <NetworkView> ();
-		//missions = new List<string> ();
-		connectToServer ();
-		DontDestroyOnLoad (this);
-		Application.LoadLevel ("MainMenu1");
+		PhotonNetwork.ConnectUsingSettings("0.1"); 	
+		//connectionInfos ();
 	}
 	
-	/// <summary>
-	/// Connects to server.
-	/// </summary>
-	void connectToServer() {
-		Network.Connect(remoteIP, remotePort);
+	void OnGUI()
+	{
+		if (!PhotonNetwork.connected)
+		{
+			GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
+		}
+		else if (PhotonNetwork.room == null)
+		{
+			// Create Room
+			Debug.Log("Room Request");
+			if (GUI.Button(new Rect(100, 100, 250, 100), "Create Game")){
+				//RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
+				//PhotonNetwork.CreateRoom(roomName + Guid.NewGuid().ToString("N"), true, true, 5);
+				PhotonNetwork.CreateRoom(roomName, true, true, 2);
+
+				//connectionInfos ();
+				GUILayout.Label("Waiting for Opponent");
+			}
+			
+			// Join Room
+			if (roomsList != null)
+			{
+				for (int i = 0; i < roomsList.Length; i++)
+				{
+					if (GUI.Button(new Rect(100, 250 + (110 * i), 250, 100), "Join Game" + roomsList[i].name)){
+						PhotonNetwork.JoinRoom(roomsList[i].name);
+						connectionInfos ();
+					}
+				}
+			}
+		}
+		connectionInfos ();
+	}
+
+	private void twoPlayersCheck(){
+		if (PhotonNetwork.countOfPlayersInRooms == 2)
+			Application.LoadLevel ("MainMenu1");
 	}
 	
-	void OnConnectedToServer() {
-		Debug.Log("Connected to server");
-		connected = true;
+	private void connectionInfos(){
+		showServerInformation(); 	
+		showClientInformation();
 	}
 	
-	/// <summary>
-	/// Disconnects from server.
-	/// </summary>
-	public void Logout() {
-		//Network.Disconnect();
-		//missionOn = !missionOn;
-		//missions.Clear ();
-		loggedIn = false;
+	private void showClientInformation(){
+		//GUILayout.Label("Clients: " + Network.connections.Length + "/" + maxClients);
+		GUILayout.Label("Clients in Lobby: " + PhotonNetwork.countOfPlayers + "/" + maxClients);
+		foreach(NetworkPlayer p in Network.connections){
+			GUILayout.Label(" Player from ip/port: " + p.ipAddress + "/" + p.port);
+		}
 	}
 	
+	private void showServerInformation(){
+		GUILayout.Label("IP: " + Network.player.ipAddress + " Port: " + Network.player.port);
+
+	}
+	
+	void OnReceivedRoomListUpdate()
+	{
+		roomsList = PhotonNetwork.GetRoomList();
+		Debug.Log ("OnReceivedRoomListUpdate()");
+	}
+
+	/*
+	void OnJoinedRoom()
+	{
+		Debug.Log("Connected to Room");
+		PhotonNetwork.isMessageQueueRunning = false;
+		Application.LoadLevel ("MainMenu1");		
+	}
+
+	void OnLevelWasLoaded( int level )
+	{
+		Debug.Log( "OnLevelWasLoaded: " + Application.loadedLevelName );
+		
+		//Resume the Photon message queue so we get all the updates.
+		PhotonNetwork.isMessageQueueRunning = true;
+		
+		//Time is frozen at the end of a round, so make sure that we resume it when we load a new level
+		Time.timeScale = 1f;
+	}
+	*/
+
 	/// <summary>
 	/// Client sends registration-request to server.
 	/// </summary>
@@ -61,7 +121,7 @@ public class Client : MonoBehaviour {
 	/// <param name="password">Password of client</param>
 	[RPC]
 	public void RequestRegistration(string username, string password){
-		networkView.RPC ("RegisterUser", RPCMode.Server, username, password, Network.player);
+		//networkView.RPC ("RegisterUser", RPCMode.Server, username, password, Network.player);
 	}
 	
 	/// <summary>
@@ -72,9 +132,9 @@ public class Client : MonoBehaviour {
 	[RPC]
 	public void RequestLogin(string username, string password)
 	{
-		networkView.RPC ("AuthorizeLogin", RPCMode.Server, username, password, Network.player);
+		//networkView.RPC ("AuthorizeLogin", RPCMode.Server, username, password, Network.player);
 	}
-
+	
 	/// <summary>
 	/// Register a user.
 	/// </summary>
@@ -111,7 +171,7 @@ public class Client : MonoBehaviour {
 	[RPC]
 	void JoinMission ()
 	{
-		networkView.RPC ("RegisterMission", RPCMode.Server, Network.player, testMission);
+		//networkView.RPC ("RegisterMission", RPCMode.Server, Network.player, testMission);
 	}
 	
 	/// <summary>
@@ -124,21 +184,21 @@ public class Client : MonoBehaviour {
 	{
 		levelController.LoadLevel (mapPrefabs, mapFields);
 	}
-
+	
 	[RPC]
 	void ReadyToStart ()
 	{
 		//After placing all your pieces on your gameboard you're ready to start the game
-		networkView.RPC ("DrawBeginner", RPCMode.Server, Network.player, testMission);
+		//networkView.RPC ("DrawBeginner", RPCMode.Server, Network.player, testMission);
 	}
-
+	
 	[RPC]
 	void SendMove ()
 	{
 		//After making your actions, pack them in a message and send it to the server
-		networkView.RPC ("CheckMove", RPCMode.Server, turnValue);
+		//etworkView.RPC ("CheckMove", RPCMode.Server, turnValue);
 	}
-
+	
 	[RPC]
 	void SetTurnValue (int value)
 	{
@@ -187,29 +247,34 @@ public class Client : MonoBehaviour {
 	void RegisterMission(NetworkPlayer sender, string missionName)
 	{
 	}
-
+	
 	[RPC]
 	void DrawBeginner (NetworkPlayer sender, string missionName)
 	{
 	}
-
+	
 	[RPC]
 	void CheckMove (int turnValue)
 	{
 	}
 
-	/* Not used yet
 	[RPC]
 	void GetMissions (NetworkPlayer sender)
 	{
 		//empty
 	}
-
-	*/
 	
 	/// <summary>
-	/// Test GUI.
+	/// Disconnects from server.
 	/// </summary>
+	public void Logout() {
+		//Network.Disconnect();
+		//missionOn = !missionOn;
+		//missions.Clear ();
+		loggedIn = false;
+	}
+
+	/*
 	void OnGUI ()
 	{
 		GUILayout.Label (message);
@@ -232,7 +297,7 @@ public class Client : MonoBehaviour {
 				SendMove ();
 			}
 		}
-	}
+
 	
-	
+	}*/
 }

@@ -200,6 +200,7 @@ GameObject:
   - 4: {fileID: 1562095030}
   - 148: {fileID: 1562095031}
   - 114: {fileID: 1562095029}
+  - 114: {fileID: 1562095032}
   m_Layer: 0
   m_Name: Client
   m_TagString: Client
@@ -215,7 +216,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1562095028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 47d41981842267348b73c72ccfbc0e74, type: 3}
+  m_Script: {fileID: 11500000, guid: 76bdccaa839467742910a8323c06f3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   loggedIn: 0
@@ -240,12 +241,37 @@ NetworkView:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1562095028}
-  m_Enabled: 1
+  m_Enabled: 0
   m_StateSynchronization: 1
   m_Observed: {fileID: 1562095030}
   m_ViewID:
     m_ID: 1
     m_Type: 1
+--- !u!114 &1562095032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1562095028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerId: 0
+  group: 0
+  prefixBackup: -1
+  observed: {fileID: 0}
+  synchronization: 3
+  onSerializeTransformOption: 3
+  onSerializeRigidBodyOption: 2
+  ownershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 1562095030}
+  ObservedComponentsFoldoutOpen: 1
+  viewIdField: 1
+  instantiationId: 1
+  isRuntimeInstantiated: 0
 --- !u!1 &1806550604
 GameObject:
   m_ObjectHideFlags: 0
@@ -318,6 +344,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: .0219999999
+  m_StereoMirrorMode: 0
 --- !u!4 &1806550609
 Transform:
   m_ObjectHideFlags: 0
