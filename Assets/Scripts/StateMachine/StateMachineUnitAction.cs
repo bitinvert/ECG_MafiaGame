@@ -5,13 +5,13 @@ using System.Collections.Generic;
 /*Simple State Machine realised through methods no outer resources used*/
 public class StateMachineUnitAction : MonoBehaviour {
 
-	public List<PlayerController> pPCPlayer;
-	private PlayerController mPCActivePlayer;
+	public PlayerController pPCPlayer;
 	public int pIntTurnCount;
+
 
 	// Use this for initialization
 	void Start () {
-		pPCPlayer =  new List<PlayerController>(Object.FindObjectsOfType(typeof(PlayerController)) as PlayerController[]);
+		pPCPlayer = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
 		pIntTurnCount = 0;
 	}
 	
