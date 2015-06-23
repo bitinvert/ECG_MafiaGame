@@ -3063,11 +3063,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22463382, guid: 6045acbd8cae2ec4fb860f50256270c7, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .600000024
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22463382, guid: 6045acbd8cae2ec4fb860f50256270c7, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22414420, guid: 6045acbd8cae2ec4fb860f50256270c7, type: 2}
       propertyPath: m_LocalPosition.x
