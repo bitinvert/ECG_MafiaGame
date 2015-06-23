@@ -8,7 +8,6 @@ public class StateMachineUnitAction : MonoBehaviour {
 	public PlayerController pPCPlayer;
 	public int pIntTurnCount;
 
-
 	// Use this for initialization
 	void Start () {
 		pPCPlayer = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
@@ -19,21 +18,17 @@ public class StateMachineUnitAction : MonoBehaviour {
 	void Update () {
 		/*The States themselves.
 		  Here the certain values will be set*/
-		if(SelectedChar ())
+		if(pPCPlayer.pBoolShowAttack == true && SelectedChar ())
 		{
-			Debug.Log ("State: Character Selected");
+			ShowAttack();
 		}
-		if(ShowAttack ())
+		else if(pPCPlayer.pBoolShowMove == true && SelectedChar ())
 		{
-			Debug.Log ("State: Show Attack");
+			ShowMove ();
 		}
-		if(ShowMove ())
+		else if(pPCPlayer.pBoolShowSpecial == true && SelectedChar ())
 		{
-			Debug.Log ("State: Show Move");
-		}
-		if(ShowSpecial ())
-		{
-			Debug.Log ("State: Show Special");
+			ShowSpecial ();
 		}
 		if(AttackDone ())
 		{
@@ -47,19 +42,37 @@ public class StateMachineUnitAction : MonoBehaviour {
 		{
 			Debug.Log ("State: Special Done");
 		}
-		if(PlayerChange ())
+		if(pPCPlayer.pBoolEndTurn == true)
 		{
-			Debug.Log ("State Player Change");
+			PlayerChange();
 		}
 	}
 	/*Checking the conditions and extra features*/
-	bool SelectedChar(){return false;}
+	bool SelectedChar(){ 
+		return(pPCPlayer.pUnitActive != null);
+	}
 
-	bool ShowAttack(){return false;}
+	void ShowAttack()
+	{
+		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
+		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
+		pPCPlayer.pUnitActive.ShowAttackRadius();
+		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.SetGrid();
+	}
 
-	bool ShowMove(){return false;}
+	void ShowMove(){
+		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
+		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
+		pPCPlayer.pUnitActive.ShowMovementRadius();
+		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.SetGrid();
+	}
 
-	bool ShowSpecial(){return false;}
+	void ShowSpecial(){
+		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
+		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
+		pPCPlayer.pUnitActive.ShowSpecialRadius();
+		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.SetGrid();
+	}
 
 	bool AttackDone(){return false;}
 
@@ -67,5 +80,8 @@ public class StateMachineUnitAction : MonoBehaviour {
 
 	bool SpecialDone(){return false;}
 
-	bool PlayerChange(){return false;}
+	void PlayerChange(){
+		pIntTurnCount++;
+		pPCPlayer.pBoolEndTurn = false;
+	}
 }

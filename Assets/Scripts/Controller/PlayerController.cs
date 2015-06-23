@@ -18,8 +18,19 @@ public class PlayerController : MonoBehaviour {
 	
 	void Start () {
 		pListUnits = new List<Unit>( Object.FindObjectsOfType(typeof(Unit)) as Unit[]);
+		pBoolShowMove = true;
+		pBoolShowAttack = false;
+		pBoolShowSpecial = false;
+		pBoolEndTurn = false;
 	}
 
+
+	void Update () {
+		if(pGCController.pTransSeeker != null){
+			int mIntUnitIndex = pGCController.pListCharacters.IndexOf(pGCController.pTransSeeker.GetComponent<Unit>());
+			pUnitActive = pGCController.pListCharacters[mIntUnitIndex];
+		}
+	}
 
 	public enum Faction
 	{

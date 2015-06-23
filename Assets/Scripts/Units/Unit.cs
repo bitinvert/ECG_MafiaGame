@@ -144,7 +144,7 @@ public class Unit : MonoBehaviour {
 	//Returns constant because it needs to be implemented in specialised units
 	private int GetSpecialDistance()
 	{
-		return 3;
+		return 1;
 	}
 
 	public void ShowSpecialRadius(){

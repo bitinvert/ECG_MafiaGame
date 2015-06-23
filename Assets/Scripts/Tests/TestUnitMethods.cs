@@ -11,8 +11,8 @@ public class TestUnitMethods : MonoBehaviour {
 			pGCTester.pListCharacters[mIntUnitIndex].pFFWalkArea.pListGridSet.Clear ();
 			//Debug.Log ("StartTest");
 			if(!pGCTester.pListCharacters[mIntUnitIndex].pBoolDoubleTap){
-			pGCTester.pListCharacters[mIntUnitIndex].ShowMovementRadius ();
-			//Debug.Log (pUnitTest.pFFWalkArea.pListGridSet.ToString());
+				pGCTester.pListCharacters[mIntUnitIndex].ShowMovementRadius ();
+				//Debug.Log (pUnitTest.pFFWalkArea.pListGridSet.ToString());
 				pGCTester.pListCharacters[mIntUnitIndex].pFFWalkArea.pGridField.SetGrid();
 		
 			}
