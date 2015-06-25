@@ -7,9 +7,8 @@ public class Client : MonoBehaviour {
 	private const string roomName = "RoomName";
 	private RoomInfo[] roomsList;
 	private int maxClients = 2;
-	private string txt;
 	
-	private PhotonView PhotonView;
+	private PhotonView photonView;
 	
 	//public bool loggedIn = false;
 	//public bool registered = false;
@@ -28,17 +27,13 @@ public class Client : MonoBehaviour {
 	void Start()
 	{
 		PhotonNetwork.ConnectUsingSettings("0.1"); 	
-		PhotonView = GetComponent <PhotonView> ();
+		photonView = GetComponent <PhotonView> ();
 		//connectionInfos ();
 	}
 	
 	void OnGUI()
 	{
-		if (txt != null) {
-			GUILayout.Label (txt);
-		} else {
-			GUILayout.Label ("kein read");
-		}
+
 		if (!PhotonNetwork.connected)
 		{
 			GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
@@ -50,7 +45,6 @@ public class Client : MonoBehaviour {
 				//RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
 				//PhotonNetwork.CreateRoom(roomName + Guid.NewGuid().ToString("N"), true, true, 5);
 				PhotonNetwork.CreateRoom(roomName, true, true, 2);
-				
 				//connectionInfos ();
 				GUILayout.Label("Waiting for Opponent");
 			}
@@ -66,17 +60,21 @@ public class Client : MonoBehaviour {
 					}
 				}
 			}
+
 		}
 		connectionInfos ();
-		if (GUILayout.Button ("move")) {
+		if (GUILayout.Button ("Spielzug beenden")) {
+			Debug.Log ("geklickt.");
 			if (isMyTurn){
-				GUILayout.Label ("Ich war dran." + PhotonNetwork.player.ID);
+				Debug.Log ("Ich war dran." + PhotonNetwork.player.ID);
 				playerToMakeTurn = PhotonNetwork.player.GetNextFor(playerToMakeTurn).ID;
+				Debug.Log (playerToMakeTurn + " ist als nächstes dran.");
+				photonView.RPC ("HandOverTurn", PhotonTargets.Others, playerToMakeTurn);
 			} else {
-				GUILayout.Label ("Ich war nicht dran." + PhotonNetwork.player.ID);
+				Debug.Log ("Ich war nicht dran. " + playerToMakeTurn + " war dran.");
 			}
-			GUILayout.Label ("Spieler " + playerToMakeTurn + " ist dran.");
 		}
+
 	}
 	
 	private void twoPlayersCheck(){
@@ -117,12 +115,13 @@ public class Client : MonoBehaviour {
 	
 	void OnJoinedRoom()
 	{
-
-		string mapFields = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_singleFields.xml");
-		string mapPrefab = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_prefabHolder.xml");
-		txt = mapFields + mapPrefab;
-		PhotonView.RPC ("InstantiateMap", PhotonTargets.All, mapPrefab, mapFields);
-
+		Debug.Log (PhotonNetwork.playerList.Length);
+		if (PhotonNetwork.playerList.Length == 2) {
+			string mapFields = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_singleFields.xml");
+			string mapPrefab = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_prefabHolder.xml");
+			playerToMakeTurn = PhotonNetwork.player.ID;
+			photonView.RPC ("InstantiateMap", PhotonTargets.All, mapPrefab, mapFields);
+		}
 	}
 	/*
 	void OnLevelWasLoaded( int level )
@@ -156,7 +155,11 @@ public class Client : MonoBehaviour {
 		*/
 		playerToMakeTurn = 1;
 	}
-	
+
+	[PunRPC]
+	void HandOverTurn (int player) {
+		playerToMakeTurn = player;
+	}
 	
 	
 }
