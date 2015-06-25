@@ -32,7 +32,7 @@ public class LoginRegistration : MonoBehaviour {
 		GameObject go = GameObject.FindWithTag ("Client");
 		Client client = (Client)go.GetComponent (typeof(Client));
 
-		client.Logout ();
+		//client.Logout ();
 
 		Debug.Log ("Logout successful");
 		switchToMenu.Switch ();
@@ -55,13 +55,14 @@ public class LoginRegistration : MonoBehaviour {
 		{
 			GameObject go = GameObject.FindWithTag ("Client");
 			Client client = (Client)go.GetComponent (typeof(Client));
-
+			/*
 			if(!client.loggedIn && !loggedInOnce)
 			{
 				StartCoroutine(CheckConnectionStatus(client, username, password));
 						
 				StartCoroutine (CheckLoginStatus(client));
 			}
+			*/
 		}
 	}
 
@@ -74,10 +75,10 @@ public class LoginRegistration : MonoBehaviour {
 		while (true)
 		{
 			Debug.Log ("AutoLogin as Username: " + username);
-			if(client.connected) {
+			/*if(client.connected) {
 				client.RequestLogin (username, password);
 				break;
-			}
+			}*/
 			yield return null;
 		}
 		yield return null;
@@ -91,7 +92,7 @@ public class LoginRegistration : MonoBehaviour {
 		GameObject go = GameObject.FindWithTag ("Client");
 		Client client = (Client)go.GetComponent (typeof(Client));
 		
-		client.RequestLogin (usernameInputField.text, passwordInputField.text);
+		//client.RequestLogin (usernameInputField.text, passwordInputField.text);
 		
 		StartCoroutine (CheckLoginStatus(client));
 	}
@@ -102,7 +103,7 @@ public class LoginRegistration : MonoBehaviour {
 	IEnumerator CheckLoginStatus(Client client) 
 	{
 		while (true) {
-			if (client.loggedIn) 
+			/*if (client.loggedIn) 
 			{		
 				PlayerPrefs.SetString("Username", usernameInputField.text);
 				PlayerPrefs.SetString("Password", passwordInputField.text);
@@ -113,7 +114,7 @@ public class LoginRegistration : MonoBehaviour {
 				switchToMenu.Switch();
 				
 				break;
-			}
+			}*/
 			yield return null;
 		}
 		
@@ -128,7 +129,7 @@ public class LoginRegistration : MonoBehaviour {
 		GameObject go = GameObject.FindWithTag ("Client");
 		Client client = (Client)go.GetComponent (typeof(Client));
 		
-		client.RequestRegistration (usernameInputField.text, passwordInputField.text);
+		//client.RequestRegistration (usernameInputField.text, passwordInputField.text);
 		
 		StartCoroutine (CheckRegistrationStatus (client));
 	}
@@ -140,7 +141,7 @@ public class LoginRegistration : MonoBehaviour {
 	{
 		while (true)
 		{
-			if(client.registered) 
+			/*if(client.registered) 
 			{
 				Debug.Log ("Registration successful");
 
@@ -152,7 +153,7 @@ public class LoginRegistration : MonoBehaviour {
 				}
 
 				break;
-			}
+			}*/
 			yield return null;
 		}
 		yield return null;

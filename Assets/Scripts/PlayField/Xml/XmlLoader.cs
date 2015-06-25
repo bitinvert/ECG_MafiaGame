@@ -57,7 +57,6 @@ public class XmlLoader : MonoBehaviour {
 	}
 	private static string PickRandomPrefab(string mStringPrefabs){
 		string[] mStingArrayPrefabs = mStringPrefabs.Split (';');
-		Debug.Log (mStingArrayPrefabs);
 		if (mStingArrayPrefabs.Length > 1) {
 			int mIntIndex =  (int) Mathf.Floor(Random.Range (0,(float)mStingArrayPrefabs.Length));
 			return mStingArrayPrefabs [mIntIndex];

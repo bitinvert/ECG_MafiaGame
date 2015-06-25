@@ -219,10 +219,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bdccaa839467742910a8323c06f3a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  loggedIn: 0
-  registered: 0
+  turnNumber: 1
+  playerToMakeTurn: 0
   levelController: {fileID: 849819198}
-  connected: 0
 --- !u!4 &1562095030
 Transform:
   m_ObjectHideFlags: 0

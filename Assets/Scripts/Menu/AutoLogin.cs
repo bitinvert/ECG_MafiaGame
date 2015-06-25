@@ -23,7 +23,7 @@ public class AutoLogin : MonoBehaviour {
 
 			GameObject go = GameObject.FindWithTag ("Client");
 			Client client = (Client)go.GetComponent (typeof(Client));
-			client.RequestLogin (username, password);
+			//client.RequestLogin (username, password);
 
 			StartCoroutine (CheckLoginStatus(client));
 		}
@@ -31,13 +31,14 @@ public class AutoLogin : MonoBehaviour {
 
 	IEnumerator CheckLoginStatus(Client client) {
 		while (true) {
-
+			/*
 			if (client.loggedIn) {
 
 				Debug.Log ("AutoLogin ok, switch now");
 
 				break;
 			}
+			*/
 			yield return null;
 		}
 		
