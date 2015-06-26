@@ -35,8 +35,12 @@ public class Unit : MonoBehaviour {
 	
 	public Unit pUnitEnemy;
 
+	public shackled pShackStunned;
+
 	void Start () {
 		mVec3Offset = new Vector3(0f,this.transform.position.y,0f);
+		pShackStunned.isSheckled = false;
+		pShackStunned.shackleTime = 0;
 	}
 
 	// Update is called once per frame
@@ -158,6 +162,12 @@ public class Unit : MonoBehaviour {
 	public void UseSpecial(Unit mUnitOther){
 		//needs to be implemented in specialized units, only debug in standard unit
 		Debug.Log("Special Done!!");
+	}
+
+	public struct shackled
+	{
+		public bool isSheckled;
+		public uint shackleTime;
 	}
 
 }
