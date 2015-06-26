@@ -33,12 +33,26 @@ public class SwitchMenu : MonoBehaviour {
 			case "LessDrawCallsTest": LessDrawCallsTest();
 				break;
 
+			case "OverlayStatisticBack": OverlayStatisticBack();
+				break;
+
+			case "OverlayStatisticTo": OverlayStatisticTo();
+				break;
+
 			default: break;
 		}
 	}
 
 	void LessDrawCallsTest() {
 		pFrom.gameObject.SetActive (false);
+		pTo.gameObject.SetActive (true);
+	}
+
+	void OverlayStatisticBack() {
+		pFrom.gameObject.SetActive (false);
+	}
+
+	void OverlayStatisticTo() {
 		pTo.gameObject.SetActive (true);
 	}
 
