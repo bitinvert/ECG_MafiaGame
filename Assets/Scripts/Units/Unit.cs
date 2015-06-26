@@ -30,7 +30,7 @@ public class Unit : MonoBehaviour {
 	private bool mBoolPathShown;
 
 	//Magic number for offset
-	private Vector3 mVec3Offset;
+	public Vector3 mVec3Offset;
 	
 	public Unit pUnitEnemy;
 
