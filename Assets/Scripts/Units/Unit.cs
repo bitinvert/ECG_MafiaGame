@@ -31,6 +31,8 @@ public class Unit : MonoBehaviour {
 
 	//Magic number for offset
 	private Vector3 mVec3Offset;
+	
+	public Unit pUnitEnemy;
 
 	void Start () {
 		mVec3Offset = new Vector3(0f,this.transform.position.y,0f);

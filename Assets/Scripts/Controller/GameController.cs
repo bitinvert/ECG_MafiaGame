@@ -8,9 +8,11 @@ public class GameController : MonoBehaviour {
 
 	public Grid pGridGrid;
 	public List<Unit> pListCharacters;
+	private PlayerController mPCPlayer;
 		
 	void Start () {
 		pListCharacters = new List<Unit>( Object.FindObjectsOfType(typeof(Unit)) as Unit[]);
+		mPCPlayer = Object.FindObjectOfType (typeof(PlayerController)) as PlayerController;
 		var mTKRecCharTap = new TKTapRecognizer();
 		mTKRecCharTap.gestureRecognizedEvent += (r) =>
 		{
@@ -22,7 +24,7 @@ public class GameController : MonoBehaviour {
 			RaycastHit mRHInfo = new RaycastHit();
 			if(pTransSeeker == null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
-				if(mRHInfo.collider.gameObject.tag.Equals("Playable"))
+				if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==false)
 				{
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
 				}
@@ -30,14 +32,14 @@ public class GameController : MonoBehaviour {
 			else if(pTransSeeker != null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
 				int mIntUnitIndex = pListCharacters.IndexOf(pTransSeeker.GetComponent<Unit>());
-				if(mRHInfo.collider.tag == "Field" && 
+				if(mRHInfo.collider.tag == "Field" && mPCPlayer.pBoolShowMove == true &&
 				   pGridGrid.NodeFromWorldPosition(mRHInfo.collider.transform.position).pBoolReachable == true && 
 				   pListCharacters[mIntUnitIndex].pGOTarget == null)
 				{
 					pListCharacters[mIntUnitIndex].pGOTarget = mRHInfo.collider.gameObject;
 					
 				}
-				else if(mRHInfo.collider.tag == "Field" &&
+				else if(mRHInfo.collider.tag == "Field" && mPCPlayer.pBoolShowMove == true &&
 				        pGridGrid.NodeFromWorldPosition(mRHInfo.collider.transform.position).pBoolReachable == true)
 				{
 					GameObject mGOTemp =  mRHInfo.collider.gameObject;
@@ -51,9 +53,13 @@ public class GameController : MonoBehaviour {
 						pListCharacters[mIntUnitIndex].pGOTarget = mGOTemp;
 					}
 				}
-				else if(mRHInfo.collider.gameObject.tag.Equals("Playable"))
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==false)
 				{
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
+				}
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==true && mPCPlayer.pBoolShowAttack == true)
+				{
+					pListCharacters[mIntUnitIndex].pUnitEnemy = mRHInfo.collider.gameObject.GetComponent<Unit>();
 				}
 			}
 			

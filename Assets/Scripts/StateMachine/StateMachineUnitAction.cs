@@ -8,6 +8,10 @@ public class StateMachineUnitAction : MonoBehaviour {
 	public PlayerController pPCPlayer;
 	public int pIntTurnCount;
 
+	private bool mBoolMove = false;
+	private bool mBoolAttack = false;
+	private bool mBoolSpecial = false;
+
 	// Use this for initialization
 	void Start () {
 		pPCPlayer = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
@@ -20,24 +24,24 @@ public class StateMachineUnitAction : MonoBehaviour {
 		  Here the certain values will be set*/
 		if(pPCPlayer.pBoolShowAttack == true && SelectedChar ())
 		{
-			ShowAttack();
+			mBoolAttack = ShowAttack();
 		}
 		else if(pPCPlayer.pBoolShowMove == true && SelectedChar ())
 		{
-			ShowMove ();
+			mBoolMove = ShowMove ();
 		}
 		else if(pPCPlayer.pBoolShowSpecial == true && SelectedChar ())
 		{
-			ShowSpecial ();
+			mBoolSpecial = ShowSpecial ();
 		}
 		if(AttackDone ())
 		{
 			Debug.Log ("State: Attack Done");
 		}
-		if(MoveDone ())
+		/*if(mBoolpPCPlayer.pUnitActive.pGOTarget != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
 		{
-			Debug.Log ("State: Move Done");
-		}
+			//pPCPlayer.pUnitActive.
+		}*/
 		if(SpecialDone ())
 		{
 			Debug.Log ("State: Special Done");
@@ -52,26 +56,29 @@ public class StateMachineUnitAction : MonoBehaviour {
 		return(pPCPlayer.pUnitActive != null);
 	}
 
-	void ShowAttack()
+	bool ShowAttack()
 	{
 		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
 		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
 		pPCPlayer.pUnitActive.ShowAttackRadius();
 		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.SetGrid();
+		return true;
 	}
 
-	void ShowMove(){
+	bool ShowMove(){
 		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
 		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
 		pPCPlayer.pUnitActive.ShowMovementRadius();
 		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.SetGrid();
+		return true;
 	}
 
-	void ShowSpecial(){
+	bool ShowSpecial(){
 		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
 		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
 		pPCPlayer.pUnitActive.ShowSpecialRadius();
 		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.SetGrid();
+		return true;
 	}
 
 	bool AttackDone(){return false;}
