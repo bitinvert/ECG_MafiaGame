@@ -8,6 +8,7 @@ public class Unit : MonoBehaviour {
 	public int pIntDefense;
 	public int pIntHealth;
 	public int pIntWalkDistance;
+	public bool pBoolCaptive;
 	//we have no attack distance at this point, because the dis. should change with particular weapons. So we are using a getAttackDis method
 	// to wrap this fact. Right now it is returning a fix number
 
