@@ -198,7 +198,6 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 1562095030}
-  - 148: {fileID: 1562095031}
   - 114: {fileID: 1562095029}
   - 114: {fileID: 1562095032}
   m_Layer: 0
@@ -222,6 +221,7 @@ MonoBehaviour:
   turnNumber: 1
   playerToMakeTurn: 0
   levelController: {fileID: 849819198}
+  playerController: {fileID: 0}
 --- !u!4 &1562095030
 Transform:
   m_ObjectHideFlags: 0
@@ -234,18 +234,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
---- !u!148 &1562095031
-NetworkView:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1562095028}
-  m_Enabled: 0
-  m_StateSynchronization: 1
-  m_Observed: {fileID: 1562095030}
-  m_ViewID:
-    m_ID: 1
-    m_Type: 1
 --- !u!114 &1562095032
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -18,14 +18,14 @@ public class Message{
 	public float damage { get { return _damage; } set { _damage = value; } }
 	private float _damage;
 
-	public Vector3[] movement { get { return _movement; } }
-	private Vector3[] _movement;
+	public GameObject targetField { get { return _targetField; } }
+	private Vector3[] _targetField;
 
-	public Message (ActionType action, float damage) 
+	public Message (ActionType action, float damage, GameObject targetField) 
 	{
 		this._action = action;
 		this._damage = damage;
+		this._targetField = targetField;
 		_involvedCharacters = new List<GameObject> ();
-		_movement = new Vector3[3];
 	}
 }

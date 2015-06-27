@@ -19,6 +19,7 @@ public class Client : MonoBehaviour {
 	public int turnNumber = 1;
 	public int playerToMakeTurn;
 	public LevelController levelController;	
+	public PlayerController playerController;
 	//public bool connected = false;
 	
 	void Awake(){
@@ -116,11 +117,9 @@ public class Client : MonoBehaviour {
 	
 	void OnJoinedRoom()
 	{
-		Debug.Log (PhotonNetwork.playerList.Length);
 		if (PhotonNetwork.playerList.Length == 2) {
 			string mapFields = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_singleFields.xml");
 			string mapPrefab = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_prefabHolder.xml");
-			playerToMakeTurn = PhotonNetwork.player.ID;
 			photonView.RPC ("InstantiateMap", PhotonTargets.All, mapPrefab, mapFields);
 		}
 	}
@@ -137,23 +136,28 @@ public class Client : MonoBehaviour {
 	}
 	*/
 
+	/// <summary>
+	/// Saves the player move in a message. The message's action will indicate
+	/// what kind of rpc will be called for the opponent.
+	/// </summary>
+	/// <param name="message">Message.</param>
 	void SavePlayerMove (Message message) 
 	{
 		string timeStamp = DateTime.Now.ToString ();
 		string actionType = message.action.ToString();
 		float damage = message.damage;
-		Vector3[] move = message.movement;
+		GameObject targetField = message.targetField;
 
 		switch (message.action) 
 		{
 			case ActionType.ATTACK:
 			GameObject attacker = message.involvedCharacters[0];
 			GameObject victim = message.involvedCharacters[1];
-			photonView.RPC ("LoadAttack", PhotonTargets.Others, timeStamp, attacker, victim, damage, move);
+			photonView.RPC ("LoadAttack", PhotonTargets.Others, timeStamp, attacker, victim, damage, targetField);
 			break;
 			case ActionType.MOVEMENT:
 			GameObject character = message.involvedCharacters[0];
-			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character, move);
+			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character, targetField);
 			break;
 			//more ActionTypes can follow
 
@@ -173,14 +177,26 @@ public class Client : MonoBehaviour {
 		playerToMakeTurn = 1;
 	}
 
+	/// <summary>
+	/// Hands the turn over to the opponent.
+	/// </summary>
+	/// <param name="opponent">Id of opponent</param>
 	[PunRPC]
-	void HandOverTurn (int player) 
+	void HandOverTurn (int opponent) 
 	{
-		playerToMakeTurn = player;
+		playerToMakeTurn = opponent;
 	}
 
+	/// <summary>
+	/// Load parameters for updating the game. In this case the opponent launched an attack on an unit.
+	/// </summary>
+	/// <param name="timeStamp">Indicates when the move was sent.</param>
+	/// <param name="attacker">Indicates which unit launched the attack.</param>
+	/// <param name="victim">Indicates the target of the attack.</param>
+	/// <param name="damage">Indicates the taken damage for the victim.</param>
+	/// <param name="targetField">Indicates the target field of the attacker, if it moved before it attacked.</param>
 	[PunRPC]
-	void LoadAttack (String timeStamp, GameObject attacker, GameObject victim, float damage, Vector3[] move) 
+	void LoadAttack (String timeStamp, GameObject attacker, GameObject victim, float damage, GameObject targetField) 
 	{
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
@@ -188,14 +204,24 @@ public class Client : MonoBehaviour {
 		if (diff.Hours > 24) {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
-			//playerController.pUnitList.get(attacker).Move(move);
-			//playerController.pUnitList.get(attacker).Attack(victim);
+			Unit attackerUnit = playerController.pListUnits.Find(x => x.pStringName == attacker.name);
+			if (targetField != null) {
+				attackerUnit.pGOTarget = targetField;
+				attackerUnit.move(); 
+			}
+			attackerUnit.Attack(victim);
 			//how to handle die?
 		}
 	}
 
+	/// <summary>
+	///  Load parameters for updating the game. In this case a character was mereley moved.
+	/// </summary>
+	/// <param name="timeStamp">Indicates when the move was sent.</param>
+	/// <param name="character">Indicates the unit which was moved.</param>
+	/// <param name="targetField">Indicates the targetField to which the character will be moved.</param>
 	[PunRPC]
-	void LoadMove (String timeStamp, GameObject character, Vector3[] move) 
+	void LoadMove (String timeStamp, GameObject character, GameObject targetField) 
 	{
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
@@ -203,9 +229,9 @@ public class Client : MonoBehaviour {
 		if (diff.Hours > 24) {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
-			//playerController.pUnitList.get(attacker).Move(move);
-			//playerController.pUnitList.get(attacker).Attack(victim);
-			//how to handle die?
+			Unit movedUnit = playerController.pListUnits.Find (x => x.pStringName == character.name);
+			movedUnit.pGOTarget = targetField;
+			movedUnit.move ();
 		}
 	}
 	
