@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -63,13 +64,13 @@ public class Client : MonoBehaviour {
 
 		}
 		connectionInfos ();
-		if (GUILayout.Button ("Spielzug beenden")) {
-			Debug.Log ("geklickt.");
+		if (GUI.Button (new Rect(50, 50, 100, 100), "Spielzug beenden")) {
 			if (isMyTurn){
 				Debug.Log ("Ich war dran." + PhotonNetwork.player.ID);
-				playerToMakeTurn = PhotonNetwork.player.GetNextFor(playerToMakeTurn).ID;
+				PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
+				playerToMakeTurn = nextPlayer.ID;
 				Debug.Log (playerToMakeTurn + " ist als nächstes dran.");
-				photonView.RPC ("HandOverTurn", PhotonTargets.Others, playerToMakeTurn);
+				photonView.RPC ("HandOverTurn", nextPlayer, playerToMakeTurn);
 			} else {
 				Debug.Log ("Ich war nicht dran. " + playerToMakeTurn + " war dran.");
 			}
@@ -135,6 +136,29 @@ public class Client : MonoBehaviour {
 		Time.timeScale = 1f;
 	}
 	*/
+
+	void SavePlayerMove (Message message) 
+	{
+		string timeStamp = DateTime.Now.ToString ();
+		string actionType = message.action.ToString();
+		float damage = message.damage;
+		Vector3[] move = message.movement;
+
+		switch (message.action) 
+		{
+			case ActionType.ATTACK:
+			GameObject attacker = message.involvedCharacters[0];
+			GameObject victim = message.involvedCharacters[1];
+			photonView.RPC ("LoadAttack", PhotonTargets.Others, timeStamp, attacker, victim, damage, move);
+			break;
+			case ActionType.MOVEMENT:
+			GameObject character = message.involvedCharacters[0];
+			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character, move);
+			break;
+			//more ActionTypes can follow
+
+		}
+	}
 	
 	/// <summary>
 	/// Client instantiates received map from server.
@@ -145,20 +169,44 @@ public class Client : MonoBehaviour {
 	void InstantiateMap (string mapPrefabs, string mapFields)
 	{
 		levelController.LoadLevel (mapPrefabs, mapFields);
-		//set randomly who can start
-		/*
-		if (UnityEngine.Random.Range (0, 2) == 0) {
-			playerToMakeTurn = 0; //spieler mit id 0 soll anfangen
-		} else {
-			playerToMakeTurn = 1;
-		}
-		*/
+		//The player who opened the game will start
 		playerToMakeTurn = 1;
 	}
 
 	[PunRPC]
-	void HandOverTurn (int player) {
+	void HandOverTurn (int player) 
+	{
 		playerToMakeTurn = player;
+	}
+
+	[PunRPC]
+	void LoadAttack (String timeStamp, GameObject attacker, GameObject victim, float damage, Vector3[] move) 
+	{
+		DateTime currentTimeStamp = DateTime.Now;
+		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
+		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
+		if (diff.Hours > 24) {
+			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
+		} else {
+			//playerController.pUnitList.get(attacker).Move(move);
+			//playerController.pUnitList.get(attacker).Attack(victim);
+			//how to handle die?
+		}
+	}
+
+	[PunRPC]
+	void LoadMove (String timeStamp, GameObject character, Vector3[] move) 
+	{
+		DateTime currentTimeStamp = DateTime.Now;
+		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
+		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
+		if (diff.Hours > 24) {
+			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
+		} else {
+			//playerController.pUnitList.get(attacker).Move(move);
+			//playerController.pUnitList.get(attacker).Attack(victim);
+			//how to handle die?
+		}
 	}
 	
 	
