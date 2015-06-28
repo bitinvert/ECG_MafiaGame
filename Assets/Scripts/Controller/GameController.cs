@@ -57,9 +57,23 @@ public class GameController : MonoBehaviour {
 				{
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
 				}
-				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==true && mPCPlayer.pBoolShowAttack == true)
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==true && mPCPlayer.pBoolShowAttack == true
+				        && pListCharacters[mIntUnitIndex].pUnitEnemy == null)
 				{
 					pListCharacters[mIntUnitIndex].pUnitEnemy = mRHInfo.collider.gameObject.GetComponent<Unit>();
+				}
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==true && mPCPlayer.pBoolShowAttack == true)
+				{
+					Unit mUnitTemp =  mRHInfo.collider.gameObject.GetComponent<Unit>();
+					
+					if(pListCharacters[mIntUnitIndex].pUnitEnemy.Equals(mUnitTemp))
+					{
+						pListCharacters[mIntUnitIndex].pBoolDoubleTap = true;
+					}
+					else
+					{
+						pListCharacters[mIntUnitIndex].pUnitEnemy = mUnitTemp;
+					}
 				}
 			}
 			

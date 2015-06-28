@@ -25,26 +25,52 @@ public class StateMachineUnitAction : MonoBehaviour {
 		if(pPCPlayer.pBoolShowAttack == true && SelectedChar ())
 		{
 			mBoolAttack = ShowAttack();
+			mBoolMove = false;
+			mBoolSpecial = false;
 		}
 		else if(pPCPlayer.pBoolShowMove == true && SelectedChar ())
 		{
 			mBoolMove = ShowMove ();
+			mBoolAttack = false;
+			mBoolSpecial = false;
 		}
 		else if(pPCPlayer.pBoolShowSpecial == true && SelectedChar ())
 		{
 			mBoolSpecial = ShowSpecial ();
+			mBoolAttack = false;
+			mBoolMove = false;
 		}
-		if(AttackDone ())
+		if(mBoolAttack)
 		{
-			Debug.Log ("State: Attack Done");
+			if(AttackDone ())
+			{
+				pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
+				pPCPlayer.pUnitActive.ResetValues();
+				Debug.Log ("State: Attack Done");
+				mBoolAttack = false;
+			}
 		}
-		/*if(mBoolpPCPlayer.pUnitActive.pGOTarget != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
+		if(mBoolMove)
 		{
-			//pPCPlayer.pUnitActive.
-		}*/
-		if(SpecialDone ())
+			if(MoveDone ())
+			{
+				pPCPlayer.pUnitActive.move();
+				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == pPCPlayer.pUnitActive.pGOTarget.transform.position)
+				{
+					pPCPlayer.pUnitActive.ResetValues();
+					Debug.Log ("State: Move Done");
+					mBoolMove = false;
+				}
+			}
+		}
+		if(mBoolSpecial)
 		{
-			Debug.Log ("State: Special Done");
+			if(SpecialDone ())
+			{
+				//TODO Special cases for each type of unit
+				Debug.Log ("State: Special Done");
+				mBoolSpecial = false;
+			}
 		}
 		if(pPCPlayer.pBoolEndTurn == true)
 		{
@@ -81,14 +107,27 @@ public class StateMachineUnitAction : MonoBehaviour {
 		return true;
 	}
 
-	bool AttackDone(){return false;}
+	bool AttackDone(){return pPCPlayer.pUnitActive.pUnitEnemy != null && pPCPlayer.pUnitActive.pBoolDoubleTap == true;}
 
-	bool MoveDone(){return false;}
+	bool MoveDone(){
+		if(pPCPlayer.pUnitActive.pGOTarget != null && !pPCPlayer.pUnitActive.pBoolDoubleTap)
+		{
+			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position-pPCPlayer.pUnitActive.mVec3Offset,
+			                                                 pPCPlayer.pUnitActive.pGOTarget.transform.position);
+			return false;
+		}
+		else if(pPCPlayer.pUnitActive.pGOTarget != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
+		{
+			return true;
+		}
+		return false;
+	}
 
 	bool SpecialDone(){return false;}
 
 	void PlayerChange(){
 		pIntTurnCount++;
 		pPCPlayer.pBoolEndTurn = false;
+		//TODO Switching player Jane?
 	}
 }

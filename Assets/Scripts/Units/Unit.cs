@@ -45,7 +45,7 @@ public class Unit : MonoBehaviour {
 
 	// Update is called once per frame
 	void Update () {
-		if(!pBoolEnemy && pGCController.pTransSeeker != null && pGOTarget != null && pGCController.pTransSeeker.position.Equals(pGOTarget.transform.position + mVec3Offset))
+		/*if(!pBoolEnemy && pGCController.pTransSeeker != null && pGOTarget != null && pGCController.pTransSeeker.position.Equals(pGOTarget.transform.position + mVec3Offset))
 		{
 			pGOTarget = null;
 			pGCController.pTransSeeker = null;
@@ -64,8 +64,19 @@ public class Unit : MonoBehaviour {
 			mBoolPathShown = false;
 			move();
 
-		}
+		}*/
 		
+	}
+
+	public void ResetValues()
+	{
+		pGOTarget = null;
+		pGCController.pTransSeeker = null;
+		pBoolDoubleTap = false;
+		mBoolPathShown = false;
+		mIntTargetIndex = 0;
+		
+		pAStarPathfinding.pListPath = new Vector3[0];
 	}
 
 	bool ShowPath()
@@ -170,4 +181,17 @@ public class Unit : MonoBehaviour {
 		public uint shackleTime;
 	}
 
+
+	public override bool Equals (object obj) {
+		if(obj == null)
+		{
+			return false;
+		}
+		if(ReferenceEquals(this, obj))
+		{
+			return true;
+		}
+		return false;
+
+	}
 }
