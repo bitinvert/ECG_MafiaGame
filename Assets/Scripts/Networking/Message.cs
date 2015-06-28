@@ -19,7 +19,7 @@ public class Message{
 	private float _damage;
 
 	public GameObject targetField { get { return _targetField; } }
-	private Vector3[] _targetField;
+	private GameObject _targetField;
 
 	public Message (ActionType action, float damage, GameObject targetField) 
 	{

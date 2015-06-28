@@ -209,7 +209,8 @@ public class Client : MonoBehaviour {
 				attackerUnit.pGOTarget = targetField;
 				attackerUnit.move(); 
 			}
-			attackerUnit.Attack(victim);
+			attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName == victim.name));
+
 			//how to handle die?
 		}
 	}
