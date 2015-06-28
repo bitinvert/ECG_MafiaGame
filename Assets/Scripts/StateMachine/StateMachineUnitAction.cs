@@ -61,6 +61,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 					Debug.Log ("State: Move Done");
 					mBoolMove = false;
 				}
+				//TODO Setting values for attacking
 			}
 		}
 		if(mBoolSpecial)
