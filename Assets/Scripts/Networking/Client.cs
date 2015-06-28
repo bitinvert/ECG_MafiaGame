@@ -18,21 +18,26 @@ public class Client : MonoBehaviour {
 	//string message;
 	public int turnNumber = 1;
 	public int playerToMakeTurn;
+	public Dictionary <string, Mission> missions { get { return _missions; } }
+	private Dictionary <string, Mission> _missions;
 	public LevelController levelController;	
 	public PlayerController playerController;
 	//public bool connected = false;
 	
 	void Awake(){
-		//Application.LoadLevel ("MainMenu");
+		Application.LoadLevel ("MainMenu1");
+		DontDestroyOnLoad (this);
 	}
 	
 	void Start()
 	{
 		PhotonNetwork.ConnectUsingSettings("0.1"); 	
 		photonView = GetComponent <PhotonView> ();
+		_missions = new Dictionary<string, Mission> ();
+		TestData ();
 		//connectionInfos ();
 	}
-	
+	/*
 	void OnGUI()
 	{
 
@@ -78,7 +83,27 @@ public class Client : MonoBehaviour {
 		}
 
 	}
-	
+	*/
+
+	/// <summary>
+	/// Create a new room(game) for a selected mission.
+	/// </summary>
+	/// <param name="missionName">Will be used as the game (room) name.</param>
+	public void CreateMission (string missionName) {
+		RoomOptions roomOptions = new RoomOptions() { isVisible = true, isOpen = true, maxPlayers = 2 };
+		if (PhotonNetwork.JoinOrCreateRoom (missionName, roomOptions, TypedLobby.Default)) {
+			Debug.Log ("game created");
+		}
+	}
+
+	/// <summary>
+	/// Joins a mission given by its name.
+	/// </summary>
+	/// <param name="missionName">Name of the mission.</param>
+	public void JoinMission (string missionName) {
+		PhotonNetwork.JoinRoom(missionName);
+	}
+
 	private void twoPlayersCheck(){
 		if (PhotonNetwork.countOfPlayersInRooms == 2)
 			Application.LoadLevel ("MainMenu1");
@@ -118,6 +143,7 @@ public class Client : MonoBehaviour {
 	void OnJoinedRoom()
 	{
 		if (PhotonNetwork.playerList.Length == 2) {
+			Debug.Log ("map instantiate");
 			string mapFields = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_singleFields.xml");
 			string mapPrefab = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_prefabHolder.xml");
 			photonView.RPC ("InstantiateMap", PhotonTargets.All, mapPrefab, mapFields);
@@ -235,6 +261,13 @@ public class Client : MonoBehaviour {
 			movedUnit.move ();
 		}
 	}
-	
+
+	private void TestData () {
+		//shouldn't be done like that; load .txt file
+		string pDesc = "Sir, my informer Dino Scarbonelli told me about a huge load of illegal merchandise at the harbour area. There are at least three safes full of jewelry, drugs and hard cash. We should get there quick, confiscate the stuff and bust the bad guys. I think we need some specialists for this task. At least an officer who knows how to deal with a picklock and some protection. Crack the safes. Get the illegal merchandise to your escape point. Protect the carriers. If they die, their treasure is lost.";
+		string mDesc = "Hey Boss, our man at the docks Dino Scarbonelli told me about an opportunity to make some money. There are at least three safes full of jewelry, drugs and hard cash  located at the harbor area. Which of our guys are the right ones for this job? You might need a safecracker and some gun power. Be aware of the cops, it might be a trap. Crack the safes. Get the loot to your escape point. Protect the carriers. If they die, their treasure is lost. ";
+		Mission harbor = new Mission ("The Harbor Job", mDesc, pDesc);
+		missions.Add (harbor.missionId, harbor);
+	}
 	
 }
