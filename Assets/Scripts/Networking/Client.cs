@@ -23,6 +23,7 @@ public class Client : MonoBehaviour {
 	public LevelController levelController;	
 	public PlayerController playerController;
 	//public bool connected = false;
+	//public bool map;
 	
 	void Awake(){
 		Application.LoadLevel ("MainMenu1");
@@ -68,6 +69,7 @@ public class Client : MonoBehaviour {
 				}
 			}
 
+
 		}
 		connectionInfos ();
 		if (GUI.Button (new Rect(50, 50, 100, 100), "Spielzug beenden")) {
@@ -81,7 +83,9 @@ public class Client : MonoBehaviour {
 				Debug.Log ("Ich war nicht dran. " + playerToMakeTurn + " war dran.");
 			}
 		}
-
+		if (map) {
+			GUI.Label (new Rect (100, 100, 200, 200), "RPC map instantiate");
+		}
 	}
 	*/
 
@@ -142,11 +146,16 @@ public class Client : MonoBehaviour {
 	
 	void OnJoinedRoom()
 	{
+		Debug.Log (PhotonNetwork.playerList.Length);
 		if (PhotonNetwork.playerList.Length == 2) {
 			Debug.Log ("map instantiate");
-			string mapFields = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_singleFields.xml");
-			string mapPrefab = System.IO.File.ReadAllText(@"Assets/XmlLevels/TestWith3DModels_prefabHolder.xml");
-			photonView.RPC ("InstantiateMap", PhotonTargets.All, mapPrefab, mapFields);
+			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
+			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
+			//string strmapFields = System.IO.File.ReadAllText(@"Assets/Resources/TestWith3DModels_singleFields.xml");
+			//string strmapPrefab = System.IO.File.ReadAllText(@"Assets/Resources/TestWith3DModels_prefabHolder.xml");
+
+			photonView.RPC ("InstantiateMap", PhotonTargets.AllViaServer, mapPrefab.text, mapFields.text);
+			//photonView.RPC ("InstantiateMap", PhotonTargets.All, strmapPrefab, strmapFields);
 		}
 	}
 	/*
@@ -198,6 +207,8 @@ public class Client : MonoBehaviour {
 	[PunRPC]
 	void InstantiateMap (string mapPrefabs, string mapFields)
 	{
+		Debug.Log ("instantiated");
+		//map = true;
 		levelController.LoadLevel (mapPrefabs, mapFields);
 		//The player who opened the game will start
 		playerToMakeTurn = 1;
