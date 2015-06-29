@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="Windows-1252"?>
+<xmlLevel xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <prefabholders>
+    <prefabholder name="Floor5x5And2x2Deco">
+      <prefab>Floor5x5And2x2Deco</prefab>
+      <x>1</x>
+      <z>1</z>
+    </prefabholder>
+    <prefabholder name="Billiard2x2">
+      <prefab>Billiard2x2;Deco2x2</prefab>
+      <x>3</x>
+      <z>2</z>
+    </prefabholder>
+    <prefabholder name="Wall1x7WithDoor">
+      <prefab>Wall1x7WithDoor</prefab>
+      <x>6</x>
+      <z>0</z>
+    </prefabholder>
+    <prefabholder name="Wall1x5">
+      <prefab>Wall1x5</prefab>
+      <x>1</x>
+      <z>0</z>
+    </prefabholder>
+    <prefabholder name="Wall1x5_1">
+      <prefab>Wall1x5</prefab>
+      <x>1</x>
+      <z>6</z>
+    </prefabholder>
+    <prefabholder name="Wall1x5_2">
+      <prefab>Wall1x5</prefab>
+      <x>7</x>
+      <z>0</z>
+    </prefabholder>
+    <prefabholder name="Wall1x5_3">
+      <prefab>Wall1x5</prefab>
+      <x>7</x>
+      <z>6</z>
+    </prefabholder>
+    <prefabholder name="Wall1x7_1">
+      <prefab>Wall1x7</prefab>
+      <x>12</x>
+      <z>0</z>
+    </prefabholder>
+    <prefabholder name="Floor5x5">
+      <prefab>Floor5x5</prefab>
+      <x>7</x>
+      <z>1</z>
+    </prefabholder>
+    <prefabholder name="CraneDeco">
+      <prefab>CraneDeco</prefab>
+      <x>13</x>
+      <z>3</z>
+    </prefabholder>
+    <prefabholder name="Wall1x7WithDoor 1">
+      <prefab>Wall1x7WithDoor</prefab>
+      <x>0</x>
+      <z>0</z>
+    </prefabholder>
+  </prefabholders>
+</xmlLevel>
