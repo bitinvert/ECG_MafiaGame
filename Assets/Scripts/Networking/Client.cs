@@ -177,6 +177,15 @@ public class Client : MonoBehaviour {
 	}
 	*/
 
+	void playerChange () {
+		if (isMyTurn) {
+			PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
+			playerToMakeTurn = nextPlayer.ID;
+			photonView.RPC ("HandOverTurn", nextPlayer, playerToMakeTurn);
+		}
+	}
+
+
 	/// <summary>
 	/// Saves the player move in a message. The message's action will indicate
 	/// what kind of rpc will be called for the opponent.
@@ -213,11 +222,14 @@ public class Client : MonoBehaviour {
 	[PunRPC]
 	void InstantiateMap (string mapPrefabs, string mapFields)
 	{
-		Debug.Log ("instantiated");
-		//map = true;
 		levelController.LoadLevel (mapPrefabs, mapFields);
 		//The player who opened the game will start
 		playerToMakeTurn = 1;
+		Application.LoadLevel ("GameScene");
+		DontDestroyOnLoad (this);
+		Debug.Log ("instantiated");
+		//map = true;
+
 	}
 
 	/// <summary>
