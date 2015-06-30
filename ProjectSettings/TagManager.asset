@@ -8,6 +8,7 @@ TagManager:
   - Menu
   - Client
   - Field
+  - LevelController
   layers:
   - Default
   - TransparentFX

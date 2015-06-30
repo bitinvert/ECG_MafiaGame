@@ -34,6 +34,8 @@ public class Client : MonoBehaviour {
 	void Awake(){
 		Application.LoadLevel ("MainMenu1");
 		DontDestroyOnLoad (this);
+		DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
+
 	}
 
 	void Start()
@@ -46,7 +48,12 @@ public class Client : MonoBehaviour {
 	}
 
 	void OnLevelWasLoaded (int level) {
-		//TODO
+
+		if (level == 2) {
+			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
+			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
+			photonView.RPC ("InstantiateMap", PhotonTargets.AllViaServer, mapPrefab.text, mapFields.text);
+		}
 	}
 	/*
 	void OnGUI()
@@ -118,12 +125,20 @@ public class Client : MonoBehaviour {
 		PhotonNetwork.JoinRoom(missionName);
 	}
 
+	/// <summary>
+	/// Check if there are currently two players in the game.
+	/// </summary>
+	/// <value><c>true</c> if there are two players return true; otherwise, <c>false</c>.</value>
 	public bool CheckTwoPlayers {
 		get { 
 			return PhotonNetwork.playerList.Length == 2;
 		}
 	}
-	
+
+	/// <summary>
+	/// Check if it's currently the players turn.
+	/// </summary>
+	/// <value><c>true</c> if it's the player's turn return true; otherwise, <c>false</c>.</value>
 	public bool IsMyTurn {
 		get { 
 			return playerToMakeTurn == PhotonNetwork.player.ID; 
@@ -157,31 +172,14 @@ public class Client : MonoBehaviour {
 	
 	void OnJoinedRoom()
 	{
-		Debug.Log (PhotonNetwork.playerList.Length);
 		if (CheckTwoPlayers) {
-			Debug.Log ("map instantiate");
-			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
-			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
-			//string strmapFields = System.IO.File.ReadAllText(@"Assets/Resources/TestWith3DModels_singleFields.xml");
-			//string strmapPrefab = System.IO.File.ReadAllText(@"Assets/Resources/TestWith3DModels_prefabHolder.xml");
-
-			photonView.RPC ("InstantiateMap", PhotonTargets.AllViaServer, mapPrefab.text, mapFields.text);
-			//photonView.RPC ("InstantiateMap", PhotonTargets.All, strmapPrefab, strmapFields);
+			photonView.RPC ("SwitchToGame", PhotonTargets.All);
 		}
 	}
-	/*
-	void OnLevelWasLoaded( int level )
-	{
-		Debug.Log( "OnLevelWasLoaded: " + Application.loadedLevelName );
-		
-		//Resume the Photon message queue so we get all the updates.
-		PhotonNetwork.isMessageQueueRunning = true;
-		
-		//Time is frozen at the end of a round, so make sure that we resume it when we load a new level
-		Time.timeScale = 1f;
-	}
-	*/
 
+	/// <summary>
+	/// Indicate player change by setting the playertomaketurn to your oppent.
+	/// </summary>
 	void playerChange () {
 		if (IsMyTurn) {
 			PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
@@ -218,6 +216,18 @@ public class Client : MonoBehaviour {
 
 		}
 	}
+
+	/// <summary>
+	/// Switch to Game Scene.
+	/// </summary>
+	[PunRPC]
+	void SwitchToGame () 
+	{
+		Application.LoadLevel ("GameScene");
+		DontDestroyOnLoad (this);
+		DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
+
+	}
 	
 	/// <summary>
 	/// Client instantiates received map from server.
@@ -227,6 +237,7 @@ public class Client : MonoBehaviour {
 	[PunRPC]
 	void InstantiateMap (string mapPrefabs, string mapFields)
 	{
+
 		//Application.LoadLevel ("GameScene");
 		//DontDestroyOnLoad (this);
 		levelController.LoadLevel (mapPrefabs, mapFields);
