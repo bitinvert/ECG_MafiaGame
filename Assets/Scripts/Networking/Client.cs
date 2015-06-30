@@ -44,6 +44,10 @@ public class Client : MonoBehaviour {
 		TestData ();
 		//connectionInfos ();
 	}
+
+	void OnLevelWasLoaded (int level) {
+		//TODO
+	}
 	/*
 	void OnGUI()
 	{
@@ -114,12 +118,13 @@ public class Client : MonoBehaviour {
 		PhotonNetwork.JoinRoom(missionName);
 	}
 
-	private void twoPlayersCheck(){
-		if (PhotonNetwork.countOfPlayersInRooms == 2)
-			Application.LoadLevel ("MainMenu1");
+	public bool CheckTwoPlayers {
+		get { 
+			return PhotonNetwork.playerList.Length == 2;
+		}
 	}
 	
-	public bool isMyTurn {
+	public bool IsMyTurn {
 		get { 
 			return playerToMakeTurn == PhotonNetwork.player.ID; 
 		}
@@ -153,7 +158,7 @@ public class Client : MonoBehaviour {
 	void OnJoinedRoom()
 	{
 		Debug.Log (PhotonNetwork.playerList.Length);
-		if (PhotonNetwork.playerList.Length == 2) {
+		if (CheckTwoPlayers) {
 			Debug.Log ("map instantiate");
 			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
 			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
@@ -178,7 +183,7 @@ public class Client : MonoBehaviour {
 	*/
 
 	void playerChange () {
-		if (isMyTurn) {
+		if (IsMyTurn) {
 			PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
 			playerToMakeTurn = nextPlayer.ID;
 			photonView.RPC ("HandOverTurn", nextPlayer, playerToMakeTurn);
@@ -222,11 +227,12 @@ public class Client : MonoBehaviour {
 	[PunRPC]
 	void InstantiateMap (string mapPrefabs, string mapFields)
 	{
+		//Application.LoadLevel ("GameScene");
+		//DontDestroyOnLoad (this);
 		levelController.LoadLevel (mapPrefabs, mapFields);
 		//The player who opened the game will start
 		playerToMakeTurn = 1;
-		Application.LoadLevel ("GameScene");
-		DontDestroyOnLoad (this);
+
 		Debug.Log ("instantiated");
 		//map = true;
 
