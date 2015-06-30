@@ -16,20 +16,26 @@ public class Client : MonoBehaviour {
 	//string username;
 	//string password;
 	//string message;
-	public int turnNumber = 1;
-	public int playerToMakeTurn;
+
 	public Dictionary <string, Mission> missions { get { return _missions; } }
 	private Dictionary <string, Mission> _missions;
+
+	public User user { get { return _user; } }
+	private User _user;
+
+	public int turnNumber = 1;
+	public int playerToMakeTurn;
+
 	public LevelController levelController;	
 	public PlayerController playerController;
 	//public bool connected = false;
 	//public bool map;
-	
+
 	void Awake(){
 		Application.LoadLevel ("MainMenu1");
 		DontDestroyOnLoad (this);
 	}
-	
+
 	void Start()
 	{
 		PhotonNetwork.ConnectUsingSettings("0.1"); 	
@@ -83,8 +89,8 @@ public class Client : MonoBehaviour {
 				Debug.Log ("Ich war nicht dran. " + playerToMakeTurn + " war dran.");
 			}
 		}
-		if (map) {
-			GUI.Label (new Rect (100, 100, 200, 200), "RPC map instantiate");
+		if (user != null) {
+			GUI.Label (new Rect (100, 100, 200, 200), "Hallo " + user.username);
 		}
 	}
 	*/
@@ -279,6 +285,9 @@ public class Client : MonoBehaviour {
 		string mDesc = "Hey Boss, our man at the docks Dino Scarbonelli told me about an opportunity to make some money. There are at least three safes full of jewelry, drugs and hard cash  located at the harbor area. Which of our guys are the right ones for this job? You might need a safecracker and some gun power. Be aware of the cops, it might be a trap. Crack the safes. Get the loot to your escape point. Protect the carriers. If they die, their treasure is lost. ";
 		Mission harbor = new Mission ("The Harbor Job", mDesc, pDesc);
 		missions.Add (harbor.missionId, harbor);
+
+		TextAsset userFile = (TextAsset)Resources.Load("user", typeof(TextAsset));
+		_user = new User (userFile.text);
 	}
 	
 }

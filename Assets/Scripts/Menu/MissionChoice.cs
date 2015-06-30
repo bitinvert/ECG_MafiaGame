@@ -15,7 +15,6 @@ public class MissionChoice : MonoBehaviour {
 		Client client = (Client)go.GetComponent (typeof(Client));
 
 		if (client != null) {
-			Debug.Log (missionName);
 			client.CreateMission (missionName);
 		} else {
 			Debug.Log ("no client");
