@@ -6,6 +6,9 @@ public class GridOverlay : MonoBehaviour {
 	[SerializeField]
 	private GameObject pathfinding; 
 
+	[SerializeField]
+	private PlayerController playerController;
+
 	private Grid grid;
 	//private AStar astar;
 	private FloodFill floodFill;
@@ -79,6 +82,22 @@ public class GridOverlay : MonoBehaviour {
 			
 			lineMaterial.hideFlags = HideFlags.HideAndDontSave;
 			lineMaterial.shader.hideFlags = HideFlags.HideAndDontSave;}
+	}
+
+	void Update() 
+	{
+		if (playerController.pBoolShowAttack) 
+		{
+			walkColor = new Color(4.0f, 0.1f, 0.1f, 0.5f);
+
+		} else if (playerController.pBoolShowMove) 
+		{
+			walkColor = new Color(0.0f, 0.7f, 0.9f, 0.5f);
+
+		} else if (playerController.pBoolShowSpecial) 
+		{
+			walkColor = new Color(0.2f, 0.9f, 0.2f, 0.5f);
+		}
 	}
 
 	void OnPostRender()  
