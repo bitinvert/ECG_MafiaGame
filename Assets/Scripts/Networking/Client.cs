@@ -329,9 +329,9 @@ public class Client : MonoBehaviour {
 
 	private void TestData () {
 		//shouldn't be done like that; load .txt file
-		string pDesc = "Sir, my informer Dino Scarbonelli told me about a huge load of illegal merchandise at the harbour area. There are at least three safes full of jewelry, drugs and hard cash. We should get there quick, confiscate the stuff and bust the bad guys. I think we need some specialists for this task. At least an officer who knows how to deal with a picklock and some protection. Crack the safes. Get the illegal merchandise to your escape point. Protect the carriers. If they die, their treasure is lost.";
-		string mDesc = "Hey Boss, our man at the docks Dino Scarbonelli told me about an opportunity to make some money. There are at least three safes full of jewelry, drugs and hard cash  located at the harbor area. Which of our guys are the right ones for this job? You might need a safecracker and some gun power. Be aware of the cops, it might be a trap. Crack the safes. Get the loot to your escape point. Protect the carriers. If they die, their treasure is lost. ";
-		Mission harbor = new Mission ("The Harbor Job", mDesc, pDesc);
+		TextAsset pDesc = (TextAsset)Resources.Load("TheHarborJob_desc_p", typeof(TextAsset));
+		TextAsset mDesc = (TextAsset)Resources.Load("TheHarborJob_desc_m", typeof(TextAsset));
+		Mission harbor = new Mission ("The Harbor Job", mDesc.text, pDesc.text);
 		missions.Add (harbor.missionId, harbor);
 
 		TextAsset userFile = (TextAsset)Resources.Load("user", typeof(TextAsset));
