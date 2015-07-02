@@ -10,12 +10,6 @@ public class Client : MonoBehaviour {
 	private int maxClients = 2;
 	
 	private PhotonView photonView;
-	
-	//public bool loggedIn = false;
-	//public bool registered = false;
-	//string username;
-	//string password;
-	//string message;
 
 	public Dictionary <string, Mission> missions { get { return _missions; } }
 	private Dictionary <string, Mission> _missions;
@@ -26,18 +20,12 @@ public class Client : MonoBehaviour {
 	public int turnNumber = 1;
 	public int playerToMakeTurn;
 
-	public string opponentName;
-
-	//public LevelController levelController;	
-	//public PlayerController playerController;
-	//public bool connected = false;
-	//public bool map;
+	public string opponentName { get { return _opponentName; } }
+	private string _opponentName;
 
 	void Awake(){
 		Application.LoadLevel ("MainMenu1");
 		DontDestroyOnLoad (this);
-		//DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
-
 	}
 
 	void Start()
@@ -47,16 +35,15 @@ public class Client : MonoBehaviour {
 		_missions = new Dictionary<string, Mission> ();
 		TestData ();
 		PhotonNetwork.playerName = user.username;
-		//connectionInfos ();
 	}
 
 	void OnLevelWasLoaded (int level) {
 
 		if (level == 2) {
 			if (PhotonNetwork.player.ID == 1) {
-				opponentName = PhotonNetwork.player.Get (2).name;
+				_opponentName = PhotonNetwork.player.Get (2).name;
 			} else {
-				opponentName = PhotonNetwork.player.Get (1).name;
+				_opponentName = PhotonNetwork.player.Get (1).name;
 			}
 			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
 			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
@@ -152,24 +139,27 @@ public class Client : MonoBehaviour {
 			return playerToMakeTurn == PhotonNetwork.player.ID; 
 		}
 	}
-	
-	private void connectionInfos(){
-		showServerInformation(); 	
-		showClientInformation();
-	}
-	
-	private void showClientInformation(){
-		//GUILayout.Label("Clients: " + Network.connections.Length + "/" + maxClients);
-		GUILayout.Label("Clients in Lobby: " + PhotonNetwork.countOfPlayers + "/" + maxClients);
-		foreach(NetworkPlayer p in Network.connections){
-			GUILayout.Label(" Player from ip/port: " + p.ipAddress + "/" + p.port);
+
+	/// <summary>
+	/// Check if the user is part of the Mafia
+	/// </summary>
+	/// <value><c>true</c> if the user is Mafia; otherwise, <c>false</c>.</value>
+	public bool IsMafia {
+		get {
+			return user.fraction == Fraction.MAFIA;
 		}
 	}
-	
-	private void showServerInformation(){
-		GUILayout.Label("IP: " + Network.player.ipAddress + " Port: " + Network.player.port);
-		
+
+	/// <summary>
+	/// Check if the user is part of the Police
+	/// </summary>
+	/// <value><c>true</c> if the user is Police; otherwise, <c>false</c>.</value>
+	public bool IsPolice {
+		get {
+			return user.fraction == Fraction.POLICE;
+		}
 	}
+
 	
 	void OnReceivedRoomListUpdate()
 	{
@@ -233,8 +223,6 @@ public class Client : MonoBehaviour {
 	{
 		Application.LoadLevel ("GameScene");
 		DontDestroyOnLoad (this);
-		//DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
-
 	}
 	
 	/// <summary>
@@ -245,19 +233,12 @@ public class Client : MonoBehaviour {
 	[PunRPC]
 	void InstantiateMap (string mapPrefabs, string mapFields)
 	{
-
-		//Application.LoadLevel ("GameScene");
-		//DontDestroyOnLoad (this);
 		GameObject go = GameObject.FindWithTag ("LevelController");
 		LevelController levelController = (LevelController)go.GetComponent (typeof(LevelController));
 		levelController.LoadLevel (mapPrefabs, mapFields);
 		//The player who opened the game will start
 		playerToMakeTurn = 1;
-
-
 		Debug.Log ("instantiated");
-		//map = true;
-
 	}
 
 	/// <summary>
@@ -335,7 +316,8 @@ public class Client : MonoBehaviour {
 		missions.Add (harbor.missionId, harbor);
 
 		TextAsset userFile = (TextAsset)Resources.Load("user", typeof(TextAsset));
-		_user = new User (userFile.text);
+		string [] userData = userFile.text.Split (new string [] {"="}, StringSplitOptions.RemoveEmptyEntries);
+		_user = new User (userData[0], userData[1]);
 	}
 	
 }
