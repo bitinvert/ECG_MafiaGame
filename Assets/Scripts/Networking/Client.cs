@@ -26,6 +26,8 @@ public class Client : MonoBehaviour {
 	public int turnNumber = 1;
 	public int playerToMakeTurn;
 
+	public string opponentName;
+
 	//public LevelController levelController;	
 	//public PlayerController playerController;
 	//public bool connected = false;
@@ -44,12 +46,18 @@ public class Client : MonoBehaviour {
 		photonView = GetComponent <PhotonView> ();
 		_missions = new Dictionary<string, Mission> ();
 		TestData ();
+		PhotonNetwork.playerName = user.username;
 		//connectionInfos ();
 	}
 
 	void OnLevelWasLoaded (int level) {
 
 		if (level == 2) {
+			if (PhotonNetwork.player.ID == 1) {
+				opponentName = PhotonNetwork.player.Get (2).name;
+			} else {
+				opponentName = PhotonNetwork.player.Get (1).name;
+			}
 			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
 			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
 			photonView.RPC ("InstantiateMap", PhotonTargets.Others, mapPrefab.text, mapFields.text);
@@ -245,6 +253,8 @@ public class Client : MonoBehaviour {
 		levelController.LoadLevel (mapPrefabs, mapFields);
 		//The player who opened the game will start
 		playerToMakeTurn = 1;
+
+
 		Debug.Log ("instantiated");
 		//map = true;
 
