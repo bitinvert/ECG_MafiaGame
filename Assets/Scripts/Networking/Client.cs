@@ -26,15 +26,15 @@ public class Client : MonoBehaviour {
 	public int turnNumber = 1;
 	public int playerToMakeTurn;
 
-	public LevelController levelController;	
-	public PlayerController playerController;
+	//public LevelController levelController;	
+	//public PlayerController playerController;
 	//public bool connected = false;
 	//public bool map;
 
 	void Awake(){
 		Application.LoadLevel ("MainMenu1");
 		DontDestroyOnLoad (this);
-		DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
+		//DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
 
 	}
 
@@ -52,7 +52,7 @@ public class Client : MonoBehaviour {
 		if (level == 2) {
 			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
 			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
-			photonView.RPC ("InstantiateMap", PhotonTargets.AllViaServer, mapPrefab.text, mapFields.text);
+			photonView.RPC ("InstantiateMap", PhotonTargets.Others, mapPrefab.text, mapFields.text);
 		}
 	}
 	/*
@@ -225,7 +225,7 @@ public class Client : MonoBehaviour {
 	{
 		Application.LoadLevel ("GameScene");
 		DontDestroyOnLoad (this);
-		DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
+		//DontDestroyOnLoad (GameObject.FindWithTag ("LevelController"));
 
 	}
 	
@@ -240,10 +240,11 @@ public class Client : MonoBehaviour {
 
 		//Application.LoadLevel ("GameScene");
 		//DontDestroyOnLoad (this);
+		GameObject go = GameObject.FindWithTag ("LevelController");
+		LevelController levelController = (LevelController)go.GetComponent (typeof(LevelController));
 		levelController.LoadLevel (mapPrefabs, mapFields);
 		//The player who opened the game will start
 		playerToMakeTurn = 1;
-
 		Debug.Log ("instantiated");
 		//map = true;
 
@@ -273,6 +274,10 @@ public class Client : MonoBehaviour {
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
 		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
+
+		GameObject go = GameObject.FindWithTag ("PlayerController");
+		PlayerController playerController = (PlayerController)go.GetComponent (typeof(PlayerController));
+
 		if (diff.Hours > 24) {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
@@ -299,6 +304,10 @@ public class Client : MonoBehaviour {
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
 		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
+
+		GameObject go = GameObject.FindWithTag ("PlayerController");
+		PlayerController playerController = (PlayerController)go.GetComponent (typeof(PlayerController));
+
 		if (diff.Hours > 24) {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
