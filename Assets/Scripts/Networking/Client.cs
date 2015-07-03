@@ -178,7 +178,7 @@ public class Client : MonoBehaviour {
 	/// <summary>
 	/// Indicate player change by setting the playertomaketurn to your oppent.
 	/// </summary>
-	void playerChange () {
+	public void playerChange () {
 		if (IsMyTurn) {
 			PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
 			playerToMakeTurn = nextPlayer.ID;
@@ -192,7 +192,7 @@ public class Client : MonoBehaviour {
 	/// what kind of rpc will be called for the opponent.
 	/// </summary>
 	/// <param name="message">Message.</param>
-	void SavePlayerMove (Message message) 
+	public void SavePlayerMove (Message message) 
 	{
 		string timeStamp = DateTime.Now.ToString ();
 		string actionType = message.action.ToString();

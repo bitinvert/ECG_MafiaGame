@@ -8,6 +8,8 @@ public class StateMachineUnitAction : MonoBehaviour {
 	public PlayerController pPCPlayer;
 	public int pIntTurnCount;
 
+    
+    private Client mClientPlayer;
 	private bool mBoolMove = false;
 	private bool mBoolAttack = false;
 	private bool mBoolSpecial = false;
@@ -15,6 +17,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		pPCPlayer = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
+        mClientPlayer = Object.FindObjectOfType(typeof(Client)) as Client;
 		pIntTurnCount = 0;
 	}
 	
@@ -59,6 +62,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 				{
 					pPCPlayer.pUnitActive.ResetValues();
 					Debug.Log ("State: Move Done");
+					//mClientPlayer.SavePlayerMove();
 					mBoolMove = false;
 				}
 				//TODO Setting values for attacking
@@ -128,6 +132,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 
 	void PlayerChange(){
 		pIntTurnCount++;
+        mClientPlayer.playerChange();
 		pPCPlayer.pBoolEndTurn = false;
 		//TODO Switching player Jane?
 	}

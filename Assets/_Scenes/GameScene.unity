@@ -187,7 +187,7 @@ MonoBehaviour:
   pLayerUnwalkableMask:
     serializedVersion: 2
     m_Bits: 256
-  pVec3GridWorldSize: {x: 7, y: 9}
+  pVec3GridWorldSize: {x: 30, y: 30}
   pFloatGridRadius: .5
   mIntSizeX: 0
   mIntSizeY: 0
@@ -493,11 +493,11 @@ Prefab:
       objectReference: {fileID: 818873794}
     - target: {fileID: 22435474, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .699999988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22435474, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
