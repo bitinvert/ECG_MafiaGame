@@ -217,7 +217,7 @@ GameObject:
   - 222: {fileID: 126150460}
   - 114: {fileID: 126150459}
   m_Layer: 5
-  m_Name: Mafia_schlaeger
+  m_Name: Mafia_Bruiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -413,6 +413,67 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 363118795}
+--- !u!1 &374139429
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 374139430}
+  - 222: {fileID: 374139432}
+  - 114: {fileID: 374139431}
+  m_Layer: 5
+  m_Name: Police_Gunslinger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &374139430
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374139429}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 556890207}
+  m_RootOrder: 2
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 45.9998322, y: -43.9999008}
+  m_SizeDelta: {x: 400, y: 2706.00024}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &374139431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374139429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12b7e80594f196045b2a37957bb9e8fb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &374139432
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 374139429}
 --- !u!1 &393410991
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,6 +598,41 @@ Transform:
   - {fileID: 580996438}
   m_Father: {fileID: 0}
   m_RootOrder: 13
+--- !u!1 &556890206
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 556890207}
+  m_Layer: 5
+  m_Name: Still Missing
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &556890207
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 556890206}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1125791138}
+  - {fileID: 1253695454}
+  - {fileID: 374139430}
+  m_Father: {fileID: 641681553}
+  m_RootOrder: 9
+  m_AnchorMin: {x: .5, y: .5}
+  m_AnchorMax: {x: .5, y: .5}
+  m_AnchoredPosition: {x: 0, y: -125.000008}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: .5, y: .5}
 --- !u!1001 &580996437
 Prefab:
   m_ObjectHideFlags: 0
@@ -725,7 +821,7 @@ GameObject:
   - 222: {fileID: 704743827}
   - 114: {fileID: 704743826}
   m_Layer: 5
-  m_Name: Mafia_fern_schwach
+  m_Name: Mafia_Gunslinger
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -866,7 +962,7 @@ GameObject:
   - 222: {fileID: 785796709}
   - 114: {fileID: 785796708}
   m_Layer: 5
-  m_Name: Mafia_nahkaempferin
+  m_Name: Mafia_Slicer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,7 +1127,7 @@ GameObject:
   - 222: {fileID: 918058991}
   - 114: {fileID: 918058990}
   m_Layer: 5
-  m_Name: Police_nah_schwach
+  m_Name: Police_Slicer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1326,6 +1422,67 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
   m_IsPrefabParent: 0
+--- !u!1 &1125791137
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1125791138}
+  - 222: {fileID: 1125791140}
+  - 114: {fileID: 1125791139}
+  m_Layer: 5
+  m_Name: Mafia_Medic
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1125791138
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1125791137}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 556890207}
+  m_RootOrder: 0
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 45.9998322, y: -43.9999313}
+  m_SizeDelta: {x: 400, y: 2706.00024}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1125791139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1125791137}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12b7e80594f196045b2a37957bb9e8fb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1125791140
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1125791137}
 --- !u!1 &1202840967
 GameObject:
   m_ObjectHideFlags: 0
@@ -1466,6 +1623,67 @@ CanvasRenderer:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1202840967}
+--- !u!1 &1253695453
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 224: {fileID: 1253695454}
+  - 222: {fileID: 1253695456}
+  - 114: {fileID: 1253695455}
+  m_Layer: 5
+  m_Name: Mafia_Beagleboy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1253695454
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253695453}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 556890207}
+  m_RootOrder: 1
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 45.9998322, y: -43.9999008}
+  m_SizeDelta: {x: 400, y: 2706.00024}
+  m_Pivot: {x: .5, y: .5}
+--- !u!114 &1253695455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253695453}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -765806418, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 12b7e80594f196045b2a37957bb9e8fb, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 1
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+--- !u!222 &1253695456
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1253695453}
 --- !u!114 &1323206079 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11490058, guid: 4c07d8e6c32fada40b1d8f8386c8357e,
@@ -1541,7 +1759,7 @@ GameObject:
   - 222: {fileID: 1488567083}
   - 114: {fileID: 1488567082}
   m_Layer: 5
-  m_Name: Police_nah_stark
+  m_Name: Police_Bruiser
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1655,7 +1873,7 @@ GameObject:
   - 222: {fileID: 1590655399}
   - 114: {fileID: 1590655398}
   m_Layer: 5
-  m_Name: Mafia_schuetzin
+  m_Name: Mafia_Rifleman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1778,18 +1996,18 @@ MonoBehaviour:
   lifebar: {fileID: 226187357}
   life: {fileID: 1323206079}
   avatars:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1253695453}
+  - {fileID: 2126648758}
+  - {fileID: 126150457}
+  - {fileID: 1488567080}
+  - {fileID: 1125791137}
+  - {fileID: 1817718287}
+  - {fileID: 704743824}
+  - {fileID: 374139429}
+  - {fileID: 1590655396}
+  - {fileID: 2024022569}
+  - {fileID: 785796706}
+  - {fileID: 918058988}
 --- !u!1001 &1680225010
 Prefab:
   m_ObjectHideFlags: 0
@@ -1871,7 +2089,7 @@ GameObject:
   - 222: {fileID: 1817718290}
   - 114: {fileID: 1817718289}
   m_Layer: 5
-  m_Name: Police_medic
+  m_Name: Police_Medic
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2070,7 +2288,7 @@ GameObject:
   - 222: {fileID: 2024022572}
   - 114: {fileID: 2024022571}
   m_Layer: 5
-  m_Name: Police_fern_stark
+  m_Name: Police_Rifleman
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2191,7 +2409,7 @@ GameObject:
   - 222: {fileID: 2126648761}
   - 114: {fileID: 2126648760}
   m_Layer: 5
-  m_Name: Police_knacker
+  m_Name: Police_Beagleboy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

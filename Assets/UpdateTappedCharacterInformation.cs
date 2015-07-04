@@ -17,17 +17,30 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 	void Update () {
 		tapped = pc.pUnitTapped;
 
+		/**
+		 * Deactivate all Pictures
+		 */
 		for (int i = 0; i < 12; i++) {
-			avatars[0].SetActive(false);
+			avatars[i].SetActive(false);
 		}
 
+		/**
+		 * If none Character is tapped, deactivate
+		 * the whole CharacterInfo.
+		 */
 		if (tapped == null) 
 		{
-
 			charInfo.SetActive(false);
 
 		} else 
 		{
+			/**
+			 * Check the Class and Fraction of the
+			 * tapped Character.
+			 * Activate the specific Fraction_Class
+			 * Avatar.
+			 */ 
+		
 			charInfo.SetActive(true);
 
 			if(tapped.GetType() == typeof(Beagleboy))
@@ -35,10 +48,11 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 				if(tapped.pFacFaction.Equals("Mafia")) 
 				{
 					avatars[0].SetActive(true);
-
+					Debug.Log (0);
 				} else 
 				{
 					avatars[1].SetActive(true);
+					Debug.Log (1);
 				}
 
 			} else if(tapped.GetType() == typeof(Bruiser))
@@ -46,10 +60,11 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 				if(tapped.pFacFaction.Equals("Mafia")) 
 				{
 					avatars[2].SetActive(true);
-
+					Debug.Log (2);
 				} else 
 				{
 					avatars[3].SetActive(true);
+					Debug.Log (3);
 				}
 				
 			} else if(tapped.GetType() == typeof(Medic))
