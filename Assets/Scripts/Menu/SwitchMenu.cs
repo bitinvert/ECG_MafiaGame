@@ -33,10 +33,10 @@ public class SwitchMenu : MonoBehaviour {
 			case "LessDrawCallsTest": LessDrawCallsTest();
 				break;
 
-			case "OverlayStatisticBack": OverlayStatisticBack();
+			case "OverlayBack": OverlayStatisticBack();
 				break;
 
-			case "OverlayStatisticTo": OverlayStatisticTo();
+			case "OverlayTo": OverlayStatisticTo();
 				break;
 
 			default: break;
