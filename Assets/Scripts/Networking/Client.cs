@@ -323,8 +323,11 @@ public class Client : MonoBehaviour {
 		} else {
 			Unit movedUnit = playerController.pListUnits.Find (x => x.pStringName.Equals(character));
 			movedUnit.pAStarPathfinding.FindPath(movedUnit.transform.position, targetField, movedUnit.mVec3Offset);
-			movedUnit.move ();
-			movedUnit.ResetMoveVals ();
+
+			while (movedUnit.transform.position - movedUnit.mVec3Offset != targetField) {
+				movedUnit.move ();
+			}
+			movedUnit.ResetValues ();
 		}
 	}
 
