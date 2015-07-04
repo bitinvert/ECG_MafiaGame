@@ -47,9 +47,9 @@ public class StateMachineUnitAction : MonoBehaviour {
 		{
 			if(AttackDone ())
 			{
-				Message msg = new Message(ActionType.ATTACK ,pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy), null);
-				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.gameObject);
-				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.gameObject);
+				Message msg = new Message(ActionType.ATTACK ,pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy));
+				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
+				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.name);
 				mClientPlayer.SavePlayerMove(msg);
 				pPCPlayer.pUnitActive.ResetValues();
 				Debug.Log ("State: Attack Done");
@@ -64,8 +64,9 @@ public class StateMachineUnitAction : MonoBehaviour {
 				pPCPlayer.pUnitActive.move();
 				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == pPCPlayer.pUnitActive.pGOTarget.transform.position)
 				{
-					Message msg = new Message(ActionType.MOVEMENT, 0, pPCPlayer.pUnitActive.pGOTarget.gameObject);
-					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.gameObject);
+					Message msg = new Message(ActionType.MOVEMENT, 0);
+					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pStringName);
+					msg.targetField = pPCPlayer.pUnitActive.transform.position;
 					mClientPlayer.SavePlayerMove(msg);
 					pPCPlayer.pUnitActive.ResetMoveVals();
 					Debug.Log ("State: Move Done");

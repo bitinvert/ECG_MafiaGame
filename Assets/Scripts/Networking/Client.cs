@@ -210,18 +210,19 @@ public class Client : MonoBehaviour {
 		string timeStamp = DateTime.Now.ToString ();
 		string actionType = message.action.ToString();
 		float damage = message.damage;
-		GameObject targetField = message.targetField;
+		Vector3 targetField = message.targetField;
 
 		switch (message.action) 
 		{
 			case ActionType.ATTACK:
-			GameObject attacker = message.involvedCharacters[0];
-			GameObject victim = message.involvedCharacters[1];
+			string attacker = message.involvedCharacters[0];
+			string victim = message.involvedCharacters[1];
 			photonView.RPC ("LoadAttack", PhotonTargets.Others, timeStamp, attacker, victim, damage, targetField);
 			break;
 			case ActionType.MOVEMENT:
-			GameObject character = message.involvedCharacters[0];
-			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character, targetField);
+			string character = message.involvedCharacters[0];
+			Debug.Log ("move send");
+			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character , targetField);
 			break;
 			//more ActionTypes can follow
 
@@ -258,9 +259,6 @@ public class Client : MonoBehaviour {
 
 
 	}
-
-
-
 	/// <summary>
 	/// Hands the turn over to the opponent.
 	/// </summary>
@@ -280,24 +278,26 @@ public class Client : MonoBehaviour {
 	/// <param name="damage">Indicates the taken damage for the victim.</param>
 	/// <param name="targetField">Indicates the target field of the attacker, if it moved before it attacked.</param>
 	[PunRPC]
-	void LoadAttack (String timeStamp, GameObject attacker, GameObject victim, float damage, GameObject targetField) 
+	void LoadAttack (String timeStamp, string attacker, string victim, float damage, Vector3 targetField) 
 	{
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
 		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
 
-		GameObject go = GameObject.FindWithTag ("PlayerController");
-		PlayerController playerController = (PlayerController)go.GetComponent (typeof(PlayerController));
+		PlayerController playerController = FindObjectOfType(typeof(PlayerController)) as PlayerController;
 
 		if (diff.Hours > 24) {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
-			Unit attackerUnit = playerController.pListUnits.Find(x => x.pStringName == attacker.name);
+			Unit attackerUnit = playerController.pListUnits.Find(x => x.pStringName.Equals(attacker));
+
 			if (targetField != null) {
-				attackerUnit.pGOTarget = targetField;
+				attackerUnit.pAStarPathfinding.FindPath(attackerUnit.transform.position, targetField, attackerUnit.mVec3Offset);
 				attackerUnit.move(); 
+				attackerUnit.ResetMoveVals ();
 			}
-			attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName == victim.name));
+
+			attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim)));
 
 			//how to handle die?
 		}
@@ -310,21 +310,21 @@ public class Client : MonoBehaviour {
 	/// <param name="character">Indicates the unit which was moved.</param>
 	/// <param name="targetField">Indicates the targetField to which the character will be moved.</param>
 	[PunRPC]
-	void LoadMove (String timeStamp, GameObject character, GameObject targetField) 
+	void LoadMove (String timeStamp, string character, Vector3 targetField) 
 	{
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
 		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
 
-		GameObject go = GameObject.FindWithTag ("PlayerController");
-		PlayerController playerController = (PlayerController)go.GetComponent (typeof(PlayerController));
+		PlayerController playerController = FindObjectOfType(typeof(PlayerController)) as PlayerController;
 
 		if (diff.Hours > 24) {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
-			Unit movedUnit = playerController.pListUnits.Find (x => x.pStringName == character.name);
-			movedUnit.pGOTarget = targetField;
+			Unit movedUnit = playerController.pListUnits.Find (x => x.pStringName.Equals(character));
+			movedUnit.pAStarPathfinding.FindPath(movedUnit.transform.position, targetField, movedUnit.mVec3Offset);
 			movedUnit.move ();
+			movedUnit.ResetMoveVals ();
 		}
 	}
 
