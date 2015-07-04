@@ -755,7 +755,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 588242148}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 90d959b3133bd12419b381e9a8062caf, type: 3}
+  m_Script: {fileID: 11500000, guid: 78793251b5c94124690fe76758959a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   pStringName: Tester
@@ -1344,11 +1344,11 @@ Prefab:
       objectReference: {fileID: 818873794}
     - target: {fileID: 22435474, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .699999988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22435474, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11452410, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
