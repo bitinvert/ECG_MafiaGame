@@ -831,11 +831,11 @@ Prefab:
       objectReference: {fileID: 818873794}
     - target: {fileID: 22435474, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: .699999988
       objectReference: {fileID: 0}
     - target: {fileID: 22435474, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 11452410, guid: 4c07d8e6c32fada40b1d8f8386c8357e, type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
