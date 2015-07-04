@@ -15,7 +15,7 @@ public class AStar : MonoBehaviour {
 
 
 
-	public void FindPath(Vector3 startPos, Vector3 targetPos)
+	public void FindPath(Vector3 startPos, Vector3 targetPos, Vector3 offset)
 	{
 		Node mNodeStart = mGridField.NodeFromWorldPosition(startPos);
 		Node mNodeTarget = mGridField.NodeFromWorldPosition(targetPos);
@@ -50,7 +50,7 @@ public class AStar : MonoBehaviour {
 			if(mNodeCurrent == mNodeTarget)
 			{
 				//New Version has to be added
-				RetracePath(mNodeStart, mNodeTarget	);
+				RetracePath(mNodeStart, mNodeTarget, offset	);
 				return;
 			}
 
@@ -82,7 +82,7 @@ public class AStar : MonoBehaviour {
 
 	//Retrace the path backward from the endnode to the startnode
 	//go through all parents to the start node and then reverse it
-	void RetracePath(Node startNode, Node endNode)
+	void RetracePath(Node startNode, Node endNode, Vector3 offset)
 	{
 		List<Vector3> mListPath = new List<Vector3>();
 		Node mNodeCurrent = endNode;
@@ -90,7 +90,7 @@ public class AStar : MonoBehaviour {
 		while(mNodeCurrent != startNode)
 		{
 			//Offset by 0.25
-			mListPath.Add (mNodeCurrent.pVec3WorldPos + new Vector3(0f, .25f, 0f));
+			mListPath.Add (mNodeCurrent.pVec3WorldPos + offset);
 			mNodeCurrent = mNodeCurrent.pNodeParent;
 		}
 		mListPath.Reverse();

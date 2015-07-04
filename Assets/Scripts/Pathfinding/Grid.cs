@@ -26,14 +26,17 @@ public class Grid : MonoBehaviour {
 
 	public bool isGridCreated = false;
 
+	public LevelController lc;
 	// Use this for initialization
 	void Start ()
 	{
 		mFloatGridDiameter = pFloatGridRadius * 2;
 		mIntSizeX = Mathf.RoundToInt(pVec3GridWorldSize.x / mFloatGridDiameter);
 		mIntSizeY = Mathf.RoundToInt(pVec3GridWorldSize.y / mFloatGridDiameter);
+
 		CreateGrid();
 		isGridCreated = true;
+
 	}
 
 /*	void Update()

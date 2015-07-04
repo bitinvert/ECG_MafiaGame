@@ -45,9 +45,16 @@ public class Client : MonoBehaviour {
 			} else {
 				_opponentName = PhotonNetwork.player.Get (1).name;
 			}
+			/*
 			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
 			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
+
+			//TextAsset map = (TextAsset)Resources.Load("TestWith3DModels", typeof(TextAsset));
 			photonView.RPC ("InstantiateMap", PhotonTargets.Others, mapPrefab.text, mapFields.text);
+
+
+			//photonView.RPC ("InstantiateMap", PhotonTargets.Others, "Assets/Resources/TestWith3DModels");
+			*/
 		}
 	}
 	/*
@@ -171,6 +178,7 @@ public class Client : MonoBehaviour {
 	void OnJoinedRoom()
 	{
 		if (CheckTwoPlayers) {
+
 			photonView.RPC ("SwitchToGame", PhotonTargets.All);
 		}
 	}
@@ -180,9 +188,14 @@ public class Client : MonoBehaviour {
 	/// </summary>
 	public void playerChange () {
 		if (IsMyTurn) {
+			Debug.Log ("war meine Runde");
 			PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
 			playerToMakeTurn = nextPlayer.ID;
 			photonView.RPC ("HandOverTurn", nextPlayer, playerToMakeTurn);
+		} else {
+			Debug.Log ("war nicht meine Runde");
+			Debug.Log (playerToMakeTurn);
+			Debug.Log (PhotonNetwork.player.ID);
 		}
 	}
 
@@ -221,6 +234,7 @@ public class Client : MonoBehaviour {
 	[PunRPC]
 	void SwitchToGame () 
 	{
+		playerToMakeTurn = 1;
 		Application.LoadLevel ("GameScene");
 		DontDestroyOnLoad (this);
 	}
@@ -231,15 +245,21 @@ public class Client : MonoBehaviour {
 	/// <param name="mapFields">xml view of map fields</param>
 	/// <param name="mapPrefabs">xml view of map prefabs</param>
 	[PunRPC]
-	void InstantiateMap (string mapPrefabs, string mapFields)
+	void InstantiateMap (string mapPrefab, string mapFields)
 	{
 		GameObject go = GameObject.FindWithTag ("LevelController");
 		LevelController levelController = (LevelController)go.GetComponent (typeof(LevelController));
-		levelController.LoadLevel (mapPrefabs, mapFields);
+		Debug.Log(mapPrefab);
+		Debug.Log(mapFields);
+		levelController.LoadLevel (mapPrefab, mapFields);
 		//The player who opened the game will start
 		playerToMakeTurn = 1;
 		Debug.Log ("instantiated");
+
+
 	}
+
+
 
 	/// <summary>
 	/// Hands the turn over to the opponent.

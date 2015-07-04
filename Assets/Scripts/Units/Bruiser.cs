@@ -10,7 +10,7 @@ public class Bruiser : Unit {
 			foreach (Node mNodeNeighbour in mListNeighbours) {
 				if (mNodeNeighbour.pBoolWalkable) {
 					Vector3 mPosTargetPosition = mUnitOther.gameObject.transform.position;
-					pAStarPathfinding.FindPath (this.gameObject.transform.position - this.mVec3Offset, mPosTargetPosition - mUnitOther.mVec3Offset);
+					pAStarPathfinding.FindPath (this.gameObject.transform.position - this.mVec3Offset, mPosTargetPosition - mUnitOther.mVec3Offset, this.mVec3Offset);
 					this.move ();
 					mUnitOther.gameObject.transform.position = Vector3.MoveTowards (mUnitOther.gameObject.transform.position, (mNodeNeighbour.pVec3WorldPos + mUnitOther.mVec3Offset), mUnitOther.pFloatSpeed * Time.deltaTime);
 					break;
