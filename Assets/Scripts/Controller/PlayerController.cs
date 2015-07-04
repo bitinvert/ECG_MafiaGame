@@ -11,17 +11,23 @@ public class PlayerController : MonoBehaviour {
 	public Faction pFactionFlag;
 	public Unit pUnitActive;
 
+	public Unit pUnitTapped;
+
 	public bool pBoolShowMove;
 	public bool pBoolShowAttack;
 	public bool pBoolShowSpecial;
 	public bool pBoolEndTurn;
-	
+
+	//Für Nadja: wenn der button zum festnehmen gedrückt wurde soll dieser boolean gesetzt werden
+	public bool pBoolShackle;
+
 	void Start () {
 		pListUnits = new List<Unit>( Object.FindObjectsOfType(typeof(Unit)) as Unit[]);
 		pBoolShowMove = true;
 		pBoolShowAttack = false;
 		pBoolShowSpecial = false;
 		pBoolEndTurn = false;
+		pBoolShackle = false;
 	}
 
 

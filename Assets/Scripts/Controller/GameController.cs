@@ -1,4 +1,4 @@
-﻿ using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -24,9 +24,11 @@ public class GameController : MonoBehaviour {
 			RaycastHit mRHInfo = new RaycastHit();
 			if(pTransSeeker == null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
 			{
-				if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==false)
+				if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pFacFaction == mPCPlayer.pFactionFlag && 
+				   mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolDone == false)
 				{
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
+					mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
 				}
 			}
 			else if(pTransSeeker != null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
@@ -51,18 +53,22 @@ public class GameController : MonoBehaviour {
 					else
 					{
 						pListCharacters[mIntUnitIndex].pGOTarget = mGOTemp;
+
 					}
 				}
-				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==false)
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pFacFaction == mPCPlayer.pFactionFlag &&
+				        mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolDone == false)
 				{
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
+					mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
 				}
-				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==true && mPCPlayer.pBoolShowAttack == true
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pFacFaction != mPCPlayer.pFactionFlag && mPCPlayer.pBoolShowAttack == true
 				        && pListCharacters[mIntUnitIndex].pUnitEnemy == null)
 				{
 					pListCharacters[mIntUnitIndex].pUnitEnemy = mRHInfo.collider.gameObject.GetComponent<Unit>();
+					mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
 				}
-				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolEnemy==true && mPCPlayer.pBoolShowAttack == true)
+				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pFacFaction != mPCPlayer.pFactionFlag && mPCPlayer.pBoolShowAttack == true)
 				{
 					Unit mUnitTemp =  mRHInfo.collider.gameObject.GetComponent<Unit>();
 					
@@ -73,6 +79,7 @@ public class GameController : MonoBehaviour {
 					else
 					{
 						pListCharacters[mIntUnitIndex].pUnitEnemy = mUnitTemp;
+						mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
 					}
 				}
 			}

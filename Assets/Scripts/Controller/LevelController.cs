@@ -32,6 +32,10 @@ public class LevelController : MonoBehaviour {
 		}
 	}
 
+	public bool GetLoadStatus() {
+		return (XmlLoader.prefabsLoaded && XmlLoader.fieldsLoaded);
+	}
+
 	public void SaveLevel(string path){
 		if (mGOLevel == null) {
 			mGOLevel = GameObject.Find ("level");
