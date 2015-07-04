@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11445120}
   m_Layer: 0
   m_Name: FieldFloor 6
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -33,7 +33,7 @@ GameObject:
   - 114: {fileID: 11437994}
   m_Layer: 0
   m_Name: FieldFloor 5
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -52,7 +52,7 @@ GameObject:
   - 114: {fileID: 11482302}
   m_Layer: 0
   m_Name: FieldFloor 4
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -87,7 +87,7 @@ GameObject:
   - 114: {fileID: 11440438}
   m_Layer: 0
   m_Name: FieldFloor 1
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ GameObject:
   - 4: {fileID: 459994}
   - 33: {fileID: 3326786}
   - 23: {fileID: 2370524}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: pCylinder149
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -123,7 +123,7 @@ GameObject:
   - 114: {fileID: 11451240}
   m_Layer: 0
   m_Name: FieldFloor
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ GameObject:
   - 114: {fileID: 11485074}
   m_Layer: 0
   m_Name: FieldFloor
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 448368}
   - 95: {fileID: 9580386}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Laterne
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -177,7 +177,7 @@ GameObject:
   - 114: {fileID: 11469692}
   m_Layer: 0
   m_Name: FieldFloor 2
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -194,7 +194,7 @@ GameObject:
   - 64: {fileID: 6483112}
   - 23: {fileID: 2351368}
   - 114: {fileID: 11405466}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldLantern
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -215,7 +215,7 @@ GameObject:
   - 114: {fileID: 11459578}
   m_Layer: 0
   m_Name: FieldFloor 3
-  m_TagString: Untagged
+  m_TagString: Field
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -963,7 +963,15 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Field
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 115426}
