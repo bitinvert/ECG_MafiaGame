@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class Unit : MonoBehaviour {
-	
+
 	public string pStringName;
 	public int pIntAttack;
 	public int pIntDefense;
@@ -12,30 +12,32 @@ public class Unit : MonoBehaviour {
 
 	public int pIntWalkDistance;
 	public bool pBoolCaptive;
+	public bool pBoolCaptive;
+	public bool pBoolHasLoot;
 	//we have no attack distance at this point, because the dis. should change with particular weapons. So we are using a getAttackDis method
 	// to wrap this fact. Right now it is returning a fix number
 
 	//for brendans pathfinding. brace yourselves changes are coming
 	public bool pBoolEnemy;
-	
+
 	public float pFloatSpeed = 2;
 	//inventory is missing
-	
+
 	public AStar pAStarPathfinding;
 	public FloodFill pFFWalkArea;
 
 	public GameController pGCController;
-	
+
 	private int mIntTargetIndex;
-	
+
 	public GameObject pGOTarget;
-	
+
 	public bool pBoolDoubleTap;
 	private bool mBoolPathShown;
 
 	//Magic number for offset
 	public Vector3 mVec3Offset;
-	
+
 	public Unit pUnitEnemy;
 
 	public shackled pShackStunned;
@@ -44,6 +46,8 @@ public class Unit : MonoBehaviour {
 
 	public bool pBoolMoveDone;
 	public bool pBoolDone;
+
+	public Safe pOIObjective;
 
 	void Start () {
 		mVec3Offset = new Vector3(0f,this.transform.position.y,0f);
@@ -62,7 +66,7 @@ public class Unit : MonoBehaviour {
 			pBoolDoubleTap = false;
 			mBoolPathShown = false;
 			mIntTargetIndex = 0;
-			
+
 			pAStarPathfinding.pListPath = new Vector3[0];
 		}
 		if(!pBoolEnemy && pGOTarget != null && !pBoolDoubleTap)
@@ -75,7 +79,7 @@ public class Unit : MonoBehaviour {
 			move();
 
 		}*/
-		
+
 	}
 
 	public void ResetValues()
@@ -85,7 +89,7 @@ public class Unit : MonoBehaviour {
 		pBoolDoubleTap = false;
 		mBoolPathShown = false;
 		mIntTargetIndex = 0;
-		
+
 		pAStarPathfinding.pListPath = new Vector3[0];
 	}
 
@@ -95,7 +99,7 @@ public class Unit : MonoBehaviour {
 		pBoolDoubleTap = false;
 		mBoolPathShown = false;
 		mIntTargetIndex = 0;
-		
+
 		pAStarPathfinding.pListPath = new Vector3[0];
 	}
 
@@ -115,7 +119,7 @@ public class Unit : MonoBehaviour {
 			for (int i = mIntTargetIndex; i < pAStarPathfinding.pListPath.Length; i ++) {
 				Gizmos.color = Color.black;
 				Gizmos.DrawCube(pAStarPathfinding.pListPath[i], Vector3.one/3);
-				
+
 				if (i == mIntTargetIndex) {
 					Gizmos.DrawLine(transform.position, pAStarPathfinding.pListPath[i]);
 				}
@@ -130,7 +134,7 @@ public class Unit : MonoBehaviour {
 		Node mNodeUnit = pFFWalkArea.pGridField.NodeFromWorldPosition (this.gameObject.transform.position-mVec3Offset);
 		pFFWalkArea.FindPath (mNodeUnit, 0,GetAttackDistance());
 	}
-	
+
 	private int GetAttackDistance(){
 		return 2;
 	}
@@ -142,7 +146,7 @@ public class Unit : MonoBehaviour {
 	public void Die (){
 		Destroy (this.gameObject);
 	}
-	
+
 	private int CalculateDamage(Unit mUnitEnemy){
 		int mIntDamage = mUnitEnemy.pIntDefense - this.pIntAttack;
 		if (mIntDamage < 1) {
@@ -161,18 +165,18 @@ public class Unit : MonoBehaviour {
 	public void move()
 	{
 		Vector3 mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
-		
+
 		while(true)
 		{
 			if (transform.position == mVec3Current) {
 				mIntTargetIndex++;
 				if (mIntTargetIndex >= pAStarPathfinding.pListPath.Length) {
-					
+
 					break;
 				}
 				mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
 			}
-			
+
 			transform.position = Vector3.MoveTowards(transform.position,mVec3Current,pFloatSpeed * Time.deltaTime);
 			return;
 		}
@@ -214,5 +218,5 @@ public class Unit : MonoBehaviour {
 		return false;
 
 	}
-	
+
 }

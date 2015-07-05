@@ -8,7 +8,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 	public PlayerController pPCPlayer;
 	public int pIntTurnCount;
 
-    
+
     private Client mClientPlayer;
 	private bool mBoolMove = false;
 	private bool mBoolAttack = false;
@@ -20,7 +20,7 @@ public class StateMachineUnitAction : MonoBehaviour {
         mClientPlayer = Object.FindObjectOfType(typeof(Client)) as Client;
 		pIntTurnCount = 0;
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
 		/*The States themselves.
@@ -93,7 +93,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 		}
 	}
 	/*Checking the conditions and extra features*/
-	bool SelectedChar(){ 
+	bool SelectedChar(){
 		return(pPCPlayer.pUnitActive != null);
 	}
 
@@ -127,7 +127,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 	bool MoveDone(){
 		if(pPCPlayer.pUnitActive.pGOTarget != null && !pPCPlayer.pUnitActive.pBoolDoubleTap)
 		{
-			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position, pPCPlayer.pUnitActive.pGOTarget.transform.position, 
+			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position, pPCPlayer.pUnitActive.pGOTarget.transform.position,
 			                                                 pPCPlayer.pUnitActive.mVec3Offset);
 			return false;
 		}
@@ -138,7 +138,22 @@ public class StateMachineUnitAction : MonoBehaviour {
 		return false;
 	}
 
-	bool SpecialDone(){return false;}
+	bool SpecialDone(){
+	if(pPCPlayer.pUnitActive.pOIObjective != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
+	{
+		Debug.Log ("Test");
+
+		ObjectiveInterface mObjective = pPCPlayer.pUnitActive.pOIObjective;
+		if(mObjective!=null){
+			mObjective.InteractWithObjective(pPCPlayer.pUnitActive);
+			mObjective.ShowObjectiveStatus();
+			return true;
+		}
+		return false;
+	}
+
+	return false;
+}
 
 	void PlayerChange(){
 		pIntTurnCount++;
