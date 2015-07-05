@@ -43,27 +43,37 @@ public class StateMachineUnitAction : MonoBehaviour {
 			mBoolAttack = false;
 			mBoolMove = false;
 		}
-		if(mBoolAttack)
+		if(mBoolAttack )
 		{
 			if(AttackDone ())
 			{
-				pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
+				Message msg = new Message(ActionType.ATTACK ,pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy));
+				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
+				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.name);
+				mClientPlayer.SavePlayerMove(msg);
 				pPCPlayer.pUnitActive.ResetValues();
 				Debug.Log ("State: Attack Done");
 				mBoolAttack = false;
+				pPCPlayer.pUnitActive.pBoolDone = true;
 			}
 		}
 		if(mBoolMove)
 		{
-			if(MoveDone ())
+			if(MoveDone () && !pPCPlayer.pUnitActive.pBoolMoveDone)
 			{
 				pPCPlayer.pUnitActive.move();
 				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == pPCPlayer.pUnitActive.pGOTarget.transform.position)
 				{
-					pPCPlayer.pUnitActive.ResetValues();
+					Message msg = new Message(ActionType.MOVEMENT, 0);
+					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pStringName);
+					msg.targetField = pPCPlayer.pUnitActive.transform.position;
+					mClientPlayer.SavePlayerMove(msg);
+					pPCPlayer.pUnitActive.ResetMoveVals();
 					Debug.Log ("State: Move Done");
-					//mClientPlayer.SavePlayerMove();
 					mBoolMove = false;
+					pPCPlayer.pUnitActive.pBoolMoveDone = true;
+					pPCPlayer.pBoolShowAttack = true;
+					pPCPlayer.pBoolShowMove = false;
 				}
 				//TODO Setting values for attacking
 			}
@@ -117,8 +127,8 @@ public class StateMachineUnitAction : MonoBehaviour {
 	bool MoveDone(){
 		if(pPCPlayer.pUnitActive.pGOTarget != null && !pPCPlayer.pUnitActive.pBoolDoubleTap)
 		{
-			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position-pPCPlayer.pUnitActive.mVec3Offset,
-			                                                 pPCPlayer.pUnitActive.pGOTarget.transform.position);
+			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position, pPCPlayer.pUnitActive.pGOTarget.transform.position, 
+			                                                 pPCPlayer.pUnitActive.mVec3Offset);
 			return false;
 		}
 		else if(pPCPlayer.pUnitActive.pGOTarget != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
@@ -128,22 +138,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 		return false;
 	}
 
-	bool SpecialDone(){
-		if(pPCPlayer.pUnitActive.pOIObjective != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
-		{
-			Debug.Log ("Test");
-		 
-			ObjectiveInterface mObjective = pPCPlayer.pUnitActive.pOIObjective;
-			if(mObjective!=null){
-				mObjective.InteractWithObjective(pPCPlayer.pUnitActive);
-				mObjective.ShowObjectiveStatus();
-				return true;
-			}
-			return false;
-		}
-
-		return false;
-	}
+	bool SpecialDone(){return false;}
 
 	void PlayerChange(){
 		pIntTurnCount++;

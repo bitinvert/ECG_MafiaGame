@@ -1,4 +1,4 @@
-using UnityEngine;
+﻿using UnityEngine;
 using System.Collections;
 
 public class Unit : MonoBehaviour {
@@ -7,9 +7,11 @@ public class Unit : MonoBehaviour {
 	public int pIntAttack;
 	public int pIntDefense;
 	public int pIntHealth;
+
+	public int pIntFullHealth;
+
 	public int pIntWalkDistance;
 	public bool pBoolCaptive;
-	public bool pBoolHasLoot;
 	//we have no attack distance at this point, because the dis. should change with particular weapons. So we are using a getAttackDis method
 	// to wrap this fact. Right now it is returning a fix number
 
@@ -38,12 +40,17 @@ public class Unit : MonoBehaviour {
 
 	public shackled pShackStunned;
 
-	public Safe pOIObjective;
+	public PlayerController.Faction pFacFaction;
+
+	public bool pBoolMoveDone;
+	public bool pBoolDone;
 
 	void Start () {
 		mVec3Offset = new Vector3(0f,this.transform.position.y,0f);
 		pShackStunned.isSheckled = false;
 		pShackStunned.shackleTime = 0;
+
+		pBoolDone = false;
 	}
 
 	// Update is called once per frame
@@ -82,16 +89,26 @@ public class Unit : MonoBehaviour {
 		pAStarPathfinding.pListPath = new Vector3[0];
 	}
 
-	bool ShowPath()
+	public void ResetMoveVals()
+	{
+		pGOTarget = null;
+		pBoolDoubleTap = false;
+		mBoolPathShown = false;
+		mIntTargetIndex = 0;
+		
+		pAStarPathfinding.pListPath = new Vector3[0];
+	}
+
+	/*bool ShowPath()
 	{
 		//Placeholder
-		pAStarPathfinding.FindPath(this.transform.position, pGOTarget.transform.position);
+		pAStarPathfinding.FindPath(this.transform.position, pGOTarget.transform.position, this.mVec3Offset);
 		if(pAStarPathfinding.pListPath.Length > 0)
 		{
 			return true;
 		}
 		return false;
-	}
+	}*/
 
 	public void OnDrawGizmos() {
 		if (pAStarPathfinding != null) {
@@ -197,4 +214,5 @@ public class Unit : MonoBehaviour {
 		return false;
 
 	}
+	
 }
