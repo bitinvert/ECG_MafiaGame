@@ -10,14 +10,14 @@ GameObject:
   - 4: {fileID: 411158}
   - 212: {fileID: 21229782}
   - 65: {fileID: 6599942}
-  - 114: {fileID: 11427118}
+  - 114: {fileID: 11411580}
   m_Layer: 0
   m_Name: MafiaMedic
   m_TagString: Playable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &411158
 Transform:
   m_ObjectHideFlags: 1
@@ -25,8 +25,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162574}
   m_LocalRotation: {x: .239117637, y: .369643837, z: -.0990457758, w: .892399073}
-  m_LocalPosition: {x: 18.3700008, y: 3, z: 0}
-  m_LocalScale: {x: .200000003, y: .200000003, z: .200000003}
+  m_LocalPosition: {x: -3.6400001, y: .949999988, z: -1.21000004}
+  m_LocalScale: {x: .0500000007, y: .0500000007, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -40,9 +40,9 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: .319999993, y: .319999993, z: .200000018}
+  m_Size: {x: 20, y: 31.4400005, z: .200000018}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11427118
+--- !u!114 &11411580
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -53,12 +53,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d4da3ff6864d944a25c5709336a98c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pStringName: 
-  pIntAttack: 3
-  pIntDefense: 3
-  pIntHealth: 15
+  pStringName: Medic_Mafia
+  pIntAttack: 0
+  pIntDefense: 0
+  pIntHealth: 10
   pIntFullHealth: 15
-  pIntWalkDistance: 6
+  pIntWalkDistance: 4
   pBoolCaptive: 0
   pBoolHasLoot: 0
   pBoolEnemy: 0
