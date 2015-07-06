@@ -9,7 +9,9 @@ public class MenuOverlayController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		CheckMedic (pc.pUnitActive);
+		if(pc.pUnitActive != null){
+			CheckMedic (pc.pUnitActive);
+		}
 	}
 
 	private void CheckMedic(Unit u) 

@@ -14,6 +14,8 @@ public class StateMachineUnitAction : MonoBehaviour {
 	private bool mBoolAttack = false;
 	private bool mBoolSpecial = false;
 
+	private List<Vector3> mVec3BackList;
+
 	// Use this for initialization
 	void Start () {
 		pPCPlayer = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
@@ -64,13 +66,17 @@ public class StateMachineUnitAction : MonoBehaviour {
 				pPCPlayer.pUnitActive.move();
 				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == pPCPlayer.pUnitActive.pGOTarget.transform.position)
 				{
+					mBoolMove = false;
+					mVec3BackList = new List<Vector3>();
+					mVec3BackList.AddRange (pPCPlayer.pUnitActive.pAStarPathfinding.pListPath);
+					pPCPlayer.pUnitActive.ResetValues();
 					Message msg = new Message(ActionType.MOVEMENT, 0);
 					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pStringName);
-					msg.targetField = pPCPlayer.pUnitActive.transform.position;
+					msg.targetField = mVec3BackList[0];
 					mClientPlayer.SavePlayerMove(msg);
-					pPCPlayer.pUnitActive.ResetMoveVals();
+
 					Debug.Log ("State: Move Done");
-					mBoolMove = false;
+
 					pPCPlayer.pUnitActive.pBoolMoveDone = true;
 					pPCPlayer.pBoolShowAttack = true;
 					pPCPlayer.pBoolShowMove = false;
@@ -127,12 +133,13 @@ public class StateMachineUnitAction : MonoBehaviour {
 	bool MoveDone(){
 		if(pPCPlayer.pUnitActive.pGOTarget != null && !pPCPlayer.pUnitActive.pBoolDoubleTap)
 		{
-			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position, pPCPlayer.pUnitActive.pGOTarget.transform.position,
+			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position-pPCPlayer.pUnitActive.mVec3Offset , pPCPlayer.pUnitActive.pGOTarget.transform.position,
 			                                                 pPCPlayer.pUnitActive.mVec3Offset);
 			return false;
 		}
 		else if(pPCPlayer.pUnitActive.pGOTarget != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
 		{
+			mBoolMove= false;
 			return true;
 		}
 		return false;

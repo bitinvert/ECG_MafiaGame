@@ -163,6 +163,7 @@ public class Unit : MonoBehaviour {
 
 	public void move()
 	{
+		Debug.Log (mIntTargetIndex);
 		Vector3 mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
 
 		while(true)
