@@ -13,11 +13,11 @@ GameObject:
   - 114: {fileID: 11464868}
   m_Layer: 0
   m_Name: MafiaFernSchwach
-  m_TagString: Player
+  m_TagString: Playable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &465524
 Transform:
   m_ObjectHideFlags: 1
@@ -90,6 +90,10 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Playable
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
