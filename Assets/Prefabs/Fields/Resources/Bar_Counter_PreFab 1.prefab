@@ -12,7 +12,7 @@ GameObject:
   - 64: {fileID: 6443274}
   - 23: {fileID: 2392014}
   - 114: {fileID: 11454714}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ GameObject:
   - 64: {fileID: 6472770}
   - 23: {fileID: 2342478}
   - 114: {fileID: 11454818}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,7 +49,7 @@ GameObject:
   - 33: {fileID: 3391802}
   - 23: {fileID: 2327564}
   - 95: {fileID: 9522596}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bar_counter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - 64: {fileID: 6464974}
   - 23: {fileID: 2339452}
   - 114: {fileID: 11418732}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 497312}
   - 114: {fileID: 11437786}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Bar_Counter_PreFab 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -103,7 +103,7 @@ GameObject:
   - 64: {fileID: 6441214}
   - 23: {fileID: 2357596}
   - 114: {fileID: 11410514}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -122,7 +122,7 @@ GameObject:
   - 64: {fileID: 6472802}
   - 23: {fileID: 2355106}
   - 114: {fileID: 11445230}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco 4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   - 64: {fileID: 6493322}
   - 23: {fileID: 2311200}
   - 114: {fileID: 11487308}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 138198}

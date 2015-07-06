@@ -68,7 +68,7 @@ GameObject:
   - 33: {fileID: 3397232}
   - 23: {fileID: 2344008}
   - 95: {fileID: 9574136}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Billiard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -141,7 +141,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 468598}
   - 114: {fileID: 11426628}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BilliardPreFab 1 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -665,7 +665,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 196708}

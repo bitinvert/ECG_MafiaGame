@@ -601,11 +601,11 @@ Prefab:
     m_Modifications:
     - target: {fileID: 22435474, guid: 3230f78f62950e44ea6269eab2b524a9, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .699999988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22435474, guid: 3230f78f62950e44ea6269eab2b524a9, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22435784, guid: 3230f78f62950e44ea6269eab2b524a9, type: 2}
       propertyPath: m_LocalPosition.x

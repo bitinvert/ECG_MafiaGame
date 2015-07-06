@@ -28,7 +28,7 @@ GameObject:
   - 64: {fileID: 6469664}
   - 23: {fileID: 2343088}
   - 114: {fileID: 11430268}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -65,7 +65,7 @@ GameObject:
   - 64: {fileID: 6432592}
   - 23: {fileID: 2355084}
   - 114: {fileID: 11484032}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -84,7 +84,7 @@ GameObject:
   - 64: {fileID: 6460624}
   - 23: {fileID: 2301882}
   - 114: {fileID: 11429962}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -395,7 +395,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 127810}
