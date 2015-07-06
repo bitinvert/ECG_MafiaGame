@@ -15,7 +15,7 @@ public class TestControllerForAnimations : MonoBehaviour {
 	void Update () {
 		counter += 1;
 		switch (counter) {
-		case (1):
+		case (31):
 			showanim.showAni(0,1);
 			break;
 		case (50):
