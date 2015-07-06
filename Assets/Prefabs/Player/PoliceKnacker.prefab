@@ -10,7 +10,7 @@ GameObject:
   - 4: {fileID: 495444}
   - 212: {fileID: 21284650}
   - 65: {fileID: 6528402}
-  - 114: {fileID: 11475566}
+  - 114: {fileID: 11435458}
   m_Layer: 0
   m_Name: PoliceKnacker
   m_TagString: Playable
@@ -42,7 +42,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .319999993, y: .319999993, z: .200000018}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11475566
+--- !u!114 &11435458
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,10 +50,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 145526}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c83b73eda0f7194590f6ea12bd40cd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 78793251b5c94124690fe76758959a2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  pStringName: 
+  pIntAttack: 3
+  pIntDefense: 3
+  pIntHealth: 15
+  pIntFullHealth: 15
+  pIntWalkDistance: 9
+  pBoolCaptive: 0
+  pBoolHasLoot: 0
+  pBoolEnemy: 0
+  pFloatSpeed: 2
+  pAStarPathfinding: {fileID: 0}
+  pFFWalkArea: {fileID: 0}
+  pGCController: {fileID: 0}
+  pGOTarget: {fileID: 0}
+  pBoolDoubleTap: 0
+  mVec3Offset: {x: 0, y: 0, z: 0}
+  pUnitEnemy: {fileID: 0}
+  pFacFaction: 1
+  pBoolMoveDone: 0
+  pBoolDone: 0
+  pOIObjective: {fileID: 0}
 --- !u!212 &21284650
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -103,6 +123,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_TagString
       value: Playable
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntAttack
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntDefense
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntFullHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntWalkDistance
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pFacFaction
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntHealth
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

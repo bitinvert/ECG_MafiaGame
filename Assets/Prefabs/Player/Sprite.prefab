@@ -10,7 +10,6 @@ GameObject:
   - 4: {fileID: 470942}
   - 212: {fileID: 21215098}
   - 65: {fileID: 6597712}
-  - 114: {fileID: 11477048}
   m_Layer: 0
   m_Name: Sprite
   m_TagString: Playable
@@ -42,18 +41,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .319999993, y: .319999993, z: .200000018}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11477048
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 185536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c83b73eda0f7194590f6ea12bd40cd5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 10
 --- !u!212 &21215098
 SpriteRenderer:
   m_ObjectHideFlags: 1
