@@ -145,7 +145,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 		}
 		else if(pPCPlayer.pUnitActive.pGOTarget != null && pPCPlayer.pUnitActive.pBoolDoubleTap)
 		{
-			mBoolMove= false;
+			//mBoolMove= false;
 			return true;
 		}
 		return false;
