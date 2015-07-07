@@ -996,11 +996,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 2094666, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
       propertyPath: near clip plane
-      value: 2
+      value: -12
       objectReference: {fileID: 0}
     - target: {fileID: 2094666, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
       propertyPath: far clip plane
-      value: 30
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 2094666, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
       propertyPath: m_Depth
