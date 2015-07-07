@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: 8e01c55e01ffd0349b0e8ba8d18e4e52
-timeCreated: 1434232460
+guid: 7bfa7affb9f90e648aaaa477c4de7ffb
+timeCreated: 1436249225
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
@@ -9,7 +9,7 @@ ModelImporter:
     400000: //RootNode
     2300000: //RootNode
     3300000: //RootNode
-    4300000: Billiard
+    4300000: polySurface1
     9500000: //RootNode
   materials:
     importMaterials: 1

@@ -163,20 +163,20 @@ public class Unit : MonoBehaviour {
 
 	public void move()
 	{
-		Debug.Log (mIntTargetIndex);
 		Vector3 mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
 
 		while(true)
 		{
-			if (transform.position == mVec3Current) {
-				mIntTargetIndex++;
-				if (mIntTargetIndex >= pAStarPathfinding.pListPath.Length) {
+			if (transform.position == mVec3Current ) {
 
+				mIntTargetIndex++;
+				Debug.Log("Before: "+mIntTargetIndex);
+				if (mIntTargetIndex >=pAStarPathfinding.pListPath.Length) {
+					Debug.Log("Bla");
 					break;
 				}
 				mVec3Current = pAStarPathfinding.pListPath[mIntTargetIndex];
 			}
-
 			transform.position = Vector3.MoveTowards(transform.position,mVec3Current,pFloatSpeed * Time.deltaTime);
 			return;
 		}

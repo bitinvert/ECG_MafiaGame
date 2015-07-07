@@ -90,13 +90,14 @@ public class AStar : MonoBehaviour {
 		while(mNodeCurrent != startNode)
 		{
 			//Offset by 0.25
-			mListPath.Add (mNodeCurrent.pVec3WorldPos + offset);
+			mListPath.Add (mNodeCurrent.pVec3WorldPos+offset);
 			mNodeCurrent = mNodeCurrent.pNodeParent;
 		}
 		mListPath.Reverse();
 		pListPath = mListPath.ToArray();
 
 	}
+
 
 
 	//Calculate the distance from node A to node B

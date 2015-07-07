@@ -9,20 +9,16 @@ public class RunAway : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		movingUnitA.pAStarPathfinding.FindPath (movingUnitA.transform.position, targetField, movingUnitA.mVec3Offset);
-		movingUnitB.pAStarPathfinding.FindPath (movingUnitB.transform.position, targetField, movingUnitB.mVec3Offset);
+		movingUnitA.ResetValues();
+//		movingUnitA.pAStarPathfinding.FindPath (movingUnitA.transform.position-movingUnitA.mVec3Offset, targetField);
+//		movingUnitB.pAStarPathfinding.FindPath (movingUnitB.transform.position-movingUnitB.mVec3Offset,targetField);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-
-		if (movingUnitA != null) {
+		if(movingUnitA != null/* || movingUnitA.gameObject.transform.position - movingUnitA.mVec3Offset != targetField*/)
 			movingUnitA.move ();
-		}
-
-		if (movingUnitB != null) {
-			movingUnitB.move ();
-		}
-	
+		//if(movingUnitB != null && movingUnitA == null)
+		//	movingUnitB.move ();
 	}
 }

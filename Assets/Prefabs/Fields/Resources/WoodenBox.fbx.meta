@@ -1,17 +1,15 @@
 fileFormatVersion: 2
-guid: 16461a26c1b4853459467dc71d04c892
-timeCreated: 1434153075
+guid: e8a9f9af029c95740b136e7b5c3e1675
+timeCreated: 1436249578
 licenseType: Free
 ModelImporter:
   serializedVersion: 18
   fileIDToRecycleName:
-    100000: Kiste1
-    100002: //RootNode
-    400000: Kiste1
-    400002: //RootNode
-    2300000: Kiste1
-    3300000: Kiste1
-    4300000: Kiste1
+    100000: //RootNode
+    400000: //RootNode
+    2300000: //RootNode
+    3300000: //RootNode
+    4300000: Group1
     9500000: //RootNode
   materials:
     importMaterials: 1
@@ -22,6 +20,10 @@ ModelImporter:
     bakeSimulation: 0
     optimizeGameObjects: 0
     motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
     animationCompression: 1
     animationRotationError: .5
     animationPositionError: .5

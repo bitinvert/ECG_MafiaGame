@@ -15,8 +15,8 @@ public class Replay : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		unitA.pAStarPathfinding.FindPath (unitA.transform.position, targetsA [moveCountA], unitA.mVec3Offset);
-		unitB.pAStarPathfinding.FindPath (unitB.transform.position, targetsB [moveCountB], unitB.mVec3Offset);
+//		unitA.pAStarPathfinding.FindPath (unitA.transform.position, targetsA [moveCountA], unitA.mVec3Offset);
+//		unitB.pAStarPathfinding.FindPath (unitB.transform.position, targetsB [moveCountB], unitB.mVec3Offset);
 	}
 	
 	// Update is called once per frame

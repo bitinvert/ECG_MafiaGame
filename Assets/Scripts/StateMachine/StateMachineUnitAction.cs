@@ -61,10 +61,13 @@ public class StateMachineUnitAction : MonoBehaviour {
 		}
 		if(mBoolMove)
 		{
-			if(MoveDone () && !pPCPlayer.pUnitActive.pBoolMoveDone)
+			if(MoveDone () && pPCPlayer.pUnitActive.pBoolMoveDone == false)
 			{
+				Vector3 test = new Vector3(pPCPlayer.pUnitActive.pGOTarget.transform.position.x, 0f, pPCPlayer.pUnitActive.pGOTarget.transform.position.z);
+				
+	
 				pPCPlayer.pUnitActive.move();
-				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == pPCPlayer.pUnitActive.pGOTarget.transform.position)
+				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == test)
 				{
 					mBoolMove = false;
 					mVec3BackList = new List<Vector3>();
@@ -133,7 +136,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 	bool MoveDone(){
 		if(pPCPlayer.pUnitActive.pGOTarget != null && !pPCPlayer.pUnitActive.pBoolDoubleTap)
 		{
-			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position-pPCPlayer.pUnitActive.mVec3Offset , pPCPlayer.pUnitActive.pGOTarget.transform.position,
+			pPCPlayer.pUnitActive.pAStarPathfinding.FindPath(pPCPlayer.pUnitActive.gameObject.transform.position , pPCPlayer.pUnitActive.pGOTarget.transform.position,
 			                                                 pPCPlayer.pUnitActive.mVec3Offset);
 			return false;
 		}
