@@ -14,7 +14,6 @@ public class TurnCollider : MonoBehaviour {
 	void Update () {
 		if(!mClientPlayer.IsMyTurn) {
 			coll.SetActive(true);
-			Debug.Log ("coll acive");
 		} else {
 			coll.SetActive(false);
 		}

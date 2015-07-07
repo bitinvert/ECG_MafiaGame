@@ -48,6 +48,9 @@ public class Unit : MonoBehaviour {
 
 	public Safe pOIObjective;
 
+	public Vector3 targetField;
+	public bool moving;
+
 	void Start () {
 		mVec3Offset = new Vector3(0f,this.transform.position.y,0f);
 		pShackStunned.isSheckled = false;
@@ -78,6 +81,17 @@ public class Unit : MonoBehaviour {
 			move();
 
 		}*/
+
+
+		if (moving) {
+			if (transform.position != targetField) {
+				move ();
+			} else {
+				moving = false;
+				ResetMoveVals();
+				ResetValues();
+			}
+		}
 
 	}
 

@@ -66,20 +66,20 @@ public class StateMachineUnitAction : MonoBehaviour {
 			{
 
 				Vector3 test = new Vector3(pPCPlayer.pUnitActive.pGOTarget.transform.position.x, 0f, pPCPlayer.pUnitActive.pGOTarget.transform.position.z);
-				
 	
 				pPCPlayer.pUnitActive.move();
 				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == test)
 				{
 					pPCPlayer.pBoolShowAttack = true;
-
 					mBoolMove = false;
 					mVec3BackList = new List<Vector3>();
 					mVec3BackList.AddRange (pPCPlayer.pUnitActive.pAStarPathfinding.pListPath);
 					pPCPlayer.pUnitActive.ResetMoveVals();
 					Message msg = new Message(ActionType.MOVEMENT, 0);
 					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pStringName);
-					msg.targetField = mVec3BackList[0];
+					//msg.targetField = mVec3BackList[0];
+					msg.targetField = pPCPlayer.pUnitActive.transform.position;
+
 					mClientPlayer.SavePlayerMove(msg);
 
 					Debug.Log ("State: Move Done");
