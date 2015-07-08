@@ -290,14 +290,14 @@ public class Client : MonoBehaviour {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
 			Unit attackerUnit = playerController.pListUnits.Find(x => x.pStringName.Equals(attacker));
-
+			/*
 			if (targetField != null) {
 				attackerUnit.pAStarPathfinding.FindPath(attackerUnit.transform.position, targetField, attackerUnit.mVec3Offset);
 				attackerUnit.move(); 
 				attackerUnit.ResetMoveVals ();
 			}
-
-			attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim)));
+			*/
+			Debug.Log (attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim))));
 
 			//how to handle die?
 		}

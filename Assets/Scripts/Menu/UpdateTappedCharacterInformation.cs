@@ -45,7 +45,7 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 
 			if(tapped.GetType() == typeof(Beagleboy))
 			{ 
-				if(tapped.pFacFaction.Equals(PlayerController.Faction.Mafia)) 
+				if(tapped.pFacFaction.Equals(Fraction.MAFIA)) 
 				{
 					avatars[0].SetActive(true);
 				} else 
@@ -55,7 +55,7 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 
 			} else if(tapped.GetType() == typeof(Bruiser))
 			{ 
-				if(tapped.pFacFaction.Equals(PlayerController.Faction.Mafia)) 
+				if(tapped.pFacFaction.Equals(Fraction.MAFIA)) 
 				{
 					avatars[2].SetActive(true);
 				} else 
@@ -65,7 +65,7 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 				
 			} else if(tapped.GetType() == typeof(Medic))
 			{ 
-				if(tapped.pFacFaction.Equals(PlayerController.Faction.Mafia)) 
+				if(tapped.pFacFaction.Equals(Fraction.MAFIA)) 
 				{
 					avatars[4].SetActive(true);
 
@@ -76,7 +76,7 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 				
 			} else if(tapped.GetType() == typeof(Gunslinger))
 			{ 
-				if(tapped.pFacFaction.Equals(PlayerController.Faction.Mafia)) 
+				if(tapped.pFacFaction.Equals(Fraction.MAFIA)) 
 				{
 					avatars[6].SetActive(true);
 
@@ -87,7 +87,7 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 
 			} else if(tapped.GetType() == typeof(Rifleman))
 			{ 
-				if(tapped.pFacFaction.Equals(PlayerController.Faction.Mafia)) 
+				if(tapped.pFacFaction.Equals(Fraction.MAFIA)) 
 				{
 					avatars[8].SetActive(true);
 
@@ -98,7 +98,7 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 				
 			} else if(tapped.GetType() == typeof(Slicer))
 			{
-				if(tapped.pFacFaction.Equals(PlayerController.Faction.Mafia)) 
+				if(tapped.pFacFaction.Equals(Fraction.MAFIA)) 
 				{
 					avatars[10].SetActive(true);
 

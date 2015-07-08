@@ -13,3 +13,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/GameScene.unity
   - enabled: 0
     path: Assets/_Scenes/AnimatedCharacters.unity
+  - enabled: 0
+    path: Assets/_Scenes/VideoForPresentation.unity

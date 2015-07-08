@@ -41,7 +41,7 @@ public class Unit : MonoBehaviour {
 
 	public shackled pShackStunned;
 
-	public PlayerController.Faction pFacFaction;
+	public Fraction pFacFaction;
 
 	public bool pBoolMoveDone;
 	public bool pBoolDone;
@@ -234,3 +234,4 @@ public class Unit : MonoBehaviour {
 	}
 
 }
+ 	
