@@ -25,7 +25,13 @@ public class Gestures : MonoBehaviour {
 		var mTKRecZoom = new TKPinchRecognizer();
 		mTKRecZoom.gestureRecognizedEvent += ( r ) =>
 		{
-			Camera.main.orthographicSize += mTKRecZoom.deltaScale * pFloatCZSpeed;
+			if (Camera.main.orthographicSize >= 1f && Camera.main.orthographicSize <= 10f) {
+				Camera.main.orthographicSize += mTKRecZoom.deltaScale*pFloatCZSpeed;
+			} else if (Camera.main.orthographicSize < 1f){
+				Camera.main.orthographicSize = 1f;
+			} else if (Camera.main.orthographicSize > 10f) {
+				Camera.main.orthographicSize = 10f;
+			}
 		};
 		TouchKit.addGestureRecognizer(mTKRecZoom);
 

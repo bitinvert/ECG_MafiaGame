@@ -208,7 +208,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 480890, guid: 8c04788fc35cfea4cab9df208be51aac, type: 2}
       propertyPath: m_RootOrder
-      value: 9
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c04788fc35cfea4cab9df208be51aac, type: 2}
@@ -406,6 +406,18 @@ Prefab:
     - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
       propertyPath: offsetZ
       value: -14.3100004
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094666, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: far clip plane
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094666, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: near clip plane
+      value: -100
+      objectReference: {fileID: 0}
+    - target: {fileID: 2094666, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: orthographic size
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
@@ -652,4 +664,4 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
