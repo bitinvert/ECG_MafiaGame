@@ -6,9 +6,9 @@ Material:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: billiard
+  m_Name: boden
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
+  m_ShaderKeywords: _NORMALMAP
   m_LightmapFlags: 5
   m_CustomRenderQueue: -1
   stringTagMap: {}
@@ -19,26 +19,19 @@ Material:
         first:
           name: _MainTex
         second:
-          m_Texture: {fileID: 2800000, guid: 1001655508e0ea34aaa7d5745da84962, type: 3}
-          m_Scale: {x: 1, y: 1}
+          m_Texture: {fileID: 2800000, guid: ed13ceff72885a144978d63df433eacb, type: 3}
+          m_Scale: {x: 1.25, y: 1.25}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _BumpMap
         second:
-          m_Texture: {fileID: 0}
+          m_Texture: {fileID: 2800000, guid: 2e717c1aa7dc05040a752ac4528605f8, type: 3}
           m_Scale: {x: 1, y: 1}
           m_Offset: {x: 0, y: 0}
       data:
         first:
           name: _DetailNormalMap
-        second:
-          m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
-          m_Offset: {x: 0, y: 0}
-      data:
-        first:
-          name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -62,7 +55,7 @@ Material:
           name: _EmissionMap
         second:
           m_Texture: {fileID: 0}
-          m_Scale: {x: 1, y: 1}
+          m_Scale: {x: 1.25, y: 1.25}
           m_Offset: {x: 0, y: 0}
       data:
         first:
@@ -74,6 +67,13 @@ Material:
       data:
         first:
           name: _DetailAlbedoMap
+        second:
+          m_Texture: {fileID: 0}
+          m_Scale: {x: 1, y: 1}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
+          name: _MetallicGlossMap
         second:
           m_Texture: {fileID: 0}
           m_Scale: {x: 1, y: 1}
@@ -93,24 +93,20 @@ Material:
         second: .5
       data:
         first:
+          name: _Parallax
+        second: .00499999989
+      data:
+        first:
           name: _ZWrite
         second: 1
       data:
         first:
           name: _Glossiness
-        second: .5
-      data:
-        first:
-          name: _Metallic
         second: 0
       data:
         first:
           name: _BumpScale
         second: 1
-      data:
-        first:
-          name: _Parallax
-        second: .0199999996
       data:
         first:
           name: _OcclusionStrength
@@ -126,6 +122,10 @@ Material:
       data:
         first:
           name: _Mode
+        second: 0
+      data:
+        first:
+          name: _Metallic
         second: 0
     m_Colors:
       data:
