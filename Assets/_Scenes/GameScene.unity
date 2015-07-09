@@ -318,11 +318,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 22480664, guid: ba19bd3f58c126e49a087c20c98b51a5, type: 2}
       propertyPath: m_AnchorMax.x
-      value: .699999988
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 22480664, guid: ba19bd3f58c126e49a087c20c98b51a5, type: 2}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 198566, guid: ba19bd3f58c126e49a087c20c98b51a5, type: 2}
       propertyPath: m_IsActive
@@ -1820,7 +1820,7 @@ Transform:
   - {fileID: 24578154}
   - {fileID: 1545539304}
   m_Father: {fileID: 0}
-  m_RootOrder: 12
+  m_RootOrder: 9
 --- !u!114 &1298986341 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 11463604, guid: 8ac0df7faf628e449ba8d6792c8239f8,

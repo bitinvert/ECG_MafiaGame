@@ -172,6 +172,14 @@ public class StateMachineUnitAction : MonoBehaviour {
 		pIntTurnCount++;
 		this.ResetStateVal();
 		mClientPlayer.playerChange();
+		foreach (Unit unit in pPCPlayer.pListUnits) {
+			unit.pBoolMoveDone = false;
+			unit.pBoolDone = false;
+		}
+		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
+		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
+		pPCPlayer.pUnitActive = null;
+		pPCPlayer.pUnitTapped = null;
 		pPCPlayer.pBoolEndTurn = false;
 		
 	}
@@ -179,7 +187,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 	void ResetStateVal()
 	{
 		pPCPlayer.pBoolShowAttack = false;
-		pPCPlayer.pBoolShowMove = true;
+		pPCPlayer.pBoolShowMove = false;
 		pPCPlayer.pBoolShowSpecial =false;
 		mBoolMove = false;
 		mBoolAttack = false;

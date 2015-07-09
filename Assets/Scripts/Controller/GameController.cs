@@ -29,6 +29,14 @@ public class GameController : MonoBehaviour {
 				{
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
 					mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
+					if( mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolMoveDone)
+					{
+						mPCPlayer.pBoolShowAttack = true;
+					}
+					else
+					{
+						mPCPlayer.pBoolShowMove = true;
+					}
 				}
 			}
 			else if(pTransSeeker != null && Physics.Raycast(Camera.main.ScreenPointToRay(mVec3TapPos), out mRHInfo))
@@ -61,6 +69,14 @@ public class GameController : MonoBehaviour {
 				{
 					pTransSeeker = mRHInfo.collider.gameObject.transform;
 					mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
+					if( mRHInfo.collider.gameObject.GetComponent<Unit>().pBoolMoveDone)
+					{
+						mPCPlayer.pBoolShowAttack = true;
+					}
+					else
+					{
+						mPCPlayer.pBoolShowMove = true;
+					}
 				}
 				else if(mRHInfo.collider.gameObject.tag.Equals("Playable") && mRHInfo.collider.gameObject.GetComponent<Unit>().pFacFaction != mPCPlayer.pFactionFlag && mPCPlayer.pBoolShowAttack == true
 				        && pListCharacters[mIntUnitIndex].pUnitEnemy == null)
