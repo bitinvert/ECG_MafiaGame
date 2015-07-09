@@ -233,5 +233,17 @@ public class Unit : MonoBehaviour {
 
 	}
 
+	//SoundTest
+	//Mehrere AudioSources
+	//Tags auf versch. Klassen spezialisieren
+	//Sound in Methode Die()
+	//private void OnCollisionEnter(Collision collision){
+
+		/*if (collision.collider.tag = "playable") {
+			Debug.Log("Collision detected");
+			GetComponent<AudioSource>().Play ();
+		}*/
+	//}
+
 }
  	
