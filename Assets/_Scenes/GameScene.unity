@@ -1030,6 +1030,70 @@ Prefab:
       propertyPath: orthographic size
       value: 5
       objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: moveColor.r
+      value: .367647052
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: moveColor.g
+      value: .921501219
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: moveColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: moveColor.a
+      value: .509000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: attackColor.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: attackColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: attackColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: attackColor.a
+      value: .509000003
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: specialColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: specialColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: specialColor.b
+      value: .0482759476
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: specialColor.a
+      value: .497000009
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: selectedFieldColor.r
+      value: .36470589
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: selectedFieldColor.g
+      value: .917647064
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: selectedFieldColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 11490858, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
+      propertyPath: selectedFieldColor.a
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8ac0df7faf628e449ba8d6792c8239f8, type: 2}
   m_IsPrefabParent: 0
@@ -1952,7 +2016,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &1495525314
 BoxCollider:
   m_ObjectHideFlags: 0
