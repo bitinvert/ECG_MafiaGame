@@ -52,7 +52,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 				int attack = pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
 				Message msg = new Message(ActionType.ATTACK ,attack);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
-				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.name);
+				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.pStringName);
 				mClientPlayer.SavePlayerMove(msg);
 				pPCPlayer.pUnitActive.ResetValues();
 				Debug.Log ("State: Attack Done");

@@ -303,7 +303,7 @@ public class Client : MonoBehaviour {
 				attackerUnit.ResetMoveVals ();
 			}
 			*/
-			Debug.Log (attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim))));
+			attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim)));
 
 			//how to handle die?
 		}
