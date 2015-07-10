@@ -8,6 +8,7 @@ public class MenuOverlayController : MonoBehaviour {
 	public GameObject healButton;
 
 	public GameObject endTurnButton;
+	public GameObject endTurnButton_Waiting;
 
 	public PlayerController pc;
 
@@ -24,9 +25,12 @@ public class MenuOverlayController : MonoBehaviour {
 		}
 
 		if(!mClientPlayer.IsMyTurn) {
-			endTurnButton.GetComponent<Button>().interactable = false;
+			endTurnButton_Waiting.SetActive(true);
+			endTurnButton.SetActive(false);
+
 		} else {
-			endTurnButton.GetComponent<Button>().interactable = true;
+			endTurnButton.SetActive(true);
+			endTurnButton_Waiting.SetActive(false);
 		}
 	}
 
