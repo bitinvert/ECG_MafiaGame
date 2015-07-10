@@ -176,8 +176,10 @@ public class StateMachineUnitAction : MonoBehaviour {
 			unit.pBoolMoveDone = false;
 			unit.pBoolDone = false;
 		}
-		pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
-		pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
+		if(pPCPlayer.pUnitActive != null) {
+			pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
+			pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
+		}
 		pPCPlayer.pUnitActive = null;
 		pPCPlayer.pUnitTapped = null;
 		pPCPlayer.pBoolEndTurn = false;
