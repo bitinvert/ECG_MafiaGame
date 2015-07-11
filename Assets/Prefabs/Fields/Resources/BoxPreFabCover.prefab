@@ -29,7 +29,7 @@ GameObject:
   - 4: {fileID: 408940}
   - 33: {fileID: 3368238}
   - 23: {fileID: 2396330}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kiste1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 419146}
   - 95: {fileID: 9595594}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WoodenBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -118,7 +118,7 @@ GameObject:
   - 64: {fileID: 6447672}
   - 23: {fileID: 2334294}
   - 114: {fileID: 11423870}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -693,7 +693,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 143568}

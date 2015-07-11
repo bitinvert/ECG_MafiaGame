@@ -13,6 +13,12 @@ public class GridOverlay : MonoBehaviour {
 	//private AStar astar;
 	private FloodFill floodFill;
 
+	public Color moveColor = new Color(1f, 1f, 1f);
+	public Color attackColor = new Color(1f, 1f, 1f);
+	public Color specialColor = new Color(1f, 1f, 1f);
+
+	public Color selectedFieldColor = new Color (1f, 1f, 1f);
+
 	//Array of all nodes
 	private Node[,] mNodeGrid;
 	private Material lineMaterial;
@@ -88,15 +94,15 @@ public class GridOverlay : MonoBehaviour {
 	{
 		if (playerController.pBoolShowAttack) 
 		{
-			walkColor = new Color(4.0f, 0.1f, 0.1f, 0.5f);
+			walkColor = attackColor;
 
 		} else if (playerController.pBoolShowMove) 
 		{
-			walkColor = new Color(0.0f, 0.7f, 0.9f, 0.5f);
+			walkColor = moveColor;
 
 		} else if (playerController.pBoolShowSpecial) 
 		{
-			walkColor = new Color(0.2f, 0.9f, 0.2f, 0.5f);
+			walkColor = specialColor;
 		}
 	}
 
@@ -136,8 +142,17 @@ public class GridOverlay : MonoBehaviour {
 				if(n.pBoolReachable && n.pBoolWalkable)
 				{
 					GL.Begin(GL.TRIANGLE_STRIP);
-
+					
 						GL.Color (walkColor);
+
+					if(playerController.pUnitActive.pGOTarget != null) {
+						Vector3 targetPosition = playerController.pUnitActive.pGOTarget.transform.position;
+
+						if((n.pVec3WorldPos.x) == System.Math.Round(targetPosition.x, 2) && (n.pVec3WorldPos.z) == System.Math.Round(targetPosition.z, 2)) {
+
+							GL.Color(selectedFieldColor);
+						}
+					}					
 
 						GL.Vertex(p1);
 						GL.Vertex(p2);

@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour {
 	
 	public string pStringPlayerName;
 	public List<Unit> pListUnits;
-	public Faction pFactionFlag;
+	public Fraction pFactionFlag;
 	public Unit pUnitActive;
 
 	public Unit pUnitTapped;
@@ -21,13 +21,17 @@ public class PlayerController : MonoBehaviour {
 	//Für Nadja: wenn der button zum festnehmen gedrückt wurde soll dieser boolean gesetzt werden
 	public bool pBoolShackle;
 
+	private Client mClinetFaction;
+
 	void Start () {
+		mClinetFaction = Object.FindObjectOfType(typeof(Client)) as Client;
 		pListUnits = new List<Unit>( Object.FindObjectsOfType(typeof(Unit)) as Unit[]);
 		pBoolShowMove = true;
 		pBoolShowAttack = false;
 		pBoolShowSpecial = false;
 		pBoolEndTurn = false;
 		pBoolShackle = false;
+		pFactionFlag = mClinetFaction.user.fraction;
 	}
 
 
@@ -38,10 +42,6 @@ public class PlayerController : MonoBehaviour {
 		}
 	}
 
-	public enum Faction
-	{
-		Mafia, Police
-	}
 
 	public void setShowMove(bool b) {
 		this.pBoolShowMove = b;

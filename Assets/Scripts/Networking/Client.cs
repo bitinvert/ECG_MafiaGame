@@ -225,6 +225,12 @@ public class Client : MonoBehaviour {
 			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character , targetField);
 			break;
 			//more ActionTypes can follow
+			/*
+			case ActionType.SPECIAL:
+            string specialUser = message.involvedCharacters[0];
+            string specialTarget = message.involvedCharacters[1];
+            photonView.RPC("LoadSpecial", PhotonTargets.Others, timeStamp, specialUser, specialTarget);
+			*/
 
 		}
 	}
@@ -290,13 +296,13 @@ public class Client : MonoBehaviour {
 			Debug.Log ("Gegner hat zu lange gebraucht. Du hast gewonnen!");
 		} else {
 			Unit attackerUnit = playerController.pListUnits.Find(x => x.pStringName.Equals(attacker));
-
+			/*
 			if (targetField != null) {
 				attackerUnit.pAStarPathfinding.FindPath(attackerUnit.transform.position, targetField, attackerUnit.mVec3Offset);
 				attackerUnit.move(); 
 				attackerUnit.ResetMoveVals ();
 			}
-
+			*/
 			attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim)));
 
 			//how to handle die?
@@ -323,14 +329,39 @@ public class Client : MonoBehaviour {
 		} else {
 			Unit movedUnit = playerController.pListUnits.Find (x => x.pStringName.Equals(character));
 			movedUnit.pAStarPathfinding.FindPath(movedUnit.transform.position, targetField, movedUnit.mVec3Offset);
-
-			while (movedUnit.transform.position - movedUnit.mVec3Offset != targetField) {
-				movedUnit.move ();
-			}
-			movedUnit.ResetValues ();
+			movedUnit.targetField = targetField;
+			movedUnit.moving = true;
 		}
 	}
+	
+	/// <summary>
+	///  Load parameters for updating the game. In this case a character used its special ability on another.
+	/// </summary>
+	/// <param name="timeStamp">Indicates when the move was sent.</param>
+	/// <param name="character">Indicates the unit which used its special ability.</param>
+	/// <param name="target">Indicates the unit on which the special ability was used.</param>
+	[PunRPC]
+    void LoadSpecial(String timeStamp, string character, string target)
+    {
+        DateTime currentTimeStamp = DateTime.Now;
+		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
+		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
 
+		PlayerController playerController = FindObjectOfType(typeof(PlayerController)) as PlayerController;
+
+        if (diff.Hours > 24)
+        {
+            Debug.Log("Gegner hat zu lange gebraucht. Du hast gewonnen!");
+        }
+        else
+        {
+            Unit specialUser = playerController.pListUnits.Find(x => x.pStringName.Equals(character));
+            Unit specialTarget = playerController.pListUnits.Find(x => x.pStringName.Equals(target));
+
+            specialUser.UseSpecial(specialTarget);
+
+        }
+    }
 	private void TestData () {
 		//shouldn't be done like that; load .txt file
 		TextAsset pDesc = (TextAsset)Resources.Load("TheHarborJob_desc_p", typeof(TextAsset));

@@ -26,7 +26,7 @@ public class Grid : MonoBehaviour {
 
 	public bool isGridCreated = false;
 
-	public LevelController lc;
+	//public LevelController lc;
 	// Use this for initialization
 	void Start ()
 	{

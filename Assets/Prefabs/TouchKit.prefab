@@ -59,8 +59,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14bfaee28f4804f409ba1556d75993ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pFloatCMSpeed: 25
-  pFloatCZSpeed: 25
+  pFloatCMSpeed: 15
+  pFloatCZSpeed: 15
 --- !u!1001 &100100000
 Prefab:
   m_ObjectHideFlags: 1

@@ -1,0 +1,2514 @@
+fileFormatVersion: 2
+guid: d214714021ca9cc48a1dc8015fb54e81
+timeCreated: 1436084991
+licenseType: Free
+ModelImporter:
+  serializedVersion: 18
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: containerschiff:container_06:container1
+    100004: containerschiff:container_06:container10
+    100006: containerschiff:container_06:container11
+    100008: containerschiff:container_06:container12
+    100010: containerschiff:container_06:container13
+    100012: containerschiff:container_06:container14
+    100014: containerschiff:container_06:container16
+    100016: containerschiff:container_06:container17
+    100018: containerschiff:container_06:container2
+    100020: containerschiff:container_06:container3
+    100022: containerschiff:container_06:container4
+    100024: containerschiff:container_06:container5
+    100026: containerschiff:container_06:container6
+    100028: containerschiff:container_06:container7
+    100030: containerschiff:container_06:container8
+    100032: containerschiff:container_06:container9
+    100034: containerschiff:container_06:container_grundform
+    100036: containerschiff:container_06:container_grundform 1
+    100038: containerschiff:container_06:container_grundform 10
+    100040: containerschiff:container_06:container_grundform 11
+    100042: containerschiff:container_06:container_grundform 12
+    100044: containerschiff:container_06:container_grundform 13
+    100046: containerschiff:container_06:container_grundform 14
+    100048: containerschiff:container_06:container_grundform 15
+    100050: containerschiff:container_06:container_grundform 16
+    100052: containerschiff:container_06:container_grundform 17
+    100054: containerschiff:container_06:container_grundform 2
+    100056: containerschiff:container_06:container_grundform 3
+    100058: containerschiff:container_06:container_grundform 4
+    100060: containerschiff:container_06:container_grundform 5
+    100062: containerschiff:container_06:container_grundform 6
+    100064: containerschiff:container_06:container_grundform 7
+    100066: containerschiff:container_06:container_grundform 8
+    100068: containerschiff:container_06:container_grundform 9
+    100070: containerschiff:container_06:container_stange
+    100072: containerschiff:container_06:container_stange 1
+    100074: containerschiff:container_06:container_stange 10
+    100076: containerschiff:container_06:container_stange 11
+    100078: containerschiff:container_06:container_stange 12
+    100080: containerschiff:container_06:container_stange 13
+    100082: containerschiff:container_06:container_stange 14
+    100084: containerschiff:container_06:container_stange 15
+    100086: containerschiff:container_06:container_stange 16
+    100088: containerschiff:container_06:container_stange 2
+    100090: containerschiff:container_06:container_stange 3
+    100092: containerschiff:container_06:container_stange 4
+    100094: containerschiff:container_06:container_stange 5
+    100096: containerschiff:container_06:container_stange 6
+    100098: containerschiff:container_06:container_stange 7
+    100100: containerschiff:container_06:container_stange 8
+    100102: containerschiff:container_06:container_stange 9
+    100104: containerschiff:container_06:container_stange1
+    100106: containerschiff:container_06:container_stange1 1
+    100108: containerschiff:container_06:container_stange1 10
+    100110: containerschiff:container_06:container_stange1 11
+    100112: containerschiff:container_06:container_stange1 12
+    100114: containerschiff:container_06:container_stange1 13
+    100116: containerschiff:container_06:container_stange1 14
+    100118: containerschiff:container_06:container_stange1 15
+    100120: containerschiff:container_06:container_stange1 16
+    100122: containerschiff:container_06:container_stange1 2
+    100124: containerschiff:container_06:container_stange1 3
+    100126: containerschiff:container_06:container_stange1 4
+    100128: containerschiff:container_06:container_stange1 5
+    100130: containerschiff:container_06:container_stange1 6
+    100132: containerschiff:container_06:container_stange1 7
+    100134: containerschiff:container_06:container_stange1 8
+    100136: containerschiff:container_06:container_stange1 9
+    100138: containerschiff:container_06:container_stange2
+    100140: containerschiff:container_06:container_stange2 1
+    100142: containerschiff:container_06:container_stange2 10
+    100144: containerschiff:container_06:container_stange2 11
+    100146: containerschiff:container_06:container_stange2 12
+    100148: containerschiff:container_06:container_stange2 13
+    100150: containerschiff:container_06:container_stange2 14
+    100152: containerschiff:container_06:container_stange2 15
+    100154: containerschiff:container_06:container_stange2 16
+    100156: containerschiff:container_06:container_stange2 2
+    100158: containerschiff:container_06:container_stange2 3
+    100160: containerschiff:container_06:container_stange2 4
+    100162: containerschiff:container_06:container_stange2 5
+    100164: containerschiff:container_06:container_stange2 6
+    100166: containerschiff:container_06:container_stange2 7
+    100168: containerschiff:container_06:container_stange2 8
+    100170: containerschiff:container_06:container_stange2 9
+    100172: containerschiff:container_06:container_stange3
+    100174: containerschiff:container_06:container_stange3 1
+    100176: containerschiff:container_06:container_stange3 10
+    100178: containerschiff:container_06:container_stange3 11
+    100180: containerschiff:container_06:container_stange3 12
+    100182: containerschiff:container_06:container_stange3 13
+    100184: containerschiff:container_06:container_stange3 14
+    100186: containerschiff:container_06:container_stange3 15
+    100188: containerschiff:container_06:container_stange3 16
+    100190: containerschiff:container_06:container_stange3 2
+    100192: containerschiff:container_06:container_stange3 3
+    100194: containerschiff:container_06:container_stange3 4
+    100196: containerschiff:container_06:container_stange3 5
+    100198: containerschiff:container_06:container_stange3 6
+    100200: containerschiff:container_06:container_stange3 7
+    100202: containerschiff:container_06:container_stange3 8
+    100204: containerschiff:container_06:container_stange3 9
+    100206: containerschiff:container_06:container_stangen
+    100208: containerschiff:container_06:container_stangen 1
+    100210: containerschiff:container_06:container_stangen 10
+    100212: containerschiff:container_06:container_stangen 11
+    100214: containerschiff:container_06:container_stangen 12
+    100216: containerschiff:container_06:container_stangen 13
+    100218: containerschiff:container_06:container_stangen 14
+    100220: containerschiff:container_06:container_stangen 15
+    100222: containerschiff:container_06:container_stangen 16
+    100224: containerschiff:container_06:container_stangen 2
+    100226: containerschiff:container_06:container_stangen 3
+    100228: containerschiff:container_06:container_stangen 4
+    100230: containerschiff:container_06:container_stangen 5
+    100232: containerschiff:container_06:container_stangen 6
+    100234: containerschiff:container_06:container_stangen 7
+    100236: containerschiff:container_06:container_stangen 8
+    100238: containerschiff:container_06:container_stangen 9
+    100240: containerschiff:container_06:group1
+    100242: containerschiff:container_06:group2
+    100244: containerschiff:container_06:pCylinder1
+    100246: containerschiff:container_06:pCylinder1 1
+    100248: containerschiff:container_06:pCylinder1 10
+    100250: containerschiff:container_06:pCylinder1 11
+    100252: containerschiff:container_06:pCylinder1 12
+    100254: containerschiff:container_06:pCylinder1 13
+    100256: containerschiff:container_06:pCylinder1 14
+    100258: containerschiff:container_06:pCylinder1 15
+    100260: containerschiff:container_06:pCylinder1 16
+    100262: containerschiff:container_06:pCylinder1 17
+    100264: containerschiff:container_06:pCylinder1 18
+    100266: containerschiff:container_06:pCylinder1 19
+    100268: containerschiff:container_06:pCylinder1 2
+    100270: containerschiff:container_06:pCylinder1 20
+    100272: containerschiff:container_06:pCylinder1 21
+    100274: containerschiff:container_06:pCylinder1 22
+    100276: containerschiff:container_06:pCylinder1 23
+    100278: containerschiff:container_06:pCylinder1 24
+    100280: containerschiff:container_06:pCylinder1 25
+    100282: containerschiff:container_06:pCylinder1 26
+    100284: containerschiff:container_06:pCylinder1 27
+    100286: containerschiff:container_06:pCylinder1 28
+    100288: containerschiff:container_06:pCylinder1 29
+    100290: containerschiff:container_06:pCylinder1 3
+    100292: containerschiff:container_06:pCylinder1 30
+    100294: containerschiff:container_06:pCylinder1 31
+    100296: containerschiff:container_06:pCylinder1 32
+    100298: containerschiff:container_06:pCylinder1 33
+    100300: containerschiff:container_06:pCylinder1 34
+    100302: containerschiff:container_06:pCylinder1 35
+    100304: containerschiff:container_06:pCylinder1 36
+    100306: containerschiff:container_06:pCylinder1 37
+    100308: containerschiff:container_06:pCylinder1 38
+    100310: containerschiff:container_06:pCylinder1 39
+    100312: containerschiff:container_06:pCylinder1 4
+    100314: containerschiff:container_06:pCylinder1 40
+    100316: containerschiff:container_06:pCylinder1 41
+    100318: containerschiff:container_06:pCylinder1 42
+    100320: containerschiff:container_06:pCylinder1 43
+    100322: containerschiff:container_06:pCylinder1 44
+    100324: containerschiff:container_06:pCylinder1 45
+    100326: containerschiff:container_06:pCylinder1 46
+    100328: containerschiff:container_06:pCylinder1 47
+    100330: containerschiff:container_06:pCylinder1 48
+    100332: containerschiff:container_06:pCylinder1 49
+    100334: containerschiff:container_06:pCylinder1 5
+    100336: containerschiff:container_06:pCylinder1 50
+    100338: containerschiff:container_06:pCylinder1 51
+    100340: containerschiff:container_06:pCylinder1 52
+    100342: containerschiff:container_06:pCylinder1 53
+    100344: containerschiff:container_06:pCylinder1 54
+    100346: containerschiff:container_06:pCylinder1 55
+    100348: containerschiff:container_06:pCylinder1 56
+    100350: containerschiff:container_06:pCylinder1 57
+    100352: containerschiff:container_06:pCylinder1 58
+    100354: containerschiff:container_06:pCylinder1 59
+    100356: containerschiff:container_06:pCylinder1 6
+    100358: containerschiff:container_06:pCylinder1 60
+    100360: containerschiff:container_06:pCylinder1 61
+    100362: containerschiff:container_06:pCylinder1 62
+    100364: containerschiff:container_06:pCylinder1 63
+    100366: containerschiff:container_06:pCylinder1 64
+    100368: containerschiff:container_06:pCylinder1 65
+    100370: containerschiff:container_06:pCylinder1 66
+    100372: containerschiff:container_06:pCylinder1 67
+    100374: containerschiff:container_06:pCylinder1 7
+    100376: containerschiff:container_06:pCylinder1 8
+    100378: containerschiff:container_06:pCylinder1 9
+    100380: containerschiff:container_06:pCylinder4
+    100382: containerschiff:container_06:pCylinder4 1
+    100384: containerschiff:container_06:pCylinder4 10
+    100386: containerschiff:container_06:pCylinder4 11
+    100388: containerschiff:container_06:pCylinder4 12
+    100390: containerschiff:container_06:pCylinder4 13
+    100392: containerschiff:container_06:pCylinder4 14
+    100394: containerschiff:container_06:pCylinder4 15
+    100396: containerschiff:container_06:pCylinder4 16
+    100398: containerschiff:container_06:pCylinder4 17
+    100400: containerschiff:container_06:pCylinder4 18
+    100402: containerschiff:container_06:pCylinder4 19
+    100404: containerschiff:container_06:pCylinder4 2
+    100406: containerschiff:container_06:pCylinder4 20
+    100408: containerschiff:container_06:pCylinder4 21
+    100410: containerschiff:container_06:pCylinder4 22
+    100412: containerschiff:container_06:pCylinder4 23
+    100414: containerschiff:container_06:pCylinder4 24
+    100416: containerschiff:container_06:pCylinder4 25
+    100418: containerschiff:container_06:pCylinder4 26
+    100420: containerschiff:container_06:pCylinder4 27
+    100422: containerschiff:container_06:pCylinder4 28
+    100424: containerschiff:container_06:pCylinder4 29
+    100426: containerschiff:container_06:pCylinder4 3
+    100428: containerschiff:container_06:pCylinder4 30
+    100430: containerschiff:container_06:pCylinder4 31
+    100432: containerschiff:container_06:pCylinder4 32
+    100434: containerschiff:container_06:pCylinder4 33
+    100436: containerschiff:container_06:pCylinder4 34
+    100438: containerschiff:container_06:pCylinder4 35
+    100440: containerschiff:container_06:pCylinder4 36
+    100442: containerschiff:container_06:pCylinder4 37
+    100444: containerschiff:container_06:pCylinder4 38
+    100446: containerschiff:container_06:pCylinder4 39
+    100448: containerschiff:container_06:pCylinder4 4
+    100450: containerschiff:container_06:pCylinder4 40
+    100452: containerschiff:container_06:pCylinder4 41
+    100454: containerschiff:container_06:pCylinder4 42
+    100456: containerschiff:container_06:pCylinder4 43
+    100458: containerschiff:container_06:pCylinder4 44
+    100460: containerschiff:container_06:pCylinder4 45
+    100462: containerschiff:container_06:pCylinder4 46
+    100464: containerschiff:container_06:pCylinder4 47
+    100466: containerschiff:container_06:pCylinder4 48
+    100468: containerschiff:container_06:pCylinder4 49
+    100470: containerschiff:container_06:pCylinder4 5
+    100472: containerschiff:container_06:pCylinder4 50
+    100474: containerschiff:container_06:pCylinder4 51
+    100476: containerschiff:container_06:pCylinder4 52
+    100478: containerschiff:container_06:pCylinder4 53
+    100480: containerschiff:container_06:pCylinder4 54
+    100482: containerschiff:container_06:pCylinder4 55
+    100484: containerschiff:container_06:pCylinder4 56
+    100486: containerschiff:container_06:pCylinder4 57
+    100488: containerschiff:container_06:pCylinder4 58
+    100490: containerschiff:container_06:pCylinder4 59
+    100492: containerschiff:container_06:pCylinder4 6
+    100494: containerschiff:container_06:pCylinder4 60
+    100496: containerschiff:container_06:pCylinder4 61
+    100498: containerschiff:container_06:pCylinder4 62
+    100500: containerschiff:container_06:pCylinder4 63
+    100502: containerschiff:container_06:pCylinder4 64
+    100504: containerschiff:container_06:pCylinder4 65
+    100506: containerschiff:container_06:pCylinder4 66
+    100508: containerschiff:container_06:pCylinder4 67
+    100510: containerschiff:container_06:pCylinder4 7
+    100512: containerschiff:container_06:pCylinder4 8
+    100514: containerschiff:container_06:pCylinder4 9
+    100516: containerschiff:container_06:pCylinder7
+    100518: containerschiff:container_06:pCylinder7 1
+    100520: containerschiff:container_06:pCylinder7 10
+    100522: containerschiff:container_06:pCylinder7 11
+    100524: containerschiff:container_06:pCylinder7 12
+    100526: containerschiff:container_06:pCylinder7 13
+    100528: containerschiff:container_06:pCylinder7 14
+    100530: containerschiff:container_06:pCylinder7 15
+    100532: containerschiff:container_06:pCylinder7 16
+    100534: containerschiff:container_06:pCylinder7 17
+    100536: containerschiff:container_06:pCylinder7 18
+    100538: containerschiff:container_06:pCylinder7 19
+    100540: containerschiff:container_06:pCylinder7 2
+    100542: containerschiff:container_06:pCylinder7 20
+    100544: containerschiff:container_06:pCylinder7 21
+    100546: containerschiff:container_06:pCylinder7 22
+    100548: containerschiff:container_06:pCylinder7 23
+    100550: containerschiff:container_06:pCylinder7 24
+    100552: containerschiff:container_06:pCylinder7 25
+    100554: containerschiff:container_06:pCylinder7 26
+    100556: containerschiff:container_06:pCylinder7 27
+    100558: containerschiff:container_06:pCylinder7 28
+    100560: containerschiff:container_06:pCylinder7 29
+    100562: containerschiff:container_06:pCylinder7 3
+    100564: containerschiff:container_06:pCylinder7 30
+    100566: containerschiff:container_06:pCylinder7 31
+    100568: containerschiff:container_06:pCylinder7 32
+    100570: containerschiff:container_06:pCylinder7 33
+    100572: containerschiff:container_06:pCylinder7 34
+    100574: containerschiff:container_06:pCylinder7 35
+    100576: containerschiff:container_06:pCylinder7 36
+    100578: containerschiff:container_06:pCylinder7 37
+    100580: containerschiff:container_06:pCylinder7 38
+    100582: containerschiff:container_06:pCylinder7 39
+    100584: containerschiff:container_06:pCylinder7 4
+    100586: containerschiff:container_06:pCylinder7 40
+    100588: containerschiff:container_06:pCylinder7 41
+    100590: containerschiff:container_06:pCylinder7 42
+    100592: containerschiff:container_06:pCylinder7 43
+    100594: containerschiff:container_06:pCylinder7 44
+    100596: containerschiff:container_06:pCylinder7 45
+    100598: containerschiff:container_06:pCylinder7 46
+    100600: containerschiff:container_06:pCylinder7 47
+    100602: containerschiff:container_06:pCylinder7 48
+    100604: containerschiff:container_06:pCylinder7 49
+    100606: containerschiff:container_06:pCylinder7 5
+    100608: containerschiff:container_06:pCylinder7 50
+    100610: containerschiff:container_06:pCylinder7 51
+    100612: containerschiff:container_06:pCylinder7 52
+    100614: containerschiff:container_06:pCylinder7 53
+    100616: containerschiff:container_06:pCylinder7 54
+    100618: containerschiff:container_06:pCylinder7 55
+    100620: containerschiff:container_06:pCylinder7 56
+    100622: containerschiff:container_06:pCylinder7 57
+    100624: containerschiff:container_06:pCylinder7 58
+    100626: containerschiff:container_06:pCylinder7 59
+    100628: containerschiff:container_06:pCylinder7 6
+    100630: containerschiff:container_06:pCylinder7 60
+    100632: containerschiff:container_06:pCylinder7 61
+    100634: containerschiff:container_06:pCylinder7 62
+    100636: containerschiff:container_06:pCylinder7 63
+    100638: containerschiff:container_06:pCylinder7 64
+    100640: containerschiff:container_06:pCylinder7 65
+    100642: containerschiff:container_06:pCylinder7 66
+    100644: containerschiff:container_06:pCylinder7 67
+    100646: containerschiff:container_06:pCylinder7 7
+    100648: containerschiff:container_06:pCylinder7 8
+    100650: containerschiff:container_06:pCylinder7 9
+    100652: containerschiff:container_06:pCylinder8
+    100654: containerschiff:container_06:pCylinder8 1
+    100656: containerschiff:container_06:pCylinder8 10
+    100658: containerschiff:container_06:pCylinder8 11
+    100660: containerschiff:container_06:pCylinder8 12
+    100662: containerschiff:container_06:pCylinder8 13
+    100664: containerschiff:container_06:pCylinder8 14
+    100666: containerschiff:container_06:pCylinder8 15
+    100668: containerschiff:container_06:pCylinder8 16
+    100670: containerschiff:container_06:pCylinder8 17
+    100672: containerschiff:container_06:pCylinder8 18
+    100674: containerschiff:container_06:pCylinder8 19
+    100676: containerschiff:container_06:pCylinder8 2
+    100678: containerschiff:container_06:pCylinder8 20
+    100680: containerschiff:container_06:pCylinder8 21
+    100682: containerschiff:container_06:pCylinder8 22
+    100684: containerschiff:container_06:pCylinder8 23
+    100686: containerschiff:container_06:pCylinder8 24
+    100688: containerschiff:container_06:pCylinder8 25
+    100690: containerschiff:container_06:pCylinder8 26
+    100692: containerschiff:container_06:pCylinder8 27
+    100694: containerschiff:container_06:pCylinder8 28
+    100696: containerschiff:container_06:pCylinder8 29
+    100698: containerschiff:container_06:pCylinder8 3
+    100700: containerschiff:container_06:pCylinder8 30
+    100702: containerschiff:container_06:pCylinder8 31
+    100704: containerschiff:container_06:pCylinder8 32
+    100706: containerschiff:container_06:pCylinder8 33
+    100708: containerschiff:container_06:pCylinder8 34
+    100710: containerschiff:container_06:pCylinder8 35
+    100712: containerschiff:container_06:pCylinder8 36
+    100714: containerschiff:container_06:pCylinder8 37
+    100716: containerschiff:container_06:pCylinder8 38
+    100718: containerschiff:container_06:pCylinder8 39
+    100720: containerschiff:container_06:pCylinder8 4
+    100722: containerschiff:container_06:pCylinder8 40
+    100724: containerschiff:container_06:pCylinder8 41
+    100726: containerschiff:container_06:pCylinder8 42
+    100728: containerschiff:container_06:pCylinder8 43
+    100730: containerschiff:container_06:pCylinder8 44
+    100732: containerschiff:container_06:pCylinder8 45
+    100734: containerschiff:container_06:pCylinder8 46
+    100736: containerschiff:container_06:pCylinder8 47
+    100738: containerschiff:container_06:pCylinder8 48
+    100740: containerschiff:container_06:pCylinder8 49
+    100742: containerschiff:container_06:pCylinder8 5
+    100744: containerschiff:container_06:pCylinder8 50
+    100746: containerschiff:container_06:pCylinder8 51
+    100748: containerschiff:container_06:pCylinder8 52
+    100750: containerschiff:container_06:pCylinder8 53
+    100752: containerschiff:container_06:pCylinder8 54
+    100754: containerschiff:container_06:pCylinder8 55
+    100756: containerschiff:container_06:pCylinder8 56
+    100758: containerschiff:container_06:pCylinder8 57
+    100760: containerschiff:container_06:pCylinder8 58
+    100762: containerschiff:container_06:pCylinder8 59
+    100764: containerschiff:container_06:pCylinder8 6
+    100766: containerschiff:container_06:pCylinder8 60
+    100768: containerschiff:container_06:pCylinder8 61
+    100770: containerschiff:container_06:pCylinder8 62
+    100772: containerschiff:container_06:pCylinder8 63
+    100774: containerschiff:container_06:pCylinder8 64
+    100776: containerschiff:container_06:pCylinder8 65
+    100778: containerschiff:container_06:pCylinder8 66
+    100780: containerschiff:container_06:pCylinder8 67
+    100782: containerschiff:container_06:pCylinder8 7
+    100784: containerschiff:container_06:pCylinder8 8
+    100786: containerschiff:container_06:pCylinder8 9
+    100788: containerschiff:container_06:pCylinder9
+    100790: containerschiff:container_06:pCylinder9 1
+    100792: containerschiff:container_06:pCylinder9 10
+    100794: containerschiff:container_06:pCylinder9 11
+    100796: containerschiff:container_06:pCylinder9 12
+    100798: containerschiff:container_06:pCylinder9 13
+    100800: containerschiff:container_06:pCylinder9 14
+    100802: containerschiff:container_06:pCylinder9 15
+    100804: containerschiff:container_06:pCylinder9 16
+    100806: containerschiff:container_06:pCylinder9 17
+    100808: containerschiff:container_06:pCylinder9 18
+    100810: containerschiff:container_06:pCylinder9 19
+    100812: containerschiff:container_06:pCylinder9 2
+    100814: containerschiff:container_06:pCylinder9 20
+    100816: containerschiff:container_06:pCylinder9 21
+    100818: containerschiff:container_06:pCylinder9 22
+    100820: containerschiff:container_06:pCylinder9 23
+    100822: containerschiff:container_06:pCylinder9 24
+    100824: containerschiff:container_06:pCylinder9 25
+    100826: containerschiff:container_06:pCylinder9 26
+    100828: containerschiff:container_06:pCylinder9 27
+    100830: containerschiff:container_06:pCylinder9 28
+    100832: containerschiff:container_06:pCylinder9 29
+    100834: containerschiff:container_06:pCylinder9 3
+    100836: containerschiff:container_06:pCylinder9 30
+    100838: containerschiff:container_06:pCylinder9 31
+    100840: containerschiff:container_06:pCylinder9 32
+    100842: containerschiff:container_06:pCylinder9 33
+    100844: containerschiff:container_06:pCylinder9 34
+    100846: containerschiff:container_06:pCylinder9 35
+    100848: containerschiff:container_06:pCylinder9 36
+    100850: containerschiff:container_06:pCylinder9 37
+    100852: containerschiff:container_06:pCylinder9 38
+    100854: containerschiff:container_06:pCylinder9 39
+    100856: containerschiff:container_06:pCylinder9 4
+    100858: containerschiff:container_06:pCylinder9 40
+    100860: containerschiff:container_06:pCylinder9 41
+    100862: containerschiff:container_06:pCylinder9 42
+    100864: containerschiff:container_06:pCylinder9 43
+    100866: containerschiff:container_06:pCylinder9 44
+    100868: containerschiff:container_06:pCylinder9 45
+    100870: containerschiff:container_06:pCylinder9 46
+    100872: containerschiff:container_06:pCylinder9 47
+    100874: containerschiff:container_06:pCylinder9 48
+    100876: containerschiff:container_06:pCylinder9 49
+    100878: containerschiff:container_06:pCylinder9 5
+    100880: containerschiff:container_06:pCylinder9 50
+    100882: containerschiff:container_06:pCylinder9 51
+    100884: containerschiff:container_06:pCylinder9 52
+    100886: containerschiff:container_06:pCylinder9 53
+    100888: containerschiff:container_06:pCylinder9 54
+    100890: containerschiff:container_06:pCylinder9 55
+    100892: containerschiff:container_06:pCylinder9 56
+    100894: containerschiff:container_06:pCylinder9 57
+    100896: containerschiff:container_06:pCylinder9 58
+    100898: containerschiff:container_06:pCylinder9 59
+    100900: containerschiff:container_06:pCylinder9 6
+    100902: containerschiff:container_06:pCylinder9 60
+    100904: containerschiff:container_06:pCylinder9 61
+    100906: containerschiff:container_06:pCylinder9 62
+    100908: containerschiff:container_06:pCylinder9 63
+    100910: containerschiff:container_06:pCylinder9 64
+    100912: containerschiff:container_06:pCylinder9 65
+    100914: containerschiff:container_06:pCylinder9 66
+    100916: containerschiff:container_06:pCylinder9 67
+    100918: containerschiff:container_06:pCylinder9 7
+    100920: containerschiff:container_06:pCylinder9 8
+    100922: containerschiff:container_06:pCylinder9 9
+    100924: containerschiff:container_06:pPlane1
+    100926: containerschiff:container_06:pPlane1 1
+    100928: containerschiff:container_06:pPlane1 10
+    100930: containerschiff:container_06:pPlane1 11
+    100932: containerschiff:container_06:pPlane1 12
+    100934: containerschiff:container_06:pPlane1 13
+    100936: containerschiff:container_06:pPlane1 14
+    100938: containerschiff:container_06:pPlane1 15
+    100940: containerschiff:container_06:pPlane1 16
+    100942: containerschiff:container_06:pPlane1 17
+    100944: containerschiff:container_06:pPlane1 2
+    100946: containerschiff:container_06:pPlane1 3
+    100948: containerschiff:container_06:pPlane1 4
+    100950: containerschiff:container_06:pPlane1 5
+    100952: containerschiff:container_06:pPlane1 6
+    100954: containerschiff:container_06:pPlane1 7
+    100956: containerschiff:container_06:pPlane1 8
+    100958: containerschiff:container_06:pPlane1 9
+    100960: containerschiff:container_06:pPlane2
+    100962: containerschiff:container_06:pPlane2 1
+    100964: containerschiff:container_06:pPlane2 10
+    100966: containerschiff:container_06:pPlane2 11
+    100968: containerschiff:container_06:pPlane2 12
+    100970: containerschiff:container_06:pPlane2 13
+    100972: containerschiff:container_06:pPlane2 14
+    100974: containerschiff:container_06:pPlane2 15
+    100976: containerschiff:container_06:pPlane2 16
+    100978: containerschiff:container_06:pPlane2 17
+    100980: containerschiff:container_06:pPlane2 2
+    100982: containerschiff:container_06:pPlane2 3
+    100984: containerschiff:container_06:pPlane2 4
+    100986: containerschiff:container_06:pPlane2 5
+    100988: containerschiff:container_06:pPlane2 6
+    100990: containerschiff:container_06:pPlane2 7
+    100992: containerschiff:container_06:pPlane2 8
+    100994: containerschiff:container_06:pPlane2 9
+    100996: containerschiff:container_06:pPlane3
+    100998: containerschiff:container_06:pPlane3 1
+    101000: containerschiff:container_06:pPlane3 10
+    101002: containerschiff:container_06:pPlane3 11
+    101004: containerschiff:container_06:pPlane3 12
+    101006: containerschiff:container_06:pPlane3 13
+    101008: containerschiff:container_06:pPlane3 14
+    101010: containerschiff:container_06:pPlane3 15
+    101012: containerschiff:container_06:pPlane3 16
+    101014: containerschiff:container_06:pPlane3 17
+    101016: containerschiff:container_06:pPlane3 2
+    101018: containerschiff:container_06:pPlane3 3
+    101020: containerschiff:container_06:pPlane3 4
+    101022: containerschiff:container_06:pPlane3 5
+    101024: containerschiff:container_06:pPlane3 6
+    101026: containerschiff:container_06:pPlane3 7
+    101028: containerschiff:container_06:pPlane3 8
+    101030: containerschiff:container_06:pPlane3 9
+    101032: containerschiff:container_06:tuer_3
+    101034: containerschiff:container_06:tuer_3 1
+    101036: containerschiff:container_06:tuer_3 10
+    101038: containerschiff:container_06:tuer_3 11
+    101040: containerschiff:container_06:tuer_3 12
+    101042: containerschiff:container_06:tuer_3 13
+    101044: containerschiff:container_06:tuer_3 14
+    101046: containerschiff:container_06:tuer_3 15
+    101048: containerschiff:container_06:tuer_3 16
+    101050: containerschiff:container_06:tuer_3 17
+    101052: containerschiff:container_06:tuer_3 2
+    101054: containerschiff:container_06:tuer_3 3
+    101056: containerschiff:container_06:tuer_3 4
+    101058: containerschiff:container_06:tuer_3 5
+    101060: containerschiff:container_06:tuer_3 6
+    101062: containerschiff:container_06:tuer_3 7
+    101064: containerschiff:container_06:tuer_3 8
+    101066: containerschiff:container_06:tuer_3 9
+    101068: containerschiff:container_06:tuer_4
+    101070: containerschiff:container_06:tuer_4 1
+    101072: containerschiff:container_06:tuer_4 10
+    101074: containerschiff:container_06:tuer_4 11
+    101076: containerschiff:container_06:tuer_4 12
+    101078: containerschiff:container_06:tuer_4 13
+    101080: containerschiff:container_06:tuer_4 14
+    101082: containerschiff:container_06:tuer_4 15
+    101084: containerschiff:container_06:tuer_4 16
+    101086: containerschiff:container_06:tuer_4 17
+    101088: containerschiff:container_06:tuer_4 2
+    101090: containerschiff:container_06:tuer_4 3
+    101092: containerschiff:container_06:tuer_4 4
+    101094: containerschiff:container_06:tuer_4 5
+    101096: containerschiff:container_06:tuer_4 6
+    101098: containerschiff:container_06:tuer_4 7
+    101100: containerschiff:container_06:tuer_4 8
+    101102: containerschiff:container_06:tuer_4 9
+    400000: //RootNode
+    400002: containerschiff:container_06:container1
+    400004: containerschiff:container_06:container10
+    400006: containerschiff:container_06:container11
+    400008: containerschiff:container_06:container12
+    400010: containerschiff:container_06:container13
+    400012: containerschiff:container_06:container14
+    400014: containerschiff:container_06:container16
+    400016: containerschiff:container_06:container17
+    400018: containerschiff:container_06:container2
+    400020: containerschiff:container_06:container3
+    400022: containerschiff:container_06:container4
+    400024: containerschiff:container_06:container5
+    400026: containerschiff:container_06:container6
+    400028: containerschiff:container_06:container7
+    400030: containerschiff:container_06:container8
+    400032: containerschiff:container_06:container9
+    400034: containerschiff:container_06:container_grundform
+    400036: containerschiff:container_06:container_grundform 1
+    400038: containerschiff:container_06:container_grundform 10
+    400040: containerschiff:container_06:container_grundform 11
+    400042: containerschiff:container_06:container_grundform 12
+    400044: containerschiff:container_06:container_grundform 13
+    400046: containerschiff:container_06:container_grundform 14
+    400048: containerschiff:container_06:container_grundform 15
+    400050: containerschiff:container_06:container_grundform 16
+    400052: containerschiff:container_06:container_grundform 17
+    400054: containerschiff:container_06:container_grundform 2
+    400056: containerschiff:container_06:container_grundform 3
+    400058: containerschiff:container_06:container_grundform 4
+    400060: containerschiff:container_06:container_grundform 5
+    400062: containerschiff:container_06:container_grundform 6
+    400064: containerschiff:container_06:container_grundform 7
+    400066: containerschiff:container_06:container_grundform 8
+    400068: containerschiff:container_06:container_grundform 9
+    400070: containerschiff:container_06:container_stange
+    400072: containerschiff:container_06:container_stange 1
+    400074: containerschiff:container_06:container_stange 10
+    400076: containerschiff:container_06:container_stange 11
+    400078: containerschiff:container_06:container_stange 12
+    400080: containerschiff:container_06:container_stange 13
+    400082: containerschiff:container_06:container_stange 14
+    400084: containerschiff:container_06:container_stange 15
+    400086: containerschiff:container_06:container_stange 16
+    400088: containerschiff:container_06:container_stange 2
+    400090: containerschiff:container_06:container_stange 3
+    400092: containerschiff:container_06:container_stange 4
+    400094: containerschiff:container_06:container_stange 5
+    400096: containerschiff:container_06:container_stange 6
+    400098: containerschiff:container_06:container_stange 7
+    400100: containerschiff:container_06:container_stange 8
+    400102: containerschiff:container_06:container_stange 9
+    400104: containerschiff:container_06:container_stange1
+    400106: containerschiff:container_06:container_stange1 1
+    400108: containerschiff:container_06:container_stange1 10
+    400110: containerschiff:container_06:container_stange1 11
+    400112: containerschiff:container_06:container_stange1 12
+    400114: containerschiff:container_06:container_stange1 13
+    400116: containerschiff:container_06:container_stange1 14
+    400118: containerschiff:container_06:container_stange1 15
+    400120: containerschiff:container_06:container_stange1 16
+    400122: containerschiff:container_06:container_stange1 2
+    400124: containerschiff:container_06:container_stange1 3
+    400126: containerschiff:container_06:container_stange1 4
+    400128: containerschiff:container_06:container_stange1 5
+    400130: containerschiff:container_06:container_stange1 6
+    400132: containerschiff:container_06:container_stange1 7
+    400134: containerschiff:container_06:container_stange1 8
+    400136: containerschiff:container_06:container_stange1 9
+    400138: containerschiff:container_06:container_stange2
+    400140: containerschiff:container_06:container_stange2 1
+    400142: containerschiff:container_06:container_stange2 10
+    400144: containerschiff:container_06:container_stange2 11
+    400146: containerschiff:container_06:container_stange2 12
+    400148: containerschiff:container_06:container_stange2 13
+    400150: containerschiff:container_06:container_stange2 14
+    400152: containerschiff:container_06:container_stange2 15
+    400154: containerschiff:container_06:container_stange2 16
+    400156: containerschiff:container_06:container_stange2 2
+    400158: containerschiff:container_06:container_stange2 3
+    400160: containerschiff:container_06:container_stange2 4
+    400162: containerschiff:container_06:container_stange2 5
+    400164: containerschiff:container_06:container_stange2 6
+    400166: containerschiff:container_06:container_stange2 7
+    400168: containerschiff:container_06:container_stange2 8
+    400170: containerschiff:container_06:container_stange2 9
+    400172: containerschiff:container_06:container_stange3
+    400174: containerschiff:container_06:container_stange3 1
+    400176: containerschiff:container_06:container_stange3 10
+    400178: containerschiff:container_06:container_stange3 11
+    400180: containerschiff:container_06:container_stange3 12
+    400182: containerschiff:container_06:container_stange3 13
+    400184: containerschiff:container_06:container_stange3 14
+    400186: containerschiff:container_06:container_stange3 15
+    400188: containerschiff:container_06:container_stange3 16
+    400190: containerschiff:container_06:container_stange3 2
+    400192: containerschiff:container_06:container_stange3 3
+    400194: containerschiff:container_06:container_stange3 4
+    400196: containerschiff:container_06:container_stange3 5
+    400198: containerschiff:container_06:container_stange3 6
+    400200: containerschiff:container_06:container_stange3 7
+    400202: containerschiff:container_06:container_stange3 8
+    400204: containerschiff:container_06:container_stange3 9
+    400206: containerschiff:container_06:container_stangen
+    400208: containerschiff:container_06:container_stangen 1
+    400210: containerschiff:container_06:container_stangen 10
+    400212: containerschiff:container_06:container_stangen 11
+    400214: containerschiff:container_06:container_stangen 12
+    400216: containerschiff:container_06:container_stangen 13
+    400218: containerschiff:container_06:container_stangen 14
+    400220: containerschiff:container_06:container_stangen 15
+    400222: containerschiff:container_06:container_stangen 16
+    400224: containerschiff:container_06:container_stangen 2
+    400226: containerschiff:container_06:container_stangen 3
+    400228: containerschiff:container_06:container_stangen 4
+    400230: containerschiff:container_06:container_stangen 5
+    400232: containerschiff:container_06:container_stangen 6
+    400234: containerschiff:container_06:container_stangen 7
+    400236: containerschiff:container_06:container_stangen 8
+    400238: containerschiff:container_06:container_stangen 9
+    400240: containerschiff:container_06:group1
+    400242: containerschiff:container_06:group2
+    400244: containerschiff:container_06:pCylinder1
+    400246: containerschiff:container_06:pCylinder1 1
+    400248: containerschiff:container_06:pCylinder1 10
+    400250: containerschiff:container_06:pCylinder1 11
+    400252: containerschiff:container_06:pCylinder1 12
+    400254: containerschiff:container_06:pCylinder1 13
+    400256: containerschiff:container_06:pCylinder1 14
+    400258: containerschiff:container_06:pCylinder1 15
+    400260: containerschiff:container_06:pCylinder1 16
+    400262: containerschiff:container_06:pCylinder1 17
+    400264: containerschiff:container_06:pCylinder1 18
+    400266: containerschiff:container_06:pCylinder1 19
+    400268: containerschiff:container_06:pCylinder1 2
+    400270: containerschiff:container_06:pCylinder1 20
+    400272: containerschiff:container_06:pCylinder1 21
+    400274: containerschiff:container_06:pCylinder1 22
+    400276: containerschiff:container_06:pCylinder1 23
+    400278: containerschiff:container_06:pCylinder1 24
+    400280: containerschiff:container_06:pCylinder1 25
+    400282: containerschiff:container_06:pCylinder1 26
+    400284: containerschiff:container_06:pCylinder1 27
+    400286: containerschiff:container_06:pCylinder1 28
+    400288: containerschiff:container_06:pCylinder1 29
+    400290: containerschiff:container_06:pCylinder1 3
+    400292: containerschiff:container_06:pCylinder1 30
+    400294: containerschiff:container_06:pCylinder1 31
+    400296: containerschiff:container_06:pCylinder1 32
+    400298: containerschiff:container_06:pCylinder1 33
+    400300: containerschiff:container_06:pCylinder1 34
+    400302: containerschiff:container_06:pCylinder1 35
+    400304: containerschiff:container_06:pCylinder1 36
+    400306: containerschiff:container_06:pCylinder1 37
+    400308: containerschiff:container_06:pCylinder1 38
+    400310: containerschiff:container_06:pCylinder1 39
+    400312: containerschiff:container_06:pCylinder1 4
+    400314: containerschiff:container_06:pCylinder1 40
+    400316: containerschiff:container_06:pCylinder1 41
+    400318: containerschiff:container_06:pCylinder1 42
+    400320: containerschiff:container_06:pCylinder1 43
+    400322: containerschiff:container_06:pCylinder1 44
+    400324: containerschiff:container_06:pCylinder1 45
+    400326: containerschiff:container_06:pCylinder1 46
+    400328: containerschiff:container_06:pCylinder1 47
+    400330: containerschiff:container_06:pCylinder1 48
+    400332: containerschiff:container_06:pCylinder1 49
+    400334: containerschiff:container_06:pCylinder1 5
+    400336: containerschiff:container_06:pCylinder1 50
+    400338: containerschiff:container_06:pCylinder1 51
+    400340: containerschiff:container_06:pCylinder1 52
+    400342: containerschiff:container_06:pCylinder1 53
+    400344: containerschiff:container_06:pCylinder1 54
+    400346: containerschiff:container_06:pCylinder1 55
+    400348: containerschiff:container_06:pCylinder1 56
+    400350: containerschiff:container_06:pCylinder1 57
+    400352: containerschiff:container_06:pCylinder1 58
+    400354: containerschiff:container_06:pCylinder1 59
+    400356: containerschiff:container_06:pCylinder1 6
+    400358: containerschiff:container_06:pCylinder1 60
+    400360: containerschiff:container_06:pCylinder1 61
+    400362: containerschiff:container_06:pCylinder1 62
+    400364: containerschiff:container_06:pCylinder1 63
+    400366: containerschiff:container_06:pCylinder1 64
+    400368: containerschiff:container_06:pCylinder1 65
+    400370: containerschiff:container_06:pCylinder1 66
+    400372: containerschiff:container_06:pCylinder1 67
+    400374: containerschiff:container_06:pCylinder1 7
+    400376: containerschiff:container_06:pCylinder1 8
+    400378: containerschiff:container_06:pCylinder1 9
+    400380: containerschiff:container_06:pCylinder4
+    400382: containerschiff:container_06:pCylinder4 1
+    400384: containerschiff:container_06:pCylinder4 10
+    400386: containerschiff:container_06:pCylinder4 11
+    400388: containerschiff:container_06:pCylinder4 12
+    400390: containerschiff:container_06:pCylinder4 13
+    400392: containerschiff:container_06:pCylinder4 14
+    400394: containerschiff:container_06:pCylinder4 15
+    400396: containerschiff:container_06:pCylinder4 16
+    400398: containerschiff:container_06:pCylinder4 17
+    400400: containerschiff:container_06:pCylinder4 18
+    400402: containerschiff:container_06:pCylinder4 19
+    400404: containerschiff:container_06:pCylinder4 2
+    400406: containerschiff:container_06:pCylinder4 20
+    400408: containerschiff:container_06:pCylinder4 21
+    400410: containerschiff:container_06:pCylinder4 22
+    400412: containerschiff:container_06:pCylinder4 23
+    400414: containerschiff:container_06:pCylinder4 24
+    400416: containerschiff:container_06:pCylinder4 25
+    400418: containerschiff:container_06:pCylinder4 26
+    400420: containerschiff:container_06:pCylinder4 27
+    400422: containerschiff:container_06:pCylinder4 28
+    400424: containerschiff:container_06:pCylinder4 29
+    400426: containerschiff:container_06:pCylinder4 3
+    400428: containerschiff:container_06:pCylinder4 30
+    400430: containerschiff:container_06:pCylinder4 31
+    400432: containerschiff:container_06:pCylinder4 32
+    400434: containerschiff:container_06:pCylinder4 33
+    400436: containerschiff:container_06:pCylinder4 34
+    400438: containerschiff:container_06:pCylinder4 35
+    400440: containerschiff:container_06:pCylinder4 36
+    400442: containerschiff:container_06:pCylinder4 37
+    400444: containerschiff:container_06:pCylinder4 38
+    400446: containerschiff:container_06:pCylinder4 39
+    400448: containerschiff:container_06:pCylinder4 4
+    400450: containerschiff:container_06:pCylinder4 40
+    400452: containerschiff:container_06:pCylinder4 41
+    400454: containerschiff:container_06:pCylinder4 42
+    400456: containerschiff:container_06:pCylinder4 43
+    400458: containerschiff:container_06:pCylinder4 44
+    400460: containerschiff:container_06:pCylinder4 45
+    400462: containerschiff:container_06:pCylinder4 46
+    400464: containerschiff:container_06:pCylinder4 47
+    400466: containerschiff:container_06:pCylinder4 48
+    400468: containerschiff:container_06:pCylinder4 49
+    400470: containerschiff:container_06:pCylinder4 5
+    400472: containerschiff:container_06:pCylinder4 50
+    400474: containerschiff:container_06:pCylinder4 51
+    400476: containerschiff:container_06:pCylinder4 52
+    400478: containerschiff:container_06:pCylinder4 53
+    400480: containerschiff:container_06:pCylinder4 54
+    400482: containerschiff:container_06:pCylinder4 55
+    400484: containerschiff:container_06:pCylinder4 56
+    400486: containerschiff:container_06:pCylinder4 57
+    400488: containerschiff:container_06:pCylinder4 58
+    400490: containerschiff:container_06:pCylinder4 59
+    400492: containerschiff:container_06:pCylinder4 6
+    400494: containerschiff:container_06:pCylinder4 60
+    400496: containerschiff:container_06:pCylinder4 61
+    400498: containerschiff:container_06:pCylinder4 62
+    400500: containerschiff:container_06:pCylinder4 63
+    400502: containerschiff:container_06:pCylinder4 64
+    400504: containerschiff:container_06:pCylinder4 65
+    400506: containerschiff:container_06:pCylinder4 66
+    400508: containerschiff:container_06:pCylinder4 67
+    400510: containerschiff:container_06:pCylinder4 7
+    400512: containerschiff:container_06:pCylinder4 8
+    400514: containerschiff:container_06:pCylinder4 9
+    400516: containerschiff:container_06:pCylinder7
+    400518: containerschiff:container_06:pCylinder7 1
+    400520: containerschiff:container_06:pCylinder7 10
+    400522: containerschiff:container_06:pCylinder7 11
+    400524: containerschiff:container_06:pCylinder7 12
+    400526: containerschiff:container_06:pCylinder7 13
+    400528: containerschiff:container_06:pCylinder7 14
+    400530: containerschiff:container_06:pCylinder7 15
+    400532: containerschiff:container_06:pCylinder7 16
+    400534: containerschiff:container_06:pCylinder7 17
+    400536: containerschiff:container_06:pCylinder7 18
+    400538: containerschiff:container_06:pCylinder7 19
+    400540: containerschiff:container_06:pCylinder7 2
+    400542: containerschiff:container_06:pCylinder7 20
+    400544: containerschiff:container_06:pCylinder7 21
+    400546: containerschiff:container_06:pCylinder7 22
+    400548: containerschiff:container_06:pCylinder7 23
+    400550: containerschiff:container_06:pCylinder7 24
+    400552: containerschiff:container_06:pCylinder7 25
+    400554: containerschiff:container_06:pCylinder7 26
+    400556: containerschiff:container_06:pCylinder7 27
+    400558: containerschiff:container_06:pCylinder7 28
+    400560: containerschiff:container_06:pCylinder7 29
+    400562: containerschiff:container_06:pCylinder7 3
+    400564: containerschiff:container_06:pCylinder7 30
+    400566: containerschiff:container_06:pCylinder7 31
+    400568: containerschiff:container_06:pCylinder7 32
+    400570: containerschiff:container_06:pCylinder7 33
+    400572: containerschiff:container_06:pCylinder7 34
+    400574: containerschiff:container_06:pCylinder7 35
+    400576: containerschiff:container_06:pCylinder7 36
+    400578: containerschiff:container_06:pCylinder7 37
+    400580: containerschiff:container_06:pCylinder7 38
+    400582: containerschiff:container_06:pCylinder7 39
+    400584: containerschiff:container_06:pCylinder7 4
+    400586: containerschiff:container_06:pCylinder7 40
+    400588: containerschiff:container_06:pCylinder7 41
+    400590: containerschiff:container_06:pCylinder7 42
+    400592: containerschiff:container_06:pCylinder7 43
+    400594: containerschiff:container_06:pCylinder7 44
+    400596: containerschiff:container_06:pCylinder7 45
+    400598: containerschiff:container_06:pCylinder7 46
+    400600: containerschiff:container_06:pCylinder7 47
+    400602: containerschiff:container_06:pCylinder7 48
+    400604: containerschiff:container_06:pCylinder7 49
+    400606: containerschiff:container_06:pCylinder7 5
+    400608: containerschiff:container_06:pCylinder7 50
+    400610: containerschiff:container_06:pCylinder7 51
+    400612: containerschiff:container_06:pCylinder7 52
+    400614: containerschiff:container_06:pCylinder7 53
+    400616: containerschiff:container_06:pCylinder7 54
+    400618: containerschiff:container_06:pCylinder7 55
+    400620: containerschiff:container_06:pCylinder7 56
+    400622: containerschiff:container_06:pCylinder7 57
+    400624: containerschiff:container_06:pCylinder7 58
+    400626: containerschiff:container_06:pCylinder7 59
+    400628: containerschiff:container_06:pCylinder7 6
+    400630: containerschiff:container_06:pCylinder7 60
+    400632: containerschiff:container_06:pCylinder7 61
+    400634: containerschiff:container_06:pCylinder7 62
+    400636: containerschiff:container_06:pCylinder7 63
+    400638: containerschiff:container_06:pCylinder7 64
+    400640: containerschiff:container_06:pCylinder7 65
+    400642: containerschiff:container_06:pCylinder7 66
+    400644: containerschiff:container_06:pCylinder7 67
+    400646: containerschiff:container_06:pCylinder7 7
+    400648: containerschiff:container_06:pCylinder7 8
+    400650: containerschiff:container_06:pCylinder7 9
+    400652: containerschiff:container_06:pCylinder8
+    400654: containerschiff:container_06:pCylinder8 1
+    400656: containerschiff:container_06:pCylinder8 10
+    400658: containerschiff:container_06:pCylinder8 11
+    400660: containerschiff:container_06:pCylinder8 12
+    400662: containerschiff:container_06:pCylinder8 13
+    400664: containerschiff:container_06:pCylinder8 14
+    400666: containerschiff:container_06:pCylinder8 15
+    400668: containerschiff:container_06:pCylinder8 16
+    400670: containerschiff:container_06:pCylinder8 17
+    400672: containerschiff:container_06:pCylinder8 18
+    400674: containerschiff:container_06:pCylinder8 19
+    400676: containerschiff:container_06:pCylinder8 2
+    400678: containerschiff:container_06:pCylinder8 20
+    400680: containerschiff:container_06:pCylinder8 21
+    400682: containerschiff:container_06:pCylinder8 22
+    400684: containerschiff:container_06:pCylinder8 23
+    400686: containerschiff:container_06:pCylinder8 24
+    400688: containerschiff:container_06:pCylinder8 25
+    400690: containerschiff:container_06:pCylinder8 26
+    400692: containerschiff:container_06:pCylinder8 27
+    400694: containerschiff:container_06:pCylinder8 28
+    400696: containerschiff:container_06:pCylinder8 29
+    400698: containerschiff:container_06:pCylinder8 3
+    400700: containerschiff:container_06:pCylinder8 30
+    400702: containerschiff:container_06:pCylinder8 31
+    400704: containerschiff:container_06:pCylinder8 32
+    400706: containerschiff:container_06:pCylinder8 33
+    400708: containerschiff:container_06:pCylinder8 34
+    400710: containerschiff:container_06:pCylinder8 35
+    400712: containerschiff:container_06:pCylinder8 36
+    400714: containerschiff:container_06:pCylinder8 37
+    400716: containerschiff:container_06:pCylinder8 38
+    400718: containerschiff:container_06:pCylinder8 39
+    400720: containerschiff:container_06:pCylinder8 4
+    400722: containerschiff:container_06:pCylinder8 40
+    400724: containerschiff:container_06:pCylinder8 41
+    400726: containerschiff:container_06:pCylinder8 42
+    400728: containerschiff:container_06:pCylinder8 43
+    400730: containerschiff:container_06:pCylinder8 44
+    400732: containerschiff:container_06:pCylinder8 45
+    400734: containerschiff:container_06:pCylinder8 46
+    400736: containerschiff:container_06:pCylinder8 47
+    400738: containerschiff:container_06:pCylinder8 48
+    400740: containerschiff:container_06:pCylinder8 49
+    400742: containerschiff:container_06:pCylinder8 5
+    400744: containerschiff:container_06:pCylinder8 50
+    400746: containerschiff:container_06:pCylinder8 51
+    400748: containerschiff:container_06:pCylinder8 52
+    400750: containerschiff:container_06:pCylinder8 53
+    400752: containerschiff:container_06:pCylinder8 54
+    400754: containerschiff:container_06:pCylinder8 55
+    400756: containerschiff:container_06:pCylinder8 56
+    400758: containerschiff:container_06:pCylinder8 57
+    400760: containerschiff:container_06:pCylinder8 58
+    400762: containerschiff:container_06:pCylinder8 59
+    400764: containerschiff:container_06:pCylinder8 6
+    400766: containerschiff:container_06:pCylinder8 60
+    400768: containerschiff:container_06:pCylinder8 61
+    400770: containerschiff:container_06:pCylinder8 62
+    400772: containerschiff:container_06:pCylinder8 63
+    400774: containerschiff:container_06:pCylinder8 64
+    400776: containerschiff:container_06:pCylinder8 65
+    400778: containerschiff:container_06:pCylinder8 66
+    400780: containerschiff:container_06:pCylinder8 67
+    400782: containerschiff:container_06:pCylinder8 7
+    400784: containerschiff:container_06:pCylinder8 8
+    400786: containerschiff:container_06:pCylinder8 9
+    400788: containerschiff:container_06:pCylinder9
+    400790: containerschiff:container_06:pCylinder9 1
+    400792: containerschiff:container_06:pCylinder9 10
+    400794: containerschiff:container_06:pCylinder9 11
+    400796: containerschiff:container_06:pCylinder9 12
+    400798: containerschiff:container_06:pCylinder9 13
+    400800: containerschiff:container_06:pCylinder9 14
+    400802: containerschiff:container_06:pCylinder9 15
+    400804: containerschiff:container_06:pCylinder9 16
+    400806: containerschiff:container_06:pCylinder9 17
+    400808: containerschiff:container_06:pCylinder9 18
+    400810: containerschiff:container_06:pCylinder9 19
+    400812: containerschiff:container_06:pCylinder9 2
+    400814: containerschiff:container_06:pCylinder9 20
+    400816: containerschiff:container_06:pCylinder9 21
+    400818: containerschiff:container_06:pCylinder9 22
+    400820: containerschiff:container_06:pCylinder9 23
+    400822: containerschiff:container_06:pCylinder9 24
+    400824: containerschiff:container_06:pCylinder9 25
+    400826: containerschiff:container_06:pCylinder9 26
+    400828: containerschiff:container_06:pCylinder9 27
+    400830: containerschiff:container_06:pCylinder9 28
+    400832: containerschiff:container_06:pCylinder9 29
+    400834: containerschiff:container_06:pCylinder9 3
+    400836: containerschiff:container_06:pCylinder9 30
+    400838: containerschiff:container_06:pCylinder9 31
+    400840: containerschiff:container_06:pCylinder9 32
+    400842: containerschiff:container_06:pCylinder9 33
+    400844: containerschiff:container_06:pCylinder9 34
+    400846: containerschiff:container_06:pCylinder9 35
+    400848: containerschiff:container_06:pCylinder9 36
+    400850: containerschiff:container_06:pCylinder9 37
+    400852: containerschiff:container_06:pCylinder9 38
+    400854: containerschiff:container_06:pCylinder9 39
+    400856: containerschiff:container_06:pCylinder9 4
+    400858: containerschiff:container_06:pCylinder9 40
+    400860: containerschiff:container_06:pCylinder9 41
+    400862: containerschiff:container_06:pCylinder9 42
+    400864: containerschiff:container_06:pCylinder9 43
+    400866: containerschiff:container_06:pCylinder9 44
+    400868: containerschiff:container_06:pCylinder9 45
+    400870: containerschiff:container_06:pCylinder9 46
+    400872: containerschiff:container_06:pCylinder9 47
+    400874: containerschiff:container_06:pCylinder9 48
+    400876: containerschiff:container_06:pCylinder9 49
+    400878: containerschiff:container_06:pCylinder9 5
+    400880: containerschiff:container_06:pCylinder9 50
+    400882: containerschiff:container_06:pCylinder9 51
+    400884: containerschiff:container_06:pCylinder9 52
+    400886: containerschiff:container_06:pCylinder9 53
+    400888: containerschiff:container_06:pCylinder9 54
+    400890: containerschiff:container_06:pCylinder9 55
+    400892: containerschiff:container_06:pCylinder9 56
+    400894: containerschiff:container_06:pCylinder9 57
+    400896: containerschiff:container_06:pCylinder9 58
+    400898: containerschiff:container_06:pCylinder9 59
+    400900: containerschiff:container_06:pCylinder9 6
+    400902: containerschiff:container_06:pCylinder9 60
+    400904: containerschiff:container_06:pCylinder9 61
+    400906: containerschiff:container_06:pCylinder9 62
+    400908: containerschiff:container_06:pCylinder9 63
+    400910: containerschiff:container_06:pCylinder9 64
+    400912: containerschiff:container_06:pCylinder9 65
+    400914: containerschiff:container_06:pCylinder9 66
+    400916: containerschiff:container_06:pCylinder9 67
+    400918: containerschiff:container_06:pCylinder9 7
+    400920: containerschiff:container_06:pCylinder9 8
+    400922: containerschiff:container_06:pCylinder9 9
+    400924: containerschiff:container_06:pPlane1
+    400926: containerschiff:container_06:pPlane1 1
+    400928: containerschiff:container_06:pPlane1 10
+    400930: containerschiff:container_06:pPlane1 11
+    400932: containerschiff:container_06:pPlane1 12
+    400934: containerschiff:container_06:pPlane1 13
+    400936: containerschiff:container_06:pPlane1 14
+    400938: containerschiff:container_06:pPlane1 15
+    400940: containerschiff:container_06:pPlane1 16
+    400942: containerschiff:container_06:pPlane1 17
+    400944: containerschiff:container_06:pPlane1 2
+    400946: containerschiff:container_06:pPlane1 3
+    400948: containerschiff:container_06:pPlane1 4
+    400950: containerschiff:container_06:pPlane1 5
+    400952: containerschiff:container_06:pPlane1 6
+    400954: containerschiff:container_06:pPlane1 7
+    400956: containerschiff:container_06:pPlane1 8
+    400958: containerschiff:container_06:pPlane1 9
+    400960: containerschiff:container_06:pPlane2
+    400962: containerschiff:container_06:pPlane2 1
+    400964: containerschiff:container_06:pPlane2 10
+    400966: containerschiff:container_06:pPlane2 11
+    400968: containerschiff:container_06:pPlane2 12
+    400970: containerschiff:container_06:pPlane2 13
+    400972: containerschiff:container_06:pPlane2 14
+    400974: containerschiff:container_06:pPlane2 15
+    400976: containerschiff:container_06:pPlane2 16
+    400978: containerschiff:container_06:pPlane2 17
+    400980: containerschiff:container_06:pPlane2 2
+    400982: containerschiff:container_06:pPlane2 3
+    400984: containerschiff:container_06:pPlane2 4
+    400986: containerschiff:container_06:pPlane2 5
+    400988: containerschiff:container_06:pPlane2 6
+    400990: containerschiff:container_06:pPlane2 7
+    400992: containerschiff:container_06:pPlane2 8
+    400994: containerschiff:container_06:pPlane2 9
+    400996: containerschiff:container_06:pPlane3
+    400998: containerschiff:container_06:pPlane3 1
+    401000: containerschiff:container_06:pPlane3 10
+    401002: containerschiff:container_06:pPlane3 11
+    401004: containerschiff:container_06:pPlane3 12
+    401006: containerschiff:container_06:pPlane3 13
+    401008: containerschiff:container_06:pPlane3 14
+    401010: containerschiff:container_06:pPlane3 15
+    401012: containerschiff:container_06:pPlane3 16
+    401014: containerschiff:container_06:pPlane3 17
+    401016: containerschiff:container_06:pPlane3 2
+    401018: containerschiff:container_06:pPlane3 3
+    401020: containerschiff:container_06:pPlane3 4
+    401022: containerschiff:container_06:pPlane3 5
+    401024: containerschiff:container_06:pPlane3 6
+    401026: containerschiff:container_06:pPlane3 7
+    401028: containerschiff:container_06:pPlane3 8
+    401030: containerschiff:container_06:pPlane3 9
+    401032: containerschiff:container_06:tuer_3
+    401034: containerschiff:container_06:tuer_3 1
+    401036: containerschiff:container_06:tuer_3 10
+    401038: containerschiff:container_06:tuer_3 11
+    401040: containerschiff:container_06:tuer_3 12
+    401042: containerschiff:container_06:tuer_3 13
+    401044: containerschiff:container_06:tuer_3 14
+    401046: containerschiff:container_06:tuer_3 15
+    401048: containerschiff:container_06:tuer_3 16
+    401050: containerschiff:container_06:tuer_3 17
+    401052: containerschiff:container_06:tuer_3 2
+    401054: containerschiff:container_06:tuer_3 3
+    401056: containerschiff:container_06:tuer_3 4
+    401058: containerschiff:container_06:tuer_3 5
+    401060: containerschiff:container_06:tuer_3 6
+    401062: containerschiff:container_06:tuer_3 7
+    401064: containerschiff:container_06:tuer_3 8
+    401066: containerschiff:container_06:tuer_3 9
+    401068: containerschiff:container_06:tuer_4
+    401070: containerschiff:container_06:tuer_4 1
+    401072: containerschiff:container_06:tuer_4 10
+    401074: containerschiff:container_06:tuer_4 11
+    401076: containerschiff:container_06:tuer_4 12
+    401078: containerschiff:container_06:tuer_4 13
+    401080: containerschiff:container_06:tuer_4 14
+    401082: containerschiff:container_06:tuer_4 15
+    401084: containerschiff:container_06:tuer_4 16
+    401086: containerschiff:container_06:tuer_4 17
+    401088: containerschiff:container_06:tuer_4 2
+    401090: containerschiff:container_06:tuer_4 3
+    401092: containerschiff:container_06:tuer_4 4
+    401094: containerschiff:container_06:tuer_4 5
+    401096: containerschiff:container_06:tuer_4 6
+    401098: containerschiff:container_06:tuer_4 7
+    401100: containerschiff:container_06:tuer_4 8
+    401102: containerschiff:container_06:tuer_4 9
+    2300000: containerschiff:container_06:container_grundform
+    2300002: containerschiff:container_06:container_grundform 1
+    2300004: containerschiff:container_06:container_grundform 10
+    2300006: containerschiff:container_06:container_grundform 11
+    2300008: containerschiff:container_06:container_grundform 12
+    2300010: containerschiff:container_06:container_grundform 13
+    2300012: containerschiff:container_06:container_grundform 14
+    2300014: containerschiff:container_06:container_grundform 15
+    2300016: containerschiff:container_06:container_grundform 16
+    2300018: containerschiff:container_06:container_grundform 17
+    2300020: containerschiff:container_06:container_grundform 2
+    2300022: containerschiff:container_06:container_grundform 3
+    2300024: containerschiff:container_06:container_grundform 4
+    2300026: containerschiff:container_06:container_grundform 5
+    2300028: containerschiff:container_06:container_grundform 6
+    2300030: containerschiff:container_06:container_grundform 7
+    2300032: containerschiff:container_06:container_grundform 8
+    2300034: containerschiff:container_06:container_grundform 9
+    2300036: containerschiff:container_06:pCylinder1
+    2300038: containerschiff:container_06:pCylinder1 1
+    2300040: containerschiff:container_06:pCylinder1 10
+    2300042: containerschiff:container_06:pCylinder1 11
+    2300044: containerschiff:container_06:pCylinder1 12
+    2300046: containerschiff:container_06:pCylinder1 13
+    2300048: containerschiff:container_06:pCylinder1 14
+    2300050: containerschiff:container_06:pCylinder1 15
+    2300052: containerschiff:container_06:pCylinder1 16
+    2300054: containerschiff:container_06:pCylinder1 17
+    2300056: containerschiff:container_06:pCylinder1 18
+    2300058: containerschiff:container_06:pCylinder1 19
+    2300060: containerschiff:container_06:pCylinder1 2
+    2300062: containerschiff:container_06:pCylinder1 20
+    2300064: containerschiff:container_06:pCylinder1 21
+    2300066: containerschiff:container_06:pCylinder1 22
+    2300068: containerschiff:container_06:pCylinder1 23
+    2300070: containerschiff:container_06:pCylinder1 24
+    2300072: containerschiff:container_06:pCylinder1 25
+    2300074: containerschiff:container_06:pCylinder1 26
+    2300076: containerschiff:container_06:pCylinder1 27
+    2300078: containerschiff:container_06:pCylinder1 28
+    2300080: containerschiff:container_06:pCylinder1 29
+    2300082: containerschiff:container_06:pCylinder1 3
+    2300084: containerschiff:container_06:pCylinder1 30
+    2300086: containerschiff:container_06:pCylinder1 31
+    2300088: containerschiff:container_06:pCylinder1 32
+    2300090: containerschiff:container_06:pCylinder1 33
+    2300092: containerschiff:container_06:pCylinder1 34
+    2300094: containerschiff:container_06:pCylinder1 35
+    2300096: containerschiff:container_06:pCylinder1 36
+    2300098: containerschiff:container_06:pCylinder1 37
+    2300100: containerschiff:container_06:pCylinder1 38
+    2300102: containerschiff:container_06:pCylinder1 39
+    2300104: containerschiff:container_06:pCylinder1 4
+    2300106: containerschiff:container_06:pCylinder1 40
+    2300108: containerschiff:container_06:pCylinder1 41
+    2300110: containerschiff:container_06:pCylinder1 42
+    2300112: containerschiff:container_06:pCylinder1 43
+    2300114: containerschiff:container_06:pCylinder1 44
+    2300116: containerschiff:container_06:pCylinder1 45
+    2300118: containerschiff:container_06:pCylinder1 46
+    2300120: containerschiff:container_06:pCylinder1 47
+    2300122: containerschiff:container_06:pCylinder1 48
+    2300124: containerschiff:container_06:pCylinder1 49
+    2300126: containerschiff:container_06:pCylinder1 5
+    2300128: containerschiff:container_06:pCylinder1 50
+    2300130: containerschiff:container_06:pCylinder1 51
+    2300132: containerschiff:container_06:pCylinder1 52
+    2300134: containerschiff:container_06:pCylinder1 53
+    2300136: containerschiff:container_06:pCylinder1 54
+    2300138: containerschiff:container_06:pCylinder1 55
+    2300140: containerschiff:container_06:pCylinder1 56
+    2300142: containerschiff:container_06:pCylinder1 57
+    2300144: containerschiff:container_06:pCylinder1 58
+    2300146: containerschiff:container_06:pCylinder1 59
+    2300148: containerschiff:container_06:pCylinder1 6
+    2300150: containerschiff:container_06:pCylinder1 60
+    2300152: containerschiff:container_06:pCylinder1 61
+    2300154: containerschiff:container_06:pCylinder1 62
+    2300156: containerschiff:container_06:pCylinder1 63
+    2300158: containerschiff:container_06:pCylinder1 64
+    2300160: containerschiff:container_06:pCylinder1 65
+    2300162: containerschiff:container_06:pCylinder1 66
+    2300164: containerschiff:container_06:pCylinder1 67
+    2300166: containerschiff:container_06:pCylinder1 7
+    2300168: containerschiff:container_06:pCylinder1 8
+    2300170: containerschiff:container_06:pCylinder1 9
+    2300172: containerschiff:container_06:pCylinder4
+    2300174: containerschiff:container_06:pCylinder4 1
+    2300176: containerschiff:container_06:pCylinder4 10
+    2300178: containerschiff:container_06:pCylinder4 11
+    2300180: containerschiff:container_06:pCylinder4 12
+    2300182: containerschiff:container_06:pCylinder4 13
+    2300184: containerschiff:container_06:pCylinder4 14
+    2300186: containerschiff:container_06:pCylinder4 15
+    2300188: containerschiff:container_06:pCylinder4 16
+    2300190: containerschiff:container_06:pCylinder4 17
+    2300192: containerschiff:container_06:pCylinder4 18
+    2300194: containerschiff:container_06:pCylinder4 19
+    2300196: containerschiff:container_06:pCylinder4 2
+    2300198: containerschiff:container_06:pCylinder4 20
+    2300200: containerschiff:container_06:pCylinder4 21
+    2300202: containerschiff:container_06:pCylinder4 22
+    2300204: containerschiff:container_06:pCylinder4 23
+    2300206: containerschiff:container_06:pCylinder4 24
+    2300208: containerschiff:container_06:pCylinder4 25
+    2300210: containerschiff:container_06:pCylinder4 26
+    2300212: containerschiff:container_06:pCylinder4 27
+    2300214: containerschiff:container_06:pCylinder4 28
+    2300216: containerschiff:container_06:pCylinder4 29
+    2300218: containerschiff:container_06:pCylinder4 3
+    2300220: containerschiff:container_06:pCylinder4 30
+    2300222: containerschiff:container_06:pCylinder4 31
+    2300224: containerschiff:container_06:pCylinder4 32
+    2300226: containerschiff:container_06:pCylinder4 33
+    2300228: containerschiff:container_06:pCylinder4 34
+    2300230: containerschiff:container_06:pCylinder4 35
+    2300232: containerschiff:container_06:pCylinder4 36
+    2300234: containerschiff:container_06:pCylinder4 37
+    2300236: containerschiff:container_06:pCylinder4 38
+    2300238: containerschiff:container_06:pCylinder4 39
+    2300240: containerschiff:container_06:pCylinder4 4
+    2300242: containerschiff:container_06:pCylinder4 40
+    2300244: containerschiff:container_06:pCylinder4 41
+    2300246: containerschiff:container_06:pCylinder4 42
+    2300248: containerschiff:container_06:pCylinder4 43
+    2300250: containerschiff:container_06:pCylinder4 44
+    2300252: containerschiff:container_06:pCylinder4 45
+    2300254: containerschiff:container_06:pCylinder4 46
+    2300256: containerschiff:container_06:pCylinder4 47
+    2300258: containerschiff:container_06:pCylinder4 48
+    2300260: containerschiff:container_06:pCylinder4 49
+    2300262: containerschiff:container_06:pCylinder4 5
+    2300264: containerschiff:container_06:pCylinder4 50
+    2300266: containerschiff:container_06:pCylinder4 51
+    2300268: containerschiff:container_06:pCylinder4 52
+    2300270: containerschiff:container_06:pCylinder4 53
+    2300272: containerschiff:container_06:pCylinder4 54
+    2300274: containerschiff:container_06:pCylinder4 55
+    2300276: containerschiff:container_06:pCylinder4 56
+    2300278: containerschiff:container_06:pCylinder4 57
+    2300280: containerschiff:container_06:pCylinder4 58
+    2300282: containerschiff:container_06:pCylinder4 59
+    2300284: containerschiff:container_06:pCylinder4 6
+    2300286: containerschiff:container_06:pCylinder4 60
+    2300288: containerschiff:container_06:pCylinder4 61
+    2300290: containerschiff:container_06:pCylinder4 62
+    2300292: containerschiff:container_06:pCylinder4 63
+    2300294: containerschiff:container_06:pCylinder4 64
+    2300296: containerschiff:container_06:pCylinder4 65
+    2300298: containerschiff:container_06:pCylinder4 66
+    2300300: containerschiff:container_06:pCylinder4 67
+    2300302: containerschiff:container_06:pCylinder4 7
+    2300304: containerschiff:container_06:pCylinder4 8
+    2300306: containerschiff:container_06:pCylinder4 9
+    2300308: containerschiff:container_06:pCylinder7
+    2300310: containerschiff:container_06:pCylinder7 1
+    2300312: containerschiff:container_06:pCylinder7 10
+    2300314: containerschiff:container_06:pCylinder7 11
+    2300316: containerschiff:container_06:pCylinder7 12
+    2300318: containerschiff:container_06:pCylinder7 13
+    2300320: containerschiff:container_06:pCylinder7 14
+    2300322: containerschiff:container_06:pCylinder7 15
+    2300324: containerschiff:container_06:pCylinder7 16
+    2300326: containerschiff:container_06:pCylinder7 17
+    2300328: containerschiff:container_06:pCylinder7 18
+    2300330: containerschiff:container_06:pCylinder7 19
+    2300332: containerschiff:container_06:pCylinder7 2
+    2300334: containerschiff:container_06:pCylinder7 20
+    2300336: containerschiff:container_06:pCylinder7 21
+    2300338: containerschiff:container_06:pCylinder7 22
+    2300340: containerschiff:container_06:pCylinder7 23
+    2300342: containerschiff:container_06:pCylinder7 24
+    2300344: containerschiff:container_06:pCylinder7 25
+    2300346: containerschiff:container_06:pCylinder7 26
+    2300348: containerschiff:container_06:pCylinder7 27
+    2300350: containerschiff:container_06:pCylinder7 28
+    2300352: containerschiff:container_06:pCylinder7 29
+    2300354: containerschiff:container_06:pCylinder7 3
+    2300356: containerschiff:container_06:pCylinder7 30
+    2300358: containerschiff:container_06:pCylinder7 31
+    2300360: containerschiff:container_06:pCylinder7 32
+    2300362: containerschiff:container_06:pCylinder7 33
+    2300364: containerschiff:container_06:pCylinder7 34
+    2300366: containerschiff:container_06:pCylinder7 35
+    2300368: containerschiff:container_06:pCylinder7 36
+    2300370: containerschiff:container_06:pCylinder7 37
+    2300372: containerschiff:container_06:pCylinder7 38
+    2300374: containerschiff:container_06:pCylinder7 39
+    2300376: containerschiff:container_06:pCylinder7 4
+    2300378: containerschiff:container_06:pCylinder7 40
+    2300380: containerschiff:container_06:pCylinder7 41
+    2300382: containerschiff:container_06:pCylinder7 42
+    2300384: containerschiff:container_06:pCylinder7 43
+    2300386: containerschiff:container_06:pCylinder7 44
+    2300388: containerschiff:container_06:pCylinder7 45
+    2300390: containerschiff:container_06:pCylinder7 46
+    2300392: containerschiff:container_06:pCylinder7 47
+    2300394: containerschiff:container_06:pCylinder7 48
+    2300396: containerschiff:container_06:pCylinder7 49
+    2300398: containerschiff:container_06:pCylinder7 5
+    2300400: containerschiff:container_06:pCylinder7 50
+    2300402: containerschiff:container_06:pCylinder7 51
+    2300404: containerschiff:container_06:pCylinder7 52
+    2300406: containerschiff:container_06:pCylinder7 53
+    2300408: containerschiff:container_06:pCylinder7 54
+    2300410: containerschiff:container_06:pCylinder7 55
+    2300412: containerschiff:container_06:pCylinder7 56
+    2300414: containerschiff:container_06:pCylinder7 57
+    2300416: containerschiff:container_06:pCylinder7 58
+    2300418: containerschiff:container_06:pCylinder7 59
+    2300420: containerschiff:container_06:pCylinder7 6
+    2300422: containerschiff:container_06:pCylinder7 60
+    2300424: containerschiff:container_06:pCylinder7 61
+    2300426: containerschiff:container_06:pCylinder7 62
+    2300428: containerschiff:container_06:pCylinder7 63
+    2300430: containerschiff:container_06:pCylinder7 64
+    2300432: containerschiff:container_06:pCylinder7 65
+    2300434: containerschiff:container_06:pCylinder7 66
+    2300436: containerschiff:container_06:pCylinder7 67
+    2300438: containerschiff:container_06:pCylinder7 7
+    2300440: containerschiff:container_06:pCylinder7 8
+    2300442: containerschiff:container_06:pCylinder7 9
+    2300444: containerschiff:container_06:pCylinder8
+    2300446: containerschiff:container_06:pCylinder8 1
+    2300448: containerschiff:container_06:pCylinder8 10
+    2300450: containerschiff:container_06:pCylinder8 11
+    2300452: containerschiff:container_06:pCylinder8 12
+    2300454: containerschiff:container_06:pCylinder8 13
+    2300456: containerschiff:container_06:pCylinder8 14
+    2300458: containerschiff:container_06:pCylinder8 15
+    2300460: containerschiff:container_06:pCylinder8 16
+    2300462: containerschiff:container_06:pCylinder8 17
+    2300464: containerschiff:container_06:pCylinder8 18
+    2300466: containerschiff:container_06:pCylinder8 19
+    2300468: containerschiff:container_06:pCylinder8 2
+    2300470: containerschiff:container_06:pCylinder8 20
+    2300472: containerschiff:container_06:pCylinder8 21
+    2300474: containerschiff:container_06:pCylinder8 22
+    2300476: containerschiff:container_06:pCylinder8 23
+    2300478: containerschiff:container_06:pCylinder8 24
+    2300480: containerschiff:container_06:pCylinder8 25
+    2300482: containerschiff:container_06:pCylinder8 26
+    2300484: containerschiff:container_06:pCylinder8 27
+    2300486: containerschiff:container_06:pCylinder8 28
+    2300488: containerschiff:container_06:pCylinder8 29
+    2300490: containerschiff:container_06:pCylinder8 3
+    2300492: containerschiff:container_06:pCylinder8 30
+    2300494: containerschiff:container_06:pCylinder8 31
+    2300496: containerschiff:container_06:pCylinder8 32
+    2300498: containerschiff:container_06:pCylinder8 33
+    2300500: containerschiff:container_06:pCylinder8 34
+    2300502: containerschiff:container_06:pCylinder8 35
+    2300504: containerschiff:container_06:pCylinder8 36
+    2300506: containerschiff:container_06:pCylinder8 37
+    2300508: containerschiff:container_06:pCylinder8 38
+    2300510: containerschiff:container_06:pCylinder8 39
+    2300512: containerschiff:container_06:pCylinder8 4
+    2300514: containerschiff:container_06:pCylinder8 40
+    2300516: containerschiff:container_06:pCylinder8 41
+    2300518: containerschiff:container_06:pCylinder8 42
+    2300520: containerschiff:container_06:pCylinder8 43
+    2300522: containerschiff:container_06:pCylinder8 44
+    2300524: containerschiff:container_06:pCylinder8 45
+    2300526: containerschiff:container_06:pCylinder8 46
+    2300528: containerschiff:container_06:pCylinder8 47
+    2300530: containerschiff:container_06:pCylinder8 48
+    2300532: containerschiff:container_06:pCylinder8 49
+    2300534: containerschiff:container_06:pCylinder8 5
+    2300536: containerschiff:container_06:pCylinder8 50
+    2300538: containerschiff:container_06:pCylinder8 51
+    2300540: containerschiff:container_06:pCylinder8 52
+    2300542: containerschiff:container_06:pCylinder8 53
+    2300544: containerschiff:container_06:pCylinder8 54
+    2300546: containerschiff:container_06:pCylinder8 55
+    2300548: containerschiff:container_06:pCylinder8 56
+    2300550: containerschiff:container_06:pCylinder8 57
+    2300552: containerschiff:container_06:pCylinder8 58
+    2300554: containerschiff:container_06:pCylinder8 59
+    2300556: containerschiff:container_06:pCylinder8 6
+    2300558: containerschiff:container_06:pCylinder8 60
+    2300560: containerschiff:container_06:pCylinder8 61
+    2300562: containerschiff:container_06:pCylinder8 62
+    2300564: containerschiff:container_06:pCylinder8 63
+    2300566: containerschiff:container_06:pCylinder8 64
+    2300568: containerschiff:container_06:pCylinder8 65
+    2300570: containerschiff:container_06:pCylinder8 66
+    2300572: containerschiff:container_06:pCylinder8 67
+    2300574: containerschiff:container_06:pCylinder8 7
+    2300576: containerschiff:container_06:pCylinder8 8
+    2300578: containerschiff:container_06:pCylinder8 9
+    2300580: containerschiff:container_06:pCylinder9
+    2300582: containerschiff:container_06:pCylinder9 1
+    2300584: containerschiff:container_06:pCylinder9 10
+    2300586: containerschiff:container_06:pCylinder9 11
+    2300588: containerschiff:container_06:pCylinder9 12
+    2300590: containerschiff:container_06:pCylinder9 13
+    2300592: containerschiff:container_06:pCylinder9 14
+    2300594: containerschiff:container_06:pCylinder9 15
+    2300596: containerschiff:container_06:pCylinder9 16
+    2300598: containerschiff:container_06:pCylinder9 17
+    2300600: containerschiff:container_06:pCylinder9 18
+    2300602: containerschiff:container_06:pCylinder9 19
+    2300604: containerschiff:container_06:pCylinder9 2
+    2300606: containerschiff:container_06:pCylinder9 20
+    2300608: containerschiff:container_06:pCylinder9 21
+    2300610: containerschiff:container_06:pCylinder9 22
+    2300612: containerschiff:container_06:pCylinder9 23
+    2300614: containerschiff:container_06:pCylinder9 24
+    2300616: containerschiff:container_06:pCylinder9 25
+    2300618: containerschiff:container_06:pCylinder9 26
+    2300620: containerschiff:container_06:pCylinder9 27
+    2300622: containerschiff:container_06:pCylinder9 28
+    2300624: containerschiff:container_06:pCylinder9 29
+    2300626: containerschiff:container_06:pCylinder9 3
+    2300628: containerschiff:container_06:pCylinder9 30
+    2300630: containerschiff:container_06:pCylinder9 31
+    2300632: containerschiff:container_06:pCylinder9 32
+    2300634: containerschiff:container_06:pCylinder9 33
+    2300636: containerschiff:container_06:pCylinder9 34
+    2300638: containerschiff:container_06:pCylinder9 35
+    2300640: containerschiff:container_06:pCylinder9 36
+    2300642: containerschiff:container_06:pCylinder9 37
+    2300644: containerschiff:container_06:pCylinder9 38
+    2300646: containerschiff:container_06:pCylinder9 39
+    2300648: containerschiff:container_06:pCylinder9 4
+    2300650: containerschiff:container_06:pCylinder9 40
+    2300652: containerschiff:container_06:pCylinder9 41
+    2300654: containerschiff:container_06:pCylinder9 42
+    2300656: containerschiff:container_06:pCylinder9 43
+    2300658: containerschiff:container_06:pCylinder9 44
+    2300660: containerschiff:container_06:pCylinder9 45
+    2300662: containerschiff:container_06:pCylinder9 46
+    2300664: containerschiff:container_06:pCylinder9 47
+    2300666: containerschiff:container_06:pCylinder9 48
+    2300668: containerschiff:container_06:pCylinder9 49
+    2300670: containerschiff:container_06:pCylinder9 5
+    2300672: containerschiff:container_06:pCylinder9 50
+    2300674: containerschiff:container_06:pCylinder9 51
+    2300676: containerschiff:container_06:pCylinder9 52
+    2300678: containerschiff:container_06:pCylinder9 53
+    2300680: containerschiff:container_06:pCylinder9 54
+    2300682: containerschiff:container_06:pCylinder9 55
+    2300684: containerschiff:container_06:pCylinder9 56
+    2300686: containerschiff:container_06:pCylinder9 57
+    2300688: containerschiff:container_06:pCylinder9 58
+    2300690: containerschiff:container_06:pCylinder9 59
+    2300692: containerschiff:container_06:pCylinder9 6
+    2300694: containerschiff:container_06:pCylinder9 60
+    2300696: containerschiff:container_06:pCylinder9 61
+    2300698: containerschiff:container_06:pCylinder9 62
+    2300700: containerschiff:container_06:pCylinder9 63
+    2300702: containerschiff:container_06:pCylinder9 64
+    2300704: containerschiff:container_06:pCylinder9 65
+    2300706: containerschiff:container_06:pCylinder9 66
+    2300708: containerschiff:container_06:pCylinder9 67
+    2300710: containerschiff:container_06:pCylinder9 7
+    2300712: containerschiff:container_06:pCylinder9 8
+    2300714: containerschiff:container_06:pCylinder9 9
+    2300716: containerschiff:container_06:pPlane1
+    2300718: containerschiff:container_06:pPlane1 1
+    2300720: containerschiff:container_06:pPlane1 10
+    2300722: containerschiff:container_06:pPlane1 11
+    2300724: containerschiff:container_06:pPlane1 12
+    2300726: containerschiff:container_06:pPlane1 13
+    2300728: containerschiff:container_06:pPlane1 14
+    2300730: containerschiff:container_06:pPlane1 15
+    2300732: containerschiff:container_06:pPlane1 16
+    2300734: containerschiff:container_06:pPlane1 17
+    2300736: containerschiff:container_06:pPlane1 2
+    2300738: containerschiff:container_06:pPlane1 3
+    2300740: containerschiff:container_06:pPlane1 4
+    2300742: containerschiff:container_06:pPlane1 5
+    2300744: containerschiff:container_06:pPlane1 6
+    2300746: containerschiff:container_06:pPlane1 7
+    2300748: containerschiff:container_06:pPlane1 8
+    2300750: containerschiff:container_06:pPlane1 9
+    2300752: containerschiff:container_06:pPlane2
+    2300754: containerschiff:container_06:pPlane2 1
+    2300756: containerschiff:container_06:pPlane2 10
+    2300758: containerschiff:container_06:pPlane2 11
+    2300760: containerschiff:container_06:pPlane2 12
+    2300762: containerschiff:container_06:pPlane2 13
+    2300764: containerschiff:container_06:pPlane2 14
+    2300766: containerschiff:container_06:pPlane2 15
+    2300768: containerschiff:container_06:pPlane2 16
+    2300770: containerschiff:container_06:pPlane2 17
+    2300772: containerschiff:container_06:pPlane2 2
+    2300774: containerschiff:container_06:pPlane2 3
+    2300776: containerschiff:container_06:pPlane2 4
+    2300778: containerschiff:container_06:pPlane2 5
+    2300780: containerschiff:container_06:pPlane2 6
+    2300782: containerschiff:container_06:pPlane2 7
+    2300784: containerschiff:container_06:pPlane2 8
+    2300786: containerschiff:container_06:pPlane2 9
+    2300788: containerschiff:container_06:pPlane3
+    2300790: containerschiff:container_06:pPlane3 1
+    2300792: containerschiff:container_06:pPlane3 10
+    2300794: containerschiff:container_06:pPlane3 11
+    2300796: containerschiff:container_06:pPlane3 12
+    2300798: containerschiff:container_06:pPlane3 13
+    2300800: containerschiff:container_06:pPlane3 14
+    2300802: containerschiff:container_06:pPlane3 15
+    2300804: containerschiff:container_06:pPlane3 16
+    2300806: containerschiff:container_06:pPlane3 17
+    2300808: containerschiff:container_06:pPlane3 2
+    2300810: containerschiff:container_06:pPlane3 3
+    2300812: containerschiff:container_06:pPlane3 4
+    2300814: containerschiff:container_06:pPlane3 5
+    2300816: containerschiff:container_06:pPlane3 6
+    2300818: containerschiff:container_06:pPlane3 7
+    2300820: containerschiff:container_06:pPlane3 8
+    2300822: containerschiff:container_06:pPlane3 9
+    2300824: containerschiff:container_06:tuer_3
+    2300826: containerschiff:container_06:tuer_3 1
+    2300828: containerschiff:container_06:tuer_3 10
+    2300830: containerschiff:container_06:tuer_3 11
+    2300832: containerschiff:container_06:tuer_3 12
+    2300834: containerschiff:container_06:tuer_3 13
+    2300836: containerschiff:container_06:tuer_3 14
+    2300838: containerschiff:container_06:tuer_3 15
+    2300840: containerschiff:container_06:tuer_3 16
+    2300842: containerschiff:container_06:tuer_3 17
+    2300844: containerschiff:container_06:tuer_3 2
+    2300846: containerschiff:container_06:tuer_3 3
+    2300848: containerschiff:container_06:tuer_3 4
+    2300850: containerschiff:container_06:tuer_3 5
+    2300852: containerschiff:container_06:tuer_3 6
+    2300854: containerschiff:container_06:tuer_3 7
+    2300856: containerschiff:container_06:tuer_3 8
+    2300858: containerschiff:container_06:tuer_3 9
+    2300860: containerschiff:container_06:tuer_4
+    2300862: containerschiff:container_06:tuer_4 1
+    2300864: containerschiff:container_06:tuer_4 10
+    2300866: containerschiff:container_06:tuer_4 11
+    2300868: containerschiff:container_06:tuer_4 12
+    2300870: containerschiff:container_06:tuer_4 13
+    2300872: containerschiff:container_06:tuer_4 14
+    2300874: containerschiff:container_06:tuer_4 15
+    2300876: containerschiff:container_06:tuer_4 16
+    2300878: containerschiff:container_06:tuer_4 17
+    2300880: containerschiff:container_06:tuer_4 2
+    2300882: containerschiff:container_06:tuer_4 3
+    2300884: containerschiff:container_06:tuer_4 4
+    2300886: containerschiff:container_06:tuer_4 5
+    2300888: containerschiff:container_06:tuer_4 6
+    2300890: containerschiff:container_06:tuer_4 7
+    2300892: containerschiff:container_06:tuer_4 8
+    2300894: containerschiff:container_06:tuer_4 9
+    3300000: containerschiff:container_06:container_grundform
+    3300002: containerschiff:container_06:container_grundform 1
+    3300004: containerschiff:container_06:container_grundform 10
+    3300006: containerschiff:container_06:container_grundform 11
+    3300008: containerschiff:container_06:container_grundform 12
+    3300010: containerschiff:container_06:container_grundform 13
+    3300012: containerschiff:container_06:container_grundform 14
+    3300014: containerschiff:container_06:container_grundform 15
+    3300016: containerschiff:container_06:container_grundform 16
+    3300018: containerschiff:container_06:container_grundform 17
+    3300020: containerschiff:container_06:container_grundform 2
+    3300022: containerschiff:container_06:container_grundform 3
+    3300024: containerschiff:container_06:container_grundform 4
+    3300026: containerschiff:container_06:container_grundform 5
+    3300028: containerschiff:container_06:container_grundform 6
+    3300030: containerschiff:container_06:container_grundform 7
+    3300032: containerschiff:container_06:container_grundform 8
+    3300034: containerschiff:container_06:container_grundform 9
+    3300036: containerschiff:container_06:pCylinder1
+    3300038: containerschiff:container_06:pCylinder1 1
+    3300040: containerschiff:container_06:pCylinder1 10
+    3300042: containerschiff:container_06:pCylinder1 11
+    3300044: containerschiff:container_06:pCylinder1 12
+    3300046: containerschiff:container_06:pCylinder1 13
+    3300048: containerschiff:container_06:pCylinder1 14
+    3300050: containerschiff:container_06:pCylinder1 15
+    3300052: containerschiff:container_06:pCylinder1 16
+    3300054: containerschiff:container_06:pCylinder1 17
+    3300056: containerschiff:container_06:pCylinder1 18
+    3300058: containerschiff:container_06:pCylinder1 19
+    3300060: containerschiff:container_06:pCylinder1 2
+    3300062: containerschiff:container_06:pCylinder1 20
+    3300064: containerschiff:container_06:pCylinder1 21
+    3300066: containerschiff:container_06:pCylinder1 22
+    3300068: containerschiff:container_06:pCylinder1 23
+    3300070: containerschiff:container_06:pCylinder1 24
+    3300072: containerschiff:container_06:pCylinder1 25
+    3300074: containerschiff:container_06:pCylinder1 26
+    3300076: containerschiff:container_06:pCylinder1 27
+    3300078: containerschiff:container_06:pCylinder1 28
+    3300080: containerschiff:container_06:pCylinder1 29
+    3300082: containerschiff:container_06:pCylinder1 3
+    3300084: containerschiff:container_06:pCylinder1 30
+    3300086: containerschiff:container_06:pCylinder1 31
+    3300088: containerschiff:container_06:pCylinder1 32
+    3300090: containerschiff:container_06:pCylinder1 33
+    3300092: containerschiff:container_06:pCylinder1 34
+    3300094: containerschiff:container_06:pCylinder1 35
+    3300096: containerschiff:container_06:pCylinder1 36
+    3300098: containerschiff:container_06:pCylinder1 37
+    3300100: containerschiff:container_06:pCylinder1 38
+    3300102: containerschiff:container_06:pCylinder1 39
+    3300104: containerschiff:container_06:pCylinder1 4
+    3300106: containerschiff:container_06:pCylinder1 40
+    3300108: containerschiff:container_06:pCylinder1 41
+    3300110: containerschiff:container_06:pCylinder1 42
+    3300112: containerschiff:container_06:pCylinder1 43
+    3300114: containerschiff:container_06:pCylinder1 44
+    3300116: containerschiff:container_06:pCylinder1 45
+    3300118: containerschiff:container_06:pCylinder1 46
+    3300120: containerschiff:container_06:pCylinder1 47
+    3300122: containerschiff:container_06:pCylinder1 48
+    3300124: containerschiff:container_06:pCylinder1 49
+    3300126: containerschiff:container_06:pCylinder1 5
+    3300128: containerschiff:container_06:pCylinder1 50
+    3300130: containerschiff:container_06:pCylinder1 51
+    3300132: containerschiff:container_06:pCylinder1 52
+    3300134: containerschiff:container_06:pCylinder1 53
+    3300136: containerschiff:container_06:pCylinder1 54
+    3300138: containerschiff:container_06:pCylinder1 55
+    3300140: containerschiff:container_06:pCylinder1 56
+    3300142: containerschiff:container_06:pCylinder1 57
+    3300144: containerschiff:container_06:pCylinder1 58
+    3300146: containerschiff:container_06:pCylinder1 59
+    3300148: containerschiff:container_06:pCylinder1 6
+    3300150: containerschiff:container_06:pCylinder1 60
+    3300152: containerschiff:container_06:pCylinder1 61
+    3300154: containerschiff:container_06:pCylinder1 62
+    3300156: containerschiff:container_06:pCylinder1 63
+    3300158: containerschiff:container_06:pCylinder1 64
+    3300160: containerschiff:container_06:pCylinder1 65
+    3300162: containerschiff:container_06:pCylinder1 66
+    3300164: containerschiff:container_06:pCylinder1 67
+    3300166: containerschiff:container_06:pCylinder1 7
+    3300168: containerschiff:container_06:pCylinder1 8
+    3300170: containerschiff:container_06:pCylinder1 9
+    3300172: containerschiff:container_06:pCylinder4
+    3300174: containerschiff:container_06:pCylinder4 1
+    3300176: containerschiff:container_06:pCylinder4 10
+    3300178: containerschiff:container_06:pCylinder4 11
+    3300180: containerschiff:container_06:pCylinder4 12
+    3300182: containerschiff:container_06:pCylinder4 13
+    3300184: containerschiff:container_06:pCylinder4 14
+    3300186: containerschiff:container_06:pCylinder4 15
+    3300188: containerschiff:container_06:pCylinder4 16
+    3300190: containerschiff:container_06:pCylinder4 17
+    3300192: containerschiff:container_06:pCylinder4 18
+    3300194: containerschiff:container_06:pCylinder4 19
+    3300196: containerschiff:container_06:pCylinder4 2
+    3300198: containerschiff:container_06:pCylinder4 20
+    3300200: containerschiff:container_06:pCylinder4 21
+    3300202: containerschiff:container_06:pCylinder4 22
+    3300204: containerschiff:container_06:pCylinder4 23
+    3300206: containerschiff:container_06:pCylinder4 24
+    3300208: containerschiff:container_06:pCylinder4 25
+    3300210: containerschiff:container_06:pCylinder4 26
+    3300212: containerschiff:container_06:pCylinder4 27
+    3300214: containerschiff:container_06:pCylinder4 28
+    3300216: containerschiff:container_06:pCylinder4 29
+    3300218: containerschiff:container_06:pCylinder4 3
+    3300220: containerschiff:container_06:pCylinder4 30
+    3300222: containerschiff:container_06:pCylinder4 31
+    3300224: containerschiff:container_06:pCylinder4 32
+    3300226: containerschiff:container_06:pCylinder4 33
+    3300228: containerschiff:container_06:pCylinder4 34
+    3300230: containerschiff:container_06:pCylinder4 35
+    3300232: containerschiff:container_06:pCylinder4 36
+    3300234: containerschiff:container_06:pCylinder4 37
+    3300236: containerschiff:container_06:pCylinder4 38
+    3300238: containerschiff:container_06:pCylinder4 39
+    3300240: containerschiff:container_06:pCylinder4 4
+    3300242: containerschiff:container_06:pCylinder4 40
+    3300244: containerschiff:container_06:pCylinder4 41
+    3300246: containerschiff:container_06:pCylinder4 42
+    3300248: containerschiff:container_06:pCylinder4 43
+    3300250: containerschiff:container_06:pCylinder4 44
+    3300252: containerschiff:container_06:pCylinder4 45
+    3300254: containerschiff:container_06:pCylinder4 46
+    3300256: containerschiff:container_06:pCylinder4 47
+    3300258: containerschiff:container_06:pCylinder4 48
+    3300260: containerschiff:container_06:pCylinder4 49
+    3300262: containerschiff:container_06:pCylinder4 5
+    3300264: containerschiff:container_06:pCylinder4 50
+    3300266: containerschiff:container_06:pCylinder4 51
+    3300268: containerschiff:container_06:pCylinder4 52
+    3300270: containerschiff:container_06:pCylinder4 53
+    3300272: containerschiff:container_06:pCylinder4 54
+    3300274: containerschiff:container_06:pCylinder4 55
+    3300276: containerschiff:container_06:pCylinder4 56
+    3300278: containerschiff:container_06:pCylinder4 57
+    3300280: containerschiff:container_06:pCylinder4 58
+    3300282: containerschiff:container_06:pCylinder4 59
+    3300284: containerschiff:container_06:pCylinder4 6
+    3300286: containerschiff:container_06:pCylinder4 60
+    3300288: containerschiff:container_06:pCylinder4 61
+    3300290: containerschiff:container_06:pCylinder4 62
+    3300292: containerschiff:container_06:pCylinder4 63
+    3300294: containerschiff:container_06:pCylinder4 64
+    3300296: containerschiff:container_06:pCylinder4 65
+    3300298: containerschiff:container_06:pCylinder4 66
+    3300300: containerschiff:container_06:pCylinder4 67
+    3300302: containerschiff:container_06:pCylinder4 7
+    3300304: containerschiff:container_06:pCylinder4 8
+    3300306: containerschiff:container_06:pCylinder4 9
+    3300308: containerschiff:container_06:pCylinder7
+    3300310: containerschiff:container_06:pCylinder7 1
+    3300312: containerschiff:container_06:pCylinder7 10
+    3300314: containerschiff:container_06:pCylinder7 11
+    3300316: containerschiff:container_06:pCylinder7 12
+    3300318: containerschiff:container_06:pCylinder7 13
+    3300320: containerschiff:container_06:pCylinder7 14
+    3300322: containerschiff:container_06:pCylinder7 15
+    3300324: containerschiff:container_06:pCylinder7 16
+    3300326: containerschiff:container_06:pCylinder7 17
+    3300328: containerschiff:container_06:pCylinder7 18
+    3300330: containerschiff:container_06:pCylinder7 19
+    3300332: containerschiff:container_06:pCylinder7 2
+    3300334: containerschiff:container_06:pCylinder7 20
+    3300336: containerschiff:container_06:pCylinder7 21
+    3300338: containerschiff:container_06:pCylinder7 22
+    3300340: containerschiff:container_06:pCylinder7 23
+    3300342: containerschiff:container_06:pCylinder7 24
+    3300344: containerschiff:container_06:pCylinder7 25
+    3300346: containerschiff:container_06:pCylinder7 26
+    3300348: containerschiff:container_06:pCylinder7 27
+    3300350: containerschiff:container_06:pCylinder7 28
+    3300352: containerschiff:container_06:pCylinder7 29
+    3300354: containerschiff:container_06:pCylinder7 3
+    3300356: containerschiff:container_06:pCylinder7 30
+    3300358: containerschiff:container_06:pCylinder7 31
+    3300360: containerschiff:container_06:pCylinder7 32
+    3300362: containerschiff:container_06:pCylinder7 33
+    3300364: containerschiff:container_06:pCylinder7 34
+    3300366: containerschiff:container_06:pCylinder7 35
+    3300368: containerschiff:container_06:pCylinder7 36
+    3300370: containerschiff:container_06:pCylinder7 37
+    3300372: containerschiff:container_06:pCylinder7 38
+    3300374: containerschiff:container_06:pCylinder7 39
+    3300376: containerschiff:container_06:pCylinder7 4
+    3300378: containerschiff:container_06:pCylinder7 40
+    3300380: containerschiff:container_06:pCylinder7 41
+    3300382: containerschiff:container_06:pCylinder7 42
+    3300384: containerschiff:container_06:pCylinder7 43
+    3300386: containerschiff:container_06:pCylinder7 44
+    3300388: containerschiff:container_06:pCylinder7 45
+    3300390: containerschiff:container_06:pCylinder7 46
+    3300392: containerschiff:container_06:pCylinder7 47
+    3300394: containerschiff:container_06:pCylinder7 48
+    3300396: containerschiff:container_06:pCylinder7 49
+    3300398: containerschiff:container_06:pCylinder7 5
+    3300400: containerschiff:container_06:pCylinder7 50
+    3300402: containerschiff:container_06:pCylinder7 51
+    3300404: containerschiff:container_06:pCylinder7 52
+    3300406: containerschiff:container_06:pCylinder7 53
+    3300408: containerschiff:container_06:pCylinder7 54
+    3300410: containerschiff:container_06:pCylinder7 55
+    3300412: containerschiff:container_06:pCylinder7 56
+    3300414: containerschiff:container_06:pCylinder7 57
+    3300416: containerschiff:container_06:pCylinder7 58
+    3300418: containerschiff:container_06:pCylinder7 59
+    3300420: containerschiff:container_06:pCylinder7 6
+    3300422: containerschiff:container_06:pCylinder7 60
+    3300424: containerschiff:container_06:pCylinder7 61
+    3300426: containerschiff:container_06:pCylinder7 62
+    3300428: containerschiff:container_06:pCylinder7 63
+    3300430: containerschiff:container_06:pCylinder7 64
+    3300432: containerschiff:container_06:pCylinder7 65
+    3300434: containerschiff:container_06:pCylinder7 66
+    3300436: containerschiff:container_06:pCylinder7 67
+    3300438: containerschiff:container_06:pCylinder7 7
+    3300440: containerschiff:container_06:pCylinder7 8
+    3300442: containerschiff:container_06:pCylinder7 9
+    3300444: containerschiff:container_06:pCylinder8
+    3300446: containerschiff:container_06:pCylinder8 1
+    3300448: containerschiff:container_06:pCylinder8 10
+    3300450: containerschiff:container_06:pCylinder8 11
+    3300452: containerschiff:container_06:pCylinder8 12
+    3300454: containerschiff:container_06:pCylinder8 13
+    3300456: containerschiff:container_06:pCylinder8 14
+    3300458: containerschiff:container_06:pCylinder8 15
+    3300460: containerschiff:container_06:pCylinder8 16
+    3300462: containerschiff:container_06:pCylinder8 17
+    3300464: containerschiff:container_06:pCylinder8 18
+    3300466: containerschiff:container_06:pCylinder8 19
+    3300468: containerschiff:container_06:pCylinder8 2
+    3300470: containerschiff:container_06:pCylinder8 20
+    3300472: containerschiff:container_06:pCylinder8 21
+    3300474: containerschiff:container_06:pCylinder8 22
+    3300476: containerschiff:container_06:pCylinder8 23
+    3300478: containerschiff:container_06:pCylinder8 24
+    3300480: containerschiff:container_06:pCylinder8 25
+    3300482: containerschiff:container_06:pCylinder8 26
+    3300484: containerschiff:container_06:pCylinder8 27
+    3300486: containerschiff:container_06:pCylinder8 28
+    3300488: containerschiff:container_06:pCylinder8 29
+    3300490: containerschiff:container_06:pCylinder8 3
+    3300492: containerschiff:container_06:pCylinder8 30
+    3300494: containerschiff:container_06:pCylinder8 31
+    3300496: containerschiff:container_06:pCylinder8 32
+    3300498: containerschiff:container_06:pCylinder8 33
+    3300500: containerschiff:container_06:pCylinder8 34
+    3300502: containerschiff:container_06:pCylinder8 35
+    3300504: containerschiff:container_06:pCylinder8 36
+    3300506: containerschiff:container_06:pCylinder8 37
+    3300508: containerschiff:container_06:pCylinder8 38
+    3300510: containerschiff:container_06:pCylinder8 39
+    3300512: containerschiff:container_06:pCylinder8 4
+    3300514: containerschiff:container_06:pCylinder8 40
+    3300516: containerschiff:container_06:pCylinder8 41
+    3300518: containerschiff:container_06:pCylinder8 42
+    3300520: containerschiff:container_06:pCylinder8 43
+    3300522: containerschiff:container_06:pCylinder8 44
+    3300524: containerschiff:container_06:pCylinder8 45
+    3300526: containerschiff:container_06:pCylinder8 46
+    3300528: containerschiff:container_06:pCylinder8 47
+    3300530: containerschiff:container_06:pCylinder8 48
+    3300532: containerschiff:container_06:pCylinder8 49
+    3300534: containerschiff:container_06:pCylinder8 5
+    3300536: containerschiff:container_06:pCylinder8 50
+    3300538: containerschiff:container_06:pCylinder8 51
+    3300540: containerschiff:container_06:pCylinder8 52
+    3300542: containerschiff:container_06:pCylinder8 53
+    3300544: containerschiff:container_06:pCylinder8 54
+    3300546: containerschiff:container_06:pCylinder8 55
+    3300548: containerschiff:container_06:pCylinder8 56
+    3300550: containerschiff:container_06:pCylinder8 57
+    3300552: containerschiff:container_06:pCylinder8 58
+    3300554: containerschiff:container_06:pCylinder8 59
+    3300556: containerschiff:container_06:pCylinder8 6
+    3300558: containerschiff:container_06:pCylinder8 60
+    3300560: containerschiff:container_06:pCylinder8 61
+    3300562: containerschiff:container_06:pCylinder8 62
+    3300564: containerschiff:container_06:pCylinder8 63
+    3300566: containerschiff:container_06:pCylinder8 64
+    3300568: containerschiff:container_06:pCylinder8 65
+    3300570: containerschiff:container_06:pCylinder8 66
+    3300572: containerschiff:container_06:pCylinder8 67
+    3300574: containerschiff:container_06:pCylinder8 7
+    3300576: containerschiff:container_06:pCylinder8 8
+    3300578: containerschiff:container_06:pCylinder8 9
+    3300580: containerschiff:container_06:pCylinder9
+    3300582: containerschiff:container_06:pCylinder9 1
+    3300584: containerschiff:container_06:pCylinder9 10
+    3300586: containerschiff:container_06:pCylinder9 11
+    3300588: containerschiff:container_06:pCylinder9 12
+    3300590: containerschiff:container_06:pCylinder9 13
+    3300592: containerschiff:container_06:pCylinder9 14
+    3300594: containerschiff:container_06:pCylinder9 15
+    3300596: containerschiff:container_06:pCylinder9 16
+    3300598: containerschiff:container_06:pCylinder9 17
+    3300600: containerschiff:container_06:pCylinder9 18
+    3300602: containerschiff:container_06:pCylinder9 19
+    3300604: containerschiff:container_06:pCylinder9 2
+    3300606: containerschiff:container_06:pCylinder9 20
+    3300608: containerschiff:container_06:pCylinder9 21
+    3300610: containerschiff:container_06:pCylinder9 22
+    3300612: containerschiff:container_06:pCylinder9 23
+    3300614: containerschiff:container_06:pCylinder9 24
+    3300616: containerschiff:container_06:pCylinder9 25
+    3300618: containerschiff:container_06:pCylinder9 26
+    3300620: containerschiff:container_06:pCylinder9 27
+    3300622: containerschiff:container_06:pCylinder9 28
+    3300624: containerschiff:container_06:pCylinder9 29
+    3300626: containerschiff:container_06:pCylinder9 3
+    3300628: containerschiff:container_06:pCylinder9 30
+    3300630: containerschiff:container_06:pCylinder9 31
+    3300632: containerschiff:container_06:pCylinder9 32
+    3300634: containerschiff:container_06:pCylinder9 33
+    3300636: containerschiff:container_06:pCylinder9 34
+    3300638: containerschiff:container_06:pCylinder9 35
+    3300640: containerschiff:container_06:pCylinder9 36
+    3300642: containerschiff:container_06:pCylinder9 37
+    3300644: containerschiff:container_06:pCylinder9 38
+    3300646: containerschiff:container_06:pCylinder9 39
+    3300648: containerschiff:container_06:pCylinder9 4
+    3300650: containerschiff:container_06:pCylinder9 40
+    3300652: containerschiff:container_06:pCylinder9 41
+    3300654: containerschiff:container_06:pCylinder9 42
+    3300656: containerschiff:container_06:pCylinder9 43
+    3300658: containerschiff:container_06:pCylinder9 44
+    3300660: containerschiff:container_06:pCylinder9 45
+    3300662: containerschiff:container_06:pCylinder9 46
+    3300664: containerschiff:container_06:pCylinder9 47
+    3300666: containerschiff:container_06:pCylinder9 48
+    3300668: containerschiff:container_06:pCylinder9 49
+    3300670: containerschiff:container_06:pCylinder9 5
+    3300672: containerschiff:container_06:pCylinder9 50
+    3300674: containerschiff:container_06:pCylinder9 51
+    3300676: containerschiff:container_06:pCylinder9 52
+    3300678: containerschiff:container_06:pCylinder9 53
+    3300680: containerschiff:container_06:pCylinder9 54
+    3300682: containerschiff:container_06:pCylinder9 55
+    3300684: containerschiff:container_06:pCylinder9 56
+    3300686: containerschiff:container_06:pCylinder9 57
+    3300688: containerschiff:container_06:pCylinder9 58
+    3300690: containerschiff:container_06:pCylinder9 59
+    3300692: containerschiff:container_06:pCylinder9 6
+    3300694: containerschiff:container_06:pCylinder9 60
+    3300696: containerschiff:container_06:pCylinder9 61
+    3300698: containerschiff:container_06:pCylinder9 62
+    3300700: containerschiff:container_06:pCylinder9 63
+    3300702: containerschiff:container_06:pCylinder9 64
+    3300704: containerschiff:container_06:pCylinder9 65
+    3300706: containerschiff:container_06:pCylinder9 66
+    3300708: containerschiff:container_06:pCylinder9 67
+    3300710: containerschiff:container_06:pCylinder9 7
+    3300712: containerschiff:container_06:pCylinder9 8
+    3300714: containerschiff:container_06:pCylinder9 9
+    3300716: containerschiff:container_06:pPlane1
+    3300718: containerschiff:container_06:pPlane1 1
+    3300720: containerschiff:container_06:pPlane1 10
+    3300722: containerschiff:container_06:pPlane1 11
+    3300724: containerschiff:container_06:pPlane1 12
+    3300726: containerschiff:container_06:pPlane1 13
+    3300728: containerschiff:container_06:pPlane1 14
+    3300730: containerschiff:container_06:pPlane1 15
+    3300732: containerschiff:container_06:pPlane1 16
+    3300734: containerschiff:container_06:pPlane1 17
+    3300736: containerschiff:container_06:pPlane1 2
+    3300738: containerschiff:container_06:pPlane1 3
+    3300740: containerschiff:container_06:pPlane1 4
+    3300742: containerschiff:container_06:pPlane1 5
+    3300744: containerschiff:container_06:pPlane1 6
+    3300746: containerschiff:container_06:pPlane1 7
+    3300748: containerschiff:container_06:pPlane1 8
+    3300750: containerschiff:container_06:pPlane1 9
+    3300752: containerschiff:container_06:pPlane2
+    3300754: containerschiff:container_06:pPlane2 1
+    3300756: containerschiff:container_06:pPlane2 10
+    3300758: containerschiff:container_06:pPlane2 11
+    3300760: containerschiff:container_06:pPlane2 12
+    3300762: containerschiff:container_06:pPlane2 13
+    3300764: containerschiff:container_06:pPlane2 14
+    3300766: containerschiff:container_06:pPlane2 15
+    3300768: containerschiff:container_06:pPlane2 16
+    3300770: containerschiff:container_06:pPlane2 17
+    3300772: containerschiff:container_06:pPlane2 2
+    3300774: containerschiff:container_06:pPlane2 3
+    3300776: containerschiff:container_06:pPlane2 4
+    3300778: containerschiff:container_06:pPlane2 5
+    3300780: containerschiff:container_06:pPlane2 6
+    3300782: containerschiff:container_06:pPlane2 7
+    3300784: containerschiff:container_06:pPlane2 8
+    3300786: containerschiff:container_06:pPlane2 9
+    3300788: containerschiff:container_06:pPlane3
+    3300790: containerschiff:container_06:pPlane3 1
+    3300792: containerschiff:container_06:pPlane3 10
+    3300794: containerschiff:container_06:pPlane3 11
+    3300796: containerschiff:container_06:pPlane3 12
+    3300798: containerschiff:container_06:pPlane3 13
+    3300800: containerschiff:container_06:pPlane3 14
+    3300802: containerschiff:container_06:pPlane3 15
+    3300804: containerschiff:container_06:pPlane3 16
+    3300806: containerschiff:container_06:pPlane3 17
+    3300808: containerschiff:container_06:pPlane3 2
+    3300810: containerschiff:container_06:pPlane3 3
+    3300812: containerschiff:container_06:pPlane3 4
+    3300814: containerschiff:container_06:pPlane3 5
+    3300816: containerschiff:container_06:pPlane3 6
+    3300818: containerschiff:container_06:pPlane3 7
+    3300820: containerschiff:container_06:pPlane3 8
+    3300822: containerschiff:container_06:pPlane3 9
+    3300824: containerschiff:container_06:tuer_3
+    3300826: containerschiff:container_06:tuer_3 1
+    3300828: containerschiff:container_06:tuer_3 10
+    3300830: containerschiff:container_06:tuer_3 11
+    3300832: containerschiff:container_06:tuer_3 12
+    3300834: containerschiff:container_06:tuer_3 13
+    3300836: containerschiff:container_06:tuer_3 14
+    3300838: containerschiff:container_06:tuer_3 15
+    3300840: containerschiff:container_06:tuer_3 16
+    3300842: containerschiff:container_06:tuer_3 17
+    3300844: containerschiff:container_06:tuer_3 2
+    3300846: containerschiff:container_06:tuer_3 3
+    3300848: containerschiff:container_06:tuer_3 4
+    3300850: containerschiff:container_06:tuer_3 5
+    3300852: containerschiff:container_06:tuer_3 6
+    3300854: containerschiff:container_06:tuer_3 7
+    3300856: containerschiff:container_06:tuer_3 8
+    3300858: containerschiff:container_06:tuer_3 9
+    3300860: containerschiff:container_06:tuer_4
+    3300862: containerschiff:container_06:tuer_4 1
+    3300864: containerschiff:container_06:tuer_4 10
+    3300866: containerschiff:container_06:tuer_4 11
+    3300868: containerschiff:container_06:tuer_4 12
+    3300870: containerschiff:container_06:tuer_4 13
+    3300872: containerschiff:container_06:tuer_4 14
+    3300874: containerschiff:container_06:tuer_4 15
+    3300876: containerschiff:container_06:tuer_4 16
+    3300878: containerschiff:container_06:tuer_4 17
+    3300880: containerschiff:container_06:tuer_4 2
+    3300882: containerschiff:container_06:tuer_4 3
+    3300884: containerschiff:container_06:tuer_4 4
+    3300886: containerschiff:container_06:tuer_4 5
+    3300888: containerschiff:container_06:tuer_4 6
+    3300890: containerschiff:container_06:tuer_4 7
+    3300892: containerschiff:container_06:tuer_4 8
+    3300894: containerschiff:container_06:tuer_4 9
+    4300000: containerschiff:container_06:container_grundform
+    4300002: containerschiff:container_06:tuer_4
+    4300004: containerschiff:container_06:tuer_3
+    4300006: containerschiff:container_06:pPlane1
+    4300008: containerschiff:container_06:pPlane2
+    4300010: containerschiff:container_06:pPlane3
+    4300012: containerschiff:container_06:pCylinder4
+    4300014: containerschiff:container_06:pCylinder1
+    4300016: containerschiff:container_06:pCylinder7
+    4300018: containerschiff:container_06:pCylinder8
+    4300020: containerschiff:container_06:pCylinder9
+    4300022: containerschiff:container_06:pCylinder4
+    4300024: containerschiff:container_06:pCylinder1
+    4300026: containerschiff:container_06:pCylinder7
+    4300028: containerschiff:container_06:pCylinder8
+    4300030: containerschiff:container_06:pCylinder9
+    4300032: containerschiff:container_06:pCylinder4
+    4300034: containerschiff:container_06:pCylinder1
+    4300036: containerschiff:container_06:pCylinder7
+    4300038: containerschiff:container_06:pCylinder8
+    4300040: containerschiff:container_06:pCylinder9
+    4300042: containerschiff:container_06:pCylinder4
+    4300044: containerschiff:container_06:pCylinder1
+    4300046: containerschiff:container_06:pCylinder7
+    4300048: containerschiff:container_06:pCylinder8
+    4300050: containerschiff:container_06:pCylinder9
+    4300052: containerschiff:container_06:container_grundform
+    4300054: containerschiff:container_06:tuer_4
+    4300056: containerschiff:container_06:tuer_3
+    4300058: containerschiff:container_06:pCylinder4
+    4300060: containerschiff:container_06:pCylinder1
+    4300062: containerschiff:container_06:pCylinder7
+    4300064: containerschiff:container_06:pCylinder8
+    4300066: containerschiff:container_06:pCylinder9
+    4300068: containerschiff:container_06:pCylinder4
+    4300070: containerschiff:container_06:pCylinder1
+    4300072: containerschiff:container_06:pCylinder7
+    4300074: containerschiff:container_06:pCylinder8
+    4300076: containerschiff:container_06:pCylinder9
+    4300078: containerschiff:container_06:pCylinder4
+    4300080: containerschiff:container_06:pCylinder1
+    4300082: containerschiff:container_06:pCylinder7
+    4300084: containerschiff:container_06:pCylinder8
+    4300086: containerschiff:container_06:pCylinder9
+    4300088: containerschiff:container_06:pCylinder4
+    4300090: containerschiff:container_06:pCylinder1
+    4300092: containerschiff:container_06:pCylinder7
+    4300094: containerschiff:container_06:pCylinder8
+    4300096: containerschiff:container_06:pCylinder9
+    4300098: containerschiff:container_06:pPlane1
+    4300100: containerschiff:container_06:pPlane2
+    4300102: containerschiff:container_06:pPlane3
+    4300104: containerschiff:container_06:container_grundform
+    4300106: containerschiff:container_06:tuer_4
+    4300108: containerschiff:container_06:tuer_3
+    4300110: containerschiff:container_06:pCylinder4
+    4300112: containerschiff:container_06:pCylinder1
+    4300114: containerschiff:container_06:pCylinder7
+    4300116: containerschiff:container_06:pCylinder8
+    4300118: containerschiff:container_06:pCylinder9
+    4300120: containerschiff:container_06:pCylinder4
+    4300122: containerschiff:container_06:pCylinder1
+    4300124: containerschiff:container_06:pCylinder7
+    4300126: containerschiff:container_06:pCylinder8
+    4300128: containerschiff:container_06:pCylinder9
+    4300130: containerschiff:container_06:pCylinder4
+    4300132: containerschiff:container_06:pCylinder1
+    4300134: containerschiff:container_06:pCylinder7
+    4300136: containerschiff:container_06:pCylinder8
+    4300138: containerschiff:container_06:pCylinder9
+    4300140: containerschiff:container_06:pCylinder4
+    4300142: containerschiff:container_06:pCylinder1
+    4300144: containerschiff:container_06:pCylinder7
+    4300146: containerschiff:container_06:pCylinder8
+    4300148: containerschiff:container_06:pCylinder9
+    4300150: containerschiff:container_06:pPlane1
+    4300152: containerschiff:container_06:pPlane2
+    4300154: containerschiff:container_06:pPlane3
+    4300156: containerschiff:container_06:container_grundform
+    4300158: containerschiff:container_06:tuer_4
+    4300160: containerschiff:container_06:tuer_3
+    4300162: containerschiff:container_06:pCylinder4
+    4300164: containerschiff:container_06:pCylinder1
+    4300166: containerschiff:container_06:pCylinder7
+    4300168: containerschiff:container_06:pCylinder8
+    4300170: containerschiff:container_06:pCylinder9
+    4300172: containerschiff:container_06:pCylinder4
+    4300174: containerschiff:container_06:pCylinder1
+    4300176: containerschiff:container_06:pCylinder7
+    4300178: containerschiff:container_06:pCylinder8
+    4300180: containerschiff:container_06:pCylinder9
+    4300182: containerschiff:container_06:pCylinder4
+    4300184: containerschiff:container_06:pCylinder1
+    4300186: containerschiff:container_06:pCylinder7
+    4300188: containerschiff:container_06:pCylinder8
+    4300190: containerschiff:container_06:pCylinder9
+    4300192: containerschiff:container_06:pCylinder4
+    4300194: containerschiff:container_06:pCylinder1
+    4300196: containerschiff:container_06:pCylinder7
+    4300198: containerschiff:container_06:pCylinder8
+    4300200: containerschiff:container_06:pCylinder9
+    4300202: containerschiff:container_06:pPlane1
+    4300204: containerschiff:container_06:pPlane2
+    4300206: containerschiff:container_06:pPlane3
+    4300208: containerschiff:container_06:container_grundform
+    4300210: containerschiff:container_06:tuer_4
+    4300212: containerschiff:container_06:tuer_3
+    4300214: containerschiff:container_06:pPlane1
+    4300216: containerschiff:container_06:pPlane2
+    4300218: containerschiff:container_06:pPlane3
+    4300220: containerschiff:container_06:container_grundform
+    4300222: containerschiff:container_06:tuer_4
+    4300224: containerschiff:container_06:tuer_3
+    4300226: containerschiff:container_06:pCylinder4
+    4300228: containerschiff:container_06:pCylinder1
+    4300230: containerschiff:container_06:pCylinder7
+    4300232: containerschiff:container_06:pCylinder8
+    4300234: containerschiff:container_06:pCylinder9
+    4300236: containerschiff:container_06:pCylinder4
+    4300238: containerschiff:container_06:pCylinder1
+    4300240: containerschiff:container_06:pCylinder7
+    4300242: containerschiff:container_06:pCylinder8
+    4300244: containerschiff:container_06:pCylinder9
+    4300246: containerschiff:container_06:pCylinder4
+    4300248: containerschiff:container_06:pCylinder1
+    4300250: containerschiff:container_06:pCylinder7
+    4300252: containerschiff:container_06:pCylinder8
+    4300254: containerschiff:container_06:pCylinder9
+    4300256: containerschiff:container_06:pCylinder4
+    4300258: containerschiff:container_06:pCylinder1
+    4300260: containerschiff:container_06:pCylinder7
+    4300262: containerschiff:container_06:pCylinder8
+    4300264: containerschiff:container_06:pCylinder9
+    4300266: containerschiff:container_06:pPlane1
+    4300268: containerschiff:container_06:pPlane2
+    4300270: containerschiff:container_06:pPlane3
+    4300272: containerschiff:container_06:container_grundform
+    4300274: containerschiff:container_06:tuer_4
+    4300276: containerschiff:container_06:tuer_3
+    4300278: containerschiff:container_06:pCylinder4
+    4300280: containerschiff:container_06:pCylinder1
+    4300282: containerschiff:container_06:pCylinder7
+    4300284: containerschiff:container_06:pCylinder8
+    4300286: containerschiff:container_06:pCylinder9
+    4300288: containerschiff:container_06:pCylinder4
+    4300290: containerschiff:container_06:pCylinder1
+    4300292: containerschiff:container_06:pCylinder7
+    4300294: containerschiff:container_06:pCylinder8
+    4300296: containerschiff:container_06:pCylinder9
+    4300298: containerschiff:container_06:pCylinder4
+    4300300: containerschiff:container_06:pCylinder1
+    4300302: containerschiff:container_06:pCylinder7
+    4300304: containerschiff:container_06:pCylinder8
+    4300306: containerschiff:container_06:pCylinder9
+    4300308: containerschiff:container_06:pCylinder4
+    4300310: containerschiff:container_06:pCylinder1
+    4300312: containerschiff:container_06:pCylinder7
+    4300314: containerschiff:container_06:pCylinder8
+    4300316: containerschiff:container_06:pCylinder9
+    4300318: containerschiff:container_06:pPlane1
+    4300320: containerschiff:container_06:pPlane2
+    4300322: containerschiff:container_06:pPlane3
+    4300324: containerschiff:container_06:container_grundform
+    4300326: containerschiff:container_06:tuer_4
+    4300328: containerschiff:container_06:tuer_3
+    4300330: containerschiff:container_06:pCylinder4
+    4300332: containerschiff:container_06:pCylinder1
+    4300334: containerschiff:container_06:pCylinder7
+    4300336: containerschiff:container_06:pCylinder8
+    4300338: containerschiff:container_06:pCylinder9
+    4300340: containerschiff:container_06:pCylinder4
+    4300342: containerschiff:container_06:pCylinder1
+    4300344: containerschiff:container_06:pCylinder7
+    4300346: containerschiff:container_06:pCylinder8
+    4300348: containerschiff:container_06:pCylinder9
+    4300350: containerschiff:container_06:pCylinder4
+    4300352: containerschiff:container_06:pCylinder1
+    4300354: containerschiff:container_06:pCylinder7
+    4300356: containerschiff:container_06:pCylinder8
+    4300358: containerschiff:container_06:pCylinder9
+    4300360: containerschiff:container_06:pCylinder4
+    4300362: containerschiff:container_06:pCylinder1
+    4300364: containerschiff:container_06:pCylinder7
+    4300366: containerschiff:container_06:pCylinder8
+    4300368: containerschiff:container_06:pCylinder9
+    4300370: containerschiff:container_06:pPlane1
+    4300372: containerschiff:container_06:pPlane2
+    4300374: containerschiff:container_06:pPlane3
+    4300376: containerschiff:container_06:container_grundform
+    4300378: containerschiff:container_06:tuer_4
+    4300380: containerschiff:container_06:tuer_3
+    4300382: containerschiff:container_06:pCylinder4
+    4300384: containerschiff:container_06:pCylinder1
+    4300386: containerschiff:container_06:pCylinder7
+    4300388: containerschiff:container_06:pCylinder8
+    4300390: containerschiff:container_06:pCylinder9
+    4300392: containerschiff:container_06:pCylinder4
+    4300394: containerschiff:container_06:pCylinder1
+    4300396: containerschiff:container_06:pCylinder7
+    4300398: containerschiff:container_06:pCylinder8
+    4300400: containerschiff:container_06:pCylinder9
+    4300402: containerschiff:container_06:pCylinder4
+    4300404: containerschiff:container_06:pCylinder1
+    4300406: containerschiff:container_06:pCylinder7
+    4300408: containerschiff:container_06:pCylinder8
+    4300410: containerschiff:container_06:pCylinder9
+    4300412: containerschiff:container_06:pCylinder4
+    4300414: containerschiff:container_06:pCylinder1
+    4300416: containerschiff:container_06:pCylinder7
+    4300418: containerschiff:container_06:pCylinder8
+    4300420: containerschiff:container_06:pCylinder9
+    4300422: containerschiff:container_06:pPlane1
+    4300424: containerschiff:container_06:pPlane2
+    4300426: containerschiff:container_06:pPlane3
+    4300428: containerschiff:container_06:container_grundform
+    4300430: containerschiff:container_06:tuer_4
+    4300432: containerschiff:container_06:tuer_3
+    4300434: containerschiff:container_06:pCylinder4
+    4300436: containerschiff:container_06:pCylinder1
+    4300438: containerschiff:container_06:pCylinder7
+    4300440: containerschiff:container_06:pCylinder8
+    4300442: containerschiff:container_06:pCylinder9
+    4300444: containerschiff:container_06:pCylinder4
+    4300446: containerschiff:container_06:pCylinder1
+    4300448: containerschiff:container_06:pCylinder7
+    4300450: containerschiff:container_06:pCylinder8
+    4300452: containerschiff:container_06:pCylinder9
+    4300454: containerschiff:container_06:pCylinder4
+    4300456: containerschiff:container_06:pCylinder1
+    4300458: containerschiff:container_06:pCylinder7
+    4300460: containerschiff:container_06:pCylinder8
+    4300462: containerschiff:container_06:pCylinder9
+    4300464: containerschiff:container_06:pCylinder4
+    4300466: containerschiff:container_06:pCylinder1
+    4300468: containerschiff:container_06:pCylinder7
+    4300470: containerschiff:container_06:pCylinder8
+    4300472: containerschiff:container_06:pCylinder9
+    4300474: containerschiff:container_06:pPlane1
+    4300476: containerschiff:container_06:pPlane2
+    4300478: containerschiff:container_06:pPlane3
+    4300480: containerschiff:container_06:container_grundform
+    4300482: containerschiff:container_06:tuer_4
+    4300484: containerschiff:container_06:tuer_3
+    4300486: containerschiff:container_06:pCylinder4
+    4300488: containerschiff:container_06:pCylinder1
+    4300490: containerschiff:container_06:pCylinder7
+    4300492: containerschiff:container_06:pCylinder8
+    4300494: containerschiff:container_06:pCylinder9
+    4300496: containerschiff:container_06:pCylinder4
+    4300498: containerschiff:container_06:pCylinder1
+    4300500: containerschiff:container_06:pCylinder7
+    4300502: containerschiff:container_06:pCylinder8
+    4300504: containerschiff:container_06:pCylinder9
+    4300506: containerschiff:container_06:pCylinder4
+    4300508: containerschiff:container_06:pCylinder1
+    4300510: containerschiff:container_06:pCylinder7
+    4300512: containerschiff:container_06:pCylinder8
+    4300514: containerschiff:container_06:pCylinder9
+    4300516: containerschiff:container_06:pCylinder4
+    4300518: containerschiff:container_06:pCylinder1
+    4300520: containerschiff:container_06:pCylinder7
+    4300522: containerschiff:container_06:pCylinder8
+    4300524: containerschiff:container_06:pCylinder9
+    4300526: containerschiff:container_06:pPlane1
+    4300528: containerschiff:container_06:pPlane2
+    4300530: containerschiff:container_06:pPlane3
+    4300532: containerschiff:container_06:container_grundform
+    4300534: containerschiff:container_06:tuer_4
+    4300536: containerschiff:container_06:tuer_3
+    4300538: containerschiff:container_06:pCylinder4
+    4300540: containerschiff:container_06:pCylinder1
+    4300542: containerschiff:container_06:pCylinder7
+    4300544: containerschiff:container_06:pCylinder8
+    4300546: containerschiff:container_06:pCylinder9
+    4300548: containerschiff:container_06:pCylinder4
+    4300550: containerschiff:container_06:pCylinder1
+    4300552: containerschiff:container_06:pCylinder7
+    4300554: containerschiff:container_06:pCylinder8
+    4300556: containerschiff:container_06:pCylinder9
+    4300558: containerschiff:container_06:pCylinder4
+    4300560: containerschiff:container_06:pCylinder1
+    4300562: containerschiff:container_06:pCylinder7
+    4300564: containerschiff:container_06:pCylinder8
+    4300566: containerschiff:container_06:pCylinder9
+    4300568: containerschiff:container_06:pCylinder4
+    4300570: containerschiff:container_06:pCylinder1
+    4300572: containerschiff:container_06:pCylinder7
+    4300574: containerschiff:container_06:pCylinder8
+    4300576: containerschiff:container_06:pCylinder9
+    4300578: containerschiff:container_06:pPlane1
+    4300580: containerschiff:container_06:pPlane2
+    4300582: containerschiff:container_06:pPlane3
+    4300584: containerschiff:container_06:container_grundform
+    4300586: containerschiff:container_06:tuer_4
+    4300588: containerschiff:container_06:tuer_3
+    4300590: containerschiff:container_06:pCylinder4
+    4300592: containerschiff:container_06:pCylinder1
+    4300594: containerschiff:container_06:pCylinder7
+    4300596: containerschiff:container_06:pCylinder8
+    4300598: containerschiff:container_06:pCylinder9
+    4300600: containerschiff:container_06:pCylinder4
+    4300602: containerschiff:container_06:pCylinder1
+    4300604: containerschiff:container_06:pCylinder7
+    4300606: containerschiff:container_06:pCylinder8
+    4300608: containerschiff:container_06:pCylinder9
+    4300610: containerschiff:container_06:pCylinder4
+    4300612: containerschiff:container_06:pCylinder1
+    4300614: containerschiff:container_06:pCylinder7
+    4300616: containerschiff:container_06:pCylinder8
+    4300618: containerschiff:container_06:pCylinder9
+    4300620: containerschiff:container_06:pCylinder4
+    4300622: containerschiff:container_06:pCylinder1
+    4300624: containerschiff:container_06:pCylinder7
+    4300626: containerschiff:container_06:pCylinder8
+    4300628: containerschiff:container_06:pCylinder9
+    4300630: containerschiff:container_06:pPlane1
+    4300632: containerschiff:container_06:pPlane2
+    4300634: containerschiff:container_06:pPlane3
+    4300636: containerschiff:container_06:container_grundform
+    4300638: containerschiff:container_06:tuer_4
+    4300640: containerschiff:container_06:tuer_3
+    4300642: containerschiff:container_06:pCylinder4
+    4300644: containerschiff:container_06:pCylinder1
+    4300646: containerschiff:container_06:pCylinder7
+    4300648: containerschiff:container_06:pCylinder8
+    4300650: containerschiff:container_06:pCylinder9
+    4300652: containerschiff:container_06:pCylinder4
+    4300654: containerschiff:container_06:pCylinder1
+    4300656: containerschiff:container_06:pCylinder7
+    4300658: containerschiff:container_06:pCylinder8
+    4300660: containerschiff:container_06:pCylinder9
+    4300662: containerschiff:container_06:pCylinder4
+    4300664: containerschiff:container_06:pCylinder1
+    4300666: containerschiff:container_06:pCylinder7
+    4300668: containerschiff:container_06:pCylinder8
+    4300670: containerschiff:container_06:pCylinder9
+    4300672: containerschiff:container_06:pCylinder4
+    4300674: containerschiff:container_06:pCylinder1
+    4300676: containerschiff:container_06:pCylinder7
+    4300678: containerschiff:container_06:pCylinder8
+    4300680: containerschiff:container_06:pCylinder9
+    4300682: containerschiff:container_06:pPlane1
+    4300684: containerschiff:container_06:pPlane2
+    4300686: containerschiff:container_06:pPlane3
+    4300688: containerschiff:container_06:container_grundform
+    4300690: containerschiff:container_06:tuer_4
+    4300692: containerschiff:container_06:tuer_3
+    4300694: containerschiff:container_06:pCylinder4
+    4300696: containerschiff:container_06:pCylinder1
+    4300698: containerschiff:container_06:pCylinder7
+    4300700: containerschiff:container_06:pCylinder8
+    4300702: containerschiff:container_06:pCylinder9
+    4300704: containerschiff:container_06:pCylinder4
+    4300706: containerschiff:container_06:pCylinder1
+    4300708: containerschiff:container_06:pCylinder7
+    4300710: containerschiff:container_06:pCylinder8
+    4300712: containerschiff:container_06:pCylinder9
+    4300714: containerschiff:container_06:pCylinder4
+    4300716: containerschiff:container_06:pCylinder1
+    4300718: containerschiff:container_06:pCylinder7
+    4300720: containerschiff:container_06:pCylinder8
+    4300722: containerschiff:container_06:pCylinder9
+    4300724: containerschiff:container_06:pCylinder4
+    4300726: containerschiff:container_06:pCylinder1
+    4300728: containerschiff:container_06:pCylinder7
+    4300730: containerschiff:container_06:pCylinder8
+    4300732: containerschiff:container_06:pCylinder9
+    4300734: containerschiff:container_06:pPlane1
+    4300736: containerschiff:container_06:pPlane2
+    4300738: containerschiff:container_06:pPlane3
+    4300740: containerschiff:container_06:container_grundform
+    4300742: containerschiff:container_06:tuer_4
+    4300744: containerschiff:container_06:tuer_3
+    4300746: containerschiff:container_06:pCylinder4
+    4300748: containerschiff:container_06:pCylinder1
+    4300750: containerschiff:container_06:pCylinder7
+    4300752: containerschiff:container_06:pCylinder8
+    4300754: containerschiff:container_06:pCylinder9
+    4300756: containerschiff:container_06:pCylinder4
+    4300758: containerschiff:container_06:pCylinder1
+    4300760: containerschiff:container_06:pCylinder7
+    4300762: containerschiff:container_06:pCylinder8
+    4300764: containerschiff:container_06:pCylinder9
+    4300766: containerschiff:container_06:pCylinder4
+    4300768: containerschiff:container_06:pCylinder1
+    4300770: containerschiff:container_06:pCylinder7
+    4300772: containerschiff:container_06:pCylinder8
+    4300774: containerschiff:container_06:pCylinder9
+    4300776: containerschiff:container_06:pCylinder4
+    4300778: containerschiff:container_06:pCylinder1
+    4300780: containerschiff:container_06:pCylinder7
+    4300782: containerschiff:container_06:pCylinder8
+    4300784: containerschiff:container_06:pCylinder9
+    4300786: containerschiff:container_06:pPlane1
+    4300788: containerschiff:container_06:pPlane2
+    4300790: containerschiff:container_06:pPlane3
+    4300792: containerschiff:container_06:container_grundform
+    4300794: containerschiff:container_06:tuer_4
+    4300796: containerschiff:container_06:tuer_3
+    4300798: containerschiff:container_06:pCylinder4
+    4300800: containerschiff:container_06:pCylinder1
+    4300802: containerschiff:container_06:pCylinder7
+    4300804: containerschiff:container_06:pCylinder8
+    4300806: containerschiff:container_06:pCylinder9
+    4300808: containerschiff:container_06:pCylinder4
+    4300810: containerschiff:container_06:pCylinder1
+    4300812: containerschiff:container_06:pCylinder7
+    4300814: containerschiff:container_06:pCylinder8
+    4300816: containerschiff:container_06:pCylinder9
+    4300818: containerschiff:container_06:pCylinder4
+    4300820: containerschiff:container_06:pCylinder1
+    4300822: containerschiff:container_06:pCylinder7
+    4300824: containerschiff:container_06:pCylinder8
+    4300826: containerschiff:container_06:pCylinder9
+    4300828: containerschiff:container_06:pCylinder4
+    4300830: containerschiff:container_06:pCylinder1
+    4300832: containerschiff:container_06:pCylinder7
+    4300834: containerschiff:container_06:pCylinder8
+    4300836: containerschiff:container_06:pCylinder9
+    4300838: containerschiff:container_06:pPlane1
+    4300840: containerschiff:container_06:pPlane2
+    4300842: containerschiff:container_06:pPlane3
+    4300844: containerschiff:container_06:container_grundform
+    4300846: containerschiff:container_06:tuer_4
+    4300848: containerschiff:container_06:tuer_3
+    4300850: containerschiff:container_06:pCylinder4
+    4300852: containerschiff:container_06:pCylinder1
+    4300854: containerschiff:container_06:pCylinder7
+    4300856: containerschiff:container_06:pCylinder8
+    4300858: containerschiff:container_06:pCylinder9
+    4300860: containerschiff:container_06:pCylinder4
+    4300862: containerschiff:container_06:pCylinder1
+    4300864: containerschiff:container_06:pCylinder7
+    4300866: containerschiff:container_06:pCylinder8
+    4300868: containerschiff:container_06:pCylinder9
+    4300870: containerschiff:container_06:pCylinder4
+    4300872: containerschiff:container_06:pCylinder1
+    4300874: containerschiff:container_06:pCylinder7
+    4300876: containerschiff:container_06:pCylinder8
+    4300878: containerschiff:container_06:pCylinder9
+    4300880: containerschiff:container_06:pCylinder4
+    4300882: containerschiff:container_06:pCylinder1
+    4300884: containerschiff:container_06:pCylinder7
+    4300886: containerschiff:container_06:pCylinder8
+    4300888: containerschiff:container_06:pCylinder9
+    4300890: containerschiff:container_06:pPlane1
+    4300892: containerschiff:container_06:pPlane2
+    4300894: containerschiff:container_06:pPlane3
+    9500000: //RootNode
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationCompression: 1
+    animationRotationError: .5
+    animationPositionError: .5
+    animationScaleError: .5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    splitTangentsAcrossUV: 1
+    normalImportMode: 0
+    tangentImportMode: 1
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    human: []
+    skeleton: []
+    armTwist: .5
+    foreArmTwist: .5
+    upperLegTwist: .5
+    legTwist: .5
+    armStretch: .0500000007
+    legStretch: .0500000007
+    feetSpacing: 0
+    rootMotionBoneName: 
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

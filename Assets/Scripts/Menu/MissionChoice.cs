@@ -6,25 +6,32 @@ public class MissionChoice : MonoBehaviour {
 
 	Client client;
 
-	public InputField messageField;
+	public Text messageField;
+	public Text missionDescriptionField;
+	public string loadingText = "loading";
 
 	// Use this for initialization
 	void Start () {
-
-	}
-	
-	public void OpenMission (string missionName) {
 		GameObject go = GameObject.FindWithTag ("Client");
-		Client client = (Client)go.GetComponent (typeof(Client));
+		client = (Client)go.GetComponent (typeof(Client));
 
 		if (client != null) {
-			client.CreateMission (missionName);
-			this.CheckMissionStatus();
-
+			missionDescriptionField.text = client.missions["The Harbor Job"].mafiaDescription;
+			Debug.Log (client.missions["The Harbor Job"].mafiaDescription);
 		} else {
 			Debug.Log ("no client");
 		}
 
+	}
+	
+	public void OpenMission (string missionName) {
+		if (client != null) {
+			client.CreateMission (missionName);
+			this.CheckMissionStatus();
+			
+		} else {
+			Debug.Log ("no client");
+		}
 	}
 
 	public void JoinMission (string missionName) {
@@ -44,16 +51,16 @@ public class MissionChoice : MonoBehaviour {
 
 			switch(i) {
 				case 0: 
-					messageField.text = "searching for opponent";
+					messageField.text = loadingText;
 					break;
 				case 1:
-					messageField.text = "searching for opponent.";
+					messageField.text = loadingText+ ".";
 					break;
 				case 2:
-					messageField.text = "searching for opponent..";
+					messageField.text = loadingText+ "..";
 					break;
 				case 3:
-					messageField.text = "searching for opponent...";
+					messageField.text = loadingText + "...";
 					break;
 				case 4:
 					i = 0;

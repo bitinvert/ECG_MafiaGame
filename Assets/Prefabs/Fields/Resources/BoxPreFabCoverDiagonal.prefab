@@ -9,7 +9,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 455332}
   - 95: {fileID: 9588784}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WoodenBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,7 +47,7 @@ GameObject:
   - 64: {fileID: 6481686}
   - 23: {fileID: 2377348}
   - 114: {fileID: 11456140}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -85,7 +85,7 @@ GameObject:
   - 64: {fileID: 6429536}
   - 23: {fileID: 2389380}
   - 114: {fileID: 11421476}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -102,7 +102,7 @@ GameObject:
   - 4: {fileID: 401310}
   - 33: {fileID: 3355758}
   - 23: {fileID: 2300098}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kiste1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -119,7 +119,7 @@ GameObject:
   - 4: {fileID: 429418}
   - 33: {fileID: 3313774}
   - 23: {fileID: 2366558}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kiste1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -155,7 +155,7 @@ GameObject:
   - 4: {fileID: 440086}
   - 33: {fileID: 3368414}
   - 23: {fileID: 2386352}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Kiste1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -212,7 +212,7 @@ GameObject:
   - 64: {fileID: 6469228}
   - 23: {fileID: 2395290}
   - 114: {fileID: 11487812}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FieldDeco
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 425484}
   - 95: {fileID: 9579058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WoodenBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -260,7 +260,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 475058}
   - 114: {fileID: 11458392}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BoxPreFab 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -295,7 +295,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 408098}
   - 114: {fileID: 11430972}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BoxPreFab 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -330,7 +330,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 455134}
   - 95: {fileID: 9586824}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: WoodenBox
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1349,7 +1349,11 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: m_Layer
+      value: 8
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 169094}

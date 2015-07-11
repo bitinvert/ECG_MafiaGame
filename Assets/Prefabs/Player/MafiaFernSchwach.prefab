@@ -10,14 +10,14 @@ GameObject:
   - 4: {fileID: 465524}
   - 212: {fileID: 21229896}
   - 65: {fileID: 6566526}
-  - 114: {fileID: 11464868}
+  - 114: {fileID: 11463426}
   m_Layer: 0
   m_Name: MafiaFernSchwach
-  m_TagString: Player
+  m_TagString: Playable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &465524
 Transform:
   m_ObjectHideFlags: 1
@@ -42,7 +42,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .319999993, y: .319999993, z: .200000018}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11464868
+--- !u!114 &11463426
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,10 +50,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 140986}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c83b73eda0f7194590f6ea12bd40cd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 7ef01433d81438e449523401a11cba08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  pStringName: 
+  pIntAttack: 4
+  pIntDefense: 5
+  pIntHealth: 15
+  pIntFullHealth: 15
+  pIntWalkDistance: 6
+  pBoolCaptive: 0
+  pBoolHasLoot: 0
+  pBoolEnemy: 0
+  pFloatSpeed: 2
+  pAStarPathfinding: {fileID: 0}
+  pFFWalkArea: {fileID: 0}
+  pGCController: {fileID: 0}
+  pGOTarget: {fileID: 0}
+  pBoolDoubleTap: 0
+  mVec3Offset: {x: 0, y: 0, z: 0}
+  pUnitEnemy: {fileID: 0}
+  pFacFaction: 0
+  pBoolMoveDone: 0
+  pBoolDone: 0
+  pOIObjective: {fileID: 0}
 --- !u!212 &21229896
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,6 +110,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Playable
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntFullHealth
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntAttack
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntDefense
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntWalkDistance
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntHealth
+      value: 15
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

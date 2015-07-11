@@ -10,14 +10,14 @@ GameObject:
   - 4: {fileID: 486652}
   - 212: {fileID: 21292512}
   - 65: {fileID: 6576204}
-  - 114: {fileID: 11448062}
+  - 114: {fileID: 11409354}
   m_Layer: 0
   m_Name: MafiaSchlaeger
-  m_TagString: Player
+  m_TagString: Playable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &486652
 Transform:
   m_ObjectHideFlags: 1
@@ -42,7 +42,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: .319999993, y: .319999993, z: .200000018}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &11448062
+--- !u!114 &11409354
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -50,10 +50,30 @@ MonoBehaviour:
   m_GameObject: {fileID: 175248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c83b73eda0f7194590f6ea12bd40cd5, type: 3}
+  m_Script: {fileID: 11500000, guid: 53cd0af3e80e3e343af3bf96e8d8bcb7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 10
+  pStringName: 
+  pIntAttack: 7
+  pIntDefense: 7
+  pIntHealth: 17
+  pIntFullHealth: 17
+  pIntWalkDistance: 4
+  pBoolCaptive: 0
+  pBoolHasLoot: 0
+  pBoolEnemy: 0
+  pFloatSpeed: 2
+  pAStarPathfinding: {fileID: 0}
+  pFFWalkArea: {fileID: 0}
+  pGCController: {fileID: 0}
+  pGOTarget: {fileID: 0}
+  pBoolDoubleTap: 0
+  mVec3Offset: {x: 0, y: 0, z: 0}
+  pUnitEnemy: {fileID: 0}
+  pFacFaction: 0
+  pBoolMoveDone: 0
+  pBoolDone: 0
+  pOIObjective: {fileID: 0}
 --- !u!212 &21292512
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -90,6 +110,30 @@ Prefab:
     - target: {fileID: 0}
       propertyPath: m_LocalPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_TagString
+      value: Playable
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntAttack
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntDefense
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntFullHealth
+      value: 17
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntWalkDistance
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: pIntHealth
+      value: 17
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}

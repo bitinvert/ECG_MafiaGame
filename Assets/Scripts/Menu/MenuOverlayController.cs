@@ -1,15 +1,37 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class MenuOverlayController : MonoBehaviour {
 
 	public GameObject attackButton;
 	public GameObject healButton;
+
+	public GameObject endTurnButton;
+	public GameObject endTurnButton_Waiting;
+
 	public PlayerController pc;
-	
+
+	private Client mClientPlayer;
+
+	void Start() {
+		mClientPlayer = Object.FindObjectOfType(typeof(Client)) as Client;
+	}
+
 	// Update is called once per frame
 	void Update () {
-		CheckMedic (pc.pUnitActive);
+		if(pc.pUnitActive != null){
+			CheckMedic (pc.pUnitActive);
+		}
+
+		if(!mClientPlayer.IsMyTurn) {
+			endTurnButton_Waiting.SetActive(true);
+			endTurnButton.SetActive(false);
+
+		} else {
+			endTurnButton.SetActive(true);
+			endTurnButton_Waiting.SetActive(false);
+		}
 	}
 
 	private void CheckMedic(Unit u) 
