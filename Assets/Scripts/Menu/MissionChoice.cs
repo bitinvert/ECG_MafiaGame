@@ -8,6 +8,7 @@ public class MissionChoice : MonoBehaviour {
 
 	public Text messageField;
 	public Text missionDescriptionField;
+	public string loadingText = "loading";
 
 	// Use this for initialization
 	void Start () {
@@ -50,16 +51,16 @@ public class MissionChoice : MonoBehaviour {
 
 			switch(i) {
 				case 0: 
-					messageField.text = "searching for opponent";
+					messageField.text = loadingText;
 					break;
 				case 1:
-					messageField.text = "searching for opponent.";
+					messageField.text = loadingText+ ".";
 					break;
 				case 2:
-					messageField.text = "searching for opponent..";
+					messageField.text = loadingText+ "..";
 					break;
 				case 3:
-					messageField.text = "searching for opponent...";
+					messageField.text = loadingText + "...";
 					break;
 				case 4:
 					i = 0;
