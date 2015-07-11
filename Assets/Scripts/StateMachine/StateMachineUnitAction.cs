@@ -7,7 +7,10 @@ public class StateMachineUnitAction : MonoBehaviour {
 	
 	public PlayerController pPCPlayer;
 	public int pIntTurnCount;
-	
+
+	public AudioSource audio1;
+	public AudioSource audio2;
+	public AudioSource audio3;
 	
 	private Client mClientPlayer;
 	private bool mBoolMove = false;
@@ -50,6 +53,8 @@ public class StateMachineUnitAction : MonoBehaviour {
 			if(AttackDone ())
 			{
 				int attack = pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
+				audio1.Play ();
+				audio3.Play ();
 				Message msg = new Message(ActionType.ATTACK ,attack);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.pStringName);
@@ -68,6 +73,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 				Vector3 test = new Vector3(pPCPlayer.pUnitActive.pGOTarget.transform.position.x, 0f, pPCPlayer.pUnitActive.pGOTarget.transform.position.z);
 				
 				pPCPlayer.pUnitActive.move();
+				audio2.Play ();
 				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == test)
 				{
 					pPCPlayer.pBoolShowAttack = true;
