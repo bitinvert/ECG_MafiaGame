@@ -54,6 +54,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 			{
 				int attack = pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
 				audio1.Play ();
+				//yield waitForSeconds(1);
 				audio3.Play ();
 				Message msg = new Message(ActionType.ATTACK ,attack);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
