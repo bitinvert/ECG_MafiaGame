@@ -2,5 +2,5 @@
 using System.Collections;
 
 public enum ActionType {
-	MOVEMENT, ATTACK
+	MOVEMENT, ATTACK, SPECIAL, BREAK_SAFE
 }

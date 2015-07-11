@@ -5,10 +5,6 @@ using System.Collections.Generic;
 
 public class Client : MonoBehaviour {
 	
-	private const string roomName = "RoomName";
-	private RoomInfo[] roomsList;
-	private int maxClients = 2;
-	
 	private PhotonView photonView;
 
 	public Dictionary <string, Mission> missions { get { return _missions; } }
@@ -37,6 +33,11 @@ public class Client : MonoBehaviour {
 		PhotonNetwork.playerName = user.username;
 	}
 
+	/// <summary>
+	/// Called if scene was switched.
+	/// Level 2 = Gamescene; get enemy's name to set in gui
+	/// </summary>
+	/// <param name="level">Level.</param>
 	void OnLevelWasLoaded (int level) {
 
 		if (level == 2) {
@@ -45,68 +46,8 @@ public class Client : MonoBehaviour {
 			} else {
 				_opponentName = PhotonNetwork.player.Get (1).name;
 			}
-			/*
-			TextAsset mapPrefab = (TextAsset)Resources.Load("TestWith3DModels_prefabHolder", typeof(TextAsset));
-			TextAsset mapFields = (TextAsset)Resources.Load("TestWith3DModels_singleFields", typeof(TextAsset));
-
-			//TextAsset map = (TextAsset)Resources.Load("TestWith3DModels", typeof(TextAsset));
-			photonView.RPC ("InstantiateMap", PhotonTargets.Others, mapPrefab.text, mapFields.text);
-
-
-			//photonView.RPC ("InstantiateMap", PhotonTargets.Others, "Assets/Resources/TestWith3DModels");
-			*/
 		}
 	}
-	/*
-	void OnGUI()
-	{
-
-		if (!PhotonNetwork.connected)
-		{
-			GUILayout.Label(PhotonNetwork.connectionStateDetailed.ToString());
-		}
-		else if (PhotonNetwork.room == null)
-		{
-			// Create Room
-			if (GUI.Button(new Rect(100, 100, 250, 100), "Create Game")){
-				//RoomOptions roomOptions = new RoomOptions() { isVisible = false, maxPlayers = 2 };
-				//PhotonNetwork.CreateRoom(roomName + Guid.NewGuid().ToString("N"), true, true, 5);
-				PhotonNetwork.CreateRoom(roomName, true, true, 2);
-				//connectionInfos ();
-				GUILayout.Label("Waiting for Opponent");
-			}
-			
-			// Join Room
-			if (roomsList != null)
-			{
-				for (int i = 0; i < roomsList.Length; i++)
-				{
-					if (GUI.Button(new Rect(100, 250 + (110 * i), 250, 100), "Join Game" + roomsList[i].name)){
-						PhotonNetwork.JoinRoom(roomsList[i].name);
-						connectionInfos ();
-					}
-				}
-			}
-
-
-		}
-		connectionInfos ();
-		if (GUI.Button (new Rect(50, 50, 100, 100), "Spielzug beenden")) {
-			if (isMyTurn){
-				Debug.Log ("Ich war dran." + PhotonNetwork.player.ID);
-				PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
-				playerToMakeTurn = nextPlayer.ID;
-				Debug.Log (playerToMakeTurn + " ist als nächstes dran.");
-				photonView.RPC ("HandOverTurn", nextPlayer, playerToMakeTurn);
-			} else {
-				Debug.Log ("Ich war nicht dran. " + playerToMakeTurn + " war dran.");
-			}
-		}
-		if (user != null) {
-			GUI.Label (new Rect (100, 100, 200, 200), "Hallo " + user.username);
-		}
-	}
-	*/
 
 	/// <summary>
 	/// Create a new room(game) for a selected mission.
@@ -114,9 +55,7 @@ public class Client : MonoBehaviour {
 	/// <param name="missionName">Will be used as the game (room) name.</param>
 	public void CreateMission (string missionName) {
 		RoomOptions roomOptions = new RoomOptions() { isVisible = true, isOpen = true, maxPlayers = 2 };
-		if (PhotonNetwork.JoinOrCreateRoom (missionName, roomOptions, TypedLobby.Default)) {
-			Debug.Log ("game created");
-		}
+		PhotonNetwork.JoinOrCreateRoom (missionName, roomOptions, TypedLobby.Default);
 	}
 
 	/// <summary>
@@ -167,14 +106,9 @@ public class Client : MonoBehaviour {
 		}
 	}
 
-	
-	void OnReceivedRoomListUpdate()
-	{
-		roomsList = PhotonNetwork.GetRoomList();
-		Debug.Log ("OnReceivedRoomListUpdate()");
-	}
-	
-	
+	/// <summary>
+	/// If someone joins a game, switch scene to game scene.
+	/// </summary>
 	void OnJoinedRoom()
 	{
 		if (CheckTwoPlayers) {
@@ -188,14 +122,11 @@ public class Client : MonoBehaviour {
 	/// </summary>
 	public void playerChange () {
 		if (IsMyTurn) {
-			Debug.Log ("war meine Runde");
 			PhotonPlayer nextPlayer = PhotonNetwork.player.GetNextFor(playerToMakeTurn);
 			playerToMakeTurn = nextPlayer.ID;
 			photonView.RPC ("HandOverTurn", nextPlayer, playerToMakeTurn);
 		} else {
-			Debug.Log ("war nicht meine Runde");
 			Debug.Log (playerToMakeTurn);
-			Debug.Log (PhotonNetwork.player.ID);
 		}
 	}
 
@@ -221,7 +152,6 @@ public class Client : MonoBehaviour {
 			break;
 			case ActionType.MOVEMENT:
 			string character = message.involvedCharacters[0];
-			Debug.Log ("move send");
 			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character , targetField);
 			break;
 			//more ActionTypes can follow
@@ -230,6 +160,10 @@ public class Client : MonoBehaviour {
             string specialUser = message.involvedCharacters[0];
             string specialTarget = message.involvedCharacters[1];
             photonView.RPC("LoadSpecial", PhotonTargets.Others, timeStamp, specialUser, specialTarget);
+            case ActionType.BREAK_SAFE:
+            string character = message.involvedCharacters[0];
+            string safe = message.involvedCharacters[1];
+            photonView.RPC("LoadSafeBreak", PhotonTargets.Others, timeStamp, character, safe);
 			*/
 
 		}
@@ -245,26 +179,7 @@ public class Client : MonoBehaviour {
 		Application.LoadLevel ("GameScene");
 		DontDestroyOnLoad (this);
 	}
-	
-	/// <summary>
-	/// Client instantiates received map from server.
-	/// </summary>
-	/// <param name="mapFields">xml view of map fields</param>
-	/// <param name="mapPrefabs">xml view of map prefabs</param>
-	[PunRPC]
-	void InstantiateMap (string mapPrefab, string mapFields)
-	{
-		GameObject go = GameObject.FindWithTag ("LevelController");
-		LevelController levelController = (LevelController)go.GetComponent (typeof(LevelController));
-		Debug.Log(mapPrefab);
-		Debug.Log(mapFields);
-		levelController.LoadLevel (mapPrefab, mapFields);
-		//The player who opened the game will start
-		playerToMakeTurn = 1;
-		Debug.Log ("instantiated");
 
-
-	}
 	/// <summary>
 	/// Hands the turn over to the opponent.
 	/// </summary>
@@ -362,6 +277,33 @@ public class Client : MonoBehaviour {
 
         }
     }
+
+	[PunRPC]
+	void LoadSafeBreak(String timeStamp, string character, string safe)
+	{
+		DateTime currentTimeStamp = DateTime.Now;
+		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
+		TimeSpan diff = currentTimeStamp.Subtract (receivedTimeStamp);
+		
+		PlayerController playerController = FindObjectOfType(typeof(PlayerController)) as PlayerController;
+		
+		if (diff.Hours > 24)
+		{
+			Debug.Log("Gegner hat zu lange gebraucht. Du hast gewonnen!");
+		}
+		else
+		{
+			Unit safeBreaker = playerController.pListUnits.Find(x => x.pStringName.Equals(character));
+			//Unit safe = playerController.pListTreasures.Find(x => x.pStringName.Equals(safe));
+			//safeBreaker.BreakSafe(safe);
+		}
+
+	}
+
+
+	/// <summary>
+	/// Loading Test data for default game.
+	/// </summary>
 	private void TestData () {
 		//shouldn't be done like that; load .txt file
 		TextAsset pDesc = (TextAsset)Resources.Load("TheHarborJob_desc_p", typeof(TextAsset));
