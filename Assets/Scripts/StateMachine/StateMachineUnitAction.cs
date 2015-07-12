@@ -58,16 +58,13 @@ public class StateMachineUnitAction : MonoBehaviour {
 				int attack = pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
 				audio1.Play ();
 				pPCPlayer.pUnitActive.EnableSoundWord();
+				GameObject sWord = pPCPlayer.pUnitActive.soundWord;
 				StartCoroutine("DelaySound");
 
+				sWord.SetActive(false);
 
-				if(trigger == true){
-					pPCPlayer.pUnitActive.DisableSoundWord();
+				audio3.Play ();			
 
-					audio3.Play ();
-
-				}
-				trigger = false;
 				Message msg = new Message(ActionType.ATTACK ,attack);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.pStringName);
@@ -184,6 +181,8 @@ public class StateMachineUnitAction : MonoBehaviour {
 			if(mObjective!=null){
 				mObjective.InteractWithObjective(pPCPlayer.pUnitActive);
 				mObjective.ShowObjectiveStatus();
+				pPCPlayer.pUnitActive.bag.SetActive(true);
+				pPCPlayer.pUnitActive.pOIObjective.gameObject.SetActive (false);
 				return true;
 			}
 			return false;
