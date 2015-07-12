@@ -21,7 +21,7 @@ public class StateMachineUnitAction : MonoBehaviour {
 
 	private bool trigger;
 
-
+	GameObject sWord;
 	// Use this for initialization
 	void Start () {
 		pPCPlayer = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
@@ -58,12 +58,8 @@ public class StateMachineUnitAction : MonoBehaviour {
 				int attack = pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
 				audio1.Play ();
 				pPCPlayer.pUnitActive.EnableSoundWord();
-				GameObject sWord = pPCPlayer.pUnitActive.soundWord;
+				sWord = pPCPlayer.pUnitActive.soundWord;
 				StartCoroutine("DelaySound");
-
-				sWord.SetActive(false);
-
-				audio3.Play ();			
 
 				Message msg = new Message(ActionType.ATTACK ,attack);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
@@ -221,7 +217,9 @@ public class StateMachineUnitAction : MonoBehaviour {
 
 	public IEnumerator DelaySound() {
 		trigger = false;
-		yield return new WaitForSeconds(2f); // waits 3 seconds
+		yield return new WaitForSeconds(1f); // waits 3 seconds
+		sWord.SetActive(false);
+		audio3.Play ();	
 		trigger = true; // will make the update method pick up 
 	}
 }
