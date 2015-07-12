@@ -2,6 +2,9 @@
 using System.Collections;
 
 public class Medic : Unit {
+
+
+
 	public void UseSpecial(Unit mUnitOther){
 		if (mUnitOther.pBoolEnemy) {
 			mUnitOther.pIntHealth = mUnitOther.pIntHealth + 4;

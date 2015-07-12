@@ -98,6 +98,10 @@ public class GameController : MonoBehaviour {
 						mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
 					}
 				}
+				else if(mRHInfo.collider.gameObject.tag.Equals ("Objective") && mPCPlayer.pBoolShowSpecial == true)
+				{
+					pListCharacters[mIntUnitIndex].pOIObjective = mRHInfo.collider.gameObject.GetComponent<Safe>();
+				}
 			}
 			
 		};

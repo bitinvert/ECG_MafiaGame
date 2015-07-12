@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Safe : Field,ObjectiveInterface {
 
+	public string identifier;
 	public int pIntCounter = 5;
 	public bool pBoolOpen = false;
 
@@ -12,6 +13,7 @@ public class Safe : Field,ObjectiveInterface {
 	public void ExecuteEffect(Unit mExecutingUnit){
 		pBoolOpen = true;
 		mExecutingUnit.pBoolHasLoot = true;
+		mExecutingUnit.bag.SetActive (true);
 	}
 	public void InteractWithObjective(Unit mInteractingUnit){
 		if (!pBoolOpen) {

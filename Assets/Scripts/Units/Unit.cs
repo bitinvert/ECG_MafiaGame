@@ -51,6 +51,15 @@ public class Unit : MonoBehaviour {
 	public Vector3 targetField;
 	public bool moving;
 
+	public int minWeaponDamadge;
+	public int maxWeaponDamadge;
+
+	public GameObject soundWord;
+
+	public int attackDistance;
+
+	public GameObject bag;
+
 	void Start () {
 		mVec3Offset = new Vector3(0f,this.transform.position.y,0f);
 		pShackStunned.isSheckled = false;
@@ -102,6 +111,7 @@ public class Unit : MonoBehaviour {
 		pBoolDoubleTap = false;
 		mBoolPathShown = false;
 		mIntTargetIndex = 0;
+		pOIObjective = null;
 
 		pAStarPathfinding.pListPath = new Vector3[0];
 	}
@@ -149,11 +159,15 @@ public class Unit : MonoBehaviour {
 	}
 
 	private int GetAttackDistance(){
-		return 2;
+		return attackDistance;
 	}
 	public int Attack (Unit mUnitEnemy){
 		int mIntDamage = CalculateDamage (mUnitEnemy);
 		mUnitEnemy.pIntHealth = mUnitEnemy.pIntHealth - mIntDamage;
+		if(mUnitEnemy.pIntHealth <= 0)
+		{
+			mUnitEnemy.Die();
+		}
 		return mIntDamage;
 	}
 	public void Die (){
@@ -161,13 +175,24 @@ public class Unit : MonoBehaviour {
 	}
 
 	private int CalculateDamage(Unit mUnitEnemy){
-		int mIntDamage = mUnitEnemy.pIntDefense - this.pIntAttack;
+		int mIntDamage = mUnitEnemy.pIntDefense - this.pIntAttack + Random.Range(minWeaponDamadge,maxWeaponDamadge);
 		if (mIntDamage < 1) {
 			mIntDamage = 1;
 		}
 		return mIntDamage;
 	}
 
+	public void EnableSoundWord()
+	{
+//		soundWord.active = true;
+		this.soundWord.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f);
+	}
+
+	public void DisableSoundWord()
+	{
+//		soundWord.active = false;
+		this.soundWord.GetComponent<SpriteRenderer>().color=new Color(1f,1f,1f,0f);
+	}
 	//Brendans implementation
 	//Movement Stuffs
 	public void ShowMovementRadius(){

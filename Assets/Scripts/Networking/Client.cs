@@ -155,16 +155,17 @@ public class Client : MonoBehaviour {
 			photonView.RPC ("LoadMove", PhotonTargets.Others, timeStamp, character , targetField);
 			break;
 			//more ActionTypes can follow
-			/*
+
 			case ActionType.SPECIAL:
             string specialUser = message.involvedCharacters[0];
             string specialTarget = message.involvedCharacters[1];
             photonView.RPC("LoadSpecial", PhotonTargets.Others, timeStamp, specialUser, specialTarget);
+			break;
             case ActionType.BREAK_SAFE:
-            string character = message.involvedCharacters[0];
+            string character1 = message.involvedCharacters[0];
             string safe = message.involvedCharacters[1];
-            photonView.RPC("LoadSafeBreak", PhotonTargets.Others, timeStamp, character, safe);
-			*/
+            photonView.RPC("LoadSafeBreak", PhotonTargets.Others, timeStamp, character1, safe);
+			break;
 
 		}
 	}

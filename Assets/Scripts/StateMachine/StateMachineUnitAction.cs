@@ -18,7 +18,10 @@ public class StateMachineUnitAction : MonoBehaviour {
 	private bool mBoolSpecial = false;
 	
 	private List<Vector3> mVec3BackList;
-	
+
+	private bool trigger;
+
+
 	// Use this for initialization
 	void Start () {
 		pPCPlayer = Object.FindObjectOfType(typeof(PlayerController)) as PlayerController;
@@ -54,8 +57,15 @@ public class StateMachineUnitAction : MonoBehaviour {
 			{
 				int attack = pPCPlayer.pUnitActive.Attack(pPCPlayer.pUnitActive.pUnitEnemy);
 				audio1.Play ();
-				//yield waitForSeconds(1);
-				audio3.Play ();
+				pPCPlayer.pUnitActive.EnableSoundWord();
+				StartCoroutine("DelaySound");
+				pPCPlayer.pUnitActive.DisableSoundWord();
+
+				if(trigger == true){
+					audio3.Play ();
+
+				}
+				trigger = false;
 				Message msg = new Message(ActionType.ATTACK ,attack);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pStringName);
 				msg.involvedCharacters.Add(pPCPlayer.pUnitActive.pUnitEnemy.pStringName);
@@ -101,9 +111,14 @@ public class StateMachineUnitAction : MonoBehaviour {
 		{
 			if(SpecialDone ())
 			{
-				//TODO Special cases for each type of unit
-				Debug.Log ("State: Special Done");
-				mBoolSpecial = false;
+				if(pPCPlayer.pUnitActive.pOIObjective != null){
+					//TODO Special cases for each type of unit
+					Message msg = new Message(ActionType.BREAK_SAFE, 0);
+					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pStringName);
+					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pOIObjective.identifier);
+					Debug.Log ("State: Special Done");
+					mBoolSpecial = false;
+				}
 			}
 		}
 		if(pPCPlayer.pBoolEndTurn == true)
@@ -201,5 +216,11 @@ public class StateMachineUnitAction : MonoBehaviour {
 		mBoolMove = false;
 		mBoolAttack = false;
 		mBoolSpecial = false;
+	}
+
+	public IEnumerator DelaySound() {
+		trigger = false;
+		yield return new WaitForSeconds(2f); // waits 3 seconds
+		trigger = true; // will make the update method pick up 
 	}
 }

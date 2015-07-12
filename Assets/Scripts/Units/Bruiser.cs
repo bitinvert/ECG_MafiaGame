@@ -4,6 +4,8 @@ using System.Collections.Generic;
 
 public class Bruiser : Unit {
 
+
+
 	public void UseSpecial(Unit mUnitOther){
 		if (mUnitOther.pBoolEnemy) {
 			List<Node> mListNeighbours = pFFWalkArea.pGridField.GetNeighbours (pFFWalkArea.pGridField.NodeFromWorldPosition (mUnitOther.gameObject.transform.position - mUnitOther.mVec3Offset));
