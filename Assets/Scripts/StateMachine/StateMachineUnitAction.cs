@@ -59,9 +59,11 @@ public class StateMachineUnitAction : MonoBehaviour {
 				audio1.Play ();
 				pPCPlayer.pUnitActive.EnableSoundWord();
 				StartCoroutine("DelaySound");
-				pPCPlayer.pUnitActive.DisableSoundWord();
+
 
 				if(trigger == true){
+					pPCPlayer.pUnitActive.DisableSoundWord();
+
 					audio3.Play ();
 
 				}

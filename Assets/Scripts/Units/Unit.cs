@@ -184,14 +184,14 @@ public class Unit : MonoBehaviour {
 
 	public void EnableSoundWord()
 	{
-//		soundWord.active = true;
-		this.soundWord.GetComponent<SpriteRenderer>().color = new Color(1f,1f,1f,1f);
+		soundWord.SetActive(true);
+
 	}
 
 	public void DisableSoundWord()
 	{
-//		soundWord.active = false;
-		this.soundWord.GetComponent<SpriteRenderer>().color=new Color(1f,1f,1f,0f);
+		soundWord.SetActive(false);
+
 	}
 	//Brendans implementation
 	//Movement Stuffs
