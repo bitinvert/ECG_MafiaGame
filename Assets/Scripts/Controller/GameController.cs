@@ -98,9 +98,21 @@ public class GameController : MonoBehaviour {
 						mPCPlayer.pUnitTapped = mRHInfo.collider.gameObject.GetComponent<Unit>();
 					}
 				}
-				else if(mRHInfo.collider.gameObject.tag.Equals ("Objective") && mPCPlayer.pBoolShowSpecial == true)
+				else if(mRHInfo.collider.gameObject.tag.Equals ("Objective") && mPCPlayer.pBoolShowSpecial == true && pListCharacters[mIntUnitIndex].pOIObjective == null)
 				{
 					pListCharacters[mIntUnitIndex].pOIObjective = mRHInfo.collider.gameObject.GetComponent<Safe>();
+				}else if(mRHInfo.collider.gameObject.tag.Equals ("Objective") && mPCPlayer.pBoolShowSpecial == true && pListCharacters[mIntUnitIndex].pOIObjective != null)
+				{
+					Safe mUnitTemp =  mRHInfo.collider.gameObject.GetComponent<Safe>();
+					
+					if(pListCharacters[mIntUnitIndex].pOIObjective.Equals(mUnitTemp))
+					{
+						pListCharacters[mIntUnitIndex].pBoolDoubleTap = true;
+					}
+					else
+					{
+						pListCharacters[mIntUnitIndex].pOIObjective = mUnitTemp;
+					}
 				}
 			}
 			
