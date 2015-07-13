@@ -9,7 +9,7 @@ public class Mission {
 	public string mafiaDescription { get { return _mafiaDescription; } set { _mafiaDescription = value; } }
 	private string _mafiaDescription;
 
-	public string policeDescription { get { return _mafiaDescription; } set { _mafiaDescription = value; } }
+	public string policeDescription { get { return _policeDescription; } set { _policeDescription = value; } }
 	private string _policeDescription;
 
 	public Mission (string missionId, string mafiaDescription, string policeDescription) {

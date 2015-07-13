@@ -16,8 +16,11 @@ public class MissionChoice : MonoBehaviour {
 		client = (Client)go.GetComponent (typeof(Client));
 
 		if (client != null) {
-			missionDescriptionField.text = client.missions["The Harbor Job"].mafiaDescription;
-			Debug.Log (client.missions["The Harbor Job"].mafiaDescription);
+			if (client.user.fraction == Fraction.MAFIA) {
+				missionDescriptionField.text = client.missions["The Harbor Job"].mafiaDescription;
+			} else if (client.user.fraction == Fraction.POLICE) {
+				missionDescriptionField.text = client.missions["The Harbor Job"].policeDescription;
+			}
 		} else {
 			Debug.Log ("no client");
 		}

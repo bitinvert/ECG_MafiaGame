@@ -13,13 +13,13 @@ public class Message{
 	public List <string> involvedCharacters { get { return _involvedCharacters; } }
 	private List <string> _involvedCharacters;
 
-	public float damage { get { return _damage; } set { _damage = value; } }
-	private float _damage;
+	public int damage { get { return _damage; } set { _damage = value; } }
+	private int _damage;
 
 	public Vector3 targetField { get { return _targetField; } set { _targetField = value; } }
 	private Vector3 _targetField;
 
-	public Message (ActionType action, float damage) 
+	public Message (ActionType action, int damage) 
 	{
 		this._action = action;
 		this._damage = damage;

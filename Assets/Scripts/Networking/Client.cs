@@ -140,7 +140,7 @@ public class Client : MonoBehaviour {
 	{
 		string timeStamp = DateTime.Now.ToString ();
 		string actionType = message.action.ToString();
-		float damage = message.damage;
+		int damage = message.damage;
 		Vector3 targetField = message.targetField;
 
 		switch (message.action) 
@@ -200,7 +200,7 @@ public class Client : MonoBehaviour {
 	/// <param name="damage">Indicates the taken damage for the victim.</param>
 	/// <param name="targetField">Indicates the target field of the attacker, if it moved before it attacked.</param>
 	[PunRPC]
-	void LoadAttack (String timeStamp, string attacker, string victim, float damage, Vector3 targetField) 
+	void LoadAttack (String timeStamp, string attacker, string victim, int damage, Vector3 targetField) 
 	{
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
@@ -219,9 +219,13 @@ public class Client : MonoBehaviour {
 				attackerUnit.ResetMoveVals ();
 			}
 			*/
-			attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim)));
-
-			//how to handle die?
+			//attackerUnit.Attack(playerController.pListUnits.Find(x => x.pStringName.Equals (victim)));
+			Unit victimUnit = playerController.pListUnits.Find(x => x.pStringName.Equals (victim));
+			victimUnit.pIntHealth -= damage;
+			if (victimUnit.pIntHealth <= 0)
+			{
+				victimUnit.Die();
+			}
 		}
 	}
 
@@ -280,7 +284,7 @@ public class Client : MonoBehaviour {
     }
 
 	[PunRPC]
-	void LoadSafeBreak(String timeStamp, string character, string safe)
+	void LoadSafeBreak(String timeStamp, string character, string safeId)
 	{
 		DateTime currentTimeStamp = DateTime.Now;
 		DateTime receivedTimeStamp = Convert.ToDateTime (timeStamp);
@@ -294,7 +298,36 @@ public class Client : MonoBehaviour {
 		}
 		else
 		{
+			Debug.Log (safeId);
 			Unit safeBreaker = playerController.pListUnits.Find(x => x.pStringName.Equals(character));
+			Safe safeToBreak = null;
+			GameObject [] gos = GameObject.FindGameObjectsWithTag("Objective");
+
+			Debug.Log(gos.Length);
+
+			foreach (GameObject go in gos) 
+			{
+
+				Safe safe = (Safe)go.GetComponent(typeof(Safe));
+				if (safe != null) 
+				{
+					if (safe.identifier.Equals(safeId))
+					{
+						safeToBreak = safe;
+						break;
+					}
+				}
+
+			}
+
+			if (safeToBreak != null) {
+				safeBreaker.pOIObjective = safeToBreak;
+				safeToBreak.InteractWithObjective(safeBreaker);
+				safeBreaker.bag.SetActive(true);
+				safeBreaker.pOIObjective.gameObject.SetActive (false);
+			}
+
+
 			//Unit safe = playerController.pListTreasures.Find(x => x.pStringName.Equals(safe));
 			//safeBreaker.BreakSafe(safe);
 		}

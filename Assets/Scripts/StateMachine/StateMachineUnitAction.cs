@@ -20,7 +20,14 @@ public class StateMachineUnitAction : MonoBehaviour {
 	private List<Vector3> mVec3BackList;
 
 	private bool trigger;
-
+	/* used for video run away
+	//-----
+	private bool runAway;
+	private int count = 0;
+	public GameObject gangCar;
+	//----
+	*/
+	
 	GameObject sWord;
 	// Use this for initialization
 	void Start () {
@@ -31,26 +38,31 @@ public class StateMachineUnitAction : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		/* used for video run away
+		//------
+		if (runAway) {
+
+			gangCar.transform.position += new Vector3(1, 0, 0)* Time.deltaTime*3;
+		}
+		//-----
+		*/
+
 		/*The States themselves.
 		  Here the certain values will be set*/
-		if(pPCPlayer.pBoolShowAttack == true && SelectedChar ())
-		{
-			mBoolAttack = ShowAttack();
+		if (pPCPlayer.pBoolShowAttack == true && SelectedChar () && !pPCPlayer.pBoolShowMove && !pPCPlayer.pBoolShowSpecial) {
+			mBoolAttack = ShowAttack ();
 			mBoolMove = false;
 			mBoolSpecial = false;
-		}
-		else if(pPCPlayer.pBoolShowMove == true && SelectedChar ())
-		{
+		} else if (pPCPlayer.pBoolShowMove == true && SelectedChar () && !pPCPlayer.pBoolShowAttack && !pPCPlayer.pBoolShowSpecial) {
 			mBoolMove = ShowMove ();
 			mBoolAttack = false;
 			mBoolSpecial = false;
-		}
-		else if(pPCPlayer.pBoolShowSpecial == true && SelectedChar ())
-		{
+		} else if (pPCPlayer.pBoolShowSpecial == true && SelectedChar () && !pPCPlayer.pBoolShowMove && !pPCPlayer.pBoolShowAttack) {
 			mBoolSpecial = ShowSpecial ();
 			mBoolAttack = false;
 			mBoolMove = false;
 		}
+
 		if(mBoolAttack )
 		{
 			if(AttackDone ())
@@ -82,7 +94,10 @@ public class StateMachineUnitAction : MonoBehaviour {
 				audio2.Play ();
 				if(pPCPlayer.pUnitActive.transform.position - pPCPlayer.pUnitActive.mVec3Offset == test)
 				{
+
+					//----
 					pPCPlayer.pBoolShowAttack = true;
+					//----
 					mBoolMove = false;
 					mVec3BackList = new List<Vector3>();
 					mVec3BackList.AddRange (pPCPlayer.pUnitActive.pAStarPathfinding.pListPath);
@@ -91,13 +106,26 @@ public class StateMachineUnitAction : MonoBehaviour {
 					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pStringName);
 					//msg.targetField = mVec3BackList[0];
 					msg.targetField = pPCPlayer.pUnitActive.transform.position;
-					
 					mClientPlayer.SavePlayerMove(msg);
 					
 					Debug.Log ("State: Move Done");
 					pPCPlayer.pBoolShowMove = false;
 					pPCPlayer.pUnitActive.pBoolMoveDone = true;
-					
+					/* used for video run away
+					//-----
+					pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
+					pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
+					pPCPlayer.pListUnits.Remove(pPCPlayer.pUnitActive);
+
+					Destroy (pPCPlayer.pUnitActive.gameObject);
+					count += 1;
+
+					if (count == 3){
+						Debug.Log ("runn away");
+						runAway = true;
+					}
+					//-----
+					*/
 				}
 				//TODO Setting values for attacking
 			}
@@ -111,8 +139,14 @@ public class StateMachineUnitAction : MonoBehaviour {
 					Message msg = new Message(ActionType.BREAK_SAFE, 0);
 					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pStringName);
 					msg.involvedCharacters.Add (pPCPlayer.pUnitActive.pOIObjective.identifier);
+					mClientPlayer.SavePlayerMove(msg);
 					Debug.Log ("State: Special Done");
+					pPCPlayer.pUnitActive.ResetValues();
+					pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
+					pPCPlayer.pUnitActive.pFFWalkArea.pGridField.ResetGrid();
 					mBoolSpecial = false;
+					pPCPlayer.pBoolShowSpecial = false;
+					pPCPlayer.pUnitActive.pBoolDone = true;
 				}
 			}
 		}
@@ -190,10 +224,11 @@ public class StateMachineUnitAction : MonoBehaviour {
 	void PlayerChange(){
 		pIntTurnCount++;
 		this.ResetStateVal();
-		mClientPlayer.playerChange();
+
 		foreach (Unit unit in pPCPlayer.pListUnits) {
 			unit.pBoolMoveDone = false;
 			unit.pBoolDone = false;
+			unit.pBoolDoubleTap = false;
 		}
 		if(pPCPlayer.pUnitActive != null) {
 			pPCPlayer.pUnitActive.pFFWalkArea.pListGridSet.Clear ();
@@ -201,7 +236,9 @@ public class StateMachineUnitAction : MonoBehaviour {
 		}
 		pPCPlayer.pUnitActive = null;
 		pPCPlayer.pUnitTapped = null;
+
 		pPCPlayer.pBoolEndTurn = false;
+		mClientPlayer.playerChange();
 		
 	}
 	
