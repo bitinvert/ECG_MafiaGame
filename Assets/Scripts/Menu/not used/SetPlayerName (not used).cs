@@ -3,18 +3,23 @@ using System.Collections;
 using UnityEngine.UI;
 
 public class SetPlayerName : MonoBehaviour {
-
-	public Text nameField;
+	
 	private GameObject client;
-	private bool nameSet;
 
-	// Use this for initialization
+	// A reference to the nameField, where the enemy's name is supposed to be
+	public Text nameField;
+
+	// A bool to make sure, that the name is only set once
+	private bool nameSet;
+	
 	void Start () {
 		client = GameObject.FindGameObjectWithTag ("Client");
 		nameSet = false;
 	}
 	
-	// Update is called once per frame
+	/**
+	 * Get the enemy's name and set it.
+	 */
 	void Update () {
 		if ((client == null) && (!nameSet)) {
 

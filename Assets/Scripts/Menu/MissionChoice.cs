@@ -6,11 +6,19 @@ public class MissionChoice : MonoBehaviour {
 
 	Client client;
 
+	// A reference to the Mission Button's text
 	public Text messageField;
+
+	// A reference to the Window containing the Mission's description text
 	public Text missionDescriptionField;
+
+	// The message that is supposed to be written into the messageField if neccessary
 	public string loadingText = "loading";
 
-	// Use this for initialization
+	/**
+	 * Get a reference to the active Client GameObject and set the Mission's description text
+	 * to the Description retrieved from the Client object.
+	 */
 	void Start () {
 		GameObject go = GameObject.FindWithTag ("Client");
 		client = (Client)go.GetComponent (typeof(Client));
@@ -26,7 +34,11 @@ public class MissionChoice : MonoBehaviour {
 		}
 
 	}
-	
+
+	/**
+	 * If called, retrieve the corresponding mission and try to start it
+	 * and call CheckMissionStatus()
+	 */
 	public void OpenMission (string missionName) {
 		if (client != null) {
 			client.CreateMission (missionName);
@@ -41,11 +53,18 @@ public class MissionChoice : MonoBehaviour {
 		client.JoinMission (missionName);
 	}
 
+	/**
+	 * Start a Coroutine to show the User that the Programm is trying to
+	 * etablish a connection with another player in order to start the mission.
+	 */
 	private void CheckMissionStatus () 
 	{
 		StartCoroutine(checkStatus());
 	}
 
+	/**
+	 * Switch between "loading." "loading.." and "loading..." every 0.5 Seconds.
+	 */
 	IEnumerator checkStatus() 
 	{
 		int i = 0;

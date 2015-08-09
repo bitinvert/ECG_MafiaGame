@@ -9,11 +9,17 @@ public class UpdateTappedCharacterInformation : MonoBehaviour {
 	public Slider lifebar;
 	public Text life;
 
+	// A reference to all character's pictures, used for the avatar in the informationBar
 	public GameObject[] avatars = new GameObject[12];
 
 	private Unit tapped = null;
 
-	// Update is called once per frame
+	/**
+	 * Get the current tapped Unit and activate the corresponding avatar.
+	 * If no unit is tapped, deactivate the InformationBar.
+	 * Also: set the LifeText and the lifebar corresponding to the tapped
+	 * units values.
+	 */
 	void Update () {
 		tapped = pc.pUnitTapped;
 

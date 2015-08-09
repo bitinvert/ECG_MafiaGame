@@ -4,18 +4,25 @@ using UnityEngine.UI;
 
 public class SetFractionAvatar : MonoBehaviour {
 
+	// A reference to the police Avatar
 	public GameObject[] police_avatar = new GameObject[2];
-	public GameObject[] mafia_avatar = new GameObject[2];
-	private GameObject client;
-	private bool avatarSet;
 
-	// Use this for initialization
+	// A reference to the mafia Avatar
+	public GameObject[] mafia_avatar = new GameObject[2];
+
+	private GameObject client;
+
+	// A bool used to only set the Avatar once
+	private bool avatarSet;
+	
 	void Start () {
 		client = GameObject.FindGameObjectWithTag ("Client");
 		avatarSet = false;
 	}
 	
-	// Update is called once per frame
+	/**
+	 * Enable the corresponding profileButton and Avatar
+	 */
 	void Update () {
 		if ((client == null) && (!avatarSet)) {
 			

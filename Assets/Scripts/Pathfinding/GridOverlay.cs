@@ -10,9 +10,9 @@ public class GridOverlay : MonoBehaviour {
 	private PlayerController playerController;
 
 	private Grid grid;
-	//private AStar astar;
 	private FloodFill floodFill;
 
+	// Variables to set the Color of the actionRadius for movement, attack and special
 	public Color moveColor = new Color(1f, 1f, 1f);
 	public Color attackColor = new Color(1f, 1f, 1f);
 	public Color specialColor = new Color(1f, 1f, 1f);
@@ -31,10 +31,14 @@ public class GridOverlay : MonoBehaviour {
 	public float offsetX;
 	public float offsetZ;
 
-	// Use this for initialization
+	/**
+	 * Try to get a reference to the grid and floodFill created in 
+	 * different scripts.
+	 * Also create the Material used for drawing the GridOverlay with
+	 * a specific shader.
+	 */
 	void Start () {
 		grid = pathfinding.GetComponent<Grid> ();
-		//astar = pathfinding.GetComponent<AStar> ();
 		floodFill = pathfinding.GetComponent<FloodFill> ();
 
 		//POSITION NICHT VERÄNDERN!!!
@@ -67,6 +71,11 @@ public class GridOverlay : MonoBehaviour {
 		yield return null;
 	}
 
+	/**
+	 * Create the Shader used to show the GridOverlay over everything else
+	 * so the movement radius etc. isn't hidden behind objects and thus a 
+	 * Unit not moveable anymore.
+	 */
 	void CreateLineMaterial() 
 	{
 		if( !lineMaterial ) {
@@ -90,6 +99,10 @@ public class GridOverlay : MonoBehaviour {
 			lineMaterial.shader.hideFlags = HideFlags.HideAndDontSave;}
 	}
 
+	/**
+	 * Check if the player wants to attack, move or use special.
+	 * Set the walkColor accordingly.
+	 */
 	void Update() 
 	{
 		if (playerController.pBoolShowAttack) 
@@ -106,6 +119,14 @@ public class GridOverlay : MonoBehaviour {
 		}
 	}
 
+	/**
+	 * Draw the GridOverlay OnPostRender by checking every node in "mNodeGrid" and
+	 * drawing lines for every node if it's walkable.
+	 * The lower part is used to draw the filled in GridOverlay part to show the action radius
+	 * of an active unit. Only if a node is reachable AND walkable, it will be filled with the
+	 * corresponding color.
+	 * The selected field will be displayed in a different color.
+	 */
 	void OnPostRender()  
 	{
 		if (gridCreated) 

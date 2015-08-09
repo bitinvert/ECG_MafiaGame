@@ -4,13 +4,20 @@ using System.Collections;
 public class TurnCollider : MonoBehaviour {
 
 	private Client mClientPlayer;
+
+	// A reference to the collider
 	public GameObject coll;
-	// Use this for initialization
+
 	void Start () {
 		mClientPlayer = Object.FindObjectOfType(typeof(Client)) as Client;
 	}
 	
-	// Update is called once per frame
+	/**
+	 * Check periodically whether it's the player's turn or not.
+	 * If it's not the player's turn, activate a Collider to ensure the player
+	 * not being able to make any move.
+	 * Deactivate the Collider if it's the player's turn.
+	 */
 	void Update () {
 		if(!mClientPlayer.IsMyTurn) {
 			coll.SetActive(true);

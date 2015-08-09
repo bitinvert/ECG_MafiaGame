@@ -4,6 +4,10 @@ using System.Collections;
 public class ExitGame : MonoBehaviour 
 {
 
+	/**
+	 * Check if the player wants to exit the game.
+	 * For Debugging only!
+	 */
 	void Update () 
 	{
 		if (Input.GetKey ("escape")) 
@@ -12,6 +16,9 @@ public class ExitGame : MonoBehaviour
 		}
 	}
 
+	/**
+	 * Exit the game if called.
+	 */
 	public void ExitGameOption() 
 	{
 		Application.Quit ();
